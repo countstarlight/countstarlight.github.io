@@ -310,23 +310,28 @@
       
         
           
-            <p>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</p>
-<h1 id="start-log-service"><a href="#start-log-service" class="headerlink" title="start log service"></a>start log service</h1><p> start logd</p>
+            <ul>
+<li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
+</ul>
+<p>#start log service<br> start logd</p>
 <p>on property:service.logcat.enable=1<br>    start logcat_service</p>
 <p>on property:service.logcat.enable=0<br>    stop logcat_service</p>
-<h1 id="log-services"><a href="#log-services" class="headerlink" title="log services"></a>log services</h1><p>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>    user root<br>    group log system<br>    class main<br>       disabled</p>
+<p>#log services<br>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>    user root<br>    group log system<br>    class main<br>       disabled</p>
 <p>service logd /system/bin/sh /system/bin/logd.sh<br>    user system<br>    group log<br>    oneshot</p>
-<p>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</p>
+<ul>
+<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</li>
+</ul>
 <p>#!/system/bin/sh</p>
 <p>#</p>
-<h1 id="Global-folder-amp-cmd-params"><a href="#Global-folder-amp-cmd-params" class="headerlink" title="Global folder &amp; cmd params"></a>Global folder &amp; cmd params</h1><p>#</p>
+<p>#Global folder &amp; cmd params<br>#</p>
 <p>OUTPUT_DIR=/data<br>LOG=Logs<br>index=2</p>
 <p>LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0<br>LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1<br>LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2</p>
 <p>RM=rm<br>MV=”mv”<br>MKDIR=mkdir<br>UMASK=umask</p>
-<h1 id="set-default-permission-0775"><a href="#set-default-permission-0775" class="headerlink" title="set default permission 0775"></a>set default permission 0775</h1><p>$UMASK 002</p>
-<h1 id="Init-the-three-folders"><a href="#Init-the-three-folders" class="headerlink" title="Init the three folders"></a>Init the three folders</h1><p>i=0<br>while [ “$i” -le “$index” ]<br>do<br>$MKDIR -p ${LOG_DIR[$i]}<br>i=$(($i+1))<br>done</p>
-<h1 id="Transfer-the-three-folders"><a href="#Transfer-the-three-folders" class="headerlink" title="Transfer the three folders"></a>Transfer the three folders</h1><p>((i=$index-1))<br>$RM -r ${LOG_DIR[$index]}/<em><br>while [ “$i” -ge “0” ]<br>do<br>$MV ${LOG_DIR[$i]}/</em> ${LOG_DIR[$i+1]}<br>i=$(($i-1))<br>done<br>$RM -r ${LOG_DIR[0]}/*</p>
-<h1 id="start-logcat-service"><a href="#start-logcat-service" class="headerlink" title="start logcat service"></a>start logcat service</h1><p>setprop service.logcat.enable 1</p>
+<p>#set default permission 0775<br>$UMASK 002</p>
+<p>#Init the three folders</p>
+<p>i=0<br>while [ “$i” -le “$index” ]<br>do<br>$MKDIR -p ${LOG_DIR[$i]}<br>i=$(($i+1))<br>done</p>
+<p>#Transfer the three folders<br>((i=$index-1))<br>$RM -r ${LOG_DIR[$index]}/<em><br>while [ “$i” -ge “0” ]<br>do<br>$MV ${LOG_DIR[$i]}/</em> ${LOG_DIR[$i+1]}<br>i=$(($i-1))<br>done<br>$RM -r ${LOG_DIR[0]}/*</p>
+<p>#start logcat service<br>setprop service.logcat.enable 1</p>
 <p>mkdir /data/www<br>cp -R /system/var/www/    /data/<br>ln -s /storage/external/ /data/www/sdcard</p>
 
           
@@ -745,7 +750,27 @@ ro_isn.te
           
 
 
-          
+          <% if (!index && post.comments && config.duoshuo_shortname){ %>
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  <% } %>
+
 
         </div>
         
