@@ -80,19 +80,28 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="首先，在产品目录的init.XXX.rc文件中，添加相应的service，
+start log service start logd
+on property:service.logcat.enable=1    start logcat_service
+on property:service.logcat.enable=0    stop logcat_service
+log servicesse">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/04/22/hello-world/index.html">
+<meta property="og:title" content="通过service实现自动保存android系统log">
+<meta property="og:url" content="http://yoursite.com/2016/06/11/通过service实现自动保存android系统log/index.html">
 <meta property="og:site_name" content="CountStarlight">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-04-22T14:29:47.919Z">
+<meta property="og:description" content="首先，在产品目录的init.XXX.rc文件中，添加相应的service，
+start log service start logd
+on property:service.logcat.enable=1    start logcat_service
+on property:service.logcat.enable=0    stop logcat_service
+log servicesse">
+<meta property="og:updated_time" content="2016-06-11T07:08:58.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="通过service实现自动保存android系统log">
+<meta name="twitter:description" content="首先，在产品目录的init.XXX.rc文件中，添加相应的service，
+start log service start logd
+on property:service.logcat.enable=1    start logcat_service
+on property:service.logcat.enable=0    stop logcat_service
+log servicesse">
 
 
 
@@ -110,7 +119,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | CountStarlight </title>
+  <title> 通过service实现自动保存android系统log | CountStarlight </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +269,7 @@ Quick">
             
             
               
-                Hello World
+                通过service实现自动保存android系统log
               
             
           </h1>
@@ -272,8 +281,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-22T22:53:15+08:00" content="2016-04-22">
-              2016-04-22
+            <time itemprop="dateCreated" datetime="2016-06-11T15:07:44+08:00" content="2016-06-11">
+              2016-06-11
             </time>
           </span>
 
@@ -300,15 +309,24 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</p>
+<h1 id="start-log-service"><a href="#start-log-service" class="headerlink" title="start log service"></a>start log service</h1><p> start logd</p>
+<p>on property:service.logcat.enable=1<br>    start logcat_service</p>
+<p>on property:service.logcat.enable=0<br>    stop logcat_service</p>
+<h1 id="log-services"><a href="#log-services" class="headerlink" title="log services"></a>log services</h1><p>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>    user root<br>    group log system<br>    class main<br>       disabled</p>
+<p>service logd /system/bin/sh /system/bin/logd.sh<br>    user system<br>    group log<br>    oneshot</p>
+<p>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</p>
+<p>#!/system/bin/sh</p>
+<p>#</p>
+<h1 id="Global-folder-amp-cmd-params"><a href="#Global-folder-amp-cmd-params" class="headerlink" title="Global folder &amp; cmd params"></a>Global folder &amp; cmd params</h1><p>#</p>
+<p>OUTPUT_DIR=/data<br>LOG=Logs<br>index=2</p>
+<p>LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0<br>LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1<br>LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2</p>
+<p>RM=rm<br>MV=”mv”<br>MKDIR=mkdir<br>UMASK=umask</p>
+<h1 id="set-default-permission-0775"><a href="#set-default-permission-0775" class="headerlink" title="set default permission 0775"></a>set default permission 0775</h1><p>$UMASK 002</p>
+<h1 id="Init-the-three-folders"><a href="#Init-the-three-folders" class="headerlink" title="Init the three folders"></a>Init the three folders</h1><p>i=0<br>while [ “$i” -le “$index” ]<br>do<br>$MKDIR -p ${LOG_DIR[$i]}<br>i=$(($i+1))<br>done</p>
+<h1 id="Transfer-the-three-folders"><a href="#Transfer-the-three-folders" class="headerlink" title="Transfer the three folders"></a>Transfer the three folders</h1><p>((i=$index-1))<br>$RM -r ${LOG_DIR[$index]}/<em><br>while [ “$i” -ge “0” ]<br>do<br>$MV ${LOG_DIR[$i]}/</em> ${LOG_DIR[$i+1]}<br>i=$(($i-1))<br>done<br>$RM -r ${LOG_DIR[0]}/*</p>
+<h1 id="start-logcat-service"><a href="#start-logcat-service" class="headerlink" title="start logcat service"></a>start logcat service</h1><p>setprop service.logcat.enable 1</p>
+<p>mkdir /data/www<br>cp -R /system/var/www/    /data/<br>ln -s /storage/external/ /data/www/sdcard</p>
 
       
     </div>
@@ -332,13 +350,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/09/在Android的selinux中添加新的规则/" rel="next" title="在Android的selinux中添加新的规则">
+                <i class="fa fa-chevron-left"></i> 在Android的selinux中添加新的规则
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/08/Debina-8-4-源/" rel="prev" title="Debina 8.4 源">
-                Debina 8.4 源 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,7 +456,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#start-log-service"><span class="nav-number">1.</span> <span class="nav-text">start log service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#log-services"><span class="nav-number">2.</span> <span class="nav-text">log services</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Global-folder-amp-cmd-params"><span class="nav-number">3.</span> <span class="nav-text">Global folder & cmd params</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#set-default-permission-0775"><span class="nav-number">4.</span> <span class="nav-text">set default permission 0775</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Init-the-three-folders"><span class="nav-number">5.</span> <span class="nav-text">Init the three folders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Transfer-the-three-folders"><span class="nav-number">6.</span> <span class="nav-text">Transfer the three folders</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#start-logcat-service"><span class="nav-number">7.</span> <span class="nav-text">start logcat service</span></a></li></ol></div>
             
           </div>
         </section>
