@@ -98,7 +98,7 @@ service ro_isn /system/bin/isn.sh class late_start user root Oneshot
 kernel log会打印以下log：
 Warning!  Service ro_isn needs a SELinux domain defined; please fix!
 这是因为Service ro_">
-<meta property="og:updated_time" content="2016-06-16T04:12:59.207Z">
+<meta property="og:updated_time" content="2016-06-16T04:27:27.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Android的selinux中添加新的规则">
 <meta name="twitter:description" content="一、适用情景当在init.rc中新增service：
@@ -330,8 +330,7 @@ Warning!  Service ro_isn needs a SELinux domain defined; please fix!
 <p>kernel log会打印以下log：</p>
 <p>Warning!  Service ro_isn needs a SELinux domain defined; please fix!</p>
 <p>这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。</p>
-<p>在这种情况下，你可以：</p>
-<p>1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。</p>
+<p>在这种情况下，你可以：<br><a id="more"></a><br>1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。</p>
 <p>2.为Service ro_isn定义一个SELinux domain，仅添加需要的权限，未允许的权限操作会被拒绝。具体方法请参照下节。</p>
 <h1 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h1><p>1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：</p>
 <p>type ro_isn, domain; </p>
