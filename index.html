@@ -318,32 +318,18 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
 </ul>
 <p>#start log service<br> start logd</p>
 <p>on property:service.logcat.enable=1<br>    start logcat_service</p>
 <p>on property:service.logcat.enable=0<br>    stop logcat_service</p>
-<p>#log services<br>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>    user root<br>    group log system<br>    class main<br>       disabled</p>
-<p>service logd /system/bin/sh /system/bin/logd.sh<br>    user system<br>    group log<br>    oneshot</p>
-<ul>
-<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</li>
-</ul>
-<p>#!/system/bin/sh</p>
-<p>#</p>
-<p>#Global folder &amp; cmd params<br>#</p>
-<p>OUTPUT_DIR=/data<br>LOG=Logs<br>index=2</p>
-<p>LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0<br>LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1<br>LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2</p>
-<p>RM=rm<br>MV=”mv”<br>MKDIR=mkdir<br>UMASK=umask</p>
-<p>#set default permission 0775<br>$UMASK 002</p>
-<p>#Init the three folders</p>
-<p>i=0<br>while [ “$i” -le “$index” ]<br>do<br>$MKDIR -p ${LOG_DIR[$i]}<br>i=$(($i+1))<br>done</p>
-<p>#Transfer the three folders<br>((i=$index-1))<br>$RM -r ${LOG_DIR[$index]}/<em><br>while [ “$i” -ge “0” ]<br>do<br>$MV ${LOG_DIR[$i]}/</em> ${LOG_DIR[$i+1]}<br>i=$(($i-1))<br>done<br>$RM -r ${LOG_DIR[0]}/*</p>
-<p>#start logcat service<br>setprop service.logcat.enable 1</p>
-<p>mkdir /data/www<br>cp -R /system/var/www/    /data/<br>ln -s /storage/external/ /data/www/sdcard</p>
-
-          
+<p>#log services<br>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/11/通过service实现自动保存android系统log/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -549,20 +535,18 @@
 
       
         
-          
-            <p>#deb cdrom:[Debian GNU/Linux 8.4.0 <em>Jessie</em> - Official amd64 DVD Binary-1 20160402-14:46]/ jessie contrib main</p>
+          <p># </p>
 <p>#deb cdrom:[Debian GNU/Linux 8.4.0 <em>Jessie</em> - Official amd64 DVD Binary-1 20160402-14:46]/ jessie contrib main</p>
-<p>deb <a href="http://ftp.cn.debian.org/debian/" target="_blank" rel="external">http://ftp.cn.debian.org/debian/</a> jessie-updates main contrib<br>deb-src <a href="http://ftp.cn.debian.org/debian/" target="_blank" rel="external">http://ftp.cn.debian.org/debian/</a> jessie-updates main contrib</p>
-<p>#deb <a href="http://security.debian.org/" target="_blank" rel="external">http://security.debian.org/</a> jessie/updates main contrib</p>
-<p>#deb-src <a href="http://security.debian.org/" target="_blank" rel="external">http://security.debian.org/</a> jessie/updates main contrib</p>
+<p>#中国镜像源<br>deb <a href="http://ftp.cn.debian.org/debian/">http://ftp.cn.debian.org/debian/</a> jessie-updates main contrib<br>deb-src <a href="http://ftp.cn.debian.org/debian/">http://ftp.cn.debian.org/debian/</a> jessie-updates main contrib</p>
+<p>#163镜像源<br>deb <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie-updates main contrib<br>deb-src <a href="http://mirrors.163.com/debian/">http://mirrors.163.com/debian/</a> jessie-updates main contrib</p>
+<p>deb <a href="http://security.debian.org/">http://security.debian.org/</a> jessie/updates main contrib<br>deb-src <a href="http://security.debian.org/">http://security.debian.org/</a> jessie/updates main contrib</p>
 <p>#jessie-updates, previously known as ‘volatile’</p>
-<p>#A network mirror was not selected during install.  The following entries</p>
-<p>#are provided as examples, but you should amend them as appropriate</p>
-<p>#for your mirror of choice.<br>#</p>
-<p>deb <a href="http://ftp.debian.org/debian/" target="_blank" rel="external">http://ftp.debian.org/debian/</a> jessie-updates main contrib<br>deb-src <a href="http://ftp.debian.org/debian/" target="_blank" rel="external">http://ftp.debian.org/debian/</a> jessie-updates main contrib</p>
-<p>#code::blocks<br>deb [arch=amd64,i386] <a href="https://apt.jenslody.de/stable" target="_blank" rel="external">https://apt.jenslody.de/stable</a> jessie main<br>deb-src <a href="https://apt.jenslody.de/stable" target="_blank" rel="external">https://apt.jenslody.de/stable</a> jessie main</p>
-
-          
+<p>#A network mirror was not selected during install.  The following entries<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/08/Debina-8-4-源/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
