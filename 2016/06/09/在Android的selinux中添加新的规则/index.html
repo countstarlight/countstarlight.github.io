@@ -80,31 +80,28 @@
 
 
 
-<meta name="description" content="一、适用情景
-当在init.rc中新增service：
+<meta name="description" content="一、适用情景当在init.rc中新增service：
 service ro_isn /system/bin/isn.sh class late_start user root Oneshot
 kernel log会打印以下log：
 Warning!  Service ro_isn needs a SELinux domain defined; please fix!
-这是因为Service ro">
+这是因为Service ro_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Android的selinux中添加新的规则">
 <meta property="og:url" content="http://yoursite.com/2016/06/09/在Android的selinux中添加新的规则/index.html">
 <meta property="og:site_name" content="CountStarlight">
-<meta property="og:description" content="一、适用情景
-当在init.rc中新增service：
+<meta property="og:description" content="一、适用情景当在init.rc中新增service：
 service ro_isn /system/bin/isn.sh class late_start user root Oneshot
 kernel log会打印以下log：
 Warning!  Service ro_isn needs a SELinux domain defined; please fix!
-这是因为Service ro">
-<meta property="og:updated_time" content="2016-06-10T02:09:36.271Z">
+这是因为Service ro_">
+<meta property="og:updated_time" content="2016-06-16T04:12:59.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Android的selinux中添加新的规则">
-<meta name="twitter:description" content="一、适用情景
-当在init.rc中新增service：
+<meta name="twitter:description" content="一、适用情景当在init.rc中新增service：
 service ro_isn /system/bin/isn.sh class late_start user root Oneshot
 kernel log会打印以下log：
 Warning!  Service ro_isn needs a SELinux domain defined; please fix!
-这是因为Service ro">
+这是因为Service ro_">
 
 
 
@@ -319,8 +316,7 @@ Warning!  Service ro_isn needs a SELinux domain defined; please fix!
       
 
       
-        <p>一、适用情景</p>
-<p>当在init.rc中新增service：</p>
+        <h1 id="一、适用情景"><a href="#一、适用情景" class="headerlink" title="一、适用情景"></a>一、适用情景</h1><p>当在init.rc中新增service：</p>
 <p><span style="font-family:SimSun;">service ro_isn /system/bin/isn.sh class late_start user root Oneshot</span></p>
 <p>kernel log会打印以下log：</p>
 <p>Warning!  Service ro_isn needs a SELinux domain defined; please fix!</p>
@@ -328,7 +324,7 @@ Warning!  Service ro_isn needs a SELinux domain defined; please fix!
 <p>在这种情况下，你可以：</p>
 <p>1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。</p>
 <p>2.为Service ro_isn定义一个SELinux domain，仅添加需要的权限，未允许的权限操作会被拒绝。具体方法请参照下节。</p>
-<p>二、解决方法<br>1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：</p>
+<h1 id="二、解决方法"><a href="#二、解决方法" class="headerlink" title="二、解决方法"></a>二、解决方法</h1><p>1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：</p>
 <p>type ro_isn, domain; </p>
 <p>type ro_isn_exec, exec_type, file_type; </p>
 <p>2.在devices/…/sepolicy/Android.mk中添加ro_isn.te文件，内容如下：</p>
@@ -339,7 +335,8 @@ Warning!  Service ro_isn needs a SELinux domain defined; please fix!
 ro_isn.te
 </code></pre><p>3.在devices/…/sepolicy/file_contexts中增加如下内容：</p>
 <p>###################################</p>
-<h1 id="System-files"><a href="#System-files" class="headerlink" title="System files"></a>System files</h1><p>#</p>
+<p>#System files</p>
+<p>#</p>
 <p>…</p>
 <p>/system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0</p>
 <p>/system/bin/isn.sh                       u:object_r:ro_isn_exec:s0</p>
@@ -516,7 +513,7 @@ ro_isn.te
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#System-files"><span class="nav-number">1.</span> <span class="nav-text">System files</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、适用情景"><span class="nav-number">1.</span> <span class="nav-text">一、适用情景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、解决方法"><span class="nav-number">2.</span> <span class="nav-text">二、解决方法</span></a></li></ol></div>
             
           </div>
         </section>
