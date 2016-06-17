@@ -318,7 +318,10 @@
 
       
         
-          <h2 id="首先，在产品目录的init-XXX-rc文件中，添加相应的service，"><a href="#首先，在产品目录的init-XXX-rc文件中，添加相应的service，" class="headerlink" title="* 首先，在产品目录的init.XXX.rc文件中，添加相应的service，"></a>* 首先，在产品目录的init.XXX.rc文件中，添加相应的service，</h2><p> #start log service<br> start logd</p>
+          <ul>
+<li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
+</ul>
+<p>#start log service<br> start logd</p>
 <p>on property:service.logcat.enable=1<br>    start logcat_service</p>
 <p>on property:service.logcat.enable=0<br>    stop logcat_service</p>
 <p>#log services<br>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br>
