@@ -100,7 +100,7 @@ on property:service.logcat.enable=0    stop logcat_service
 on property:service.logcat.enable=1    start logcat_service
 on property:service.logcat.enable=0    stop logcat_service
 #log servic">
-<meta property="og:updated_time" content="2016-06-17T15:22:48.086Z">
+<meta property="og:updated_time" content="2016-06-17T15:25:06.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过service实现自动保存android系统log">
 <meta name="twitter:description" content="首先，在产品目录的init.XXX.rc文件中，添加相应的service，
@@ -336,9 +336,7 @@ on property:service.logcat.enable=0    stop logcat_service
 <p>on property:service.logcat.enable=0<br>    stop logcat_service</p>
 <p>#log services<br>service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log<br><a id="more"></a><br>    user root<br>    group log system<br>    class main<br>       disabled</p>
 <p>service logd /system/bin/sh /system/bin/logd.sh<br>    user system<br>    group log<br>    oneshot</p>
-<ul>
-<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,<br>—sh<br>#!/system/bin/sh</li>
-</ul>
+<h2 id="然后，在目标平台的system-bin下添加脚本文件logd-sh，处理存储的log日志，以及设置属性，开启logcat-service"><a href="#然后，在目标平台的system-bin下添加脚本文件logd-sh，处理存储的log日志，以及设置属性，开启logcat-service" class="headerlink" title="* 然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,"></a>* 然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</h2><p>#!/system/bin/sh</p>
 <p>#</p>
 <p>#Global folder &amp; cmd params<br>#</p>
 <p>OUTPUT_DIR=/data<br>LOG=Logs<br>index=2</p>
@@ -484,7 +482,7 @@ on property:service.logcat.enable=0    stop logcat_service
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ln-s-storage-external-data-www-sdcard"><span class="nav-number">1.</span> <span class="nav-text">ln -s /storage/external/ /data/www/sdcard</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#然后，在目标平台的system-bin下添加脚本文件logd-sh，处理存储的log日志，以及设置属性，开启logcat-service"><span class="nav-number">1.</span> <span class="nav-text">* 然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln-s-storage-external-data-www-sdcard"><span class="nav-number">2.</span> <span class="nav-text">ln -s /storage/external/ /data/www/sdcard</span></a></li></ol></div>
             
           </div>
         </section>
