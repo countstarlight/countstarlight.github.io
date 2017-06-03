@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on CountStarlight</title>
+    <link>https://countstarlight.github.io/blog/</link>
+    <description>Recent content in Blogs on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jun 2016 19:00:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过service实现自动保存android系统log</title>
+      <link>https://countstarlight.github.io/blog/%E9%80%9A%E8%BF%87service%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98android%E7%B3%BB%E7%BB%9Flog/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/blog/%E9%80%9A%E8%BF%87service%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98android%E7%B3%BB%E7%BB%9Flog/</guid>
+      <description>首先，在产品目录的init.XXX.rc文件中，添加相应的service，  #start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot   然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,  #!/system/bin/sh # #Global folder &amp;amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.</description>
+    </item>
+    
+    <item>
+      <title>在Android的selinux中添加新的规则</title>
+      <link>https://countstarlight.github.io/blog/%E5%9C%A8android%E7%9A%84selinux%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%A7%84%E5%88%99/</link>
+      <pubDate>Thu, 09 Jun 2016 19:09:09 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/blog/%E5%9C%A8android%E7%9A%84selinux%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E8%A7%84%E5%88%99/</guid>
+      <description>一、适用情景 当在init.rc中新增service：
+service ro_isn /system/bin/isn.sh class late_start user root Oneshot
+kernel log会打印以下log：
+Warning! Service ro_isn needs a SELinux domain defined; please fix!
+这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。
+在这种情况下，你可以：
+1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。
+2.为Service ro_isn定义一个SELinux domain，仅添加需要的权限，未允许的权限操作会被拒绝。具体方法请参照下节。
+二、解决方法 1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：
+type ro_isn, domain; type ro_isn_exec, exec_type, file_type;  2.在devices/…/sepolicy/Android.mk中添加ro_isn.te文件，内容如下：
+BOARD_SEPOLICY_UNION := ... hostapd.te ro_isn.te  3.在devices/…/sepolicy/file_contexts中增加如下内容：
+################################### #System files # ... /system/vendor/bin/slim_ap_daemon u:object_r:location_exec:s0 /system/bin/isn.sh u:object_r:ro_isn_exec:s0  4.在device/&amp;hellip;/sepolicy/service_contexts中添加：
+servicename u:object_r:ro_isn_service:s0  5.在init.rc中service ro_isn下添加:
+secure context by seclabel service ro_isn /system/bin/isn.</description>
+    </item>
+    
+  </channel>
+</rss>
