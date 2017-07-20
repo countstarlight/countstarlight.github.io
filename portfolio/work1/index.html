@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.22-DEV" /><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>CountStarlight</title>
+<title>Use the service to automatically save the Android system log</title>
 <meta name="description" content="Describe your website">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -29,9 +28,6 @@
 
 <link href="https://countstarlight.github.io/css/custom.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://countstarlight.github.io/img/favicon.png">
-
-  <link href="https://countstarlight.github.io/index.xml" rel="alternate" type="application/rss+xml" title="CountStarlight" />
-  <link href="https://countstarlight.github.io/index.xml" rel="feed" type="application/rss+xml" title="CountStarlight" />
 
 
 <script>
@@ -105,80 +101,103 @@ ga('send', 'pageview');
 </div>
 
               
-  <div class="col-xs-12 col-sm-8 col-md-9 content-column">
-    <div class="small-navbar visible-xs">
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
   <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
   <h1 class="small-navbar-heading"><a href="/">CountStarlight</a></h1>
 </div>
 
-    <div class="grid">
-        <div class="row">
-          
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-                  <div class="box-masonry">
-                      
-                        
-                        <a href="https://countstarlight.github.io/portfolio/work2/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                        
-                            <img src="img/portfolio/business-card-26.jpg" alt="" class="img-responsive">
-                        </a>
-                      
-                      
-                      <div class="box-masonry-text">
-                      
-                          <h4><a href="https://countstarlight.github.io/portfolio/work2/">Add new rules to Android&#39;s selinux</a></h4>
-                          <div class="box-masonry-description">
-                              <p><p></p></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-                  <div class="box-masonry">
-                      
-                        
-                        <a href="https://countstarlight.github.io/portfolio/work1/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                        
-                            <img src="img/portfolio/a4-paper.jpg" alt="" class="img-responsive">
-                        </a>
-                      
-                      
-                      <div class="box-masonry-text">
-                      
-                          <h4><a href="https://countstarlight.github.io/portfolio/work1/">Use the service to automatically save the Android system log</a></h4>
-                          <div class="box-masonry-description">
-                              <p><p></p></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          
-              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-                  <div class="box-masonry">
-                      
-                        
-                        <a href="https://countstarlight.github.io/portfolio/work3/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                        
-                            <img src="img/portfolio/webcam.jpeg" alt="" class="img-responsive">
-                        </a>
-                      
-                      
-                      <div class="box-masonry-text">
-                      
-                          <h4><a href="https://countstarlight.github.io/portfolio/work3/">Set up a Webcam with Linux</a></h4>
-                          <div class="box-masonry-description">
-                              <p><p>You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.
-</p></p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          
-        </div>
-    </div>
-</div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+         <h1>Use the service to automatically save the Android system log</h1>
+         <p></p>
 
+<ul>
+<li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
+</ul>
+
+<pre><code>#start log service
+ start logd
+
+on property:service.logcat.enable=1
+    start logcat_service
+
+on property:service.logcat.enable=0
+    stop logcat_service
+
+#log services
+service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
+
+    user root
+    group log system
+    class main
+       disabled
+
+service logd /system/bin/sh /system/bin/logd.sh
+    user system
+    group log
+    oneshot
+</code></pre>
+
+<ul>
+<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</li>
+</ul>
+
+<pre><code>#!/system/bin/sh
+
+#
+#Global folder &amp; cmd params
+#
+
+OUTPUT_DIR=/data
+LOG=Logs
+index=2
+
+LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0
+LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1
+LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2
+
+RM=rm
+MV=&quot;mv&quot;
+MKDIR=mkdir
+UMASK=umask
+
+
+#set default permission 0775
+$UMASK 002
+
+#Init the three folders
+
+i=0
+while [ &quot;$i&quot; -le &quot;$index&quot; ]
+do
+$MKDIR -p ${LOG_DIR[$i]}
+i=$(($i+1))
+done
+
+#Transfer the three folders
+((i=$index-1))
+$RM -r ${LOG_DIR[$index]}/*
+while [ &quot;$i&quot; -ge &quot;0&quot; ]
+do
+$MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]}
+i=$(($i-1))
+done
+$RM -r ${LOG_DIR[0]}/*
+
+#start logcat service
+setprop service.logcat.enable 1
+
+mkdir /data/www
+cp -R /system/var/www/    /data/
+ln -s /storage/external/ /data/www/sdcard
+</code></pre>
+         
+      </div>
+    </div>
+  </div>
+</div>
 
           </div>
       </div>

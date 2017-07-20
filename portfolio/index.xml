@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CountStarlight</title>
-    <link>https://countstarlight.github.io/</link>
-    <description>Recent content on CountStarlight</description>
+    <title>Portfolios on CountStarlight</title>
+    <link>https://countstarlight.github.io/portfolio/</link>
+    <description>Recent content in Portfolios on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2017 CountStarlight</copyright>
     <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
     
-	<atom:link href="https://countstarlight.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://countstarlight.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -38,26 +38,6 @@
       <guid>https://countstarlight.github.io/portfolio/work3/</guid>
       <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>contact</title>
-      <link>https://countstarlight.github.io/contact/</link>
-      <pubDate>Sat, 03 Jun 2017 18:46:14 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/contact/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>https://countstarlight.github.io/about/</link>
-      <pubDate>Sat, 03 Jun 2017 18:46:08 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/about/</guid>
-      <description>Github: CountStarlight
-Email: countstarlight@gmail.com
-website: couuntstarlight.github.io</description>
     </item>
     
   </channel>

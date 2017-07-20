@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Add new rules to Android&#39;s selinux</title>
+<meta name="description" content="Describe your website">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="https://countstarlight.github.io/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="https://countstarlight.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://countstarlight.github.io/css/owl.carousel.css">
+<link rel="stylesheet" href="https://countstarlight.github.io/css/owl.theme.css">
+
+
+  <link href="https://countstarlight.github.io/css/style.sea.css" rel="stylesheet" id="theme-stylesheet">
+
+ 
+
+  
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+
+<link href="https://countstarlight.github.io/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="https://countstarlight.github.io/img/favicon.png">
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-102901995-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="/">CountStarlight</a></h1>
+    
+      <p class="sidebar-p">I am a hardware engineer, familiar with c/c++, python, keen on golang.</p>
+    
+    <ul class="sidebar-menu">
+      
+      
+        <li><a href="https://countstarlight.github.io//">Home</a></li>
+      
+        <li><a href="https://countstarlight.github.io/about/">About</a></li>
+      
+        <li><a href="https://countstarlight.github.io/contact/">Get in touch</a></li>
+      
+    </ul>
+    <p class="social">
+  
+  
+  <a href="https://plus.google.com/u/0/116322408739427412385" data-animate-hover="pulse" class="external gplus">
+    <i class="fa fa-google-plus"></i>
+  </a>
+  
+  
+  
+  
+  <a href="mailto:countstarlight@gmail.com" data-animate-hover="pulse" class="email">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  
+  <a href="https://stackoverflow.com/users/7488623/rex-frank" data-animate-hover="pulse">
+    <i class="fa fa-stack-overflow"></i>
+  </a>
+  
+  
+  <a href="https://github.com/countstarlight" data-animate-hover="pulse">
+    <i class="fa fa-github"></i>
+  </a>
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2017 CountStarlight
+        
+        | Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a>
+
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><a href="/">CountStarlight</a></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+         <h1>Add new rules to Android&#39;s selinux</h1>
+         <p></p>
+
+<h2 id="一-适用情景">一、适用情景</h2>
+
+<p>当在init.rc中新增service：</p>
+
+<p>service ro_isn /system/bin/isn.sh class late_start user root Oneshot</p>
+
+<p>kernel log会打印以下log：</p>
+
+<p>Warning! Service ro_isn needs a SELinux domain defined; please fix!</p>
+
+<p>这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。</p>
+
+<p>在这种情况下，你可以：</p>
+
+<p>1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。</p>
+
+<p>2.为Service ro_isn定义一个SELinux domain，仅添加需要的权限，未允许的权限操作会被拒绝。具体方法请参照下节。</p>
+
+<h2 id="二-解决方法">二、解决方法</h2>
+
+<p>1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：</p>
+
+<pre><code>type ro_isn, domain; 
+
+type ro_isn_exec, exec_type, file_type;
+</code></pre>
+
+<p>2.在devices/…/sepolicy/Android.mk中添加ro_isn.te文件，内容如下：</p>
+
+<pre><code>BOARD_SEPOLICY_UNION := 
+
+... 
+
+        hostapd.te 
+
+        ro_isn.te
+</code></pre>
+
+<p>3.在devices/…/sepolicy/file_contexts中增加如下内容：</p>
+
+<pre><code>###################################
+
+#System files
+
+#
+
+...
+
+/system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
+
+/system/bin/isn.sh                       u:object_r:ro_isn_exec:s0
+</code></pre>
+
+<p>4.在device/&hellip;/sepolicy/service_contexts中添加：</p>
+
+<pre><code>servicename       u:object_r:ro_isn_service:s0
+</code></pre>
+
+<p>5.在init.rc中service ro_isn下添加:</p>
+
+<pre><code>secure context by seclabel 
+
+service ro_isn /system/bin/isn.sh 
+
+class late_start 
+
+user root 
+
+oneshot 
+
+seclabel u:r:ro_isn:s0
+</code></pre>
+
+<p>6.编译并烧录bootimage</p>
+
+<ul>
+<li>如果编译不成功，失败原因如下：</li>
+</ul>
+
+<pre><code>Error while expanding policy
+
+libsepol.check_assertion_helper: neverallow on line 233 of external/sepolicy/domain.te (or line 5194 of policy.conf) violated by allow ro_isn system_file:file { entrypoint };
+
+make: *** [out/target/product/msm8226/obj/ETC/sepolicy_intermediates/sepolicy] 错误 1
+</code></pre>
+
+<p>这是因为系统在domain.te中定义了全局的neverallow策略，与ro_isn.te中allow的策略有冲突：</p>
+
+<pre><code>allow ro_isn system_file:file { entrypoint };
+
+neverallow domain { file_type -exec_type }:file entrypoint;
+</code></pre>
+
+<p>请确定自己的service有必要需要这个权限。如无必要，请在自己的code中删除掉相关操作；如必要，可以在external/sepolicy/domain.te中冲突的neverallow语句中添加自己为例外：</p>
+
+<pre><code>neverallow {
+
+    domain
+
+    -ro_isn
+
+} { file_type -exec_type }:file entrypoint;
+</code></pre>
+
+<ul>
+<li>在service ro_isn运行时，出现关于“ro_isn”的avc: denied log</li>
+</ul>
+
+<pre><code>&lt;6&gt;[ 13.547188](CPU:0-pid:320:logd.auditd) type=1400 audit(17468992.410:7): avc: denied { entrypoint } for pid=272 comm=&quot;init&quot; path=&quot;/system/bin/isn.sh&quot; dev=&quot;mmcblk0p38&quot; ino=631 scontext=u:r:ro_isn:s0 tcontext=u:object_r:system_file:s0 tclass=file
+</code></pre>
+
+<p>a.按照如下规则在ro_isn.te添加权限</p>
+
+<p>SELinux规则语句一般如下：
+allow A B:C D;
+可以从log中分别获取ABCD四个参数。</p>
+
+<p>比如这行warning log：</p>
+
+<pre><code>avc: denied { entrypoint } for pid=272 comm=&quot;init&quot; path=&quot;/system/bin/isn.sh&quot; dev=&quot;mmcblk0p38&quot; ino=631 scontext=u:r:ro_isn:s0 tcontext=u:object_r:system_file:s0 tclass=file
+</code></pre>
+
+<p>那么我们就得出最后的规则是：</p>
+
+<pre><code>allow qcomsysd  block_device:dir { search };
+
+allow ro_isn system_file:file { entrypoint };
+</code></pre>
+
+<p>重复该步骤,直到没有关于“ro_isn”的avc: denied log</p>
+         
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="https://countstarlight.github.io/js/jquery.min.js"></script>
+<script src="https://countstarlight.github.io/js/bootstrap.min.js"></script>
+<script src="https://countstarlight.github.io/js/jquery.cookie.js"> </script>
+<script src="https://countstarlight.github.io/js/ekko-lightbox.js"></script>
+<script src="https://countstarlight.github.io/js/jquery.scrollTo.min.js"></script>
+<script src="https://countstarlight.github.io/js/masonry.pkgd.min.js"></script>
+<script src="https://countstarlight.github.io/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://countstarlight.github.io/js/owl.carousel.min.js"></script>
+<script src="https://countstarlight.github.io/js/front.js"></script>
+
+</body>
+</html>
