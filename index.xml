@@ -7,26 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2017 CountStarlight</copyright>
-    <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Add new rules to Android&#39;s selinux</title>
-      <link>https://countstarlight.github.io/portfolio/work2/</link>
-      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      <title>Connect to a terminal to Serial-USB device on Linux</title>
+      <link>https://countstarlight.github.io/portfolio/work4/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
-      <guid>https://countstarlight.github.io/portfolio/work2/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Use the service to automatically save the Android system log</title>
-      <link>https://countstarlight.github.io/portfolio/work1/</link>
-      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work1/</guid>
+      <guid>https://countstarlight.github.io/portfolio/work4/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -58,6 +49,24 @@
       <description>Github: CountStarlight
 Email: countstarlight@gmail.com
 website: couuntstarlight.github.io</description>
+    </item>
+    
+    <item>
+      <title>Add new rules to Android&#39;s selinux</title>
+      <link>https://countstarlight.github.io/portfolio/work2/</link>
+      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      
+      <guid>https://countstarlight.github.io/portfolio/work2/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Use the service to automatically save the Android system log</title>
+      <link>https://countstarlight.github.io/portfolio/work1/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/portfolio/work1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

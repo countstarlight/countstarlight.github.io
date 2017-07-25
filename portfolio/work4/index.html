@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Use the service to automatically save the Android system log</title>
+<title>Connect to a terminal to Serial-USB device on Linux</title>
 <meta name="description" content="Describe your website">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -110,89 +110,39 @@ ga('send', 'pageview');
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>Use the service to automatically save the Android system log</h1>
+         <h1>Connect to a terminal to Serial-USB device on Linux</h1>
          <p></p>
 
+<h2 id="install-minicom">Install <code>minicom</code></h2>
+
+<pre><code class="language-shell">sudo aptitude update
+sudo aptitude install minicom
+</code></pre>
+
+<h2 id="check-if-system-recognize-the-adapter">Check if system recognize the adapter</h2>
+
+<pre><code class="language-shell">sudo dmesg | grep tty
+</code></pre>
+
+<h4 id="if-cannot-recognize-it-seems-to-be">if cannot recognize, it seems to be:</h4>
+
+<pre><code class="language-shel">[    0.000000] console [tty0] enabled
+[    8.264501] systemd[1]: Created slice system-getty.slice.
+</code></pre>
+
+<h4 id="if-the-device-is-dev-ttyusb0">If the device is <code>/dev/ttyUSB0</code></h4>
+
 <ul>
-<li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
+<li>Run:</li>
 </ul>
 
-<pre><code>#start log service
- start logd
-
-on property:service.logcat.enable=1
-    start logcat_service
-
-on property:service.logcat.enable=0
-    stop logcat_service
-
-#log services
-service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
-
-    user root
-    group log system
-    class main
-       disabled
-
-service logd /system/bin/sh /system/bin/logd.sh
-    user system
-    group log
-    oneshot
+<pre><code class="language-shell">sudo minicom -s
 </code></pre>
 
 <ul>
-<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</li>
+<li>Go to <code>Serial port setup</code> and change the first line to <code>/dev/ttyUSB0</code></li>
+<li>Save config as default with <code>Save setup as dfl</code></li>
 </ul>
-
-<pre><code>#!/system/bin/sh
-
-#
-#Global folder &amp; cmd params
-#
-
-OUTPUT_DIR=/data
-LOG=Logs
-index=2
-
-LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0
-LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1
-LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2
-
-RM=rm
-MV=&quot;mv&quot;
-MKDIR=mkdir
-UMASK=umask
-
-
-#set default permission 0775
-$UMASK 002
-
-#Init the three folders
-
-i=0
-while [ &quot;$i&quot; -le &quot;$index&quot; ]
-do
-$MKDIR -p ${LOG_DIR[$i]}
-i=$(($i+1))
-done
-
-#Transfer the three folders
-((i=$index-1))
-$RM -r ${LOG_DIR[$index]}/*
-while [ &quot;$i&quot; -ge &quot;0&quot; ]
-do
-$MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]}
-i=$(($i-1))
-done
-$RM -r ${LOG_DIR[0]}/*
-
-#start logcat service
-setprop service.logcat.enable 1
-
-mkdir /data/www
-cp -R /system/var/www/    /data/
-ln -s /storage/external/ /data/www/sdcard
-</code></pre>
          
       </div>
     </div>

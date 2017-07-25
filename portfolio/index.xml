@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2017 CountStarlight</copyright>
-    <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Connect to a terminal to Serial-USB device on Linux</title>
+      <link>https://countstarlight.github.io/portfolio/work4/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/portfolio/work4/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Set up a Webcam with Linux</title>
+      <link>https://countstarlight.github.io/portfolio/work3/</link>
+      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/portfolio/work3/</guid>
+      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Add new rules to Android&#39;s selinux</title>
@@ -28,16 +47,6 @@
       
       <guid>https://countstarlight.github.io/portfolio/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Set up a Webcam with Linux</title>
-      <link>https://countstarlight.github.io/portfolio/work3/</link>
-      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work3/</guid>
-      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.
-&lt;/p&gt;</description>
     </item>
     
   </channel>
