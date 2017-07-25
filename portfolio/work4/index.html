@@ -119,7 +119,7 @@ ga('send', 'pageview');
 sudo aptitude install minicom
 </code></pre>
 
-<h2 id="check-if-system-recognize-the-adapter">Check if system recognize the adapter</h2>
+<h2 id="plug-the-device-then-check-if-system-recognize-the-adapter">Plug the device then check if system recognize the adapter</h2>
 
 <pre><code class="language-shell">sudo dmesg | grep tty
 </code></pre>
@@ -129,6 +129,53 @@ sudo aptitude install minicom
 <pre><code class="language-shel">[    0.000000] console [tty0] enabled
 [    8.264501] systemd[1]: Created slice system-getty.slice.
 </code></pre>
+
+<ul>
+<li>Unplug the device and type <code>lsub</code>. You will see a list of output similar to this:</li>
+</ul>
+
+<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+  Bus 003 Device 006: ID 13d3:3402 IMC Networks  
+  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre>
+
+<ul>
+<li>Plug in the usb-Serial Port converter back, and run <code>lsusb</code> again, and you shall see an additional line, like this:</li>
+</ul>
+
+<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+  Bus 003 Device 006: ID 13d3:3402 IMC Networks 
+  Bus 003 Device 008: ID 18f8:0f99 --- --- --- (notice the additional line!)
+  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre>
+
+<ul>
+<li>Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :</li>
+</ul>
+
+<pre><code class="language-shell">  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+</code></pre>
+
+<ul>
+<li>Run <code>dmesg</code> again and you shall see lines similar like this :</li>
+</ul>
+
+<pre><code class="language-shell">  usbserial_generic 1-1:1.0: generic converter detected
+  usb 1-1: generic converter now attached to ttyUSB0
+  usbcore: registered new interface driver usbserial_generic 
+</code></pre>
+
+<p>You can instruct Linux to load this module automatically by include the line : <code>usbserial vendor=0x18f8 product=0x0f99</code> inside <code>/etc/modules</code> file.</p>
 
 <h4 id="if-the-device-is-dev-ttyusb0">If the device is <code>/dev/ttyUSB0</code></h4>
 
