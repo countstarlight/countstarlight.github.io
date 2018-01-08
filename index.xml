@@ -6,54 +6,95 @@
     <description>Recent content on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy;2017 CountStarlight</copyright>
-    <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
+    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
+    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
+    <lastBuildDate>Mon, 08 Jan 2018 23:25:08 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Minicom through xmodem send files</title>
-      <link>https://countstarlight.github.io/portfolio/work6/</link>
+      <title>Hello, 2018</title>
+      <link>https://countstarlight.github.io/post/work7/</link>
+      <pubDate>Mon, 08 Jan 2018 23:25:08 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minicom send files</title>
+      <link>https://countstarlight.github.io/post/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work6/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work6/</guid>
+      <description>&lt;h3 id=&#34;send-file&#34;&gt;Send file&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Set the file path which you should choose file from&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Press &lt;code&gt;Ctrl + A&lt;/code&gt; , then press &lt;code&gt;O&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Choose &lt;code&gt;Filenames and paths&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Configure Qt-creator 4.3.1 cross-compliation environment</title>
-      <link>https://countstarlight.github.io/portfolio/work5/</link>
+      <title>Qt-creator cross-compliation</title>
+      <link>https://countstarlight.github.io/post/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work5/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work5/</guid>
+      <description>&lt;h3 id=&#34;install-the-cross-compiler-you-need&#34;&gt;Install the cross compiler you need&lt;/h3&gt;
+
+&lt;p&gt;Because i am using the processor &lt;code&gt;imx28&lt;/code&gt;, so i need to install &lt;code&gt;arm-fsl-linux-gnueabi&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Connect to a terminal to Serial-USB device on Linux</title>
-      <link>https://countstarlight.github.io/portfolio/work4/</link>
+      <title>Serial-USB device on Linux</title>
+      <link>https://countstarlight.github.io/post/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work4/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work4/</guid>
+      <description>&lt;h3 id=&#34;install-minicom&#34;&gt;Install &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo aptitude update
+sudo aptitude install minicom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Set up a Webcam with Linux</title>
-      <link>https://countstarlight.github.io/portfolio/work3/</link>
+      <title>Webcam with Linux</title>
+      <link>https://countstarlight.github.io/post/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work3/</guid>
-      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.
-&lt;/p&gt;</description>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work3/</guid>
+      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.&lt;/p&gt;
+
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>contact</title>
       <link>https://countstarlight.github.io/contact/</link>
       <pubDate>Sat, 03 Jun 2017 18:46:14 +0800</pubDate>
-      
+      <author>countstarlight@gmail.com (CountStarlight)</author>
       <guid>https://countstarlight.github.io/contact/</guid>
       <description></description>
     </item>
@@ -62,7 +103,7 @@
       <title>about</title>
       <link>https://countstarlight.github.io/about/</link>
       <pubDate>Sat, 03 Jun 2017 18:46:08 +0800</pubDate>
-      
+      <author>countstarlight@gmail.com (CountStarlight)</author>
       <guid>https://countstarlight.github.io/about/</guid>
       <description>Github: CountStarlight
 Email: countstarlight@gmail.com
@@ -70,20 +111,34 @@ website: couuntstarlight.github.io</description>
     </item>
     
     <item>
-      <title>Add new rules to Android&#39;s selinux</title>
-      <link>https://countstarlight.github.io/portfolio/work2/</link>
+      <title>Android&#39;s selinux</title>
+      <link>https://countstarlight.github.io/post/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work2/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work2/</guid>
+      <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
+
+&lt;p&gt;当在init.rc中新增service：&lt;/p&gt;
+
+&lt;p&gt;service ro_isn /system/bin/isn.sh class late_start user root Oneshot&lt;/p&gt;
+
+&lt;p&gt;kernel log会打印以下log：&lt;/p&gt;
+
+&lt;p&gt;Warning! Service ro_isn needs a SELinux domain defined; please fix!&lt;/p&gt;
+
+&lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
+
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Use the service to automatically save the Android system log</title>
-      <link>https://countstarlight.github.io/portfolio/work1/</link>
+      <title>Android system log</title>
+      <link>https://countstarlight.github.io/post/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      
-      <guid>https://countstarlight.github.io/portfolio/work1/</guid>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     

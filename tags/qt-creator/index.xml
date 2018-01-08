@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt Creator on CountStarlight</title>
+    <link>https://countstarlight.github.io/tags/qt-creator/</link>
+    <description>Recent content in Qt Creator on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
+    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
+    <lastBuildDate>Wed, 26 Jul 2017 09:11:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/tags/qt-creator/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qt-creator cross-compliation</title>
+      <link>https://countstarlight.github.io/post/work5/</link>
+      <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/post/work5/</guid>
+      <description>&lt;h3 id=&#34;install-the-cross-compiler-you-need&#34;&gt;Install the cross compiler you need&lt;/h3&gt;
+
+&lt;p&gt;Because i am using the processor &lt;code&gt;imx28&lt;/code&gt;, so i need to install &lt;code&gt;arm-fsl-linux-gnueabi&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

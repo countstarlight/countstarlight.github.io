@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work6/</loc>
+    <loc>https://countstarlight.github.io/post/work7/</loc>
+    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/post/work6/</loc>
     <lastmod>2017-07-26T20:41:02+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work5/</loc>
+    <loc>https://countstarlight.github.io/post/work5/</loc>
     <lastmod>2017-07-26T09:11:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work4/</loc>
+    <loc>https://countstarlight.github.io/post/work4/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work3/</loc>
+    <loc>https://countstarlight.github.io/post/work3/</loc>
     <lastmod>2017-07-20T14:54:35+08:00</lastmod>
   </url>
   
@@ -43,13 +48,19 @@
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work2/</loc>
+    <loc>https://countstarlight.github.io/post/work2/</loc>
     <lastmod>2016-11-05T19:41:01+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/work1/</loc>
+    <loc>https://countstarlight.github.io/post/work1/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/android/</loc>
+    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -59,18 +70,61 @@
   
   <url>
     <loc>https://countstarlight.github.io/</loc>
+    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/linux/</loc>
     <lastmod>2017-07-26T20:41:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/portfolio/</loc>
+    <loc>https://countstarlight.github.io/tags/log/</loc>
+    <lastmod>2016-06-11T19:00:10+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/minicom/</loc>
     <lastmod>2017-07-26T20:41:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/post/</loc>
+    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/qt-creator/</loc>
+    <lastmod>2017-07-26T09:11:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/selinux/</loc>
+    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/serial-usb/</loc>
+    <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://countstarlight.github.io/tags/</loc>
+    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/tags/webcam/</loc>
+    <lastmod>2017-07-20T14:54:35+08:00</lastmod>
     <priority>0</priority>
   </url>
   

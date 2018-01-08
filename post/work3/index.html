@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Webcam with Linux</title>
+  <meta property="og:title" content="Webcam with Linux" />
+  <meta name="twitter:title" content="Webcam with Linux" />
+  <meta name="description" content="Set up a Webcam with Linux">
+  <meta property="og:description" content="Set up a Webcam with Linux">
+  <meta name="twitter:description" content="Set up a Webcam with Linux">
+  <meta name="author" content="CountStarlight"/>
+  <link href='https://countstarlight.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://countstarlight.github.io/img/avatar-icon.jpg" />
+  <meta name="twitter:image" content="https://countstarlight.github.io/img/avatar-icon.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@countstarlight" />
+  <meta name="twitter:creator" content="@countstarlight" />
+  <meta property="og:url" content="https://countstarlight.github.io/post/work3/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CountStarlight" />
+
+  <meta name="generator" content="Hugo 0.33-DEV" />
+  <link rel="canonical" href="https://countstarlight.github.io/post/work3/" />
+  <link rel="alternate" href="https://countstarlight.github.io/index.xml" type="application/rss+xml" title="CountStarlight">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://countstarlight.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://countstarlight.github.io/css/codeblock.css" />
+  <link rel="stylesheet" href="https://countstarlight.github.io/css/highlight.min.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-102901995-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://countstarlight.github.io/">CountStarlight</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="CountStarlight" href="https://countstarlight.github.io/">
+            <img class="avatar-img" src="https://countstarlight.github.io/img/avatar-icon.jpg" alt="CountStarlight" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Webcam with Linux</h1>
+                
+                  
+                    <h2 class="post-subheading">Set up a Webcam with Linux</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 20, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 4 minutes (843 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.</p>
+
+<h3 id="setup">Setup</h3>
+
+<ul>
+<li>plug in your webcam (typically to USB)</li>
+</ul>
+
+<p></p>
+
+<ul>
+<li>list your video4linux devices:</li>
+</ul>
+
+<pre><code class="language-shell">  ls -ltr /dev/video*
+</code></pre>
+
+<ul>
+<li>you will find an output like this:</li>
+</ul>
+
+<pre><code class="language-shell">  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
+</code></pre>
+
+<p>In this example your webcam device is named <em>/dev/video0</em>. If you have no /dev/video file, read <a href="http://www.linuxintro.org/wiki/Set_up_a_Webcam_with_Linux#Troubleshooting">#Troubleshooting</a>. If you have several video4linux devices, for example a <a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a> your webcam may show up as /dev/video1 or whatever. But the time (in this case Nov 11 09:06) will be the time when you plugged it in.</p>
+
+<ul>
+<li><p>test the webcam</p>
+
+<ul>
+<li>if you have <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a> installed you can start it and choose Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</li>
+<li>if you have mplayer installed you can use the command</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-shell">  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
+</code></pre>
+
+<h3 id="use-it">Use it</h3>
+
+<h4 id="record-video">record video</h4>
+
+<p>to capture video streams you can use <a href="http://en.wikipedia.org/wiki/Cheese_%28software%29">cheese</a>, a nice program with a graphical user interface. It allows you to watch and record your camera output at the same time. It stores in a strange format (.webm), but <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a> can play this.</p>
+
+<p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
+
+<ul>
+<li>use the software <em>mencoder</em>:</li>
+</ul>
+
+<pre><code class="language-shell">  mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
+</code></pre>
+
+<ul>
+<li>or use the software <em>streamer</em>. Here are two examples:</li>
+</ul>
+
+<pre><code class="language-shell">  streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+</code></pre>
+
+<h4 id="ip-phoning">IP phoning</h4>
+
+<ul>
+<li>to do IP phoning, <a href="http://www.linuxintro.org/wiki/Use_skype_under_Linux">use skype under Linux</a>.</li>
+</ul>
+
+<h4 id="watch-it">watch it</h4>
+
+<p>To watch your camera&rsquo;s input, use <em>cheese</em> or <a href="http://www.linuxintro.org/wiki/Mplayer">mplayer</a>:</p>
+
+<pre><code class="language-shell">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
+</code></pre>
+
+<p>Or use <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>. You can <a href="http://www.linuxintro.org/wiki/Run_vlc_as_root">run vlc as root</a> by the way. To watch your webcam /dev/video0, start vlc and select Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p>Troubleshooting heavily depends on the distribution and version you are using. If you have done cabling correctly and a device file /dev/video* does not appear, your kernel probably does not know the hardware. In this case you may have to install the device driver separately because it may not be part of the kernel.</p>
+
+<h3 id="suse-linux-11-0-and-earlier">SUSE Linux 11.0 and earlier</h3>
+
+<p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, <a href="http://www.linuxintro.org/wiki/Open_a_console">open a console</a> and call</p>
+
+<pre><code class="language-shell">hwinfo --usb
+</code></pre>
+
+<p>If a Logitech Quickcam Messenger is plugged in the answer will be like:</p>
+
+<pre><code class="language-shell">06: USB 00.2: 0000 Unclassified device
+  [Created at usb.122]                
+  UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
+  Unique ID: Eopr.vE+cdFBwClB                                      
+  Parent ID: uIhY.uOe2OKugI8D                                      
+  SysFS ID: /devices/pci0000:00/0000:00:1a.2/usb3/3-1/3-1:1.2      
+  SysFS BusID: 3-1:1.2                                             
+  Hardware Class: unknown                                          
+  Model: &quot;Logitech QuickCam Messanger&quot;                             
+  Hotplug: USB                                                     
+  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;                              
+  Device: usb 0x08da &quot;QuickCam Messanger&quot;                          
+  Revision: &quot;1.00&quot;                                                 
+  Driver: &quot;snd-usb-audio&quot;                                          
+  Driver Modules: &quot;snd_usb_audio&quot;                                  
+  Speed: 12 Mbps                                                   
+  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;    
+  Driver Info #0:                                                  
+    Driver Status: quickcam_messenger is active                    
+    Driver Activation Cmd: &quot;modprobe quickcam_messenger&quot;
+  Driver Info #1:                                                  
+    Driver Status: gspca is active                                 
+    Driver Activation Cmd: &quot;modprobe gspca&quot;
+  Config Status: cfg=new, avail=yes, need=no, active=unknown       
+  Attached to: #20 (Hub)
+</code></pre>
+
+<p>This means you can install and load the webcam driver like this:</p>
+
+<pre><code class="language-shell">yast -i gspcav-kmp-default
+modprobe gspca
+</code></pre>
+
+<p>Now you should see a video device:</p>
+
+<pre><code class="language-shell">ls /dev/video*
+/dev/video  /dev/video0
+</code></pre>
+
+<p>That means you can install and start your webcam-viewer-software. We choose gqcam:</p>
+
+<pre><code class="language-shell">yast -i gqcam
+gqcam
+</code></pre>
+
+<p>It works. You see a video what from what is going on in front of your webcam.</p>
+
+<h3 id="ubuntu">Ubuntu</h3>
+
+<p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. <a href="http://www.linuxintro.org/wiki/Open_a_console">Open a console</a>and type:</p>
+
+<pre><code class="language-shell">sudo apt-get install hwinfo
+</code></pre>
+
+<p>Then call hwinfo:</p>
+
+<pre><code class="language-shell">hwinfo --usb
+</code></pre>
+
+<p>If a Logitech Quickcam Messenger is plugged in the response will be like:</p>
+
+<pre><code class="language-shell">04: USB 00.2: 0000 Unclassified device
+  [Created at usb.122]
+  UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
+  Unique ID: 4ajv.vE+cdFBwClB
+  Parent ID: k4bc._Mkd+LmXb03
+  SysFS ID: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-1/1-1:1.2
+  SysFS BusID: 1-1:1.2
+  Hardware Class: unknown
+  Model: &quot;Logitech QuickCam Messanger&quot;
+  Hotplug: USB
+  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;
+  Device: usb 0x08da &quot;QuickCam Messanger&quot;
+  Revision: &quot;1.00&quot;
+  Driver: &quot;snd-usb-audio&quot;
+  Driver Modules: &quot;snd_usb_audio&quot;
+  Speed: 12 Mbps
+  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;
+  Driver Info #0:
+    Driver Status: gspca_zc3xx is active
+    Driver Activation Cmd: &quot;modprobe gspca_zc3xx&quot;
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #8 (Hub)
+</code></pre>
+
+<p>Activate the driver:</p>
+
+<pre><code class="language-shell">sudo modprobe gspca_zc3xx
+</code></pre>
+
+<p>Now you should be able to see the video device:</p>
+
+<pre><code class="language-shell">ls /dev/video*
+/dev/video0
+</code></pre>
+
+<p>You can now test your webcam using the software cheese:</p>
+
+<pre><code class="language-shell">sudo apt-get install cheese
+cheese
+</code></pre>
+
+<h3 id="other-webcams">Other webcams</h3>
+
+<p>If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:</p>
+
+<pre><code class="language-shell">yast -i uvcvideo_kmp_default
+modprobe uvcvideo
+</code></pre>
+
+<p>and start gqcam again.</p>
+
+<h3 id="testbed">Testbed</h3>
+
+<p>The following webcams have been found working with this tutorial:</p>
+
+<ul>
+<li>Logitech Quickcam messenger</li>
+<li>Philips Webcam SPC220NC</li>
+</ul>
+
+<p>A general list of working webcams can be found at <a href="http://mxhaard.free.fr/spca5xx.html">http://mxhaard.free.fr/spca5xx.html</a>.</p>
+
+<p>The guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.</p>
+
+<h3 id="see-also">See also</h3>
+
+<ul>
+<li><a href="http://www.linuxintro.org/wiki/Hardware">hardware</a></li>
+<li><a href="http://en.opensuse.org/Webcam">http://en.opensuse.org/Webcam</a></li>
+<li><a href="http://www.linux.com/feature/126186">http://www.linux.com/feature/126186</a></li>
+<li><a href="http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/">http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/</a></li>
+<li><a href="http://www.goldmann.de/webcam-linux_tipp_408.html">http://www.goldmann.de/webcam-linux_tipp_408.html</a></li>
+<li><a href="http://wiki.ubuntuusers.de/Webcam">http://wiki.ubuntuusers.de/Webcam</a></li>
+</ul>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://countstarlight.github.io/post/work2/" data-toggle="tooltip" data-placement="top" title="Android&#39;s selinux">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://countstarlight.github.io/post/work4/" data-toggle="tooltip" data-placement="top" title="Serial-USB device on Linux">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "countstarlight" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:countstarlight@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/u/0/116322408739427412385" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/CountStarlight" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/CountStarlight" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/countstarlight" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/7488623/rex-frank" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://countstarlight.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="countstarlight.github.io">CountStarlight</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://countstarlight.github.io/">CountStarlight</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://countstarlight.github.io/js/main.js"></script>
+<script src="https://countstarlight.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://countstarlight.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
