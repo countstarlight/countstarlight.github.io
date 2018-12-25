@@ -1,0 +1,78 @@
+[
+{
+	"uri": "https://countstarlight.github.io/zh/android/",
+	"title": "Android",
+	"tags": [],
+	"description": "",
+	"content": " Android 这里是做安卓底层（内核，驱动）遇到的一些问题和解决办法\n"
+},
+{
+	"uri": "https://countstarlight.github.io/zh/embedded/",
+	"title": "嵌入式",
+	"tags": [],
+	"description": "",
+	"content": " 嵌入式 这里是一些做过的嵌入式相关遇到的问题和解决办法\n"
+},
+{
+	"uri": "https://countstarlight.github.io/zh/",
+	"title": "嵌入式",
+	"tags": [],
+	"description": "",
+	"content": " CountStarlight 这是CountStarlight的个人博客，是一些在日常开发中遇到的问题和解决方法的整理\n"
+},
+{
+	"uri": "https://countstarlight.github.io/zh/embedded/work6/",
+	"title": "用minicom发送文件到嵌入式平台",
+	"tags": ["Minicom", "Linux"],
+	"description": "",
+	"content": "Send file  Set the file path which you should choose file from\n Press Ctrl + A , then press O\n Choose Filenames and paths\n   \n Set the A-Download directory (Download to PC from your device)\n Set the B-Upload directory (Upload to your device from PC), you will choose the file you want to upload from the path.\n Press esc and choose Save setup as dfl\n In minicom(embedded device\u0026rsquo;s terminal)\n  rx filename   Press Ctrl + A , then press S Choose xmodem Choose your file  Run the file(Qt Gui) chmod a+x filename ./filename  If you don\u0026rsquo;t have a desktop environment Add -qws option:\n./filename -qws  If you want transform the display Add -display and your transform operation(Counterclockwise):\n./filename -display \u0026quot;Transformed:Rot270\u0026quot; "
+},
+{
+	"uri": "https://countstarlight.github.io/zh/android/work1/",
+	"title": "将Android的系统日志输出到文件",
+	"tags": ["Android", "log"],
+	"description": "",
+	"content": "\n 首先，在产品目录的init.XXX.rc文件中，添加相应的service，\n#start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot  然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,\n#!/system/bin/sh # #Global folder \u0026amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1 LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2 RM=rm MV=\u0026quot;mv\u0026quot; MKDIR=mkdir UMASK=umask #set default permission 0775 $UMASK 002 #Init the three folders i=0 while [ \u0026quot;$i\u0026quot; -le \u0026quot;$index\u0026quot; ] do $MKDIR -p ${LOG_DIR[$i]} i=$(($i+1)) done #Transfer the three folders ((i=$index-1)) $RM -r ${LOG_DIR[$index]}/* while [ \u0026quot;$i\u0026quot; -ge \u0026quot;0\u0026quot; ] do $MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]} i=$(($i-1)) done $RM -r ${LOG_DIR[0]}/* #start logcat service setprop service.logcat.enable 1 mkdir /data/www cp -R /system/var/www/ /data/ ln -s /storage/external/ /data/www/sdcard  "
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/android/",
+	"title": "Android",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/log/",
+	"title": "Log",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/minicom/",
+	"title": "Minicom",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

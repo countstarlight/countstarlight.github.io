@@ -1,131 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work7/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work6/</loc>
-    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work5/</loc>
-    <lastmod>2017-07-26T09:11:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work4/</loc>
-    <lastmod>2017-07-25T09:38:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work3/</loc>
-    <lastmod>2017-07-20T14:54:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/contact/</loc>
-    <lastmod>2017-06-03T18:46:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/about/</loc>
-    <lastmod>2017-06-03T18:46:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/contact/</loc>
-    <lastmod>2016-11-06T13:00:25+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/about/</loc>
-    <lastmod>2016-11-05T21:05:33+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work2/</loc>
-    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/work1/</loc>
-    <lastmod>2016-06-11T19:00:10+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/android/</loc>
-    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/linux/</loc>
-    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/log/</loc>
-    <lastmod>2016-06-11T19:00:10+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/minicom/</loc>
-    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/post/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/qt-creator/</loc>
-    <lastmod>2017-07-26T09:11:37+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/selinux/</loc>
-    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/serial-usb/</loc>
-    <lastmod>2017-07-25T09:38:52+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/</loc>
-    <lastmod>2016-11-05T19:41:01+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/tags/webcam/</loc>
-    <lastmod>2017-07-20T14:54:35+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	
+	<sitemap>
+	   	<loc>https://countstarlight.github.io/zh/sitemap.xml</loc>
+		
+	   	<lastmod>2017-07-26T20:41:02+08:00</lastmod>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>https://countstarlight.github.io/en/sitemap.xml</loc>
+		
+	   	<lastmod>2018-01-08T23:25:08+08:00</lastmod>
+		
+	</sitemap>
+	
+</sitemapindex>

@@ -15,10 +15,10 @@
     
     <item>
       <title>Serial-USB device on Linux</title>
-      <link>https://countstarlight.github.io/post/work4/</link>
+      <link>https://countstarlight.github.io/android/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work4/</guid>
+      <guid>https://countstarlight.github.io/android/work4/</guid>
       <description>&lt;h3 id=&#34;install-minicom&#34;&gt;Install &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo aptitude update

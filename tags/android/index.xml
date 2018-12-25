@@ -15,10 +15,10 @@
     
     <item>
       <title>Android&#39;s selinux</title>
-      <link>https://countstarlight.github.io/post/work2/</link>
+      <link>https://countstarlight.github.io/android/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work2/</guid>
+      <guid>https://countstarlight.github.io/android/work2/</guid>
       <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
 
 &lt;p&gt;当在init.rc中新增service：&lt;/p&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>Android system log</title>
-      <link>https://countstarlight.github.io/post/work1/</link>
+      <link>https://countstarlight.github.io/android/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work1/</guid>
+      <guid>https://countstarlight.github.io/android/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     

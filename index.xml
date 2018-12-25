@@ -15,19 +15,19 @@
     
     <item>
       <title>Hello, 2018</title>
-      <link>https://countstarlight.github.io/post/work7/</link>
+      <link>https://countstarlight.github.io/android/work7/</link>
       <pubDate>Mon, 08 Jan 2018 23:25:08 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work7/</guid>
+      <guid>https://countstarlight.github.io/android/work7/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Send files via minicom</title>
-      <link>https://countstarlight.github.io/post/work6/</link>
+      <link>https://countstarlight.github.io/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work6/</guid>
+      <guid>https://countstarlight.github.io/embedded/work6/</guid>
       <description>&lt;h3 id=&#34;send-file&#34;&gt;Send file&lt;/h3&gt;
 
 &lt;ul&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Qt-creator cross-compliation</title>
-      <link>https://countstarlight.github.io/post/work5/</link>
+      <link>https://countstarlight.github.io/android/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work5/</guid>
+      <guid>https://countstarlight.github.io/android/work5/</guid>
       <description>&lt;h3 id=&#34;install-the-cross-compiler-you-need&#34;&gt;Install the cross compiler you need&lt;/h3&gt;
 
 &lt;p&gt;Because i am using the processor &lt;code&gt;imx28&lt;/code&gt;, so i need to install &lt;code&gt;arm-fsl-linux-gnueabi&lt;/code&gt;&lt;/p&gt;
@@ -58,10 +58,10 @@
     
     <item>
       <title>Serial-USB device on Linux</title>
-      <link>https://countstarlight.github.io/post/work4/</link>
+      <link>https://countstarlight.github.io/android/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work4/</guid>
+      <guid>https://countstarlight.github.io/android/work4/</guid>
       <description>&lt;h3 id=&#34;install-minicom&#34;&gt;Install &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo aptitude update
@@ -75,10 +75,10 @@ sudo aptitude install minicom
     
     <item>
       <title>Webcam with Linux</title>
-      <link>https://countstarlight.github.io/post/work3/</link>
+      <link>https://countstarlight.github.io/android/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work3/</guid>
+      <guid>https://countstarlight.github.io/android/work3/</guid>
       <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.&lt;/p&gt;
 
 &lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
@@ -111,11 +111,27 @@ website: couuntstarlight.github.io</description>
     </item>
     
     <item>
+      <title>Math Sample</title>
+      <link>https://countstarlight.github.io/android/work8/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/android/work8/</guid>
+      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
+
+&lt;p&gt;$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$&lt;/p&gt;
+
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Android&#39;s selinux</title>
-      <link>https://countstarlight.github.io/post/work2/</link>
+      <link>https://countstarlight.github.io/android/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work2/</guid>
+      <guid>https://countstarlight.github.io/android/work2/</guid>
       <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
 
 &lt;p&gt;当在init.rc中新增service：&lt;/p&gt;
@@ -135,10 +151,10 @@ website: couuntstarlight.github.io</description>
     
     <item>
       <title>Android system log</title>
-      <link>https://countstarlight.github.io/post/work1/</link>
+      <link>https://countstarlight.github.io/android/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work1/</guid>
+      <guid>https://countstarlight.github.io/android/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     

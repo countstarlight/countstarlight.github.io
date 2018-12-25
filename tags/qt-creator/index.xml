@@ -15,10 +15,10 @@
     
     <item>
       <title>Qt-creator cross-compliation</title>
-      <link>https://countstarlight.github.io/post/work5/</link>
+      <link>https://countstarlight.github.io/android/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/post/work5/</guid>
+      <guid>https://countstarlight.github.io/android/work5/</guid>
       <description>&lt;h3 id=&#34;install-the-cross-compiler-you-need&#34;&gt;Install the cross compiler you need&lt;/h3&gt;
 
 &lt;p&gt;Because i am using the processor &lt;code&gt;imx28&lt;/code&gt;, so i need to install &lt;code&gt;arm-fsl-linux-gnueabi&lt;/code&gt;&lt;/p&gt;
