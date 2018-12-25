@@ -5,8 +5,6 @@
     <link>https://countstarlight.github.io/android/</link>
     <description>Recent content in Android on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
-    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
     <lastBuildDate>Mon, 08 Jan 2018 23:25:08 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/android/index.xml" rel="self" type="application/rss+xml" />
@@ -16,33 +14,16 @@
       <title>Hello, 2018</title>
       <link>https://countstarlight.github.io/android/work7/</link>
       <pubDate>Mon, 08 Jan 2018 23:25:08 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/android/work7/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Webcam with Linux</title>
-      <link>https://countstarlight.github.io/android/work3/</link>
-      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
-      <guid>https://countstarlight.github.io/android/work3/</guid>
-      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.&lt;/p&gt;
-
-&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Math Sample</title>
       <link>https://countstarlight.github.io/android/work8/</link>
       <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/android/work8/</guid>
       <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
 
@@ -58,7 +39,7 @@ $$&lt;/p&gt;
       <title>Android&#39;s selinux</title>
       <link>https://countstarlight.github.io/android/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/android/work2/</guid>
       <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
 
@@ -81,7 +62,7 @@ $$&lt;/p&gt;
       <title>Android system log</title>
       <link>https://countstarlight.github.io/android/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/android/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -5,8 +5,6 @@
     <link>https://countstarlight.github.io/zh/tags/linux/</link>
     <description>Recent content in Linux on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
-    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
     <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/zh/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +14,7 @@
       <title>用minicom发送文件到嵌入式平台</title>
       <link>https://countstarlight.github.io/zh/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/zh/embedded/work6/</guid>
       <description>1. 设置文件路径  设置需要传送的文件所在的路径
  按下组合键 Ctrl + A , 再按下 O
@@ -32,10 +30,24 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
       <title>在Linux上用usb连接嵌入式设备的串口</title>
       <link>https://countstarlight.github.io/zh/embedded/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/zh/embedded/work4/</guid>
       <description>1. 安装 minicom Debian/Ubuntu：
 sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：  Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.</description>
+    </item>
+    
+    <item>
+      <title>Linux上网络摄像头的使用</title>
+      <link>https://countstarlight.github.io/zh/linux/work3/</link>
+      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/zh/linux/work3/</guid>
+      <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
+1. 配置  插上摄像头（通常是通过USB）
+ 列出所有的 video4linux 设备:
+  ls -ltr /dev/video*   得到的输出类似于：  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0  这里的摄像头设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+ test the webcam
+ if you have vlc installed you can start it and choose Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play if you have mplayer installed you can use the command   mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30  Use it record video to capture video streams you can use cheese, a nice program with a graphical user interface.</description>
     </item>
     
   </channel>

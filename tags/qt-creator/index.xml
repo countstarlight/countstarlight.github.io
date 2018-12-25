@@ -5,8 +5,6 @@
     <link>https://countstarlight.github.io/tags/qt-creator/</link>
     <description>Recent content in Qt Creator on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
-    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
     <lastBuildDate>Wed, 26 Jul 2017 09:11:37 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/tags/qt-creator/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +14,7 @@
       <title>Qt-creator cross-compliation</title>
       <link>https://countstarlight.github.io/embedded/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/embedded/work5/</guid>
       <description>1. Get the cross compiler toolchain Because i am using the processor imx28, so i need to install arm-fsl-linux-gnueabi</description>
     </item>

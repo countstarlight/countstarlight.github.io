@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webcam on CountStarlight</title>
+    <link>https://countstarlight.github.io/zh/tags/webcam/</link>
+    <description>Recent content in Webcam on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 Jul 2017 14:54:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/zh/tags/webcam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux上网络摄像头的使用</title>
+      <link>https://countstarlight.github.io/zh/linux/work3/</link>
+      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/zh/linux/work3/</guid>
+      <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
+1. 配置  插上摄像头（通常是通过USB）
+ 列出所有的 video4linux 设备:
+  ls -ltr /dev/video*   得到的输出类似于：  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0  这里的摄像头设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+ test the webcam
+ if you have vlc installed you can start it and choose Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play if you have mplayer installed you can use the command   mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30  Use it record video to capture video streams you can use cheese, a nice program with a graphical user interface.</description>
+    </item>
+    
+  </channel>
+</rss>

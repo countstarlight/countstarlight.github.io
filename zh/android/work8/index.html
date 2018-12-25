@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta name="description" content="CountStarlight&#39;s blog">
+<meta name="author" content="CountStarlight">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Math Sample :: CountStarlight</title>
+
+    
+    <link href="/css/nucleus.css?1545716730" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1545716730" rel="stylesheet">
+    <link href="/css/hybrid.css?1545716730" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1545716730" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1545716730" rel="stylesheet">
+    <link href="/css/auto-complete.css?1545716730" rel="stylesheet">
+    <link href="/css/theme.css?1545716730" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1545716730" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1545716730" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1545716730"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/zh/android/work8/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://countstarlight.github.io/">
+  <img src="/images/favicon.png">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="当前页面搜索...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1545716730"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1545716730"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/countstarlight.github.io\/\/zh";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1545716730"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/android/" title="Android底层" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/zh/android/">
+          Android底层
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/android/work7/" title="Hello, 2018" class="dd-item ">
+        <a href="/zh/android/work7/">
+        Hello, 2018
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/android/work8/" title="Math Sample" class="dd-item active">
+        <a href="/zh/android/work8/">
+        Math Sample
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/android/work2/" title="Android&#39;s selinux" class="dd-item ">
+        <a href="/zh/android/work2/">
+        Android&#39;s selinux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/android/work1/" title="将Android的系统日志输出到文件" class="dd-item ">
+        <a href="/zh/android/work1/">
+        将Android的系统日志输出到文件
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/embedded/" title="嵌入式" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/embedded/">
+          嵌入式
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/embedded/work6/" title="用minicom发送文件到嵌入式平台" class="dd-item ">
+        <a href="/zh/embedded/work6/">
+        用minicom发送文件到嵌入式平台
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/embedded/work5/" title="Qt creator 配置交叉编译" class="dd-item ">
+        <a href="/zh/embedded/work5/">
+        Qt creator 配置交叉编译
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/embedded/work4/" title="在Linux上用usb连接嵌入式设备的串口" class="dd-item ">
+        <a href="/zh/embedded/work4/">
+        在Linux上用usb连接嵌入式设备的串口
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/zh/linux/" title="桌面Linux" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/zh/linux/">
+          桌面Linux
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/linux/work3/" title="Linux上网络摄像头的使用" class="dd-item ">
+        <a href="/zh/linux/work3/">
+        Linux上网络摄像头的使用
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>更多</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/countstarlight"><i class='fab fa-github'></i> Github</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://plus.google.com/u/0/116322408739427412385"><i class='fab fa-google-plus'></i> Google Plus</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gitlab.com/countstarlight"><i class='fab fa-gitlab'></i> Gitlab</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://stackoverflow.com/users/7488623/rex-frank"><i class='fab fa-stack-overflow'></i> Stack Overflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="mailto:countstarlight@gmail.com"><i class='far fa-envelope'></i> Email</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="zh" value="/zh/android/work8/" selected>简体中文</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/android/work8/">English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> 清除历史</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/zh/'>首页</a> > <a href='/zh/android/'>Android底层</a> > Math Sample
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example-2">Example 2</a></li>
+<li><a href="#example-3">Example 3</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Math Sample</h1>
+          
+
+        
+
+
+<p>KaTeX can be used to generate complex math formulas server-side.</p>
+
+<p>$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$</p>
+
+<p>Additional details can be found on <a href="https://github.com/Khan/KaTeX">GitHub</a> or on the <a href="http://tiddlywiki.com/plugins/tiddlywiki/katex/">Wiki</a>.
+</p>
+
+<h3 id="example-1">Example 1</h3>
+
+<p>If the text between $$ contains newlines it will rendered in display mode:</p>
+
+<pre><code>$$
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+$$
+</code></pre>
+
+<p>$$
+f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
+$$</p>
+
+<h3 id="example-2">Example 2</h3>
+
+<pre><code>$$
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
+$$
+</code></pre>
+
+<p>​​$$
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
+$$
+​​</p>
+
+<h3 id="example-3">Example 3</h3>
+
+<pre><code>$$
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \quad\quad \text{for }\lvert q\rvert&lt;1.
+$$
+</code></pre>
+
+<p>$$
+1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \quad\quad \text{for }\lvert q\rvert&lt;1.
+$$</p>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/zh/android/work7/" title="Hello, 2018"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/zh/android/work2/" title="Android&#39;s selinux" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1545716730"></script>
+    <script src="/js/perfect-scrollbar.min.js?1545716730"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1545716730"></script>
+    <script src="/js/jquery.sticky.js?1545716730"></script>
+    <script src="/js/featherlight.min.js?1545716730"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1545716730"></script>
+    <script src="/js/highlight.pack.js?1545716730"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1545716730"></script>
+    <script src="/js/learn.js?1545716730"></script>
+    <script src="/js/hugo-learn.js?1545716730"></script>
+
+    <link href="/mermaid/mermaid.css?1545716730" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1545716730"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

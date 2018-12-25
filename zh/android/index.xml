@@ -1,22 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on CountStarlight</title>
+    <title>Android底层 on CountStarlight</title>
     <link>https://countstarlight.github.io/zh/android/</link>
-    <description>Recent content in Android on CountStarlight</description>
+    <description>Recent content in Android底层 on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
-    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
-    <lastBuildDate>Sat, 11 Jun 2016 19:00:10 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jan 2018 23:25:08 +0800</lastBuildDate>
     
 	<atom:link href="https://countstarlight.github.io/zh/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Hello, 2018</title>
+      <link>https://countstarlight.github.io/zh/android/work7/</link>
+      <pubDate>Mon, 08 Jan 2018 23:25:08 +0800</pubDate>
+      
+      <guid>https://countstarlight.github.io/zh/android/work7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math Sample</title>
+      <link>https://countstarlight.github.io/zh/android/work8/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://countstarlight.github.io/zh/android/work8/</guid>
+      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
+
+&lt;p&gt;$$
+\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
+$$&lt;/p&gt;
+
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android&#39;s selinux</title>
+      <link>https://countstarlight.github.io/zh/android/work2/</link>
+      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      
+      <guid>https://countstarlight.github.io/zh/android/work2/</guid>
+      <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
+
+&lt;p&gt;当在init.rc中新增service：&lt;/p&gt;
+
+&lt;p&gt;service ro_isn /system/bin/isn.sh class late_start user root Oneshot&lt;/p&gt;
+
+&lt;p&gt;kernel log会打印以下log：&lt;/p&gt;
+
+&lt;p&gt;Warning! Service ro_isn needs a SELinux domain defined; please fix!&lt;/p&gt;
+
+&lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
+
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>将Android的系统日志输出到文件</title>
       <link>https://countstarlight.github.io/zh/android/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      <author>countstarlight@gmail.com (CountStarlight)</author>
+      
       <guid>https://countstarlight.github.io/zh/android/work1/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
