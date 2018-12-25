@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://countstarlight.github.io/android/</loc>
+    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/android/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/embedded/</loc>
+    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/embedded/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/embedded/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/</loc>
+    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/"
+                />
+  </url>
+  
+  <url>
     <loc>https://countstarlight.github.io/android/work7/</loc>
     <lastmod>2018-01-08T23:25:08+08:00</lastmod>
   </url>
@@ -23,13 +68,33 @@
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/android/work5/</loc>
+    <loc>https://countstarlight.github.io/embedded/work5/</loc>
     <lastmod>2017-07-26T09:11:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/embedded/work5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/embedded/work5/"
+                />
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/android/work4/</loc>
+    <loc>https://countstarlight.github.io/embedded/work4/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/embedded/work4/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/embedded/work4/"
+                />
   </url>
   
   <url>
@@ -99,22 +164,6 @@
   </url>
   
   <url>
-    <loc>https://countstarlight.github.io/android/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://countstarlight.github.io/zh/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://countstarlight.github.io/android/"
-                />
-  </url>
-  
-  <url>
     <loc>https://countstarlight.github.io/categories/</loc>
     <priority>0</priority>
     <xhtml:link
@@ -126,38 +175,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://countstarlight.github.io/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://countstarlight.github.io/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://countstarlight.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://countstarlight.github.io/embedded/</loc>
-    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://countstarlight.github.io/zh/embedded/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://countstarlight.github.io/embedded/"
                 />
   </url>
   
@@ -225,6 +242,16 @@
     <loc>https://countstarlight.github.io/tags/qt-creator/</loc>
     <lastmod>2017-07-26T09:11:37+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/tags/qt-creator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/tags/qt-creator/"
+                />
   </url>
   
   <url>
@@ -237,6 +264,16 @@
     <loc>https://countstarlight.github.io/tags/serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/tags/serial-usb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/tags/serial-usb/"
+                />
   </url>
   
   <url>

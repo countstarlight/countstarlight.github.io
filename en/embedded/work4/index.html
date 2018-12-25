@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta name="description" content="">
+
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Serial-USB device on Linux :: CountStarlight</title>
+
+    
+    <link href="/css/nucleus.css?1545712339" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1545712339" rel="stylesheet">
+    <link href="/css/hybrid.css?1545712339" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1545712339" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1545712339" rel="stylesheet">
+    <link href="/css/auto-complete.css?1545712339" rel="stylesheet">
+    <link href="/css/theme.css?1545712339" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1545712339" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1545712339" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1545712339"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/embedded/work4/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://countstarlight.github.io/">
+  <img src="/images/favicon.png">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1545712339"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1545712339"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/countstarlight.github.io\/\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1545712339"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/embedded/" title="Embedded" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/embedded/">
+          Embedded
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work6/" title="Send files via minicom" class="dd-item ">
+        <a href="/en/embedded/work6/">
+        Send files via minicom
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work5/" title="Qt-creator cross-compliation" class="dd-item ">
+        <a href="/en/embedded/work5/">
+        Qt-creator cross-compliation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work4/" title="Serial-USB device on Linux" class="dd-item active">
+        <a href="/en/embedded/work4/">
+        Serial-USB device on Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/android/" title="Android" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/android/">
+          Android
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/android/work1/" title="Android system log" class="dd-item ">
+        <a href="/en/android/work1/">
+        Android system log
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/contact/" title="Get in touch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/contact/">
+          Get in touch
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/about/" title="About me" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/about/">
+          About me
+          
+            <i class="fas read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="zh" value="/embedded/work4/">简体中文</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/embedded/work4/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Homepage</a> > <a href='/en/embedded/'>Embedded</a> > Serial-USB device on Linux
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#install-minicom">Install <code>minicom</code></a></li>
+<li><a href="#plug-the-device-then-check-if-system-recognize-the-adapter">Plug the device then check if system recognize the adapter</a>
+<ul>
+<li><a href="#if-cannot-recognize-it-seems-to-be">if cannot recognize, it seems to be:</a></li>
+<li><a href="#if-the-device-is-dev-ttyusb0">If the device is <code>/dev/ttyUSB0</code></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Serial-USB device on Linux</h1>
+          
+
+        
+
+
+<h3 id="install-minicom">Install <code>minicom</code></h3>
+
+<pre><code class="language-shell">sudo aptitude update
+sudo aptitude install minicom
+</code></pre>
+
+<h3 id="plug-the-device-then-check-if-system-recognize-the-adapter">Plug the device then check if system recognize the adapter</h3>
+
+<p></p>
+
+<pre><code class="language-shell">sudo dmesg | grep tty
+</code></pre>
+
+<h4 id="if-cannot-recognize-it-seems-to-be">if cannot recognize, it seems to be:</h4>
+
+<pre><code class="language-shel">[    0.000000] console [tty0] enabled
+[    8.264501] systemd[1]: Created slice system-getty.slice.
+</code></pre>
+
+<ul>
+<li>Unplug the device and type <code>lsusb</code>. You will see a list of output similar to this:</li>
+</ul>
+
+<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+  Bus 003 Device 006: ID 13d3:3402 IMC Networks  
+  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre>
+
+<ul>
+<li>Plug in the usb-Serial Port converter back, and run <code>lsusb</code> again, and you shall see an additional line, like this:</li>
+</ul>
+
+<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+  Bus 003 Device 006: ID 13d3:3402 IMC Networks 
+  Bus 003 Device 008: ID 18f8:0f99 --- --- --- (notice the additional line!)
+  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre>
+
+<ul>
+<li>Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :</li>
+</ul>
+
+<pre><code class="language-shell">  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+</code></pre>
+
+<ul>
+<li>Run <code>dmesg</code> again and you shall see lines similar like this :</li>
+</ul>
+
+<pre><code class="language-shell">  usbserial_generic 1-1:1.0: generic converter detected
+  usb 1-1: generic converter now attached to ttyUSB0
+  usbcore: registered new interface driver usbserial_generic 
+</code></pre>
+
+<p>You can instruct Linux to load this module automatically by include the line : <code>usbserial vendor=0x18f8 product=0x0f99</code> inside <code>/etc/modules</code> file.</p>
+
+<h4 id="if-the-device-is-dev-ttyusb0">If the device is <code>/dev/ttyUSB0</code></h4>
+
+<ul>
+<li>Run:</li>
+</ul>
+
+<pre><code class="language-shell">sudo minicom -s
+</code></pre>
+
+<ul>
+<li>Go to <code>Serial port setup</code> and change the first line to <code>/dev/ttyUSB0</code></li>
+<li>Save config as default with <code>Save setup as dfl</code></li>
+</ul>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/embedded/work5/" title="Qt-creator cross-compliation"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/android/" title="Android" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1545712339"></script>
+    <script src="/js/perfect-scrollbar.min.js?1545712339"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1545712339"></script>
+    <script src="/js/jquery.sticky.js?1545712339"></script>
+    <script src="/js/featherlight.min.js?1545712339"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1545712339"></script>
+    <script src="/js/highlight.pack.js?1545712339"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1545712339"></script>
+    <script src="/js/learn.js?1545712339"></script>
+    <script src="/js/hugo-learn.js?1545712339"></script>
+
+    <link href="/mermaid/mermaid.css?1545712339" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1545712339"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

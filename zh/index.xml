@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>嵌入式 on CountStarlight</title>
+    <title>首页 on CountStarlight</title>
     <link>https://countstarlight.github.io/zh/</link>
-    <description>Recent content in 嵌入式 on CountStarlight</description>
+    <description>Recent content in 首页 on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
     <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
     <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
@@ -19,19 +18,33 @@
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       <author>countstarlight@gmail.com (CountStarlight)</author>
       <guid>https://countstarlight.github.io/zh/embedded/work6/</guid>
-      <description>&lt;h3 id=&#34;send-file&#34;&gt;Send file&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Set the file path which you should choose file from&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Press &lt;code&gt;Ctrl + A&lt;/code&gt; , then press &lt;code&gt;O&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Choose &lt;code&gt;Filenames and paths&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>1. 设置文件路径  设置需要传送的文件所在的路径
+ 按下组合键 Ctrl + A , 再按下 O
+ 选择 Filenames and paths：
+    设置 A-Download directory （将文件从设备传送到本地的路径）
+ 设置 B-Upload directory （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。
+ 按下 esc 然后选择 Save setup as dfl来保存设置：
+  2. 发送文件到设备  在minicom里（已经连接到设备的终端）  rx filename   按下组合键 Ctrl + A，然后按下S 选择 xmodem 选择要发送的文件  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：
+chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备上的系统没有图形化环境 添加参数 -qws：</description>
+    </item>
+    
+    <item>
+      <title>Qt creator 配置交叉编译</title>
+      <link>https://countstarlight.github.io/zh/embedded/work5/</link>
+      <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/zh/embedded/work5/</guid>
+      <description>1. 获取对应的交叉编译工具链 假设目标平台的处理器是 imx28，则相应的工具链为 arm-fsl-linux-gnueabi</description>
+    </item>
+    
+    <item>
+      <title>在Linux上用usb连接嵌入式设备的串口</title>
+      <link>https://countstarlight.github.io/zh/embedded/work4/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/zh/embedded/work4/</guid>
+      <description>1. 安装 minicom Debian/Ubuntu：
+sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：  Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.</description>
     </item>
     
     <item>

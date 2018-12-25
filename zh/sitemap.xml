@@ -63,6 +63,36 @@
   </url>
   
   <url>
+    <loc>https://countstarlight.github.io/zh/embedded/work5/</loc>
+    <lastmod>2017-07-26T09:11:37+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/embedded/work5/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/embedded/work5/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/zh/embedded/work4/</loc>
+    <lastmod>2017-07-25T09:38:52+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/embedded/work4/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/embedded/work4/"
+                />
+  </url>
+  
+  <url>
     <loc>https://countstarlight.github.io/zh/android/work1/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <xhtml:link
@@ -153,6 +183,38 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://countstarlight.github.io/zh/tags/minicom/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/zh/tags/qt-creator/</loc>
+    <lastmod>2017-07-26T09:11:37+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/tags/qt-creator/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/tags/qt-creator/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://countstarlight.github.io/zh/tags/serial-usb/</loc>
+    <lastmod>2017-07-25T09:38:52+08:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://countstarlight.github.io/tags/serial-usb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://countstarlight.github.io/zh/tags/serial-usb/"
                 />
   </url>
   

@@ -15,17 +15,31 @@
 },
 {
 	"uri": "https://countstarlight.github.io/zh/",
-	"title": "嵌入式",
+	"title": "首页",
 	"tags": [],
 	"description": "",
-	"content": " CountStarlight 这是CountStarlight的个人博客，是一些在日常开发中遇到的问题和解决方法的整理\n"
+	"content": " CountStarlight 这是CountStarlight的个人博客，是一些在日常开发中遇到的问题和解决方法的整理\n\u0026lt;-左侧是目录\n"
 },
 {
 	"uri": "https://countstarlight.github.io/zh/embedded/work6/",
 	"title": "用minicom发送文件到嵌入式平台",
 	"tags": ["Minicom", "Linux"],
 	"description": "",
-	"content": "Send file  Set the file path which you should choose file from\n Press Ctrl + A , then press O\n Choose Filenames and paths\n   \n Set the A-Download directory (Download to PC from your device)\n Set the B-Upload directory (Upload to your device from PC), you will choose the file you want to upload from the path.\n Press esc and choose Save setup as dfl\n In minicom(embedded device\u0026rsquo;s terminal)\n  rx filename   Press Ctrl + A , then press S Choose xmodem Choose your file  Run the file(Qt Gui) chmod a+x filename ./filename  If you don\u0026rsquo;t have a desktop environment Add -qws option:\n./filename -qws  If you want transform the display Add -display and your transform operation(Counterclockwise):\n./filename -display \u0026quot;Transformed:Rot270\u0026quot; "
+	"content": " 1. 设置文件路径  设置需要传送的文件所在的路径\n 按下组合键 Ctrl + A , 再按下 O\n 选择 Filenames and paths：\n    设置 A-Download directory （将文件从设备传送到本地的路径）\n 设置 B-Upload directory （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。\n 按下 esc 然后选择 Save setup as dfl来保存设置：\n  2. 发送文件到设备  在minicom里（已经连接到设备的终端）  rx filename   按下组合键 Ctrl + A，然后按下S 选择 xmodem 选择要发送的文件  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：\nchmod +x filename #给文件授予执行权限 ./filename #运行  如果设备上的系统没有图形化环境 添加参数 -qws：\n./filename -qws  如果希望旋转屏幕显示 添加参数 -display 以及要旋转的角度（顺时针）：\n./filename -display \u0026quot;Transformed:Rot270\u0026quot;  "
+},
+{
+	"uri": "https://countstarlight.github.io/zh/embedded/work5/",
+	"title": "Qt creator 配置交叉编译",
+	"tags": ["Qt-creator"],
+	"description": "",
+	"content": " 1. 获取对应的交叉编译工具链 假设目标平台的处理器是 imx28，则相应的工具链为 arm-fsl-linux-gnueabi\n"
+},
+{
+	"uri": "https://countstarlight.github.io/zh/embedded/work4/",
+	"title": "在Linux上用usb连接嵌入式设备的串口",
+	"tags": ["Linux", "Serial-USB"],
+	"description": "",
+	"content": " 1. 安装 minicom Debian/Ubuntu：\nsudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：  Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub   再次插上usb转串口线，再次运行命令 lsusb，会看到输出结果相比之前增加了一行：  Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 008: ID 18f8:0f99 --- --- --- (注意这行是新加的！) Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub   现在我们知道了usb转串口的 vendor id 和 product id，让我们加载Linux内核的usbserial模块来激活这个设备：  sudo modprobe usbserial vendor=0x18f8 product=0x0f99   再次运行 dmesg 命令，输出结果类似：  usbserial_generic 1-1:1.0: generic converter detected usb 1-1: generic converter now attached to ttyUSB0 usbcore: registered new interface driver usbserial_generic  可以把自动加载usbserial模块添加到开机启动里，编辑文件/etc/modules，添加一行：\nusbserial vendor=0x18f8 product=0x0f99  3. 连接到设备 假设设备路径为 /dev/ttyUSB0，运行命令:\nsudo minicom -s  在Serial port setup里修改第一行为/dev/ttyUSB0\n选择Save setup as dfl保存设置\n"
 },
 {
 	"uri": "https://countstarlight.github.io/zh/android/work1/",
@@ -65,6 +79,20 @@
 {
 	"uri": "https://countstarlight.github.io/zh/tags/minicom/",
 	"title": "Minicom",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/qt-creator/",
+	"title": "Qt Creator",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://countstarlight.github.io/zh/tags/serial-usb/",
+	"title": "Serial Usb",
 	"tags": [],
 	"description": "",
 	"content": ""

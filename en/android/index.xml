@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on CountStarlight</title>
+    <link>https://countstarlight.github.io/en/android/</link>
+    <description>Recent content in Android on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
+    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
+    <lastBuildDate>Sat, 11 Jun 2016 19:00:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/en/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android system log</title>
+      <link>https://countstarlight.github.io/en/android/work1/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/en/android/work1/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

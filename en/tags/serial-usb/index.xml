@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serial Usb on CountStarlight</title>
+    <link>https://countstarlight.github.io/en/tags/serial-usb/</link>
+    <description>Recent content in Serial Usb on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
+    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
+    <lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/en/tags/serial-usb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Serial-USB device on Linux</title>
+      <link>https://countstarlight.github.io/en/embedded/work4/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/en/embedded/work4/</guid>
+      <description>&lt;h3 id=&#34;install-minicom&#34;&gt;Install &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo aptitude update
+sudo aptitude install minicom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

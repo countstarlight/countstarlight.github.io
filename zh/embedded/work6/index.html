@@ -12,19 +12,19 @@
     <title>用minicom发送文件到嵌入式平台 :: CountStarlight</title>
 
     
-    <link href="/css/nucleus.css?1545705020" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1545705020" rel="stylesheet">
-    <link href="/css/hybrid.css?1545705020" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1545705020" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1545705020" rel="stylesheet">
-    <link href="/css/auto-complete.css?1545705020" rel="stylesheet">
-    <link href="/css/theme.css?1545705020" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1545705020" rel="stylesheet">
+    <link href="/css/nucleus.css?1545712483" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1545712483" rel="stylesheet">
+    <link href="/css/hybrid.css?1545712483" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1545712483" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1545712483" rel="stylesheet">
+    <link href="/css/auto-complete.css?1545712483" rel="stylesheet">
+    <link href="/css/theme.css?1545712483" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1545712483" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1545705020" rel="stylesheet">
+      <link href="/css/theme-blue.css?1545712483" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1545705020"></script>
+    <script src="/js/jquery-2.x.min.js?1545712483"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1545705020"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1545705020"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1545712483"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1545712483"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/countstarlight.github.io\/\/zh";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1545705020"></script>
+<script type="text/javascript" src="/js/search.js?1545712483"></script>
 
     
   </div>
@@ -106,6 +106,44 @@
       <li data-nav-id="/zh/embedded/work6/" title="用minicom发送文件到嵌入式平台" class="dd-item active">
         <a href="/zh/embedded/work6/">
         用minicom发送文件到嵌入式平台
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/embedded/work5/" title="Qt creator 配置交叉编译" class="dd-item ">
+        <a href="/zh/embedded/work5/">
+        Qt creator 配置交叉编译
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/zh/embedded/work4/" title="在Linux上用usb连接嵌入式设备的串口" class="dd-item ">
+        <a href="/zh/embedded/work4/">
+        在Linux上用usb连接嵌入式设备的串口
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -281,7 +319,7 @@
             
           
           
-            <a href='/zh/'>嵌入式</a> > <a href='/zh/embedded/'>嵌入式</a> > 用minicom发送文件到嵌入式平台
+            <a href='/zh/'>首页</a> > <a href='/zh/embedded/'>嵌入式</a> > 用minicom发送文件到嵌入式平台
           
          
           
@@ -300,11 +338,12 @@
 <ul>
 <li>
 <ul>
-<li><a href="#send-file">Send file</a></li>
-<li><a href="#run-the-file-qt-gui">Run the file(Qt Gui)</a>
+<li><a href="#1-设置文件路径">1. 设置文件路径</a></li>
+<li><a href="#2-发送文件到设备">2. 发送文件到设备</a></li>
+<li><a href="#3-在设备上运行刚才发送过去的文件-假设是qt图形界面程序">3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序）</a>
 <ul>
-<li><a href="#if-you-don-t-have-a-desktop-environment">If you don&rsquo;t have a desktop environment</a></li>
-<li><a href="#if-you-want-transform-the-display">If you want transform the display</a></li>
+<li><a href="#如果设备上的系统没有图形化环境">如果设备上的系统没有图形化环境</a></li>
+<li><a href="#如果希望旋转屏幕显示">如果希望旋转屏幕显示</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -327,64 +366,71 @@
         
 
 
-<h3 id="send-file">Send file</h3>
+
+
+<h3 id="1-设置文件路径">1. 设置文件路径</h3>
 
 <ul>
-<li><p>Set the file path which you should choose file from</p>
+<li><p>设置需要传送的文件所在的路径</p>
 
 <ul>
-<li><p>Press <code>Ctrl + A</code> , then press <code>O</code></p></li>
+<li><p>按下组合键 <code>Ctrl + A</code> , 再按下 <code>O</code></p></li>
 
-<li><p>Choose <code>Filenames and paths</code></p></li>
+<li><p>选择 <code>Filenames and paths</code>：</p></li>
 </ul></li>
 </ul>
-
-<p></p>
 
 <p><img src="/images/portfolio/work6/1.png" alt="1" /></p>
 
 <ul>
-<li><p>Set the  <code>A-Download directory</code> (Download to PC from your device)</p></li>
+<li><p>设置 <code>A-Download directory</code> （将文件从设备传送到本地的路径）</p></li>
 
-<li><p>Set the <code>B-Upload directory</code> (Upload to your device from PC), you will choose the file you want to upload from the path.</p>
+<li><p>设置 <code>B-Upload directory</code> （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。</p>
 
 <p><img src="/images/portfolio/work6/2.png" alt="1" /></p></li>
 
-<li><p>Press <code>esc</code> and choose <code>Save setup as dfl</code></p>
+<li><p>按下 <code>esc</code> 然后选择 <code>Save setup as dfl</code>来保存设置：</p>
 
 <p><img src="/images/portfolio/work6/3.png" alt="1" /></p></li>
+</ul>
 
-<li><p>In <code>minicom</code>(embedded device&rsquo;s terminal)</p></li>
+<h3 id="2-发送文件到设备">2. 发送文件到设备</h3>
+
+<ul>
+<li>在<code>minicom</code>里（已经连接到设备的终端）</li>
 </ul>
 
 <pre><code class="language-shell">rx filename
 </code></pre>
 
 <ul>
-<li>Press <code>Ctrl + A</code> , then press <code>S</code></li>
-<li>Choose <code>xmodem</code></li>
-<li>Choose your file</li>
+<li>按下组合键 <code>Ctrl + A</code>，然后按下<code>S</code></li>
+<li>选择 <code>xmodem</code></li>
+<li>选择要发送的文件</li>
 </ul>
 
-<h3 id="run-the-file-qt-gui">Run the file(Qt Gui)</h3>
+<h3 id="3-在设备上运行刚才发送过去的文件-假设是qt图形界面程序">3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序）</h3>
 
-<pre><code class="language-shell">chmod a+x filename
-./filename
+<p>在<code>minicom</code>里（已经连接到设备的终端）：</p>
+
+<pre><code class="language-shell">chmod +x filename     #给文件授予执行权限
+./filename             #运行
 </code></pre>
 
-<h4 id="if-you-don-t-have-a-desktop-environment">If you don&rsquo;t have a desktop environment</h4>
+<h4 id="如果设备上的系统没有图形化环境">如果设备上的系统没有图形化环境</h4>
 
-<p>Add <code>-qws</code> option:</p>
+<p>添加参数 <code>-qws</code>：</p>
 
 <pre><code class="language-shell">./filename -qws
 </code></pre>
 
-<h4 id="if-you-want-transform-the-display">If you want transform the display</h4>
+<h4 id="如果希望旋转屏幕显示">如果希望旋转屏幕显示</h4>
 
-<p>Add <code>-display</code> and your transform operation(Counterclockwise):</p>
+<p>添加参数 <code>-display</code> 以及要旋转的角度（顺时针）：</p>
 
 <pre><code class="language-shell">./filename -display &quot;Transformed:Rot270&quot;
 </code></pre>
+
 
 <footer class=" footline" >
 	
@@ -448,6 +494,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -456,8 +518,24 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -498,7 +576,7 @@
 			<a class="nav nav-prev" href="/zh/embedded/" title="嵌入式"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/zh/android/" title="Android" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/zh/embedded/work5/" title="Qt creator 配置交叉编译" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -508,20 +586,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1545705020"></script>
-    <script src="/js/perfect-scrollbar.min.js?1545705020"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1545705020"></script>
-    <script src="/js/jquery.sticky.js?1545705020"></script>
-    <script src="/js/featherlight.min.js?1545705020"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1545705020"></script>
-    <script src="/js/highlight.pack.js?1545705020"></script>
+    <script src="/js/clipboard.min.js?1545712483"></script>
+    <script src="/js/perfect-scrollbar.min.js?1545712483"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1545712483"></script>
+    <script src="/js/jquery.sticky.js?1545712483"></script>
+    <script src="/js/featherlight.min.js?1545712483"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1545712483"></script>
+    <script src="/js/highlight.pack.js?1545712483"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1545705020"></script>
-    <script src="/js/learn.js?1545705020"></script>
-    <script src="/js/hugo-learn.js?1545705020"></script>
+    <script src="/js/modernizr.custom.71422.js?1545712483"></script>
+    <script src="/js/learn.js?1545712483"></script>
+    <script src="/js/hugo-learn.js?1545712483"></script>
 
-    <link href="/mermaid/mermaid.css?1545705020" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1545705020"></script>
+    <link href="/mermaid/mermaid.css?1545712483" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1545712483"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

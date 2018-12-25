@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt Creator on CountStarlight</title>
+    <link>https://countstarlight.github.io/zh/tags/qt-creator/</link>
+    <description>Recent content in Qt Creator on CountStarlight</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
+    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
+    <lastBuildDate>Wed, 26 Jul 2017 09:11:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://countstarlight.github.io/zh/tags/qt-creator/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qt creator 配置交叉编译</title>
+      <link>https://countstarlight.github.io/zh/embedded/work5/</link>
+      <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
+      <author>countstarlight@gmail.com (CountStarlight)</author>
+      <guid>https://countstarlight.github.io/zh/embedded/work5/</guid>
+      <description>1. 获取对应的交叉编译工具链 假设目标平台的处理器是 imx28，则相应的工具链为 arm-fsl-linux-gnueabi</description>
+    </item>
+    
+  </channel>
+</rss>
