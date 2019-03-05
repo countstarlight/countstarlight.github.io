@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta name="generator" content="Hugo 0.55.0-DEV" />
     <meta name="description" content="CountStarlight&#39;s blog">
 <meta name="author" content="CountStarlight">
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
     <title>Webcam with Linux :: CountStarlight</title>
 
     
-    <link href="/css/nucleus.css?1545716730" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1545716730" rel="stylesheet">
-    <link href="/css/hybrid.css?1545716730" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1545716730" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1545716730" rel="stylesheet">
-    <link href="/css/auto-complete.css?1545716730" rel="stylesheet">
-    <link href="/css/theme.css?1545716730" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1545716730" rel="stylesheet">
+    <link href="/css/nucleus.css?1551755599" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1551755599" rel="stylesheet">
+    <link href="/css/hybrid.css?1551755599" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1551755599" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1551755599" rel="stylesheet">
+    <link href="/css/auto-complete.css?1551755599" rel="stylesheet">
+    <link href="/css/theme.css?1551755599" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1551755599" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1545716730" rel="stylesheet">
+      <link href="/css/theme-blue.css?1551755599" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1545716730"></script>
+    <script src="/js/jquery-2.x.min.js?1551755599"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1545716730"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1545716730"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1551755599"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1551755599"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/countstarlight.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1545716730"></script>
+<script type="text/javascript" src="/js/search.js?1551755599"></script>
 
     
   </div>
@@ -84,7 +84,7 @@
       <a href="/android/">
           Android
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -194,7 +194,7 @@
       <a href="/embedded/">
           Embedded
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -285,7 +285,7 @@
       <a href="/linux/">
           Linux Desktop
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -338,7 +338,7 @@
       <a href="/contact/">
           Get in touch
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -362,7 +362,7 @@
       <a href="/about/">
           About me
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -565,21 +565,17 @@
 <li>plug in your webcam (typically to USB)</li>
 </ul>
 
-<p></p>
-
 <ul>
-<li>list your video4linux devices:</li>
+<li><p>list your video4linux devices:</p>
+
+<pre><code class="language-shell">ls -ltr /dev/video*
+</code></pre></li>
+
+<li><p>you will find an output like this:</p>
+
+<pre><code class="language-shell">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
+</code></pre></li>
 </ul>
-
-<pre><code class="language-shell">  ls -ltr /dev/video*
-</code></pre>
-
-<ul>
-<li>you will find an output like this:</li>
-</ul>
-
-<pre><code class="language-shell">  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
-</code></pre>
 
 <p>In this example your webcam device is named <em>/dev/video0</em>. If you have no /dev/video file, read <a href="http://www.linuxintro.org/wiki/Set_up_a_Webcam_with_Linux#Troubleshooting">#Troubleshooting</a>. If you have several video4linux devices, for example a <a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a> your webcam may show up as /dev/video1 or whatever. But the time (in this case Nov 11 09:06) will be the time when you plugged it in.</p>
 
@@ -588,12 +584,13 @@
 
 <ul>
 <li>if you have <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a> installed you can start it and choose Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</li>
-<li>if you have mplayer installed you can use the command</li>
+
+<li><p>if you have mplayer installed you can use the command</p>
+
+<pre><code class="language-shell">mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
+</code></pre></li>
 </ul></li>
 </ul>
-
-<pre><code class="language-shell">  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
-</code></pre>
 
 <h3 id="use-it">Use it</h3>
 
@@ -604,18 +601,16 @@
 <p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
 
 <ul>
-<li>use the software <em>mencoder</em>:</li>
+<li><p>use the software <em>mencoder</em>:</p>
+
+<pre><code class="language-shell">mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
+</code></pre></li>
+
+<li><p>or use the software <em>streamer</em>. Here are two examples:</p>
+
+<pre><code class="language-shell">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+</code></pre></li>
 </ul>
-
-<pre><code class="language-shell">  mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
-</code></pre>
-
-<ul>
-<li>or use the software <em>streamer</em>. Here are two examples:</li>
-</ul>
-
-<pre><code class="language-shell">  streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
-</code></pre>
 
 <h4 id="ip-phoning">IP phoning</h4>
 
@@ -1050,20 +1045,20 @@ modprobe uvcvideo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1545716730"></script>
-    <script src="/js/perfect-scrollbar.min.js?1545716730"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1545716730"></script>
-    <script src="/js/jquery.sticky.js?1545716730"></script>
-    <script src="/js/featherlight.min.js?1545716730"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1545716730"></script>
-    <script src="/js/highlight.pack.js?1545716730"></script>
+    <script src="/js/clipboard.min.js?1551755599"></script>
+    <script src="/js/perfect-scrollbar.min.js?1551755599"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1551755599"></script>
+    <script src="/js/jquery.sticky.js?1551755599"></script>
+    <script src="/js/featherlight.min.js?1551755599"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1551755599"></script>
+    <script src="/js/highlight.pack.js?1551755599"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1545716730"></script>
-    <script src="/js/learn.js?1545716730"></script>
-    <script src="/js/hugo-learn.js?1545716730"></script>
+    <script src="/js/modernizr.custom.71422.js?1551755599"></script>
+    <script src="/js/learn.js?1551755599"></script>
+    <script src="/js/hugo-learn.js?1551755599"></script>
 
-    <link href="/mermaid/mermaid.css?1545716730" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1545716730"></script>
+    <link href="/mermaid/mermaid.css?1551755599" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1551755599"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

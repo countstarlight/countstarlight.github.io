@@ -28,9 +28,7 @@
 
 &lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
 
-&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;</description>
     </item>
     
   </channel>

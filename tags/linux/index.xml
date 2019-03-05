@@ -26,9 +26,7 @@
 
 &lt;li&gt;&lt;p&gt;Choose &lt;code&gt;Filenames and paths&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -43,9 +41,7 @@
 sudo aptitude install minicom
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;</description>
     </item>
     
     <item>
@@ -60,9 +56,7 @@ sudo aptitude install minicom
 
 &lt;ul&gt;
 &lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

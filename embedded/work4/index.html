@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.50-DEV" />
+    <meta name="generator" content="Hugo 0.55.0-DEV" />
     <meta name="description" content="CountStarlight&#39;s blog">
 <meta name="author" content="CountStarlight">
 
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
     <title>Serial-USB device on Linux :: CountStarlight</title>
 
     
-    <link href="/css/nucleus.css?1545716730" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1545716730" rel="stylesheet">
-    <link href="/css/hybrid.css?1545716730" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1545716730" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1545716730" rel="stylesheet">
-    <link href="/css/auto-complete.css?1545716730" rel="stylesheet">
-    <link href="/css/theme.css?1545716730" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1545716730" rel="stylesheet">
+    <link href="/css/nucleus.css?1551755599" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1551755599" rel="stylesheet">
+    <link href="/css/hybrid.css?1551755599" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1551755599" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1551755599" rel="stylesheet">
+    <link href="/css/auto-complete.css?1551755599" rel="stylesheet">
+    <link href="/css/theme.css?1551755599" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1551755599" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1545716730" rel="stylesheet">
+      <link href="/css/theme-blue.css?1551755599" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1545716730"></script>
+    <script src="/js/jquery-2.x.min.js?1551755599"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1545716730"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1545716730"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1551755599"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1551755599"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/countstarlight.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1545716730"></script>
+<script type="text/javascript" src="/js/search.js?1551755599"></script>
 
     
   </div>
@@ -84,7 +84,7 @@
       <a href="/android/">
           Android
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -194,7 +194,7 @@
       <a href="/embedded/">
           Embedded
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -285,7 +285,7 @@
       <a href="/linux/">
           Linux Desktop
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -338,7 +338,7 @@
       <a href="/contact/">
           Get in touch
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -362,7 +362,7 @@
       <a href="/about/">
           About me
           
-            <i class="fas read-icon"></i>
+            <i class="fas fa-check read-icon"></i>
           
       </a>
       
@@ -558,8 +558,6 @@ sudo aptitude install minicom
 
 <h3 id="plug-the-device-then-check-if-system-recognize-the-adapter">Plug the device then check if system recognize the adapter</h3>
 
-<p></p>
-
 <pre><code class="language-shell">sudo dmesg | grep tty
 </code></pre>
 
@@ -570,64 +568,57 @@ sudo aptitude install minicom
 </code></pre>
 
 <ul>
-<li>Unplug the device and type <code>lsusb</code>. You will see a list of output similar to this:</li>
+<li><p>Unplug the device and type <code>lsusb</code>. You will see a list of output similar to this:</p>
+
+<pre><code class="language-shell">Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+Bus 003 Device 006: ID 13d3:3402 IMC Networks  
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre></li>
+
+<li><p>Plug in the usb-Serial Port converter back, and run <code>lsusb</code> again, and you shall see an additional line, like this:</p>
+
+<pre><code class="language-shell">Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+Bus 003 Device 006: ID 13d3:3402 IMC Networks 
+Bus 003 Device 008: ID 18f8:0f99 --- --- --- (notice the additional line!)
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</code></pre></li>
+
+<li><p>Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :</p>
+
+<pre><code class="language-shell">sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+</code></pre></li>
+
+<li><p>Run <code>dmesg</code> again and you shall see lines similar like this :</p>
+
+<pre><code class="language-shell">usbserial_generic 1-1:1.0: generic converter detected
+usb 1-1: generic converter now attached to ttyUSB0
+usbcore: registered new interface driver usbserial_generic 
+</code></pre></li>
 </ul>
-
-<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
-  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
-  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
-  Bus 003 Device 006: ID 13d3:3402 IMC Networks  
-  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre>
-
-<ul>
-<li>Plug in the usb-Serial Port converter back, and run <code>lsusb</code> again, and you shall see an additional line, like this:</li>
-</ul>
-
-<pre><code class="language-shell">  Bus 002 Device 002: ID 8087:8000 Intel Corp. 
-  Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-  Bus 001 Device 002: ID 8087:8008 Intel Corp. 
-  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-  Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-  Bus 003 Device 004: ID 13d3:5188 IMC Networks 
-  Bus 003 Device 006: ID 13d3:3402 IMC Networks 
-  Bus 003 Device 008: ID 18f8:0f99 --- --- --- (notice the additional line!)
-  Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre>
-
-<ul>
-<li>Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :</li>
-</ul>
-
-<pre><code class="language-shell">  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
-</code></pre>
-
-<ul>
-<li>Run <code>dmesg</code> again and you shall see lines similar like this :</li>
-</ul>
-
-<pre><code class="language-shell">  usbserial_generic 1-1:1.0: generic converter detected
-  usb 1-1: generic converter now attached to ttyUSB0
-  usbcore: registered new interface driver usbserial_generic 
-</code></pre>
 
 <p>You can instruct Linux to load this module automatically by include the line : <code>usbserial vendor=0x18f8 product=0x0f99</code> inside <code>/etc/modules</code> file.</p>
 
 <h4 id="if-the-device-is-dev-ttyusb0">If the device is <code>/dev/ttyUSB0</code></h4>
 
 <ul>
-<li>Run:</li>
-</ul>
+<li><p>Run:</p>
 
 <pre><code class="language-shell">sudo minicom -s
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Go to <code>Serial port setup</code> and change the first line to <code>/dev/ttyUSB0</code></li>
-<li>Save config as default with <code>Save setup as dfl</code></li>
+<li><p>Go to <code>Serial port setup</code> and change the first line to <code>/dev/ttyUSB0</code></p></li>
+
+<li><p>Save config as default with <code>Save setup as dfl</code></p></li>
 </ul>
 
 <footer class=" footline" >
@@ -902,20 +893,20 @@ sudo aptitude install minicom
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1545716730"></script>
-    <script src="/js/perfect-scrollbar.min.js?1545716730"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1545716730"></script>
-    <script src="/js/jquery.sticky.js?1545716730"></script>
-    <script src="/js/featherlight.min.js?1545716730"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1545716730"></script>
-    <script src="/js/highlight.pack.js?1545716730"></script>
+    <script src="/js/clipboard.min.js?1551755599"></script>
+    <script src="/js/perfect-scrollbar.min.js?1551755599"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1551755599"></script>
+    <script src="/js/jquery.sticky.js?1551755599"></script>
+    <script src="/js/featherlight.min.js?1551755599"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1551755599"></script>
+    <script src="/js/highlight.pack.js?1551755599"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1545716730"></script>
-    <script src="/js/learn.js?1545716730"></script>
-    <script src="/js/hugo-learn.js?1545716730"></script>
+    <script src="/js/modernizr.custom.71422.js?1551755599"></script>
+    <script src="/js/learn.js?1551755599"></script>
+    <script src="/js/hugo-learn.js?1551755599"></script>
 
-    <link href="/mermaid/mermaid.css?1545716730" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1545716730"></script>
+    <link href="/mermaid/mermaid.css?1551755599" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1551755599"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

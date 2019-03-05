@@ -35,9 +35,7 @@
 
 &lt;li&gt;&lt;p&gt;Choose &lt;code&gt;Filenames and paths&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -61,9 +59,7 @@
 sudo aptitude install minicom
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;h3 id=&#34;plug-the-device-then-check-if-system-recognize-the-adapter&#34;&gt;Plug the device then check if system recognize the adapter&lt;/h3&gt;</description>
     </item>
     
     <item>
@@ -78,9 +74,7 @@ sudo aptitude install minicom
 
 &lt;ul&gt;
 &lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -115,8 +109,7 @@ website: couuntstarlight.github.io</description>
 \phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
 $$&lt;/p&gt;
 
-&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.
-&lt;/p&gt;</description>
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -137,9 +130,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
 
-&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -148,7 +139,9 @@ $$&lt;/p&gt;
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       
       <guid>https://countstarlight.github.io/android/work1/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>首先，在产品目录的init.XXX.rc文件中，添加相应的service，
+#start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot  然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,
+#!/system/bin/sh # #Global folder &amp;amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1 LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2 RM=rm MV=&amp;quot;mv&amp;quot; MKDIR=mkdir UMASK=umask #set default permission 0775 $UMASK 002 #Init the three folders i=0 while [ &amp;quot;$i&amp;quot; -le &amp;quot;$index&amp;quot; ] do $MKDIR -p ${LOG_DIR[$i]} i=$(($i+1)) done #Transfer the three folders ((i=$index-1)) $RM -r ${LOG_DIR[$index]}/* while [ &amp;quot;$i&amp;quot; -ge &amp;quot;0&amp;quot; ] do $MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]} i=$(($i-1)) done $RM -r ${LOG_DIR[0]}/* #start logcat service setprop service.</description>
     </item>
     
   </channel>

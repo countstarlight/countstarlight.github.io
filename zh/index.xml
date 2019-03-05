@@ -31,7 +31,11 @@
     设置 A-Download directory （将文件从设备传送到本地的路径）
  设置 B-Upload directory （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。
  按下 esc 然后选择 Save setup as dfl来保存设置：
-  2. 发送文件到设备  在minicom里（已经连接到设备的终端）  rx filename   按下组合键 Ctrl + A，然后按下S 选择 xmodem 选择要发送的文件  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：
+  2. 发送文件到设备  在minicom里（已经连接到设备的终端）
+rx filename  按下组合键 Ctrl + A，然后按下S
+ 选择 xmodem
+ 选择要发送的文件
+  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：
 chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备上的系统没有图形化环境 添加参数 -qws：</description>
     </item>
     
@@ -51,7 +55,8 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
       
       <guid>https://countstarlight.github.io/zh/embedded/work4/</guid>
       <description>1. 安装 minicom Debian/Ubuntu：
-sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：  Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.</description>
+sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：
+Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.</description>
     </item>
     
     <item>
@@ -63,9 +68,10 @@ sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系�
       <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
 1. 配置  插上摄像头（通常是通过USB）
  列出所有的 video4linux 设备:
-  ls -ltr /dev/video*   得到的输出类似于：  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0  这里的摄像头设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+ls -ltr /dev/video*  得到的输出类似于：
+crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像头设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
  test the webcam
- if you have vlc installed you can start it and choose Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play if you have mplayer installed you can use the command   mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30  Use it record video to capture video streams you can use cheese, a nice program with a graphical user interface.</description>
+ if you have vlc installed you can start it and choose Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play if you have mplayer installed you can use the command</description>
     </item>
     
     <item>
@@ -80,8 +86,7 @@ sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系�
 \phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
 $$&lt;/p&gt;
 
-&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.
-&lt;/p&gt;</description>
+&lt;p&gt;Additional details can be found on &lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the &lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -102,9 +107,7 @@ $$&lt;/p&gt;
 
 &lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
 
-&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,7 +116,9 @@ $$&lt;/p&gt;
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       
       <guid>https://countstarlight.github.io/zh/android/work1/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
+      <description>首先，在产品目录的init.XXX.rc文件中，添加相应的service，
+#start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot  然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,
+#!/system/bin/sh # #Global folder &amp;amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1 LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2 RM=rm MV=&amp;quot;mv&amp;quot; MKDIR=mkdir UMASK=umask #set default permission 0775 $UMASK 002 #Init the three folders i=0 while [ &amp;quot;$i&amp;quot; -le &amp;quot;$index&amp;quot; ] do $MKDIR -p ${LOG_DIR[$i]} i=$(($i+1)) done #Transfer the three folders ((i=$index-1)) $RM -r ${LOG_DIR[$index]}/* while [ &amp;quot;$i&amp;quot; -ge &amp;quot;0&amp;quot; ] do $MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]} i=$(($i-1)) done $RM -r ${LOG_DIR[0]}/* #start logcat service setprop service.</description>
     </item>
     
   </channel>
