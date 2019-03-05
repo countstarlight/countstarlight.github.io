@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webcam on CountStarlight</title>
-    <link>https://countstarlight.github.io/zh/tags/webcam/</link>
+    <link>https://blog.codist.me/zh/tags/webcam/</link>
     <description>Recent content in Webcam on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 20 Jul 2017 14:54:35 +0800</lastBuildDate>
     
-	<atom:link href="https://countstarlight.github.io/zh/tags/webcam/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/zh/tags/webcam/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux上网络摄像头的使用</title>
-      <link>https://countstarlight.github.io/zh/linux/work3/</link>
+      <link>https://blog.codist.me/zh/linux/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
       
-      <guid>https://countstarlight.github.io/zh/linux/work3/</guid>
+      <guid>https://blog.codist.me/zh/linux/work3/</guid>
       <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
 1. 配置  插上摄像头（通常是通过USB）
  列出所有的 video4linux 设备:

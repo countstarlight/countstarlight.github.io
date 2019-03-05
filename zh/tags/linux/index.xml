@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on CountStarlight</title>
-    <link>https://countstarlight.github.io/zh/tags/linux/</link>
+    <link>https://blog.codist.me/zh/tags/linux/</link>
     <description>Recent content in Linux on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
     
-	<atom:link href="https://countstarlight.github.io/zh/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/zh/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用minicom发送文件到嵌入式平台</title>
-      <link>https://countstarlight.github.io/zh/embedded/work6/</link>
+      <link>https://blog.codist.me/zh/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       
-      <guid>https://countstarlight.github.io/zh/embedded/work6/</guid>
+      <guid>https://blog.codist.me/zh/embedded/work6/</guid>
       <description>1. 设置文件路径  设置需要传送的文件所在的路径
  按下组合键 Ctrl + A , 再按下 O
  选择 Filenames and paths：
@@ -32,10 +32,10 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
     
     <item>
       <title>在Linux上用usb连接嵌入式设备的串口</title>
-      <link>https://countstarlight.github.io/zh/embedded/work4/</link>
+      <link>https://blog.codist.me/zh/embedded/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
-      <guid>https://countstarlight.github.io/zh/embedded/work4/</guid>
+      <guid>https://blog.codist.me/zh/embedded/work4/</guid>
       <description>1. 安装 minicom Debian/Ubuntu：
 sudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：
 Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.</description>
@@ -43,10 +43,10 @@ Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Li
     
     <item>
       <title>Linux上网络摄像头的使用</title>
-      <link>https://countstarlight.github.io/zh/linux/work3/</link>
+      <link>https://blog.codist.me/zh/linux/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
       
-      <guid>https://countstarlight.github.io/zh/linux/work3/</guid>
+      <guid>https://blog.codist.me/zh/linux/work3/</guid>
       <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
 1. 配置  插上摄像头（通常是通过USB）
  列出所有的 video4linux 设备:

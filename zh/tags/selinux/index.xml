@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Selinux on CountStarlight</title>
-    <link>https://countstarlight.github.io/zh/tags/selinux/</link>
+    <link>https://blog.codist.me/zh/tags/selinux/</link>
     <description>Recent content in Selinux on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
     
-	<atom:link href="https://countstarlight.github.io/zh/tags/selinux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/zh/tags/selinux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android&#39;s selinux</title>
-      <link>https://countstarlight.github.io/zh/android/work2/</link>
+      <link>https://blog.codist.me/zh/android/work2/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
-      <guid>https://countstarlight.github.io/zh/android/work2/</guid>
+      <guid>https://blog.codist.me/zh/android/work2/</guid>
       <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
 
 &lt;p&gt;当在init.rc中新增service：&lt;/p&gt;

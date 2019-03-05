@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on CountStarlight</title>
-    <link>https://countstarlight.github.io/tags/math/</link>
+    <link>https://blog.codist.me/tags/math/</link>
     <description>Recent content in Math on CountStarlight</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 05 Mar 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://countstarlight.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Math Sample</title>
-      <link>https://countstarlight.github.io/android/work8/</link>
+      <link>https://blog.codist.me/android/work8/</link>
       <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://countstarlight.github.io/android/work8/</guid>
+      <guid>https://blog.codist.me/android/work8/</guid>
       <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
 
 &lt;p&gt;$$
