@@ -1,3 +1,14 @@
+/*commento.css*/
 .commento-root{
     overflow-x: initial;
 } 
+
+/*themes/hugo-theme-learn/static/css/theme.css*/
+pre {
+    background: initial;
+}
+
+/*themes/hugo-theme-learn/static/css/theme.css*/
+pre .copy-to-clipboard {
+    background-color: initial;
+}

@@ -5,7 +5,7 @@
     <link>https://blog.codist.me/zh/</link>
     <description>Recent content in 首页 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Jan 2018 23:25:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/zh/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,25 +16,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.codist.me/zh/selfhost/commento/</guid>
-      <description>用开源的commento搭建博客评论系统
-在Debian上安装 yarn：
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn  安装dep：
+      <description>在Debian9上用开源的Commento搭建博客评论系统
+安装 yarn：
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn  安装dep（需要已经配置好的go环境）：
 go get -u github.com/golang/dep/cmd/dep export PATH=$PATH:$GOPATH/bin  下载&amp;amp;编译：
 mkdir -p $GOPATH/gitlab.com/commento cd $GOPATH/gitlab.com/commento git clone https://gitlab.com/commento/commento.git make prod  在根目录下新建脚本server.sh：
 #! /bin/bash # 绑定的域名 export COMMENTO_ORIGIN=https://comment.example.com # 绑定的端口，可以用nginx反向代理到这个端口 export COMMENTO_PORT=8002 # 数据库 PostgreSQL 设置 export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable # 关闭注册，首次需要注册账号，之后可以关闭注册 #export COMMENTO_FORBID_NEW_OWNERS=true # # github oauth，其他类似 # export GITHUB_KEY= export GITHUB_SECRET= .</description>
     </item>
     
     <item>
-      <title>Hello, 2018</title>
-      <link>https://blog.codist.me/zh/android/work7/</link>
-      <pubDate>Mon, 08 Jan 2018 23:25:08 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/zh/android/work7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>用minicom发送文件到嵌入式平台</title>
+      <title>用minicom通过串口发送文件</title>
       <link>https://blog.codist.me/zh/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       
@@ -54,7 +45,7 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
     </item>
     
     <item>
-      <title>Qt creator 配置交叉编译</title>
+      <title>Qt Creator 配置交叉编译</title>
       <link>https://blog.codist.me/zh/embedded/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
       
@@ -63,7 +54,7 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
     </item>
     
     <item>
-      <title>在Linux上用usb连接嵌入式设备的串口</title>
+      <title>Linux上通过串口连接嵌入式Linux终端</title>
       <link>https://blog.codist.me/zh/embedded/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
@@ -74,18 +65,19 @@ Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Li
     </item>
     
     <item>
-      <title>Linux上网络摄像头的使用</title>
+      <title>Linux上摄像设备的使用</title>
       <link>https://blog.codist.me/zh/linux/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
       
       <guid>https://blog.codist.me/zh/linux/work3/</guid>
-      <description>在Linux上配置网络摄像头，播放来自于它的视频流以及需要用到的一些程序。
-1. 配置  插上摄像头（通常是通过USB）
+      <description>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入
+1. 查找设备  插上摄像设备（通常是通过USB）
  列出所有的 video4linux 设备:
 ls -ltr /dev/video*  得到的输出类似于：
-crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像头设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
- test the webcam
- if you have vlc installed you can start it and choose Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play if you have mplayer installed you can use the command</description>
+crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+2.测试设备  如果安装有 vlc，可以启动它，选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play
+ 如果安装有mplayer，可以使用：
+mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30   3.使用设备 3.1录制视频 要捕获设备的视频输入，可以使用 cheese，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用vlc可以播放。</description>
     </item>
     
     <item>

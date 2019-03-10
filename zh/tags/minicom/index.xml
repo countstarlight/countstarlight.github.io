@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>用minicom发送文件到嵌入式平台</title>
+      <title>用minicom通过串口发送文件</title>
       <link>https://blog.codist.me/zh/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       

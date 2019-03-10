@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://blog.codist.me/android/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://blog.codist.me/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
+    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -59,21 +59,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.codist.me/linux/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/android/work7/</loc>
-    <lastmod>2018-01-08T23:25:08+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/zh/android/work7/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/android/work7/"
                 />
   </url>
   
@@ -381,16 +366,6 @@
     <loc>https://blog.codist.me/tags/webcam/</loc>
     <lastmod>2017-07-20T14:54:35+08:00</lastmod>
     <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/zh/tags/webcam/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/tags/webcam/"
-                />
   </url>
   
 </urlset>

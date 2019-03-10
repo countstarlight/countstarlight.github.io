@@ -28,13 +28,6 @@
 	"content": " Linux Desktop This is some of the needs when using the desktop Linux distribution.\n"
 },
 {
-	"uri": "https://blog.codist.me/android/work7/",
-	"title": "Hello, 2018",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://blog.codist.me/embedded/work6/",
 	"title": "Send files via minicom",
 	"tags": ["Minicom", "Linux"],

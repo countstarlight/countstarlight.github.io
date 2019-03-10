@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>嵌入式 on Codist</title>
+    <title>嵌入式开发 on Codist</title>
     <link>https://blog.codist.me/zh/embedded/</link>
-    <description>Recent content in 嵌入式 on Codist</description>
+    <description>Recent content in 嵌入式开发 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
     
@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>用minicom发送文件到嵌入式平台</title>
+      <title>用minicom通过串口发送文件</title>
       <link>https://blog.codist.me/zh/embedded/work6/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
       
@@ -31,7 +31,7 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
     </item>
     
     <item>
-      <title>Qt creator 配置交叉编译</title>
+      <title>Qt Creator 配置交叉编译</title>
       <link>https://blog.codist.me/zh/embedded/work5/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
       
@@ -40,7 +40,7 @@ chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备�
     </item>
     
     <item>
-      <title>在Linux上用usb连接嵌入式设备的串口</title>
+      <title>Linux上通过串口连接嵌入式Linux终端</title>
       <link>https://blog.codist.me/zh/embedded/work4/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
