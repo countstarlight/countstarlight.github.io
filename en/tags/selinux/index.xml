@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selinux on Codist</title>
+    <link>https://blog.codist.me/en/tags/selinux/</link>
+    <description>Recent content in Selinux on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/en/tags/selinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android&#39;s selinux</title>
+      <link>https://blog.codist.me/en/android/work2/</link>
+      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      
+      <guid>https://blog.codist.me/en/android/work2/</guid>
+      <description>&lt;h2 id=&#34;一-适用情景&#34;&gt;一、适用情景&lt;/h2&gt;
+
+&lt;p&gt;当在init.rc中新增service：&lt;/p&gt;
+
+&lt;p&gt;service ro_isn /system/bin/isn.sh class late_start user root Oneshot&lt;/p&gt;
+
+&lt;p&gt;kernel log会打印以下log：&lt;/p&gt;
+
+&lt;p&gt;Warning! Service ro_isn needs a SELinux domain defined; please fix!&lt;/p&gt;
+
+&lt;p&gt;这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。&lt;/p&gt;
+
+&lt;p&gt;在这种情况下，你可以：&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

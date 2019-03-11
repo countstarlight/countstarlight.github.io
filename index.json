@@ -1,73 +1,94 @@
 [
 {
-	"uri": "https://blog.codist.me/android/",
-	"title": "Android",
+	"uri": "https://blog.codist.me/asr/kaldi/",
+	"title": "安装kaldi",
 	"tags": [],
 	"description": "",
-	"content": " Android 这里是做安卓底层（内核，驱动）遇到的一些问题和解决办法\n"
+	"content": " 1.环境 操作系统建议使用ubuntu，因为源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。\n需要安装有git和make以及gcc等编译工具链\n2.从源码安装 1.下载源码：\ngit clone https://github.com/kaldi-asr/kaldi.git  安装文档在kaldi/tools/INSTALL，很短，建议阅读一下\n2.检查依赖和安装：\n#检查依赖，如有问题参照仔细修改 ./extras/check_dependencies.sh #自动下载安装依赖 make -j 8  这会安装ATLAS headers, OpenFst, SCTK 和 sph2pipe\n3.由于ATLAS安装复杂，使用OpenBLAS：\n./extras/install_openblas.sh  4.根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：\n./configure --openblas-root=../tools/OpenBLAS/install make depend -j 8 make -j 8  这样就已经编译好训练需要的工具，之后进行在线解码和处理一些数据集需要额外安装一些工具\n"
+},
+{
+	"uri": "https://blog.codist.me/selfhost/commento/",
+	"title": "搭建博客评论系统",
+	"tags": [],
+	"description": "",
+	"content": "在Debian9上用开源的Commento搭建博客评论系统\n安装 yarn：\ncurl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo \u0026quot;deb https://dl.yarnpkg.com/debian/ stable main\u0026quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update \u0026amp;\u0026amp; sudo apt-get install yarn  安装dep（需要已经配置好的go环境）：\ngo get -u github.com/golang/dep/cmd/dep export PATH=$PATH:$GOPATH/bin  下载\u0026amp;编译：\nmkdir -p $GOPATH/gitlab.com/commento cd $GOPATH/gitlab.com/commento git clone https://gitlab.com/commento/commento.git make prod  在根目录下新建脚本server.sh：\n#! /bin/bash # 绑定的域名 export COMMENTO_ORIGIN=https://comment.example.com # 绑定的端口，可以用nginx反向代理到这个端口 export COMMENTO_PORT=8002 # 数据库 PostgreSQL 设置 export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable # 关闭注册，首次需要注册账号，之后可以关闭注册 #export COMMENTO_FORBID_NEW_OWNERS=true # # github oauth，其他类似 # export GITHUB_KEY= export GITHUB_SECRET= ./build/prod/commento  运行：\nchmod +x server.sh ./server.sh  "
+},
+{
+	"uri": "https://blog.codist.me/asr/thchs30/",
+	"title": "使用thchs30数据集",
+	"tags": [],
+	"description": "",
+	"content": " 1.下载数据集 Kaldi中文语音识别公共数据集有：\n 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kaldi-master/egs/aishell\n 2.gale_mandarin：中文新闻广播数据集(LDC2013S08, LDC2013S08）\n 3.hkust：中文电话数据集(LDC2005S15, LDC2005T32)\n 4.thchs30：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载\n  这里采用thchs30，从http://www.openslr.org/18/ 或者参照它的README下载三个压缩包：\n data_thchs30.tgz 6.4G Mirrors: China\n test-noise.tgz 1.9G Mirrors: China\n resource.tgz 24M Mirrors: China\n  在egs/thchs30/s5下新建文件夹thchs30-openslr，把三个文件解压在该文件夹下\n这个数据集包含以下内容：\n   数据集 音频时长(h) 句子数 词数     train(训练) 25 10000 198252   dev(开发) 2:14 893 17743   test(测试) 6:15 2495 49085    还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。\n其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。\n local/thchs-30_data_prep.sh：主要工作是从$thchs/data_thchs30（下载的数据）三部分分别生成word.txt（词序列），phone.txt（音素序列），text（与word.txt相同），wav.scp（语音），utt2pk（句子与说话人的映射），spk2utt（说话人与句子的映射）\n #produce MFCC features：提取MFCC特征，分为两步，先通过steps/make_mfcc.sh提取MFCC特征，再通过steps/compute_cmvn_stats.sh计算倒谱均值和方差归一化。\n #prepare language stuff：构建一个包含训练和解码用到的词的词典。而语言模型已经由王东老师处理好了，如果不打算改语言模型，这段代码也不需要修改。\n a)基于词的语言模型包含48k基于三元词的词，从gigaword语料库中随机选择文本信息进行训练得到，训练文本包含772000个句子，总计1800万词，1.15亿汉字 b)基于音素的语言模型包含218个基于三元音的中文声调，从只有200万字的样本训练得到，之所以选择这么小的样本是因为在模型中尽可能少地保留语言信息，可以使得到的性能更直接地反映声学模型的质量。 c)这两个语言模型都是由SRILM工具训练得到。   2.训练 2.1修改训练脚本 1.首先修改s5/cmd.sh脚本，把原脚本注释掉，修改为本地运行：\n#export train_cmd=queue.pl #export decode_cmd=\u0026quot;queue.pl --mem 4G\u0026quot; #export mkgraph_cmd=\u0026quot;queue.pl --mem 8G\u0026quot; #export cuda_cmd=\u0026quot;queue.pl --gpu 1\u0026quot; export train_cmd=run.pl export decode_cmd=\u0026quot;run.pl --mem 4G\u0026quot; export mkgraph_cmd=\u0026quot;run.pl --mem 8G\u0026quot; export cuda_cmd=\u0026quot;run.pl --gpu 1\u0026quot;  2.然后修改s5/run.sh脚本，需要修改两个地方：\n第一个地方是修改并行任务的数量，cpu核心数*2：\nn=8 #parallel jobs  第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：\n#corpus and trans directory #thchs=/nfs/public/materials/data/thchs30-openslr thchs=/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr  "
+},
+{
+	"uri": "https://blog.codist.me/android/",
+	"title": "Android底层",
+	"tags": [],
+	"description": "",
+	"content": " Android底层 这里是做安卓底层（内核，驱动）遇到的一些问题和解决办法\n"
 },
 {
 	"uri": "https://blog.codist.me/embedded/",
-	"title": "Embedded",
+	"title": "嵌入式开发",
 	"tags": [],
 	"description": "",
-	"content": " Embedded 这里是一些做过的嵌入式相关遇到的问题和解决办法\n"
-},
-{
-	"uri": "https://blog.codist.me/",
-	"title": "Homepage",
-	"tags": [],
-	"description": "",
-	"content": " Codist\u0026rsquo;s blog The blog of Codist, which including a list of problems and solution during development\n"
+	"content": " 嵌入式开发 这里是一些做过的嵌入式Linux平台遇到的问题和解决办法\n"
 },
 {
 	"uri": "https://blog.codist.me/linux/",
-	"title": "Linux Desktop",
+	"title": "桌面Linux",
 	"tags": [],
 	"description": "",
-	"content": " Linux Desktop This is some of the needs when using the desktop Linux distribution.\n"
+	"content": " 桌面Linux 这是使用Linux桌面发行版时遇到的一些需求\n"
+},
+{
+	"uri": "https://blog.codist.me/selfhost/",
+	"title": "自建",
+	"tags": [],
+	"description": "",
+	"content": " Selfhost 搭建开源的git \u0026amp; ci 以及评论系统\n"
+},
+{
+	"uri": "https://blog.codist.me/",
+	"title": "首页",
+	"tags": [],
+	"description": "",
+	"content": " Codist 这是Codist的博客，是一些在开发中遇到的问题和解决方法的整理\n左侧是目录，左侧下方切换语言 简体中文/English\n"
+},
+{
+	"uri": "https://blog.codist.me/asr/",
+	"title": "基于kaldi的语音识别",
+	"tags": [],
+	"description": "",
+	"content": " 基于kaldi的语音识别 用开源工具集Kaldi ASR，开源数据集thchs30和aishell进行训练和语音识别，\n所有过程都经过检验\n"
 },
 {
 	"uri": "https://blog.codist.me/embedded/work6/",
-	"title": "Send files via minicom",
+	"title": "用minicom通过串口发送文件",
 	"tags": ["Minicom", "Linux"],
 	"description": "",
-	"content": "Send file  Set the file path which you should choose file from\n Press Ctrl + A , then press O\n Choose Filenames and paths\n    Set the A-Download directory (Download to PC from your device)\n Set the B-Upload directory (Upload to your device from PC), you will choose the file you want to upload from the path.\n Press esc and choose Save setup as dfl\n In minicom(embedded device\u0026rsquo;s terminal)\nrx filename  Press Ctrl + A , then press S\n Choose xmodem\n Choose your file\n  Run the file(Qt Gui) chmod a+x filename ./filename  If you don\u0026rsquo;t have a desktop environment Add -qws option:\n./filename -qws  If you want transform the display Add -display and your transform operation(Counterclockwise):\n./filename -display \u0026quot;Transformed:Rot270\u0026quot; "
+	"content": " 1. 设置文件路径  设置需要传送的文件所在的路径\n 按下组合键 Ctrl + A , 再按下 O\n 选择 Filenames and paths：\n    设置 A-Download directory （将文件从设备传送到本地的路径）\n 设置 B-Upload directory （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。\n 按下 esc 然后选择 Save setup as dfl来保存设置：\n  2. 发送文件到设备  在minicom里（已经连接到设备的终端）\nrx filename  按下组合键 Ctrl + A，然后按下S\n 选择 xmodem\n 选择要发送的文件\n  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：\nchmod +x filename #给文件授予执行权限 ./filename #运行  如果设备上的系统没有图形化环境 添加参数 -qws：\n./filename -qws  如果希望旋转屏幕显示 添加参数 -display 以及要旋转的角度（顺时针）：\n./filename -display \u0026quot;Transformed:Rot270\u0026quot;  "
 },
 {
 	"uri": "https://blog.codist.me/embedded/work5/",
-	"title": "Qt-creator cross-compliation",
+	"title": "Qt Creator 配置交叉编译",
 	"tags": ["Qt-creator"],
 	"description": "",
-	"content": " 1. Get the cross compiler toolchain Because i am using the processor imx28, so i need to install arm-fsl-linux-gnueabi\n"
+	"content": " 1. 获取对应的交叉编译工具链 假设目标平台的处理器是 imx28，则相应的工具链为 arm-fsl-linux-gnueabi\n"
 },
 {
 	"uri": "https://blog.codist.me/embedded/work4/",
-	"title": "Serial-USB device on Linux",
+	"title": "Linux上通过串口连接嵌入式Linux终端",
 	"tags": ["Linux", "Serial-USB"],
 	"description": "",
-	"content": "Install minicom sudo aptitude update sudo aptitude install minicom  Plug the device then check if system recognize the adapter sudo dmesg | grep tty  if cannot recognize, it seems to be: [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   Unplug the device and type lsusb. You will see a list of output similar to this:\nBus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  Plug in the usb-Serial Port converter back, and run lsusb again, and you shall see an additional line, like this:\nBus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 008: ID 18f8:0f99 --- --- --- (notice the additional line!) Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :\nsudo modprobe usbserial vendor=0x18f8 product=0x0f99  Run dmesg again and you shall see lines similar like this :\nusbserial_generic 1-1:1.0: generic converter detected usb 1-1: generic converter now attached to ttyUSB0 usbcore: registered new interface driver usbserial_generic   You can instruct Linux to load this module automatically by include the line : usbserial vendor=0x18f8 product=0x0f99 inside /etc/modules file.\nIf the device is /dev/ttyUSB0  Run:\nsudo minicom -s  Go to Serial port setup and change the first line to /dev/ttyUSB0\n Save config as default with Save setup as dfl\n "
+	"content": " 1. 安装 minicom Debian/Ubuntu：\nsudo aptitude update sudo aptitude install minicom  2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty  如果没有检测到设备，得到的结果类似： [ 0.000000] console [tty0] enabled [ 8.264501] systemd[1]: Created slice system-getty.slice.   拔下usb转串口线，输入命令 lsusb会看到一些已经连接到usb的设备：\nBus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  再次插上usb转串口线，再次运行命令 lsusb，会看到输出结果相比之前增加了一行：\nBus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 002: ID 8087:8008 Intel Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub Bus 003 Device 004: ID 13d3:5188 IMC Networks Bus 003 Device 006: ID 13d3:3402 IMC Networks Bus 003 Device 008: ID 18f8:0f99 --- --- --- (注意这行是新加的！) Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  现在我们知道了usb转串口的 vendor id 和 product id，让我们加载Linux内核的usbserial模块来激活这个设备：\nsudo modprobe usbserial vendor=0x18f8 product=0x0f99  再次运行 dmesg 命令，输出结果类似：\nusbserial_generic 1-1:1.0: generic converter detected usb 1-1: generic converter now attached to ttyUSB0 usbcore: registered new interface driver usbserial_generic   可以把自动加载usbserial模块添加到开机启动里，编辑文件/etc/modules，添加一行：\n usbserial vendor=0x18f8 product=0x0f99  3. 连接到设备 假设设备路径为 /dev/ttyUSB0，运行命令:\nsudo minicom -s  在Serial port setup里修改第一行为/dev/ttyUSB0\n选择Save setup as dfl保存设置\n"
 },
 {
 	"uri": "https://blog.codist.me/linux/work3/",
-	"title": "Webcam with Linux",
-	"tags": ["Linux", "Webcam"],
-	"description": "",
-	"content": "You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.\nSetup  plug in your webcam (typically to USB)   list your video4linux devices:\nls -ltr /dev/video*  you will find an output like this:\ncrw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   In this example your webcam device is named /dev/video0. If you have no /dev/video file, read #Troubleshooting. If you have several video4linux devices, for example a tv card your webcam may show up as /dev/video1 or whatever. But the time (in this case Nov 11 09:06) will be the time when you plugged it in.\n test the webcam\n if you have vlc installed you can start it and choose Media -\u0026gt; Open Capture Device -\u0026gt; Video device name = /dev/video0 -\u0026gt; Play if you have mplayer installed you can use the command\nmplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30    Use it record video to capture video streams you can use cheese, a nice program with a graphical user interface. It allows you to watch and record your camera output at the same time. It stores in a strange format (.webm), but vlc can play this.\nYou can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can\n use the software mencoder:\nmencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi  or use the software streamer. Here are two examples:\nstreamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05   IP phoning  to do IP phoning, use skype under Linux.  watch it To watch your camera\u0026rsquo;s input, use cheese or mplayer:\nmplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://  Or use vlc. You can run vlc as root by the way. To watch your webcam /dev/video0, start vlc and select Media -\u0026gt; Open Capture Device -\u0026gt; Video device name = /dev/video0 -\u0026gt; Play\nTroubleshooting Troubleshooting heavily depends on the distribution and version you are using. If you have done cabling correctly and a device file /dev/video* does not appear, your kernel probably does not know the hardware. In this case you may have to install the device driver separately because it may not be part of the kernel.\nSUSE Linux 11.0 and earlier This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, open a console and call\nhwinfo --usb  If a Logitech Quickcam Messenger is plugged in the answer will be like:\n06: USB 00.2: 0000 Unclassified device [Created at usb.122] UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2 Unique ID: Eopr.vE+cdFBwClB Parent ID: uIhY.uOe2OKugI8D SysFS ID: /devices/pci0000:00/0000:00:1a.2/usb3/3-1/3-1:1.2 SysFS BusID: 3-1:1.2 Hardware Class: unknown Model: \u0026quot;Logitech QuickCam Messanger\u0026quot; Hotplug: USB Vendor: usb 0x046d \u0026quot;Logitech, Inc.\u0026quot; Device: usb 0x08da \u0026quot;QuickCam Messanger\u0026quot; Revision: \u0026quot;1.00\u0026quot; Driver: \u0026quot;snd-usb-audio\u0026quot; Driver Modules: \u0026quot;snd_usb_audio\u0026quot; Speed: 12 Mbps Module Alias: \u0026quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00\u0026quot; Driver Info #0: Driver Status: quickcam_messenger is active Driver Activation Cmd: \u0026quot;modprobe quickcam_messenger\u0026quot; Driver Info #1: Driver Status: gspca is active Driver Activation Cmd: \u0026quot;modprobe gspca\u0026quot; Config Status: cfg=new, avail=yes, need=no, active=unknown Attached to: #20 (Hub)  This means you can install and load the webcam driver like this:\nyast -i gspcav-kmp-default modprobe gspca  Now you should see a video device:\nls /dev/video* /dev/video /dev/video0  That means you can install and start your webcam-viewer-software. We choose gqcam:\nyast -i gqcam gqcam  It works. You see a video what from what is going on in front of your webcam.\nUbuntu This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software hwinfo. Open a consoleand type:\nsudo apt-get install hwinfo  Then call hwinfo:\nhwinfo --usb  If a Logitech Quickcam Messenger is plugged in the response will be like:\n04: USB 00.2: 0000 Unclassified device [Created at usb.122] UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2 Unique ID: 4ajv.vE+cdFBwClB Parent ID: k4bc._Mkd+LmXb03 SysFS ID: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-1/1-1:1.2 SysFS BusID: 1-1:1.2 Hardware Class: unknown Model: \u0026quot;Logitech QuickCam Messanger\u0026quot; Hotplug: USB Vendor: usb 0x046d \u0026quot;Logitech, Inc.\u0026quot; Device: usb 0x08da \u0026quot;QuickCam Messanger\u0026quot; Revision: \u0026quot;1.00\u0026quot; Driver: \u0026quot;snd-usb-audio\u0026quot; Driver Modules: \u0026quot;snd_usb_audio\u0026quot; Speed: 12 Mbps Module Alias: \u0026quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00\u0026quot; Driver Info #0: Driver Status: gspca_zc3xx is active Driver Activation Cmd: \u0026quot;modprobe gspca_zc3xx\u0026quot; Config Status: cfg=new, avail=yes, need=no, active=unknown Attached to: #8 (Hub)  Activate the driver:\nsudo modprobe gspca_zc3xx  Now you should be able to see the video device:\nls /dev/video* /dev/video0  You can now test your webcam using the software cheese:\nsudo apt-get install cheese cheese  Other webcams If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:\nyast -i uvcvideo_kmp_default modprobe uvcvideo  and start gqcam again.\nTestbed The following webcams have been found working with this tutorial:\n Logitech Quickcam messenger Philips Webcam SPC220NC  A general list of working webcams can be found at http://mxhaard.free.fr/spca5xx.html.\nThe guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.\nSee also  hardware http://en.opensuse.org/Webcam http://www.linux.com/feature/126186 http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/ http://www.goldmann.de/webcam-linux_tipp_408.html http://wiki.ubuntuusers.de/Webcam "
-},
-{
-	"uri": "https://blog.codist.me/contact/",
-	"title": "contact",
+	"title": "Linux上摄像设备的使用",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://blog.codist.me/about/",
-	"title": "about",
-	"tags": [],
-	"description": "",
-	"content": "Github: CountStarlight\nEmail: countstarlight@gmail.com\nwebsite: couuntstarlight.github.io\n"
+	"content": " 在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入\n1. 查找设备  插上摄像设备（通常是通过USB）\n 列出所有的 video4linux 设备:\nls -ltr /dev/video*  得到的输出类似于：\ncrw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。\n2.测试设备  如果安装有 vlc，可以启动它，选择 Media -\u0026gt; Open Capture Device -\u0026gt; Video device name = /dev/video0 -\u0026gt; Play\n 如果安装有mplayer，可以使用：\nmplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30   3.使用设备 3.1录制视频 要捕获设备的视频输入，可以使用 cheese，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用vlc可以播放。\nYou can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can\n use the software mencoder:\nmencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi  or use the software streamer. Here are two examples:\nstreamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05   3.2视频通话 视频通话，在Linux上使用skype.\n3.3查看视频输入 查看摄像设备的视频输入，使用cheese 或 mplayer:\nmplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://  或者用vlc，你可以用root权限运行vlc，来查看你的摄像设备 /dev/video0，启动vlc并选择 Media -\u0026gt; Open Capture Device -\u0026gt; Video device name = /dev/video0 -\u0026gt; Play\n排查问题 Troubleshooting heavily depends on the distribution and version you are using. If you have done cabling correctly and a device file /dev/video* does not appear, your kernel probably does not know the hardware. In this case you may have to install the device driver separately because it may not be part of the kernel.\nSUSE Linux 11.0 and earlier This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, open a console and call\nhwinfo --usb  If a Logitech Quickcam Messenger is plugged in the answer will be like:\n06: USB 00.2: 0000 Unclassified device [Created at usb.122] UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2 Unique ID: Eopr.vE+cdFBwClB Parent ID: uIhY.uOe2OKugI8D SysFS ID: /devices/pci0000:00/0000:00:1a.2/usb3/3-1/3-1:1.2 SysFS BusID: 3-1:1.2 Hardware Class: unknown Model: \u0026quot;Logitech QuickCam Messanger\u0026quot; Hotplug: USB Vendor: usb 0x046d \u0026quot;Logitech, Inc.\u0026quot; Device: usb 0x08da \u0026quot;QuickCam Messanger\u0026quot; Revision: \u0026quot;1.00\u0026quot; Driver: \u0026quot;snd-usb-audio\u0026quot; Driver Modules: \u0026quot;snd_usb_audio\u0026quot; Speed: 12 Mbps Module Alias: \u0026quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00\u0026quot; Driver Info #0: Driver Status: quickcam_messenger is active Driver Activation Cmd: \u0026quot;modprobe quickcam_messenger\u0026quot; Driver Info #1: Driver Status: gspca is active Driver Activation Cmd: \u0026quot;modprobe gspca\u0026quot; Config Status: cfg=new, avail=yes, need=no, active=unknown Attached to: #20 (Hub)  This means you can install and load the webcam driver like this:\nyast -i gspcav-kmp-default modprobe gspca  Now you should see a video device:\nls /dev/video* /dev/video /dev/video0  That means you can install and start your webcam-viewer-software. We choose gqcam:\nyast -i gqcam gqcam  It works. You see a video what from what is going on in front of your webcam.\nUbuntu This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software hwinfo. Open a consoleand type:\nsudo apt-get install hwinfo  Then call hwinfo:\nhwinfo --usb  If a Logitech Quickcam Messenger is plugged in the response will be like:\n04: USB 00.2: 0000 Unclassified device [Created at usb.122] UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2 Unique ID: 4ajv.vE+cdFBwClB Parent ID: k4bc._Mkd+LmXb03 SysFS ID: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-1/1-1:1.2 SysFS BusID: 1-1:1.2 Hardware Class: unknown Model: \u0026quot;Logitech QuickCam Messanger\u0026quot; Hotplug: USB Vendor: usb 0x046d \u0026quot;Logitech, Inc.\u0026quot; Device: usb 0x08da \u0026quot;QuickCam Messanger\u0026quot; Revision: \u0026quot;1.00\u0026quot; Driver: \u0026quot;snd-usb-audio\u0026quot; Driver Modules: \u0026quot;snd_usb_audio\u0026quot; Speed: 12 Mbps Module Alias: \u0026quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00\u0026quot; Driver Info #0: Driver Status: gspca_zc3xx is active Driver Activation Cmd: \u0026quot;modprobe gspca_zc3xx\u0026quot; Config Status: cfg=new, avail=yes, need=no, active=unknown Attached to: #8 (Hub)  Activate the driver:\nsudo modprobe gspca_zc3xx  Now you should be able to see the video device:\nls /dev/video* /dev/video0  You can now test your webcam using the software cheese:\nsudo apt-get install cheese cheese  Other webcams If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:\nyast -i uvcvideo_kmp_default modprobe uvcvideo  and start gqcam again.\nTestbed The following webcams have been found working with this tutorial:\n Logitech Quickcam messenger Philips Webcam SPC220NC  A general list of working webcams can be found at http://mxhaard.free.fr/spca5xx.html.\nThe guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.\nSee also  hardware http://en.opensuse.org/Webcam http://www.linux.com/feature/126186 http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/ http://www.goldmann.de/webcam-linux_tipp_408.html http://wiki.ubuntuusers.de/Webcam  "
 },
 {
 	"uri": "https://blog.codist.me/android/work8/",
@@ -75,20 +96,6 @@
 	"tags": ["example", "math"],
 	"description": "",
 	"content": "KaTeX can be used to generate complex math formulas server-side.\n$$ \\phi = \\frac{(1+\\sqrt{5})}{2} = 1.6180339887\\cdots $$\nAdditional details can be found on GitHub or on the Wiki.\nExample 1 If the text between $$ contains newlines it will rendered in display mode:\n$$ f(x) = \\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi $$  $$ f(x) = \\int_{-\\infty}^\\infty\\hat f(\\xi)\\,e^{2 \\pi i \\xi x}\\,d\\xi $$\nExample 2 $$ \\frac{1}{\\Bigl(\\sqrt{\\phi \\sqrt{5}}-\\phi\\Bigr) e^{\\frac25 \\pi}} = 1+\\frac{e^{-2\\pi}} {1+\\frac{e^{-4\\pi}} {1+\\frac{e^{-6\\pi}} {1+\\frac{e^{-8\\pi}} {1+\\cdots} } } } $$  ​​$$ \\frac{1}{\\Bigl(\\sqrt{\\phi \\sqrt{5}}-\\phi\\Bigr) e^{\\frac25 \\pi}} = 1+\\frac{e^{-2\\pi}} {1+\\frac{e^{-4\\pi}} {1+\\frac{e^{-6\\pi}} {1+\\frac{e^{-8\\pi}} {1+\\cdots} } } } $$ ​​\nExample 3 $$ 1 + \\frac{q^2}{(1-q)}+\\frac{q^6}{(1-q)(1-q^2)}+\\cdots = \\prod_{j=0}^{\\infty}\\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \\quad\\quad \\text{for }\\lvert q\\rvert\u0026lt;1. $$  $$ 1 + \\frac{q^2}{(1-q)}+\\frac{q^6}{(1-q)(1-q^2)}+\\cdots = \\prod_{j=0}^{\\infty}\\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \\quad\\quad \\text{for }\\lvert q\\rvert\u0026lt;1. $$\n"
-},
-{
-	"uri": "https://blog.codist.me/contact/",
-	"title": "Get in touch",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://blog.codist.me/about/",
-	"title": "About me",
-	"tags": [],
-	"description": "",
-	"content": "Github: CountStarlight\nEmail: countstarlight@gmail.com\nWebsite: countstarlight.github.io\n"
 },
 {
 	"uri": "https://blog.codist.me/android/work2/",
@@ -99,7 +106,7 @@
 },
 {
 	"uri": "https://blog.codist.me/android/work1/",
-	"title": "Android system log",
+	"title": "将Android的系统日志输出到文件",
 	"tags": ["Android", "log"],
 	"description": "",
 	"content": " 首先，在产品目录的init.XXX.rc文件中，添加相应的service，\n#start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot  然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,\n#!/system/bin/sh # #Global folder \u0026amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1 LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2 RM=rm MV=\u0026quot;mv\u0026quot; MKDIR=mkdir UMASK=umask #set default permission 0775 $UMASK 002 #Init the three folders i=0 while [ \u0026quot;$i\u0026quot; -le \u0026quot;$index\u0026quot; ] do $MKDIR -p ${LOG_DIR[$i]} i=$(($i+1)) done #Transfer the three folders ((i=$index-1)) $RM -r ${LOG_DIR[$index]}/* while [ \u0026quot;$i\u0026quot; -ge \u0026quot;0\u0026quot; ] do $MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]} i=$(($i-1)) done $RM -r ${LOG_DIR[0]}/* #start logcat service setprop service.logcat.enable 1 mkdir /data/www cp -R /system/var/www/ /data/ ln -s /storage/external/ /data/www/sdcard  "
@@ -177,13 +184,6 @@
 {
 	"uri": "https://blog.codist.me/tags/",
 	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://blog.codist.me/tags/webcam/",
-	"title": "Webcam",
 	"tags": [],
 	"description": "",
 	"content": ""

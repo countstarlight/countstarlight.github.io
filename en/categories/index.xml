@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on CountStarlight</title>
-    <link>https://countstarlight.github.io/en/categories/</link>
-    <description>Recent content in Categories on CountStarlight</description>
+    <title>Categories on Codist</title>
+    <link>https://blog.codist.me/en/categories/</link>
+    <description>Recent content in Categories on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>countstarlight@gmail.com (CountStarlight)</managingEditor>
-    <webMaster>countstarlight@gmail.com (CountStarlight)</webMaster>
     
-	<atom:link href="https://countstarlight.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/en/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

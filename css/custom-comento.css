@@ -5,7 +5,9 @@
 
 /*themes/hugo-theme-learn/static/css/theme.css*/
 pre {
+    padding: initial;
     background: initial;
+    line-height: initial;
 }
 
 /*themes/hugo-theme-learn/static/css/theme.css*/

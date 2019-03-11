@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux Desktop on Codist</title>
+    <title>桌面Linux on Codist</title>
     <link>https://blog.codist.me/linux/</link>
-    <description>Recent content in Linux Desktop on Codist</description>
+    <description>Recent content in 桌面Linux on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 20 Jul 2017 14:54:35 +0800</lastBuildDate>
     
@@ -11,18 +11,19 @@
     
     
     <item>
-      <title>Webcam with Linux</title>
+      <title>Linux上摄像设备的使用</title>
       <link>https://blog.codist.me/linux/work3/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
       
       <guid>https://blog.codist.me/linux/work3/</guid>
-      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.&lt;/p&gt;
-
-&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入
+1. 查找设备  插上摄像设备（通常是通过USB）
+ 列出所有的 video4linux 设备:
+ls -ltr /dev/video*  得到的输出类似于：
+crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+2.测试设备  如果安装有 vlc，可以启动它，选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play
+ 如果安装有mplayer，可以使用：
+mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30   3.使用设备 3.1录制视频 要捕获设备的视频输入，可以使用 cheese，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用vlc可以播放。</description>
     </item>
     
   </channel>

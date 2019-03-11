@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta name="description" content="Codist&#39;s blog">
+<meta name="author" content="Codist">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Android&#39;s selinux :: Codist</title>
+
+    
+    <link href="/css/nucleus.css?1552301081" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1552301081" rel="stylesheet">
+    <link href="/css/github.css?1552301081" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1552301081" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1552301081" rel="stylesheet">
+    <link href="/css/auto-complete.css?1552301081" rel="stylesheet">
+    <link href="/css/theme.css?1552301081" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1552301081" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1552301081" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1552301081"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha256-uXNHy6FK52Pb83SmU45mVAg7YECmr9Lwwu1zOz31j5c=" crossorigin="anonymous" />
+
+  </head>
+  <body class="" data-url="/en/android/work2/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://blog.codist.me/">
+  <img src="/images/favicon.png" height="220" width="220">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1552301081"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1552301081"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/blog.codist.me\/\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1552301081"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/embedded/" title="Embedded" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/embedded/">
+          Embedded
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work6/" title="Send files via minicom" class="dd-item ">
+        <a href="/en/embedded/work6/">
+        Send files via minicom
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work5/" title="Qt-creator cross-compliation" class="dd-item ">
+        <a href="/en/embedded/work5/">
+        Qt-creator cross-compliation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/embedded/work4/" title="Serial-USB device on Linux" class="dd-item ">
+        <a href="/en/embedded/work4/">
+        Serial-USB device on Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/linux/" title="Linux Desktop" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/linux/">
+          Linux Desktop
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/linux/work3/" title="Webcam with Linux" class="dd-item ">
+        <a href="/en/linux/work3/">
+        Webcam with Linux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/android/" title="Android" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/en/android/">
+          Android
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/android/work8/" title="Math Sample" class="dd-item ">
+        <a href="/en/android/work8/">
+        Math Sample
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/android/work2/" title="Android&#39;s selinux" class="dd-item active">
+        <a href="/en/android/work2/">
+        Android&#39;s selinux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/en/android/work1/" title="Android system log" class="dd-item ">
+        <a href="/en/android/work1/">
+        Android system log
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/contact/" title="Get in touch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/contact/">
+          Get in touch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/en/about/" title="About me" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/en/about/">
+          About me
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/countstarlight"><i class='fab fa-github'></i> Github</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://plus.google.com/u/0/116322408739427412385"><i class='fab fa-google-plus'></i> Google Plus</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gitlab.com/countstarlight"><i class='fab fa-gitlab'></i> Gitlab</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://stackoverflow.com/users/7488623/rex-frank"><i class='fab fa-stack-overflow'></i> Stack Overflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="mailto:countstarlight@gmail.com"><i class='far fa-envelope'></i> Email</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="zh" value="/android/work2/">简体中文</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="/en/android/work2/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>Homepage</a> > <a href='/en/android/'>Android</a> > Android's selinux
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#一-适用情景">一、适用情景</a></li>
+<li><a href="#二-解决方法">二、解决方法</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Android&#39;s selinux</h1>
+          
+
+        
+
+
+<h2 id="一-适用情景">一、适用情景</h2>
+
+<p>当在init.rc中新增service：</p>
+
+<p>service ro_isn /system/bin/isn.sh class late_start user root Oneshot</p>
+
+<p>kernel log会打印以下log：</p>
+
+<p>Warning! Service ro_isn needs a SELinux domain defined; please fix!</p>
+
+<p>这是因为Service ro_isn没有在SELinux的监控之下，这种情况会提示你定义一个SELinux。</p>
+
+<p>在这种情况下，你可以：</p>
+
+<p>1.无视该条log，Service功能不受影响。各种权限不受限制。但是这样做会有风险。</p>
+
+<p>2.为Service ro_isn定义一个SELinux domain，仅添加需要的权限，未允许的权限操作会被拒绝。具体方法请参照下节。</p>
+
+<h2 id="二-解决方法">二、解决方法</h2>
+
+<p>1.在devices/…/sepolicy/目录下新增ro_isn.te文件，内容如下：</p>
+
+<pre><code>type ro_isn, domain; 
+
+type ro_isn_exec, exec_type, file_type;
+</code></pre>
+
+<p>2.在devices/…/sepolicy/Android.mk中添加ro_isn.te文件，内容如下：</p>
+
+<pre><code>BOARD_SEPOLICY_UNION := 
+
+... 
+
+        hostapd.te 
+
+        ro_isn.te
+</code></pre>
+
+<p>3.在devices/…/sepolicy/file_contexts中增加如下内容：</p>
+
+<pre><code>###################################
+
+#System files
+
+#
+
+...
+
+/system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
+
+/system/bin/isn.sh                       u:object_r:ro_isn_exec:s0
+</code></pre>
+
+<p>4.在device/&hellip;/sepolicy/service_contexts中添加：</p>
+
+<pre><code>servicename       u:object_r:ro_isn_service:s0
+</code></pre>
+
+<p>5.在init.rc中service ro_isn下添加:</p>
+
+<pre><code>secure context by seclabel 
+
+service ro_isn /system/bin/isn.sh 
+
+class late_start 
+
+user root 
+
+oneshot 
+
+seclabel u:r:ro_isn:s0
+</code></pre>
+
+<p>6.编译并烧录bootimage</p>
+
+<ul>
+<li><p>如果编译不成功，失败原因如下：</p>
+
+<pre><code>Error while expanding policy
+
+libsepol.check_assertion_helper: neverallow on line 233 of external/sepolicy/domain.te (or line 5194 of policy.conf) violated by allow ro_isn system_file:file { entrypoint };
+
+make: *** [out/target/product/msm8226/obj/ETC/sepolicy_intermediates/sepolicy] 错误 1
+</code></pre></li>
+</ul>
+
+<p>这是因为系统在domain.te中定义了全局的neverallow策略，与ro_isn.te中allow的策略有冲突：</p>
+
+<pre><code>allow ro_isn system_file:file { entrypoint };
+
+neverallow domain { file_type -exec_type }:file entrypoint;
+</code></pre>
+
+<p>请确定自己的service有必要需要这个权限。如无必要，请在自己的code中删除掉相关操作；如必要，可以在external/sepolicy/domain.te中冲突的neverallow语句中添加自己为例外：</p>
+
+<pre><code>neverallow {
+
+    domain
+
+    -ro_isn
+
+} { file_type -exec_type }:file entrypoint;
+</code></pre>
+
+<ul>
+<li><p>在service ro_isn运行时，出现关于“ro_isn”的avc: denied log</p>
+
+<pre><code>&lt;6&gt;[ 13.547188](CPU:0-pid:320:logd.auditd) type=1400 audit(17468992.410:7): avc: denied { entrypoint } for pid=272 comm=&quot;init&quot; path=&quot;/system/bin/isn.sh&quot; dev=&quot;mmcblk0p38&quot; ino=631 scontext=u:r:ro_isn:s0 tcontext=u:object_r:system_file:s0 tclass=file
+</code></pre></li>
+</ul>
+
+<p>a.按照如下规则在ro_isn.te添加权限</p>
+
+<p>SELinux规则语句一般如下：
+allow A B:C D;
+可以从log中分别获取ABCD四个参数。</p>
+
+<p>比如这行warning log：</p>
+
+<pre><code>avc: denied { entrypoint } for pid=272 comm=&quot;init&quot; path=&quot;/system/bin/isn.sh&quot; dev=&quot;mmcblk0p38&quot; ino=631 scontext=u:r:ro_isn:s0 tcontext=u:object_r:system_file:s0 tclass=file
+</code></pre>
+
+<p>那么我们就得出最后的规则是：</p>
+
+<pre><code>allow qcomsysd  block_device:dir { search };
+
+allow ro_isn system_file:file { entrypoint };
+</code></pre>
+
+<p>重复该步骤,直到没有关于“ro_isn”的avc: denied log</p>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        <link rel="stylesheet" href="/css/custom-comento.css" />
+<div id="commento"></div>
+<script src="https://comment.aiicy.com/js/commento.js"></script>
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/android/work8/" title="Math Sample"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/android/work1/" title="Android system log" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1552301081"></script>
+    <script src="/js/perfect-scrollbar.min.js?1552301081"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1552301081"></script>
+    <script src="/js/jquery.sticky.js?1552301081"></script>
+    <script src="/js/featherlight.min.js?1552301081"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1552301081"></script>
+    <script src="/js/highlight.pack.js?1552301081"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1552301081"></script>
+    <script src="/js/learn.js?1552301081"></script>
+    <script src="/js/hugo-learn.js?1552301081"></script>
+
+    <link href="/mermaid/mermaid.css?1552301081" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1552301081"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha256-34ADEQM6cIZ7chSRA07lN4aD5JM9IQoeIr2VamKDcT0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js" integrity="sha256-HkMrKMLKQk4t1R2ofMAcLz72fWM2sshnx6215U+LgU0=" crossorigin="anonymous"></script>
+<script>
+  renderMathInElement(document.body,
+    {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+        ]
+    }
+  );
+
+  var inlineMathArray = document.querySelectorAll("script[type='math/tex']");
+  for (var i = 0; i < inlineMathArray.length; i++) {
+    var inlineMath = inlineMathArray[i];
+    var tex = inlineMath.innerText || inlineMath.textContent;
+    var replaced = document.createElement("span");
+    replaced.innerHTML = katex.renderToString(tex, {displayMode: false});
+    inlineMath.parentNode.replaceChild(replaced, inlineMath);
+  }
+
+  var displayMathArray = document.querySelectorAll("script[type='math/tex; mode=display']");
+  for (var i = 0; i < displayMathArray.length; i++) {
+    var displayMath = displayMathArray[i];
+    var tex = displayMath.innerHTML;
+    var replaced = document.createElement("span");
+    replaced.innerHTML = katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+    displayMath.parentNode.replaceChild(replaced, displayMath);
+  }
+</script>
+
+  </body>
+</html>
+

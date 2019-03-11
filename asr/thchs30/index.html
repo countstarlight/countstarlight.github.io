@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="zh" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta name="description" content="Codist&#39;s blog">
+<meta name="author" content="Codist">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>使用thchs30数据集 :: Codist</title>
+
+    
+    <link href="/css/nucleus.css?1552301081" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1552301081" rel="stylesheet">
+    <link href="/css/github.css?1552301081" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1552301081" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1552301081" rel="stylesheet">
+    <link href="/css/auto-complete.css?1552301081" rel="stylesheet">
+    <link href="/css/theme.css?1552301081" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1552301081" rel="stylesheet">
+    
+      <link href="/css/theme-blue.css?1552301081" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1552301081"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha256-uXNHy6FK52Pb83SmU45mVAg7YECmr9Lwwu1zOz31j5c=" crossorigin="anonymous" />
+
+  </head>
+  <body class="" data-url="/asr/thchs30/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="https://blog.codist.me/">
+  <img src="/images/favicon.png" height="220" width="220">
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="搜索...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1552301081"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1552301081"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/blog.codist.me\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1552301081"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/embedded/" title="嵌入式开发" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/embedded/">
+          嵌入式开发
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/embedded/work6/" title="用minicom通过串口发送文件" class="dd-item ">
+        <a href="/embedded/work6/">
+        用minicom通过串口发送文件
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/embedded/work5/" title="Qt Creator 配置交叉编译" class="dd-item ">
+        <a href="/embedded/work5/">
+        Qt Creator 配置交叉编译
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/embedded/work4/" title="Linux上通过串口连接嵌入式Linux终端" class="dd-item ">
+        <a href="/embedded/work4/">
+        Linux上通过串口连接嵌入式Linux终端
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/linux/" title="桌面Linux" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/linux/">
+          桌面Linux
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/work3/" title="Linux上摄像设备的使用" class="dd-item ">
+        <a href="/linux/work3/">
+        Linux上摄像设备的使用
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/android/" title="Android底层" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/android/">
+          Android底层
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/android/work8/" title="Math Sample" class="dd-item ">
+        <a href="/android/work8/">
+        Math Sample
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/android/work2/" title="Android&#39;s selinux" class="dd-item ">
+        <a href="/android/work2/">
+        Android&#39;s selinux
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/android/work1/" title="将Android的系统日志输出到文件" class="dd-item ">
+        <a href="/android/work1/">
+        将Android的系统日志输出到文件
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/selfhost/" title="自建" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/selfhost/">
+          自建
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/selfhost/commento/" title="搭建博客评论系统" class="dd-item ">
+        <a href="/selfhost/commento/">
+        搭建博客评论系统
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/asr/" title="基于kaldi的语音识别" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/asr/">
+          基于kaldi的语音识别
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/asr/kaldi/" title="安装kaldi" class="dd-item ">
+        <a href="/asr/kaldi/">
+        安装kaldi
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/asr/thchs30/" title="使用thchs30数据集" class="dd-item active">
+        <a href="/asr/thchs30/">
+        使用thchs30数据集
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>更多</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/countstarlight"><i class='fab fa-github'></i> Github</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://plus.google.com/u/0/116322408739427412385"><i class='fab fa-google-plus'></i> Google Plus</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://gitlab.com/countstarlight"><i class='fab fa-gitlab'></i> Gitlab</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://stackoverflow.com/users/7488623/rex-frank"><i class='fab fa-stack-overflow'></i> Stack Overflow</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="mailto:countstarlight@gmail.com"><i class='far fa-envelope'></i> Email</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="zh" value="/asr/thchs30/" selected>简体中文</option>
+                    
+                  
+              
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> 清除历史</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>首页</a> > <a href='/asr/'>基于kaldi的语音识别</a> > 使用thchs30数据集
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-下载数据集">1.下载数据集</a></li>
+<li><a href="#2-训练">2.训练</a>
+<ul>
+<li><a href="#2-1修改训练脚本">2.1修改训练脚本</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>使用thchs30数据集</h1>
+          
+
+        
+
+
+
+
+<h2 id="1-下载数据集">1.下载数据集</h2>
+
+<p>Kaldi中文语音识别公共数据集有：</p>
+
+<ul>
+<li><p>1.<code>aishell</code>：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见<code>kaldi-master/egs/aishell</code></p></li>
+
+<li><p>2.<code>gale_mandarin</code>：中文新闻广播数据集(LDC2013S08, LDC2013S08）</p></li>
+
+<li><p>3.<code>hkust</code>：中文电话数据集(LDC2005S15, LDC2005T32)</p></li>
+
+<li><p>4.<code>thchs30</code>：清华大学30小时的数据集，可以在<a href="http://www.openslr.org/18/">http://www.openslr.org/18/</a> 下载</p></li>
+</ul>
+
+<p>这里采用<code>thchs30</code>，从<a href="http://www.openslr.org/18/">http://www.openslr.org/18/</a> 或者参照它的<a href="http://data.cslt.org/thchs30/README.html">README</a>下载三个压缩包：</p>
+
+<ul>
+<li><p><a href="http://www.openslr.org/resources/18/data_thchs30.tgz">data_thchs30.tgz </a><a href="speech data and transcripts">6.4G</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz">China</a></p></li>
+
+<li><p><a href="http://www.openslr.org/resources/18/test-noise.tgz">test-noise.tgz </a><a href="standard 0db noisy test data">1.9G</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/test-noise.tgz">China</a></p></li>
+
+<li><p><a href="http://www.openslr.org/resources/18/resource.tgz">resource.tgz </a><a href="supplementary resources, incl. lexicon for training data, noise samples">24M</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/resource.tgz">China</a></p></li>
+</ul>
+
+<p>在egs/thchs30/s5下新建文件夹<code>thchs30-openslr</code>，把三个文件解压在该文件夹下</p>
+
+<p>这个数据集包含以下内容：</p>
+
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>音频时长(h)</th>
+<th>句子数</th>
+<th>词数</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>train(训练)</td>
+<td>25</td>
+<td>10000</td>
+<td>198252</td>
+</tr>
+
+<tr>
+<td>dev(开发)</td>
+<td>2:14</td>
+<td>893</td>
+<td>17743</td>
+</tr>
+
+<tr>
+<td>test(测试)</td>
+<td>6:15</td>
+<td>2495</td>
+<td>49085</td>
+</tr>
+</tbody>
+</table>
+
+<p>还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。</p>
+
+<p>其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</p>
+
+<ul>
+<li><p><code>local/thchs-30_data_prep.sh</code>：主要工作是从$thchs/data_thchs30（下载的数据）三部分分别生成word.txt（词序列），phone.txt（音素序列），text（与word.txt相同），wav.scp（语音），utt2pk（句子与说话人的映射），spk2utt（说话人与句子的映射）</p></li>
+
+<li><p><code>#produce MFCC features</code>：提取MFCC特征，分为两步，先通过steps/make_mfcc.sh提取MFCC特征，再通过steps/compute_cmvn_stats.sh计算倒谱均值和方差归一化。</p></li>
+
+<li><p><code>#prepare language stuff</code>：构建一个包含训练和解码用到的词的词典。而语言模型已经由王东老师处理好了，如果不打算改语言模型，这段代码也不需要修改。</p>
+
+<ul>
+<li>a)基于词的语言模型包含48k基于三元词的词，从gigaword语料库中随机选择文本信息进行训练得到，训练文本包含772000个句子，总计1800万词，1.15亿汉字</li>
+<li>b)基于音素的语言模型包含218个基于三元音的中文声调，从只有200万字的样本训练得到，之所以选择这么小的样本是因为在模型中尽可能少地保留语言信息，可以使得到的性能更直接地反映声学模型的质量。</li>
+<li>c)这两个语言模型都是由SRILM工具训练得到。</li>
+</ul></li>
+</ul>
+
+<h2 id="2-训练">2.训练</h2>
+
+<h3 id="2-1修改训练脚本">2.1修改训练脚本</h3>
+
+<p>1.首先修改<code>s5/cmd.sh</code>脚本，把原脚本注释掉，修改为本地运行：</p>
+
+<pre><code class="language-shell">#export train_cmd=queue.pl
+#export decode_cmd=&quot;queue.pl --mem 4G&quot;
+#export mkgraph_cmd=&quot;queue.pl --mem 8G&quot;
+#export cuda_cmd=&quot;queue.pl --gpu 1&quot;
+
+export train_cmd=run.pl
+export decode_cmd=&quot;run.pl --mem 4G&quot;
+export mkgraph_cmd=&quot;run.pl --mem 8G&quot;
+export cuda_cmd=&quot;run.pl --gpu 1&quot;
+</code></pre>
+
+<p>2.然后修改<code>s5/run.sh</code>脚本，需要修改两个地方：</p>
+
+<p>第一个地方是修改并行任务的数量，cpu核心数*2：</p>
+
+<pre><code class="language-shell">  n=8      #parallel jobs
+</code></pre>
+
+<p>第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：</p>
+
+<pre><code class="language-shell">#corpus and trans directory
+#thchs=/nfs/public/materials/data/thchs30-openslr
+thchs=/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
+</code></pre>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        <link rel="stylesheet" href="/css/custom-comento.css" />
+<div id="commento"></div>
+<script src="https://comment.aiicy.com/js/commento.js"></script>
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/asr/kaldi/" title="安装kaldi"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/asr/kaldi/" title="安装kaldi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1552301081"></script>
+    <script src="/js/perfect-scrollbar.min.js?1552301081"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1552301081"></script>
+    <script src="/js/jquery.sticky.js?1552301081"></script>
+    <script src="/js/featherlight.min.js?1552301081"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1552301081"></script>
+    <script src="/js/highlight.pack.js?1552301081"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1552301081"></script>
+    <script src="/js/learn.js?1552301081"></script>
+    <script src="/js/hugo-learn.js?1552301081"></script>
+
+    <link href="/mermaid/mermaid.css?1552301081" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1552301081"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js" integrity="sha256-34ADEQM6cIZ7chSRA07lN4aD5JM9IQoeIr2VamKDcT0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/contrib/auto-render.min.js" integrity="sha256-HkMrKMLKQk4t1R2ofMAcLz72fWM2sshnx6215U+LgU0=" crossorigin="anonymous"></script>
+<script>
+  renderMathInElement(document.body,
+    {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+        ]
+    }
+  );
+
+  var inlineMathArray = document.querySelectorAll("script[type='math/tex']");
+  for (var i = 0; i < inlineMathArray.length; i++) {
+    var inlineMath = inlineMathArray[i];
+    var tex = inlineMath.innerText || inlineMath.textContent;
+    var replaced = document.createElement("span");
+    replaced.innerHTML = katex.renderToString(tex, {displayMode: false});
+    inlineMath.parentNode.replaceChild(replaced, inlineMath);
+  }
+
+  var displayMathArray = document.querySelectorAll("script[type='math/tex; mode=display']");
+  for (var i = 0; i < displayMathArray.length; i++) {
+    var displayMath = displayMathArray[i];
+    var tex = displayMath.innerHTML;
+    var replaced = document.createElement("span");
+    replaced.innerHTML = katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
+    displayMath.parentNode.replaceChild(replaced, displayMath);
+  }
+</script>
+
+  </body>
+</html>
+

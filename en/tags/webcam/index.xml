@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webcam on Codist</title>
+    <link>https://blog.codist.me/en/tags/webcam/</link>
+    <description>Recent content in Webcam on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 Jul 2017 14:54:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/en/tags/webcam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Webcam with Linux</title>
+      <link>https://blog.codist.me/en/linux/work3/</link>
+      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/linux/work3/</guid>
+      <description>&lt;p&gt;You want to set up your webcam with Linux, see a video stream from it and learn which applications you can use with it, right? Then this article is for you.&lt;/p&gt;
+
+&lt;h3 id=&#34;setup&#34;&gt;Setup&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plug in your webcam (typically to USB)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

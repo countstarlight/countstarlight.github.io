@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on Codist</title>
+    <title>Android底层 on Codist</title>
     <link>https://blog.codist.me/android/</link>
-    <description>Recent content in Android on Codist</description>
+    <description>Recent content in Android底层 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 05 Mar 2017 00:00:00 +0000</lastBuildDate>
     
@@ -47,7 +47,7 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>Android system log</title>
+      <title>将Android的系统日志输出到文件</title>
       <link>https://blog.codist.me/android/work1/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       
