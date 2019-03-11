@@ -5,7 +5,7 @@
     <link>https://blog.codist.me/</link>
     <description>Recent content in 首页 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Jul 2017 20:41:02 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 19:19:26 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -60,6 +60,21 @@ mkdir -p $GOPATH/gitlab.com/commento cd $GOPATH/gitlab.com/commento git clone ht
 这个数据集包含以下内容：
    数据集 音频时长(h) 句子数 词数     train(训练) 25 10000 198252   dev(开发) 2:14 893 17743   test(测试) 6:15 2495 49085    还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。
 其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</description>
+    </item>
+    
+    <item>
+      <title>使用aishell数据集</title>
+      <link>https://blog.codist.me/asr/aishell/</link>
+      <pubDate>Mon, 11 Mar 2019 19:19:26 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/asr/aishell/</guid>
+      <description>1.下载数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载数据集或运行s5/run.sh会自动下载并解压缩数据集，这里只演示手动下载数据集。
+访问http://www.openslr.org/33/ ，下载两个压缩包：
+data_aishell.tgz [15G] ( speech data and transcripts ) Mirrors: China
+resource_aishell.tgz [1.2M] ( supplementary resources, incl. lexicon, speaker info ) Mirrors: China
+下载解压缩到一个目录，假设解压缩到aishell-openslr
+aishell-openslr/data_aishell/wav里的压缩包需要都解压出来，创建脚本local/untar.sh：
+#!/bin/bash remove_archive=false if [ &amp;quot;$1&amp;quot; == --remove-archive ]; then remove_archive=true shift fi if [ $# -ne 3 ]; then echo &amp;quot;Usage: $0 &amp;lt;data-base&amp;gt;&amp;quot; echo &amp;quot;e.g.: $0 /export/a05/xna/data&amp;quot; fi data=$1 part=&amp;quot;data_aishell&amp;quot; if [ ! -d &amp;quot;$data&amp;quot; ]; then echo &amp;quot;$0: no such directory $data&amp;quot; exit 1; fi if [ -f $data/$part/.</description>
     </item>
     
     <item>

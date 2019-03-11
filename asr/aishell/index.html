@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Log :: Codist</title>
+    <title>使用aishell数据集 :: Codist</title>
 
     
     <link href="/css/nucleus.css?1552304696" rel="stylesheet">
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha256-uXNHy6FK52Pb83SmU45mVAg7YECmr9Lwwu1zOz31j5c=" crossorigin="anonymous" />
 
   </head>
-  <body class="" data-url="/tags/log/">
+  <body class="" data-url="/asr/aishell/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -366,7 +366,7 @@
   
     
     <li data-nav-id="/asr/" title="基于kaldi的语音识别" class="dd-item 
-        
+        parent
         
         
         ">
@@ -430,7 +430,7 @@
  
   
     
-      <li data-nav-id="/asr/aishell/" title="使用aishell数据集" class="dd-item ">
+      <li data-nav-id="/asr/aishell/" title="使用aishell数据集" class="dd-item active">
         <a href="/asr/aishell/">
         使用aishell数据集
         <i class="fas fa-check read-icon"></i>
@@ -501,22 +501,10 @@
                   
                     
                     
-                      <option id="zh" value="/tags/log/" selected>简体中文</option>
+                      <option id="zh" value="/asr/aishell/" selected>简体中文</option>
                     
                   
               
-                  
-              
-          
-              
-              
-                  
-              
-                  
-                    
-                    
-                      <option id="en" value="/en/tags/log/">English</option>
-                    
                   
               
           
@@ -574,7 +562,19 @@
                     
           
           
-            Log
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>首页</a> > <a href='/asr/'>基于kaldi的语音识别</a> > 使用aishell数据集
+          
+         
+          
+         
           
         
                  
@@ -583,7 +583,20 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-下载数据集">1.下载数据集</a></li>
+<li><a href="#2-训练">2.训练</a></li>
+<li><a href="#3-识别-在线解码">3.识别&ndash;在线解码</a>
+<ul>
+<li><a href="#3-1生成配置文件">3.1生成配置文件</a></li>
+<li><a href="#3-2解码">3.2解码</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -595,7 +608,7 @@
         
         <div id="body-inner">
           
-            <h1>Log</h1>
+            <h1>使用aishell数据集</h1>
           
 
         
@@ -603,9 +616,145 @@
 
 
 
+<h2 id="1-下载数据集">1.下载数据集</h2>
+
+<p>和thchs30类似，参照<code>egs/aishell/README.txt</code>，手动下载数据集或运行<code>s5/run.sh</code>会自动下载并解压缩数据集，这里只演示手动下载数据集。</p>
+
+<p>访问<a href="http://www.openslr.org/33/">http://www.openslr.org/33/</a> ，下载两个压缩包：</p>
+
+<p><a href="http://www.openslr.org/resources/33/data_aishell.tgz">data_aishell.tgz </a>[15G]   ( speech data and transcripts )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/data_aishell.tgz">China</a><br />
+<a href="http://www.openslr.org/resources/33/resource_aishell.tgz">resource_aishell.tgz </a>[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz">China</a></p>
+
+<p>下载解压缩到一个目录，假设解压缩到<code>aishell-openslr</code></p>
+
+<p><code>aishell-openslr/data_aishell/wav</code>里的压缩包需要都解压出来，创建脚本<code>local/untar.sh</code>：</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+remove_archive=false
+
+if [ &quot;$1&quot; == --remove-archive ]; then
+  remove_archive=true
+  shift
+fi
+
+if [ $# -ne 3 ]; then
+  echo &quot;Usage: $0 &lt;data-base&gt;&quot;
+  echo &quot;e.g.: $0 /export/a05/xna/data&quot;
+fi
+
+data=$1
+part=&quot;data_aishell&quot;
+
+if [ ! -d &quot;$data&quot; ]; then
+  echo &quot;$0: no such directory $data&quot;
+  exit 1;
+fi
+
+if [ -f $data/$part/.complete ]; then
+  echo &quot;$0: data part $part was already successfully extracted, nothing to do.&quot;
+  exit 0;
+fi
+
+touch $data/$part/.complete
+
+if [ $part == &quot;data_aishell&quot; ]; then
+  cd $data/$part/wav
+  for wav in ./*.tar.gz; do
+    echo &quot;Extracting wav from $wav&quot;
+    tar -zxf $wav &amp;&amp; rm $wav
+  done
+fi
+
+echo &quot;$0: Successfully downloaded and un-tarred $data/$part.tgz&quot;
+
+exit 0;
+</code></pre>
+
+<p>修改训练脚本<code>run.sh</code>：</p>
+
+<p>修改数据集存放路径</p>
+
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
+</code></pre>
+
+<p>修改下载解压缩数据集为我们新建的解压缩脚本</p>
+
+<pre><code class="language-bash">#local/download_and_untar.sh $data $data_url data_aishell || exit 1;
+#local/download_and_untar.sh $data $data_url resource_aishell || exit 1;
+
+local/untar.sh $data || exit 1;
+</code></pre>
+
+<p>这样在首次运行训练脚本时会执行我们的解压缩脚本，对wav文件进行批量解压缩</p>
+
+<h2 id="2-训练">2.训练</h2>
+
+<p>和thchs30一样，建议对训练脚本<code>run.sh</code>分成多个文件，run1.sh&hellip;，分次执行，公共的内容是：</p>
+
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
+
+. ./cmd.sh
+</code></pre>
+
+<h2 id="3-识别-在线解码">3.识别&ndash;在线解码</h2>
+
+<p>以aishell的chain模型为例</p>
+
+<h3 id="3-1生成配置文件">3.1生成配置文件</h3>
+
+<p>在<code>aishell</code>的根路径下：</p>
+
+<pre><code class="language-bash">./s5/steps/online/nnet3/prepare_online_decoding.sh \
+ --add_pitch=true \
+ --config=s5/conf/mfcc_hires.conf \
+ s5/data/lang_chain \
+ s5/exp/nnet3/extractor \
+ s5/exp/chain/tdnn_1a_sp \
+ s5/exp/chain/nnet_online
+</code></pre>
+
+<p><code>data/lang_chain</code>：存储chain模型解码网络图中G.fst和L.fst文件以及词汇表words.txt文件</p>
+
+<p><code>exp/chain/tdnn_1a_sp</code>：存储chain模型</p>
+
+<p><code>exp/chain/nnet_online</code>：自己定义存储生成配置文件的路径</p>
+
+<p><code>--add_pitch=true</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p>
+
+<p><code>--config</code>：使用的配置文件，注意这里我们使用的是<code>mfcc_hires.conf</code></p>
+
+<h3 id="3-2解码">3.2解码</h3>
+
+<pre><code class="language-bash">online2-wav-nnet3-latgen-faster \
+  --config=s5/exp/chain/nnet_online/conf/online.conf \
+  --do-endpointing=false \
+  --frames-per-chunk=20 \
+  --extra-left-context-initial=0 \
+  --online=true \
+  --frame-subsampling-factor=3 \
+  --min-active=200 \
+  --max-active=7000 \
+  --beam=15.0 \
+  --lattice-beam=6.0 \
+  --acoustic-scale=1.0 \
+  --word-symbol-table=s5/data/lang/words.txt \
+  s5/exp/chain/tdnn_1a_sp/final.mdl \
+  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst \
+  ark:s5/data/test/spk2utt \
+  scp:s5/data/test/wav.scp \
+  ark,t:20190308.txt
+</code></pre>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -835,6 +984,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -847,6 +997,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -879,6 +1032,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -903,8 +1057,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/asr/thchs30/" title="使用thchs30数据集"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/embedded/" title="嵌入式开发" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/asr/kaldi/" title="安装kaldi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -964,3 +1120,4 @@
 
   </body>
 </html>
+
