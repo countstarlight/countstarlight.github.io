@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git使用 on Codist</title>
+    <link>https://blog.codist.me/git/</link>
+    <description>Recent content in Git使用 on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 11 Mar 2019 20:00:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 用GPG签名</title>
+      <link>https://blog.codist.me/git/gpg/</link>
+      <pubDate>Mon, 11 Mar 2019 20:03:50 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/git/gpg/</guid>
+      <description> 1. 生成GPG key gpg --full-generate-key   加密方式选择RSA and RSA 过期时间输入：4096 valid选择默认  填写信息后生成成功。
+2.导出公钥 gpg --list-secret-keys --keyid-format LONG  rsa4096/后面的就是 GPG key ID
+gpg --armor --export &amp;lt;要导出的GPG Key ID&amp;gt;  将得到的一大段公钥粘贴到git平台。
+3.配置git 1.设置签名用的GPG key ID
+git config --global user.signingkey &amp;lt;GPG Key ID&amp;gt;  2.设置gpg签名用的程序
+git config --global gpg.program gpg  3.启用gpg签名
+git config --global commit.gpgsign true  测试签名
+echo &amp;quot;test&amp;quot; | gpg --clearsign  </description>
+    </item>
+    
+  </channel>
+</rss>

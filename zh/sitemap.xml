@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.codist.me/git/gpg/</loc>
+    <lastmod>2019-03-11T20:03:50+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/asr/</loc>
     <lastmod>2019-03-11T19:19:26+08:00</lastmod>
   </url>
@@ -75,7 +80,7 @@
   
   <url>
     <loc>https://blog.codist.me/</loc>
-    <lastmod>2019-03-11T19:19:26+08:00</lastmod>
+    <lastmod>2019-03-11T20:03:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -86,6 +91,11 @@
                 hreflang="zh"
                 href="https://blog.codist.me/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/git/</loc>
+    <lastmod>2019-03-11T20:00:51+08:00</lastmod>
   </url>
   
   <url>

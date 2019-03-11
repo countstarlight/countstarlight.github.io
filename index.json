@@ -1,5 +1,12 @@
 [
 {
+	"uri": "https://blog.codist.me/git/gpg/",
+	"title": "Git 用GPG签名",
+	"tags": [],
+	"description": "",
+	"content": " 1. 生成GPG key gpg --full-generate-key   加密方式选择RSA and RSA 过期时间输入：4096 valid选择默认  填写信息后生成成功。\n2.导出公钥 gpg --list-secret-keys --keyid-format LONG  rsa4096/后面的就是 GPG key ID\ngpg --armor --export \u0026lt;要导出的GPG Key ID\u0026gt;  将得到的一大段公钥粘贴到git平台。\n3.配置git 1.设置签名用的GPG key ID\ngit config --global user.signingkey \u0026lt;GPG Key ID\u0026gt;  2.设置gpg签名用的程序\ngit config --global gpg.program gpg  3.启用gpg签名\ngit config --global commit.gpgsign true  测试签名\necho \u0026quot;test\u0026quot; | gpg --clearsign  "
+},
+{
 	"uri": "https://blog.codist.me/asr/",
 	"title": "基于kaldi的语音识别",
 	"tags": [],
@@ -68,6 +75,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Codist 这是Codist的博客，是一些在开发中遇到的问题和解决方法的整理\n左侧是目录，左侧下方切换语言 简体中文/English\n欢迎补充和错误指正\n"
+},
+{
+	"uri": "https://blog.codist.me/git/",
+	"title": "Git使用",
+	"tags": [],
+	"description": "",
+	"content": " Git使用 一些不太常用的Git使用细节 "
 },
 {
 	"uri": "https://blog.codist.me/embedded/work6/",
