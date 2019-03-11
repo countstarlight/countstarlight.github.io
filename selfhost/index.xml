@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>自建 on Codist</title>
+    <title>自建代码托管&amp;CI/CD on Codist</title>
     <link>https://blog.codist.me/selfhost/</link>
-    <description>Recent content in 自建 on Codist</description>
+    <description>Recent content in 自建代码托管&amp;CI/CD on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://blog.codist.me/selfhost/index.xml" rel="self" type="application/rss+xml" />

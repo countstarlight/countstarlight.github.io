@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.codist.me/asr/</loc>
+    <lastmod>2019-03-11T19:19:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/asr/kaldi/</loc>
   </url>
   
@@ -12,6 +17,21 @@
   
   <url>
     <loc>https://blog.codist.me/asr/thchs30/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/embedded/</loc>
+    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/embedded/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/embedded/"
+                />
   </url>
   
   <url>
@@ -31,21 +51,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://blog.codist.me/android/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/embedded/</loc>
-    <lastmod>2017-07-26T20:41:02+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/embedded/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/embedded/"
                 />
   </url>
   
@@ -81,11 +86,6 @@
                 hreflang="zh"
                 href="https://blog.codist.me/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/asr/</loc>
-    <lastmod>2019-03-11T19:19:26+08:00</lastmod>
   </url>
   
   <url>

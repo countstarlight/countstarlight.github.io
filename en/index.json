@@ -1,12 +1,5 @@
 [
 {
-	"uri": "https://blog.codist.me/en/android/",
-	"title": "Android",
-	"tags": [],
-	"description": "",
-	"content": " Android 这里是做安卓底层（内核，驱动）遇到的一些问题和解决办法\n"
-},
-{
 	"uri": "https://blog.codist.me/en/embedded/",
 	"title": "Embedded",
 	"tags": [],
@@ -14,11 +7,11 @@
 	"content": " Embedded 这里是一些做过的嵌入式相关遇到的问题和解决办法\n"
 },
 {
-	"uri": "https://blog.codist.me/en/",
-	"title": "Homepage",
+	"uri": "https://blog.codist.me/en/android/",
+	"title": "Android",
 	"tags": [],
 	"description": "",
-	"content": " Codist\u0026rsquo;s blog The blog of Codist, which including a list of problems and solution during development\n"
+	"content": " Android 这里是做安卓底层（内核，驱动）遇到的一些问题和解决办法\n"
 },
 {
 	"uri": "https://blog.codist.me/en/linux/",
@@ -26,6 +19,13 @@
 	"tags": [],
 	"description": "",
 	"content": " Linux Desktop This is some of the needs when using the desktop Linux distribution.\n"
+},
+{
+	"uri": "https://blog.codist.me/en/",
+	"title": "Homepage",
+	"tags": [],
+	"description": "",
+	"content": " Codist\u0026rsquo;s blog The blog of Codist, which including a list of problems and solution during development\n"
 },
 {
 	"uri": "https://blog.codist.me/en/embedded/work6/",
