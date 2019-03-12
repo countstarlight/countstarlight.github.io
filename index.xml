@@ -34,13 +34,15 @@ echo &amp;quot;test&amp;quot; | gpg --clearsign  </description>
       <guid>https://blog.codist.me/asr/kaldi/</guid>
       <description>1.环境 操作系统建议使用ubuntu，因为源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。
 需要安装有git和make以及gcc等编译工具链
-2.从源码安装 1.下载源码：
-git clone https://github.com/kaldi-asr/kaldi.git  安装文档在kaldi/tools/INSTALL，很短，建议阅读一下
-2.检查依赖和安装：
-#检查依赖，如有问题参照仔细修改 ./extras/check_dependencies.sh #自动下载安装依赖 make -j 8  这会安装ATLAS headers, OpenFst, SCTK 和 sph2pipe
-3.由于ATLAS安装复杂，使用OpenBLAS：
-./extras/install_openblas.sh  4.根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
-./configure --openblas-root=../tools/OpenBLAS/install make depend -j 8 make -j 8  这样就已经编译好训练需要的工具，之后进行在线解码和处理一些数据集需要额外安装一些工具</description>
+2.从源码安装 2.1下载源码： git clone https://github.com/kaldi-asr/kaldi.git  安装文档在kaldi/tools/INSTALL，很短，建议阅读一下
+2.2检查依赖和安装： #检查依赖，如有问题参照仔细修改 ./extras/check_dependencies.sh #自动下载安装依赖 make -j 8  这会安装ATLAS headers, OpenFst, SCTK 和 sph2pipe
+2.3使用OpenBLAS： 由于ATLAS安装复杂，需要调节cpu工作模式，如果使用Ubuntu系统，源里有编译好的ATLAS库，可以直接安装，这里使用OpenBLAS：
+./extras/install_openblas.sh  2.4安装cuda thchs30和aishell的训练都需要用到cuda，建议在编译安装的时候就把相关依赖一并装好。
+可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：https://developer.nvidia.com/cuda-downloads ，再手动安装。
+Archlinux可以直接从源里安装，Ubuntu等发行版类似：
+sudo pacman -S cuda  2.5编译 根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
+./configure --openblas-root=../tools/OpenBLAS/install  如果没有找到cuda安装路径，提示：
+CUDA will not be used! If you have already installed cuda drivers and cuda toolkit, try using --cudatk-dir=... option. Note: this is only relevant for neural net experiments  按照提示指定cuda安装路径，Archlinux安装路径在/opt/cuda/：</description>
     </item>
     
     <item>

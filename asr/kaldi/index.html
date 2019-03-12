@@ -12,19 +12,19 @@
     <title>安装kaldi :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1552306008" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1552306008" rel="stylesheet">
-    <link href="/css/github.css?1552306008" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1552306008" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1552306008" rel="stylesheet">
-    <link href="/css/auto-complete.css?1552306008" rel="stylesheet">
-    <link href="/css/theme.css?1552306008" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1552306008" rel="stylesheet">
+    <link href="/css/nucleus.css?1552381497" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1552381497" rel="stylesheet">
+    <link href="/css/github.css?1552381497" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1552381497" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1552381497" rel="stylesheet">
+    <link href="/css/auto-complete.css?1552381497" rel="stylesheet">
+    <link href="/css/theme.css?1552381497" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1552381497" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1552306008" rel="stylesheet">
+      <link href="/css/theme-blue.css?1552381497" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1552306008"></script>
+    <script src="/js/jquery-2.x.min.js?1552381497"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1552306008"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1552306008"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1552381497"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1552381497"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1552306008"></script>
+<script type="text/javascript" src="/js/search.js?1552381497"></script>
 
     
   </div>
@@ -640,10 +640,14 @@
 <ul>
 <li>
 <ul>
-<li>
-<ul>
 <li><a href="#1-环境">1.环境</a></li>
-<li><a href="#2-从源码安装">2.从源码安装</a></li>
+<li><a href="#2-从源码安装">2.从源码安装</a>
+<ul>
+<li><a href="#2-1下载源码">2.1下载源码：</a></li>
+<li><a href="#2-2检查依赖和安装">2.2检查依赖和安装：</a></li>
+<li><a href="#2-3使用-openblas">2.3使用<code>OpenBLAS</code>：</a></li>
+<li><a href="#2-4安装-cuda">2.4安装<code>cuda</code></a></li>
+<li><a href="#2-5编译">2.5编译</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -667,22 +671,22 @@
 
 
 
-<h3 id="1-环境">1.环境</h3>
+<h2 id="1-环境">1.环境</h2>
 
 <p>操作系统建议使用ubuntu，因为源里已经有编译好的一些依赖库，如<code>ATLAS</code>，安装不会遇到太多问题。</p>
 
 <p>需要安装有<code>git</code>和<code>make</code>以及<code>gcc</code>等编译工具链</p>
 
-<h3 id="2-从源码安装">2.从源码安装</h3>
+<h2 id="2-从源码安装">2.从源码安装</h2>
 
-<p>1.下载源码：</p>
+<h3 id="2-1下载源码">2.1下载源码：</h3>
 
 <pre><code class="language-shell">git clone https://github.com/kaldi-asr/kaldi.git
 </code></pre>
 
 <p>安装文档在<code>kaldi/tools/INSTALL</code>，很短，建议阅读一下</p>
 
-<p>2.检查依赖和安装：</p>
+<h3 id="2-2检查依赖和安装">2.2检查依赖和安装：</h3>
 
 <pre><code class="language-shell">#检查依赖，如有问题参照仔细修改
 ./extras/check_dependencies.sh
@@ -692,14 +696,55 @@ make -j 8
 
 <p>这会安装<code>ATLAS</code> <code>headers</code>, <code>OpenFst</code>, <code>SCTK</code> 和 <code>sph2pipe</code></p>
 
-<p>3.由于<code>ATLAS</code>安装复杂，使用<code>OpenBLAS</code>：</p>
+<h3 id="2-3使用-openblas">2.3使用<code>OpenBLAS</code>：</h3>
+
+<p>由于<code>ATLAS</code>安装复杂，需要调节cpu工作模式，如果使用Ubuntu系统，源里有编译好的<code>ATLAS</code>库，可以直接安装，这里使用<code>OpenBLAS</code>：</p>
 
 <pre><code class="language-shell">./extras/install_openblas.sh
 </code></pre>
 
-<p>4.根据安装文档下载编译依赖(这里使用<code>OpenBLAS</code>)，需要硬盘上有20G的空闲空间：</p>
+<h3 id="2-4安装-cuda">2.4安装<code>cuda</code></h3>
 
-<pre><code class="language-shell">./configure  --openblas-root=../tools/OpenBLAS/install
+<p>thchs30和aishell的训练都需要用到<code>cuda</code>，建议在编译安装的时候就把相关依赖一并装好。</p>
+
+<p>可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：<a href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a> ，再手动安装。</p>
+
+<p>Archlinux可以直接从源里安装，Ubuntu等发行版类似：</p>
+
+<pre><code class="language-bash">sudo pacman -S cuda
+</code></pre>
+
+<h3 id="2-5编译">2.5编译</h3>
+
+<p>根据安装文档下载编译依赖(这里使用<code>OpenBLAS</code>)，需要硬盘上有20G的空闲空间：</p>
+
+<pre><code class="language-bash">./configure  --openblas-root=../tools/OpenBLAS/install
+</code></pre>
+
+<p>如果没有找到<code>cuda</code>安装路径，提示：</p>
+
+<pre><code class="language-bash">CUDA will not be used! If you have already installed cuda drivers 
+and cuda toolkit, try using --cudatk-dir=... option.  Note: this is
+only relevant for neural net experiments
+</code></pre>
+
+<p>按照提示指定<code>cuda</code>安装路径，Archlinux安装路径在<code>/opt/cuda/</code>：</p>
+
+<pre><code class="language-bash">./configure  --openblas-root=../tools/OpenBLAS/install --cudatk-dir=/opt/cuda/
+</code></pre>
+
+<p>如果提示<code>g++</code>版本问题：</p>
+
+<pre><code>Configuring dynamically loaded OpenBlas since --static-math=no (the default)
+Successfully configured for Linux with OpenBLAS from /home/countstarlight/data/Documents/kaldi/tools/OpenBLAS/install
+***configure failed: CUDA 10_0 does not support g++ (g++-8.2.1).
+                 You need g++ &lt; 8.0. ***
+</code></pre>
+
+<p>比如这里提示cuda10只支持<code>g++</code>8.0以下的版本，不需要降级，从源里安装低版本的<code>g++</code>，Archlinux会在安装<code>cuda</code>时自动安装适合版本的<code>g++</code>，Ubuntu等发行版类似，指定用低版本的<code>g++</code>，这里我们用<code>g++-7</code>：</p>
+
+<pre><code class="language-bash">export CXX=g++-7
+./configure  --openblas-root=../tools/OpenBLAS/install --cudatk-dir=/opt/cuda/
 make depend -j 8
 make -j 8
 </code></pre>
@@ -1055,20 +1100,20 @@ make -j 8
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1552306008"></script>
-    <script src="/js/perfect-scrollbar.min.js?1552306008"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1552306008"></script>
-    <script src="/js/jquery.sticky.js?1552306008"></script>
-    <script src="/js/featherlight.min.js?1552306008"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1552306008"></script>
-    <script src="/js/highlight.pack.js?1552306008"></script>
+    <script src="/js/clipboard.min.js?1552381497"></script>
+    <script src="/js/perfect-scrollbar.min.js?1552381497"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1552381497"></script>
+    <script src="/js/jquery.sticky.js?1552381497"></script>
+    <script src="/js/featherlight.min.js?1552381497"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1552381497"></script>
+    <script src="/js/highlight.pack.js?1552381497"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1552306008"></script>
-    <script src="/js/learn.js?1552306008"></script>
-    <script src="/js/hugo-learn.js?1552306008"></script>
+    <script src="/js/modernizr.custom.71422.js?1552381497"></script>
+    <script src="/js/learn.js?1552381497"></script>
+    <script src="/js/hugo-learn.js?1552381497"></script>
 
-    <link href="/mermaid/mermaid.css?1552306008" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1552306008"></script>
+    <link href="/mermaid/mermaid.css?1552381497" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1552381497"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
