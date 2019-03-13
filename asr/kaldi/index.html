@@ -12,19 +12,19 @@
     <title>安装kaldi :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1552381497" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1552381497" rel="stylesheet">
-    <link href="/css/github.css?1552381497" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1552381497" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1552381497" rel="stylesheet">
-    <link href="/css/auto-complete.css?1552381497" rel="stylesheet">
-    <link href="/css/theme.css?1552381497" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1552381497" rel="stylesheet">
+    <link href="/css/nucleus.css?1552447763" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1552447763" rel="stylesheet">
+    <link href="/css/github.css?1552447763" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1552447763" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1552447763" rel="stylesheet">
+    <link href="/css/auto-complete.css?1552447763" rel="stylesheet">
+    <link href="/css/theme.css?1552447763" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1552447763" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1552381497" rel="stylesheet">
+      <link href="/css/theme-blue.css?1552447763" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1552381497"></script>
+    <script src="/js/jquery-2.x.min.js?1552447763"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1552381497"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1552381497"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1552447763"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1552447763"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1552381497"></script>
+<script type="text/javascript" src="/js/search.js?1552447763"></script>
 
     
   </div>
@@ -640,14 +640,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#1-环境">1.环境</a></li>
-<li><a href="#2-从源码安装">2.从源码安装</a>
+<li><a href="#环境">环境</a></li>
+<li><a href="#1-下载源码">1.下载源码</a></li>
+<li><a href="#2-编译安装-kaldi-tools">2.编译安装<code>kaldi/tools</code></a></li>
+<li><a href="#3-编译安装-kaldi-src">3.编译安装<code>kaldi/src</code></a>
 <ul>
-<li><a href="#2-1下载源码">2.1下载源码：</a></li>
-<li><a href="#2-2检查依赖和安装">2.2检查依赖和安装：</a></li>
-<li><a href="#2-3使用-openblas">2.3使用<code>OpenBLAS</code>：</a></li>
-<li><a href="#2-4安装-cuda">2.4安装<code>cuda</code></a></li>
-<li><a href="#2-5编译">2.5编译</a></li>
+<li><a href="#3-1使用-openblas">3.1使用<code>OpenBLAS</code></a></li>
+<li><a href="#3-2安装-cuda">3.2安装<code>cuda</code></a></li>
+<li><a href="#3-3编译">3.3编译</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -671,39 +671,52 @@
 
 
 
-<h2 id="1-环境">1.环境</h2>
+<h2 id="环境">环境</h2>
 
-<p>操作系统建议使用ubuntu，因为源里已经有编译好的一些依赖库，如<code>ATLAS</code>，安装不会遇到太多问题。</p>
+<p>操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如<code>ATLAS</code>，安装不会遇到太多问题。</p>
 
-<p>需要安装有<code>git</code>和<code>make</code>以及<code>gcc</code>等编译工具链</p>
+<p>需要安装有<code>git</code>，<code>subversion</code>，<code>make</code>以及<code>gcc</code>等编译工具链</p>
 
-<h2 id="2-从源码安装">2.从源码安装</h2>
-
-<h3 id="2-1下载源码">2.1下载源码：</h3>
+<h2 id="1-下载源码">1.下载源码</h2>
 
 <pre><code class="language-shell">git clone https://github.com/kaldi-asr/kaldi.git
 </code></pre>
 
+<h2 id="2-编译安装-kaldi-tools">2.编译安装<code>kaldi/tools</code></h2>
+
 <p>安装文档在<code>kaldi/tools/INSTALL</code>，很短，建议阅读一下</p>
 
-<h3 id="2-2检查依赖和安装">2.2检查依赖和安装：</h3>
+<div class="notices note" ><p>注意：如果要使用特定版本的编译器，必须和后面编译安装<code>kaldi/src</code>的编译器一致，如之后我们编译安装<code>cuda</code>要用<code>g++-7</code>，需要修改<code>tools/Makefile</code>：</p>
+</div>
 
-<pre><code class="language-shell">#检查依赖，如有问题参照仔细修改
-./extras/check_dependencies.sh
+
+<pre><code class="language-makefile">#CXX = g++
+#CC = gcc         # used for sph2pipe
+CXX = g++-7
+CC = gcc-7         # used for sph2pipe
+</code></pre>
+
+<p>开始编译：</p>
+
+<pre><code class="language-shell">cd tools
+./extras/check_dependencies.sh #检查依赖，如有问题参照仔细修改
 #自动下载安装依赖
 make -j 8
 </code></pre>
 
 <p>这会安装<code>ATLAS</code> <code>headers</code>, <code>OpenFst</code>, <code>SCTK</code> 和 <code>sph2pipe</code></p>
 
-<h3 id="2-3使用-openblas">2.3使用<code>OpenBLAS</code>：</h3>
+<h2 id="3-编译安装-kaldi-src">3.编译安装<code>kaldi/src</code></h2>
 
-<p>由于<code>ATLAS</code>安装复杂，需要调节cpu工作模式，如果使用Ubuntu系统，源里有编译好的<code>ATLAS</code>库，可以直接安装，这里使用<code>OpenBLAS</code>：</p>
+<h3 id="3-1使用-openblas">3.1使用<code>OpenBLAS</code></h3>
 
-<pre><code class="language-shell">./extras/install_openblas.sh
+<p>如果使用Ubuntu系统，源里有编译好的<code>ATLAS</code>库，可以直接安装，其他Linux发行版由于<code>ATLAS</code>安装复杂，需要调节cpu工作模式，这里用<code>OpenBLAS</code>替代：</p>
+
+<pre><code class="language-shell">cd tools
+./extras/install_openblas.sh
 </code></pre>
 
-<h3 id="2-4安装-cuda">2.4安装<code>cuda</code></h3>
+<h3 id="3-2安装-cuda">3.2安装<code>cuda</code></h3>
 
 <p>thchs30和aishell的训练都需要用到<code>cuda</code>，建议在编译安装的时候就把相关依赖一并装好。</p>
 
@@ -714,7 +727,7 @@ make -j 8
 <pre><code class="language-bash">sudo pacman -S cuda
 </code></pre>
 
-<h3 id="2-5编译">2.5编译</h3>
+<h3 id="3-3编译">3.3编译</h3>
 
 <p>根据安装文档下载编译依赖(这里使用<code>OpenBLAS</code>)，需要硬盘上有20G的空闲空间：</p>
 
@@ -1100,20 +1113,20 @@ make -j 8
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1552381497"></script>
-    <script src="/js/perfect-scrollbar.min.js?1552381497"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1552381497"></script>
-    <script src="/js/jquery.sticky.js?1552381497"></script>
-    <script src="/js/featherlight.min.js?1552381497"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1552381497"></script>
-    <script src="/js/highlight.pack.js?1552381497"></script>
+    <script src="/js/clipboard.min.js?1552447763"></script>
+    <script src="/js/perfect-scrollbar.min.js?1552447763"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1552447763"></script>
+    <script src="/js/jquery.sticky.js?1552447763"></script>
+    <script src="/js/featherlight.min.js?1552447763"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1552447763"></script>
+    <script src="/js/highlight.pack.js?1552447763"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1552381497"></script>
-    <script src="/js/learn.js?1552381497"></script>
-    <script src="/js/hugo-learn.js?1552381497"></script>
+    <script src="/js/modernizr.custom.71422.js?1552447763"></script>
+    <script src="/js/learn.js?1552447763"></script>
+    <script src="/js/hugo-learn.js?1552447763"></script>
 
-    <link href="/mermaid/mermaid.css?1552381497" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1552381497"></script>
+    <link href="/mermaid/mermaid.css?1552447763" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1552447763"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
