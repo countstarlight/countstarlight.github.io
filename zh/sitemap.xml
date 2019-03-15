@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.codist.me/stl/set/</loc>
+    <lastmod>2019-03-14T16:32:45+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/git/gpg/</loc>
     <lastmod>2019-03-11T20:03:50+08:00</lastmod>
   </url>
@@ -21,7 +26,17 @@
   </url>
   
   <url>
+    <loc>https://blog.codist.me/stl/</loc>
+    <lastmod>2019-03-14T16:26:15+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/asr/thchs30/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/asr/aishell/</loc>
+    <lastmod>2019-03-11T19:19:26+08:00</lastmod>
   </url>
   
   <url>
@@ -36,26 +51,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://blog.codist.me/embedded/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/asr/aishell/</loc>
-    <lastmod>2019-03-11T19:19:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/android/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/android/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/android/"
                 />
   </url>
   
@@ -75,12 +70,23 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/selfhost/</loc>
+    <loc>https://blog.codist.me/android/</loc>
+    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/android/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/</loc>
-    <lastmod>2019-03-11T20:03:50+08:00</lastmod>
+    <lastmod>2019-03-14T16:32:45+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -91,6 +97,10 @@
                 hreflang="zh"
                 href="https://blog.codist.me/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/selfhost/</loc>
   </url>
   
   <url>

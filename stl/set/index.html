@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.55.0-DEV" />
-    <meta name="description" content="生成gpg key和配置用gpg签名git commit">
+    <meta name="description" content="基于红黑树的平衡二叉树的数据结构实现的一种容器">
 <meta name="author" content="Codist">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Git 用GPG签名 :: Codist</title>
+    <title>SET容器 - 自定义去重和排序 :: Codist</title>
 
     
     <link href="/css/nucleus.css?1552616730" rel="stylesheet">
@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha256-uXNHy6FK52Pb83SmU45mVAg7YECmr9Lwwu1zOz31j5c=" crossorigin="anonymous" />
 
   </head>
-  <body class="" data-url="/git/gpg/">
+  <body class="" data-url="/stl/set/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -169,7 +169,7 @@
   
     
     <li data-nav-id="/stl/" title="C&#43;&#43; STL" class="dd-item 
-        
+        parent
         
         
         ">
@@ -195,7 +195,7 @@
  
   
     
-      <li data-nav-id="/stl/set/" title="SET容器 - 自定义去重和排序" class="dd-item ">
+      <li data-nav-id="/stl/set/" title="SET容器 - 自定义去重和排序" class="dd-item active">
         <a href="/stl/set/">
         SET容器 - 自定义去重和排序
         <i class="fas fa-check read-icon"></i>
@@ -510,7 +510,7 @@
   
     
     <li data-nav-id="/git/" title="Git使用" class="dd-item 
-        parent
+        
         
         
         ">
@@ -536,7 +536,7 @@
  
   
     
-      <li data-nav-id="/git/gpg/" title="Git 用GPG签名" class="dd-item active">
+      <li data-nav-id="/git/gpg/" title="Git 用GPG签名" class="dd-item ">
         <a href="/git/gpg/">
         Git 用GPG签名
         <i class="fas fa-check read-icon"></i>
@@ -607,7 +607,7 @@
                   
                     
                     
-                      <option id="zh" value="/git/gpg/" selected>简体中文</option>
+                      <option id="zh" value="/stl/set/" selected>简体中文</option>
                     
                   
               
@@ -676,7 +676,7 @@
             
           
           
-            <a href='/'>首页</a> > <a href='/git/'>Git使用</a> > Git 用GPG签名
+            <a href='/'>首页</a> > <a href='/stl/'>C++ STL</a> > SET容器 - 自定义去重和排序
           
          
           
@@ -689,16 +689,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-生成gpg-key">1. 生成GPG key</a></li>
-<li><a href="#2-导出公钥">2.导出公钥</a></li>
-<li><a href="#3-配置git">3.配置git</a></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -710,60 +701,13 @@
         
         <div id="body-inner">
           
-            <h1>Git 用GPG签名</h1>
+            <h1>SET容器 - 自定义去重和排序</h1>
           
 
         
 
 
-
-
-<h2 id="1-生成gpg-key">1. 生成GPG key</h2>
-
-<pre><code class="language-bash">gpg --full-generate-key
-</code></pre>
-
-<ul>
-<li>加密方式选择RSA and RSA</li>
-<li>过期时间输入：4096</li>
-<li>valid选择默认</li>
-</ul>
-
-<p>填写信息后生成成功。</p>
-
-<h2 id="2-导出公钥">2.导出公钥</h2>
-
-<pre><code class="language-bash">gpg --list-secret-keys --keyid-format LONG
-</code></pre>
-
-<p><code>rsa4096/</code>后面的就是 <code>GPG key ID</code></p>
-
-<pre><code class="language-bash">gpg --armor --export &lt;要导出的GPG Key ID&gt;
-</code></pre>
-
-<p>将得到的一大段公钥粘贴到git平台。</p>
-
-<h2 id="3-配置git">3.配置git</h2>
-
-<p>1.设置签名用的<code>GPG key ID</code></p>
-
-<pre><code class="language-bash">git config --global user.signingkey &lt;GPG Key ID&gt;
-</code></pre>
-
-<p>2.设置gpg签名用的程序</p>
-
-<pre><code class="language-bash">git config --global gpg.program gpg
-</code></pre>
-
-<p>3.启用gpg签名</p>
-
-<pre><code class="language-bash">git config --global commit.gpgsign true
-</code></pre>
-
-<p>测试签名</p>
-
-<pre><code class="language-bash">echo &quot;test&quot; | gpg --clearsign
-</code></pre>
+<p><code>std::set</code>，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于去重和排序。</p>
 
 
 <footer class=" footline" >
@@ -871,6 +815,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -883,6 +828,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -903,101 +849,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1095,6 +948,69 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1109,6 +1025,37 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1133,10 +1080,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/git/" title="Git使用"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/stl/" title="C&#43;&#43; STL"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/asr/" title="基于kaldi的语音识别" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/embedded/" title="嵌入式开发" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

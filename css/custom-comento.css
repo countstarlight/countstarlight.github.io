@@ -14,3 +14,19 @@ pre {
 pre .copy-to-clipboard {
     background-color: initial;
 }
+
+/*themes/hugo-theme-learn/static/css/theme.css*/
+.children-li p {
+    font-style: initial;
+}
+
+/*
+#chapter p {
+    text-align: left;
+}
+
+.children p {
+    margin-top: initial;
+    margin-bottom: initial;
+}
+*/
