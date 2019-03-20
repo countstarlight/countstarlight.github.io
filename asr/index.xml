@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基于kaldi的语音识别 on Codist</title>
+    <title>基于kaldi的中文语音识别 on Codist</title>
     <link>https://blog.codist.me/asr/</link>
-    <description>Recent content in 基于kaldi的语音识别 on Codist</description>
+    <description>Recent content in 基于kaldi的中文语音识别 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 11 Mar 2019 19:19:26 +0800</lastBuildDate>
     

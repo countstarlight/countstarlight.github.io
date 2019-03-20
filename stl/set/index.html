@@ -9,22 +9,22 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>SET容器 - 自定义去重和排序 :: Codist</title>
+    <title>SET容器 - 自定义排序和去重 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1552616730" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1552616730" rel="stylesheet">
-    <link href="/css/github.css?1552616730" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1552616730" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1552616730" rel="stylesheet">
-    <link href="/css/auto-complete.css?1552616730" rel="stylesheet">
-    <link href="/css/theme.css?1552616730" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1552616730" rel="stylesheet">
+    <link href="/css/nucleus.css?1553056576" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1553056576" rel="stylesheet">
+    <link href="/css/github.css?1553056576" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1553056576" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1553056576" rel="stylesheet">
+    <link href="/css/auto-complete.css?1553056576" rel="stylesheet">
+    <link href="/css/theme.css?1553056576" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1553056576" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1552616730" rel="stylesheet">
+      <link href="/css/theme-blue.css?1553056576" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1552616730"></script>
+    <script src="/js/jquery-2.x.min.js?1553056576"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1552616730"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1552616730"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1553056576"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1553056576"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1552616730"></script>
+<script type="text/javascript" src="/js/search.js?1553056576"></script>
 
     
   </div>
@@ -77,13 +77,13 @@
  
   
     
-    <li data-nav-id="/asr/" title="基于kaldi的语音识别" class="dd-item 
+    <li data-nav-id="/asr/" title="基于kaldi的中文语音识别" class="dd-item 
         
         
         
         ">
       <a href="/asr/">
-          基于kaldi的语音识别
+          基于kaldi的中文语音识别
           
             <i class="fas fa-check read-icon"></i>
           
@@ -195,9 +195,9 @@
  
   
     
-      <li data-nav-id="/stl/set/" title="SET容器 - 自定义去重和排序" class="dd-item active">
+      <li data-nav-id="/stl/set/" title="SET容器 - 自定义排序和去重" class="dd-item active">
         <a href="/stl/set/">
-        SET容器 - 自定义去重和排序
+        SET容器 - 自定义排序和去重
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -676,7 +676,7 @@
             
           
           
-            <a href='/'>首页</a> > <a href='/stl/'>C++ STL</a> > SET容器 - 自定义去重和排序
+            <a href='/'>首页</a> > <a href='/stl/'>C++ STL</a> > SET容器 - 自定义排序和去重
           
          
           
@@ -689,7 +689,19 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-使用内置的比较函数-less">1.使用内置的比较函数<code>less</code></a></li>
+<li><a href="#2-定义比较函数对自定义结构体-类-排序">2.定义比较函数对自定义结构体(类)排序</a>
+<ul>
+<li><a href="#2-1重载操作符">2.1重载操作符 <code>&lt;</code></a></li>
+<li><a href="#2-2重载操作符">2.2重载操作符 <code>()</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -701,13 +713,203 @@
         
         <div id="body-inner">
           
-            <h1>SET容器 - 自定义去重和排序</h1>
+            <h1>SET容器 - 自定义排序和去重</h1>
           
 
         
 
 
-<p><code>std::set</code>，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于去重和排序。</p>
+
+
+<p><code>std::set</code>，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。</p>
+
+<h2 id="1-使用内置的比较函数-less">1.使用内置的比较函数<code>less</code></h2>
+
+<p>定义内置类型的<code>set</code>对象，限制：</p>
+
+<ul>
+<li>用于比较内置类型，如<code>int</code>，<code>char</code></li>
+<li>只能对一个内置类型进行排序或去重</li>
+</ul>
+
+<p>示例排序(<code>c++11</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    //iteratorz，迭代器，用于遍历容器内元素和元素数据类型
+    for (set&lt;int&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; *i &lt;&lt; &quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+<p>输出：</p>
+
+<pre><code>10 20
+</code></pre>
+
+<h2 id="2-定义比较函数对自定义结构体-类-排序">2.定义比较函数对自定义结构体(类)排序</h2>
+
+<h3 id="2-1重载操作符">2.1重载操作符 <code>&lt;</code></h3>
+
+<p>不能重载<code>&lt;=</code>或<code>&gt;=</code>，几乎所有的方法或容器都需要排序来满足数学意义上的标准严格弱序化，否则这些方法或容器的行为将不可预知。</p>
+
+<p>严格弱序化需要满足：</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">f(x,x) = false</td>
+<td align="center">相同为假</td>
+</tr>
+
+<tr>
+<td align="center">if f(x,y) then !f(y,x)</td>
+<td align="center">如果 x &lt; y(x &gt; y) 为真，则 x &gt; y (x &lt; y) 为假</td>
+</tr>
+
+<tr>
+<td align="center">if f(x,y) and f(y,z) then f(x,z)</td>
+<td align="center">如果 x &gt; y (x &lt; y) 且 y &gt; z (y &lt; z)，则x &gt; z(x &lt; z)</td>
+</tr>
+
+<tr>
+<td align="center">if !f(x,y)&amp;&amp;!f(y,x) then x==y; if x==y and y==z then x==z</td>
+<td align="center">如果 x &lt; y 为假且 x &gt; y 为假，则 x = y</td>
+</tr>
+</tbody>
+</table>
+
+<p>set容器在判定已有元素a和新插入元素b是否相等时：</p>
+
+<ul>
+<li>1.将a作为左操作数，b为右操作数，调用比较函数，得到返回值</li>
+<li>2.将b作为左操作数，a为右操作数，再调用一次比较函数，得到返回值</li>
+<li>3.如果前两步返回值都为<code>false</code>，则<code>a=b</code>，b不会被插入set容器；如果前两步返回值都为<code>true</code>，则可能得到不可预知的结果。</li>
+</ul>
+
+<p>由上述，必须满足：<strong>比较函数对相同元素返回<code>false</code></strong></p>
+
+<p>示例，对结构体<code>Stu</code>按照id排序，如果id相同，对<code>name</code>按照字典序排序，同时去重(<code>c++11</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
+    Stu() {}
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
+        }
+    }
+};
+
+int main() {
+    std::set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;)); //重复数据
+    //对应insert，先调用存储对象构造函数，在内存中生成对象，然后拷贝至容器中，c++98不支持
+    testSet.emplace(1, &quot;wang&quot;);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; &quot;id: &quot; &lt;&lt; i.id &lt;&lt; &quot; &quot;
+                  &lt;&lt; &quot;name: &quot; &lt;&lt; i.name &lt;&lt; std::endl;
+    }
+    return 0;
+}
+</code></pre>
+
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
+    Stu() {}
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
+        }
+    }
+};
+
+int main() {
+    set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(1, &quot;wang&quot;));
+    for (set&lt;Stu&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; &quot;id: &quot; &lt;&lt; i-&gt;id &lt;&lt; &quot; &quot;
+             &lt;&lt; &quot;name: &quot; &lt;&lt; i-&gt;name &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+
+<p>输出：</p>
+
+<pre><code>id: 1 name: wang
+id: 2 name: li
+id: 2 name: zhang
+</code></pre>
+
+<h3 id="2-2重载操作符">2.2重载操作符 <code>()</code></h3>
 
 
 <footer class=" footline" >
@@ -1093,20 +1295,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1552616730"></script>
-    <script src="/js/perfect-scrollbar.min.js?1552616730"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1552616730"></script>
-    <script src="/js/jquery.sticky.js?1552616730"></script>
-    <script src="/js/featherlight.min.js?1552616730"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1552616730"></script>
-    <script src="/js/highlight.pack.js?1552616730"></script>
+    <script src="/js/clipboard.min.js?1553056576"></script>
+    <script src="/js/perfect-scrollbar.min.js?1553056576"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1553056576"></script>
+    <script src="/js/jquery.sticky.js?1553056576"></script>
+    <script src="/js/featherlight.min.js?1553056576"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1553056576"></script>
+    <script src="/js/highlight.pack.js?1553056576"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1552616730"></script>
-    <script src="/js/learn.js?1552616730"></script>
-    <script src="/js/hugo-learn.js?1552616730"></script>
+    <script src="/js/modernizr.custom.71422.js?1553056576"></script>
+    <script src="/js/learn.js?1553056576"></script>
+    <script src="/js/hugo-learn.js?1553056576"></script>
 
-    <link href="/mermaid/mermaid.css?1552616730" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1552616730"></script>
+    <link href="/mermaid/mermaid.css?1553056576" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1553056576"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

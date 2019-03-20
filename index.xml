@@ -11,12 +11,16 @@
     
     
     <item>
-      <title>SET容器 - 自定义去重和排序</title>
+      <title>SET容器 - 自定义排序和去重</title>
       <link>https://blog.codist.me/stl/set/</link>
       <pubDate>Thu, 14 Mar 2019 16:32:45 +0800</pubDate>
       
       <guid>https://blog.codist.me/stl/set/</guid>
-      <description>std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于去重和排序。</description>
+      <description>std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。
+1.使用内置的比较函数less 定义内置类型的set对象，限制：
+ 用于比较内置类型，如int，char 只能对一个内置类型进行排序或去重  示例排序(c++11)：
+#include &amp;lt;iostream&amp;gt; #include &amp;lt;set&amp;gt; int main() { std::set&amp;lt;int&amp;gt; testSet; testSet.insert(20); testSet.insert(10); for (auto i : testSet) { std::cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;quot; &amp;quot;; } std::cout &amp;lt;&amp;lt; std::endl; return 0; }  Microsoft Visual C++ 6.0(c++98)：
+#include &amp;lt;iostream&amp;gt; #include &amp;lt;set&amp;gt; using namespace std; int main() { std::set&amp;lt;int&amp;gt; testSet; testSet.insert(20); testSet.insert(10); //iteratorz，迭代器，用于遍历容器内元素和元素数据类型 for (set&amp;lt;int&amp;gt;::iterator i = testSet.begin(); i != testSet.end(); i++) { cout &amp;lt;&amp;lt; *i &amp;lt;&amp;lt; &amp;quot; &amp;quot;; } cout &amp;lt;&amp;lt; endl; return 0; }  输出：</description>
     </item>
     
     <item>
