@@ -12,19 +12,19 @@
     <title>使用aishell数据集 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1553056827" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1553056827" rel="stylesheet">
-    <link href="/css/github.css?1553056827" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1553056827" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1553056827" rel="stylesheet">
-    <link href="/css/auto-complete.css?1553056827" rel="stylesheet">
-    <link href="/css/theme.css?1553056827" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1553056827" rel="stylesheet">
+    <link href="/css/nucleus.css?1553057849" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1553057849" rel="stylesheet">
+    <link href="/css/github.css?1553057849" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1553057849" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1553057849" rel="stylesheet">
+    <link href="/css/auto-complete.css?1553057849" rel="stylesheet">
+    <link href="/css/theme.css?1553057849" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1553057849" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1553056827" rel="stylesheet">
+      <link href="/css/theme-blue.css?1553057849" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1553056827"></script>
+    <script src="/js/jquery-2.x.min.js?1553057849"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1553056827"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1553056827"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1553057849"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1553057849"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1553056827"></script>
+<script type="text/javascript" src="/js/search.js?1553057849"></script>
 
     
   </div>
@@ -852,11 +852,11 @@ data_url=www.openslr.org/resources/33
 
 <h3 id="4-1生成配置文件">4.1生成配置文件</h3>
 
-<p>整个操作都在<code>aishell/s5</code>下</p>
+<p>所有操作都在<code>aishell/s5</code>下</p>
 
 <h4 id="4-1-1使用-nnet3-模型">4.1.1使用<code>nnet3</code>模型</h4>
 
-<p>1.首先建立需要的软链接：</p>
+<p>1.建立需要的软链接：</p>
 
 <pre><code class="language-bash">cd exp/nnet3/tdnn_sp
 ln -s 0.mdl final.mdl
@@ -873,15 +873,17 @@ ln -s 0.mdl final.mdl
  exp/nnet3/nnet_online
 </code></pre>
 
-<p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p>
+<ul>
+<li><p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p></li>
 
-<p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p>
+<li><p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p></li>
 
-<p><code>data/lang</code>：nnet3模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p>
+<li><p><code>data/lang</code>：nnet3模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p></li>
 
-<p><code>exp/nnet3/tdnn_sp</code>：nnet3模型</p>
+<li><p><code>exp/nnet3/tdnn_sp</code>：nnet3模型</p></li>
 
-<p><code>exp/nnet3/nnet_online</code>：生成的配置文件存放的目录，自己定义</p>
+<li><p><code>exp/nnet3/nnet_online</code>：生成的配置文件存放的目录，自己定义</p></li>
+</ul>
 
 <h4 id="4-1-2使用-chain-模型-未经测试">4.1.2使用<code>chain</code>模型(未经测试)</h4>
 
@@ -894,15 +896,17 @@ ln -s 0.mdl final.mdl
  exp/chain/nnet_online
 </code></pre>
 
-<p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p>
+<ul>
+<li><p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p></li>
 
-<p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p>
+<li><p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p></li>
 
-<p><code>data/lang_chain</code>：存储chain模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p>
+<li><p><code>data/lang_chain</code>：存储chain模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p></li>
 
-<p><code>exp/chain/tdnn_1a_sp</code>：存储chain模型</p>
+<li><p><code>exp/chain/tdnn_1a_sp</code>：存储chain模型</p></li>
 
-<p><code>exp/chain/nnet_online</code>：生成的配置文件存放的目录，自己定义</p>
+<li><p><code>exp/chain/nnet_online</code>：生成的配置文件存放的目录，自己定义</p></li>
+</ul>
 
 <h3 id="4-2解码">4.2解码</h3>
 
@@ -1334,20 +1338,20 @@ ln -s 0.mdl final.mdl
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1553056827"></script>
-    <script src="/js/perfect-scrollbar.min.js?1553056827"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1553056827"></script>
-    <script src="/js/jquery.sticky.js?1553056827"></script>
-    <script src="/js/featherlight.min.js?1553056827"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1553056827"></script>
-    <script src="/js/highlight.pack.js?1553056827"></script>
+    <script src="/js/clipboard.min.js?1553057849"></script>
+    <script src="/js/perfect-scrollbar.min.js?1553057849"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1553057849"></script>
+    <script src="/js/jquery.sticky.js?1553057849"></script>
+    <script src="/js/featherlight.min.js?1553057849"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1553057849"></script>
+    <script src="/js/highlight.pack.js?1553057849"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1553056827"></script>
-    <script src="/js/learn.js?1553056827"></script>
-    <script src="/js/hugo-learn.js?1553056827"></script>
+    <script src="/js/modernizr.custom.71422.js?1553057849"></script>
+    <script src="/js/learn.js?1553057849"></script>
+    <script src="/js/hugo-learn.js?1553057849"></script>
 
-    <link href="/mermaid/mermaid.css?1553056827" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1553056827"></script>
+    <link href="/mermaid/mermaid.css?1553057849" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1553057849"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
