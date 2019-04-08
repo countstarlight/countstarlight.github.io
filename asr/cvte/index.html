@@ -12,16 +12,16 @@
     <title>使用cvte预训练模型 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1554707633" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1554707633" rel="stylesheet">
+    <link href="/css/nucleus.css?1554708457" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1554708457" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.2.3/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1554707633" rel="stylesheet">
-    <link href="/css/theme.css?1554707633" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1554707633" rel="stylesheet">
+    <link href="/css/auto-complete.css?1554708457" rel="stylesheet">
+    <link href="/css/theme.css?1554708457" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1554708457" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1554707633" rel="stylesheet">
+      <link href="/css/theme-blue.css?1554708457" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1554707633"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1554707633"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1554708457"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1554708457"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1554707633"></script>
+<script type="text/javascript" src="/js/search.js?1554708457"></script>
 
     
   </div>
@@ -712,7 +712,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#下载">下载</a></li>
+<li><a href="#获取模型">获取模型</a></li>
+<li><a href="#修改解码脚本">修改解码脚本</a></li>
+<li><a href="#运行解码测试">运行解码测试</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -725,6 +727,14 @@
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="/tags/kaldi">kaldi</a>
+
+  <a class="tag-link" href="/tags/asr">ASR</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
@@ -741,9 +751,9 @@
 
 
 
-<p>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但cvte没有开源数据集和模型配置</p>
+<p>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置</p>
 
-<h2 id="下载">下载</h2>
+<h2 id="获取模型">获取模型</h2>
 
 <p>从 <a href="http://kaldi-asr.org/models/m2">http://kaldi-asr.org/models/m2</a> 下载 <a href="http://kaldi-asr.org/models/2/0002_cvte_chain_model.tar.gz">0002_cvte_chain_model.tar.gz</a>(3.5G)</p>
 
@@ -761,6 +771,8 @@ cp -r ../../wsj/s5/utils utils
 cd local/
 ln -s ../steps/score_kaldi.sh score.sh
 </code></pre>
+
+<h2 id="修改解码脚本">修改解码脚本</h2>
 
 <p>修改<code>utils/lang/check_phones_compatible.sh</code>为：</p>
 
@@ -781,6 +793,14 @@ elif [ ! -f $table_second ]; then
   exit 0;
 fi
 </code></pre>
+
+<h2 id="运行解码测试">运行解码测试</h2>
+
+<pre><code class="language-bash">chmod +x *.sh
+./run.sh
+</code></pre>
+
+<p>需要在大内存平台上，在本地12G内存的计算机上由于内存不够而出错</p>
 
 
 <footer class=" footline" >
@@ -1187,15 +1207,15 @@ fi
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.2.3/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1554707633"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1554708457"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1554707633"></script>
-    <script src="/js/learn.js?1554707633"></script>
-    <script src="/js/hugo-learn.js?1554707633"></script>
+    <script src="/js/modernizr.custom.71422.js?1554708457"></script>
+    <script src="/js/learn.js?1554708457"></script>
+    <script src="/js/hugo-learn.js?1554708457"></script>
 
-    <link href="/mermaid/mermaid.css?1554707633" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1554707633"></script>
+    <link href="/mermaid/mermaid.css?1554708457" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1554708457"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

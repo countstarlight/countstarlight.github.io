@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基于kaldi的中文语音识别 on Codist</title>
-    <link>https://blog.codist.me/asr/</link>
-    <description>Recent content in 基于kaldi的中文语音识别 on Codist</description>
+    <title>Asr on Codist</title>
+    <link>https://blog.codist.me/tags/asr/</link>
+    <description>Recent content in Asr on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 11 Mar 2019 19:19:26 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.codist.me/asr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.codist.me/tags/asr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用thchs30数据集</title>
+      <link>https://blog.codist.me/asr/thchs30/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.codist.me/asr/thchs30/</guid>
+      <description>1.下载数据集 Kaldi中文语音识别公共数据集有：
+ 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kaldi-master/egs/aishell
+ 2.gale_mandarin：中文新闻广播数据集(LDC2013S08, LDC2013S08）
+ 3.hkust：中文电话数据集(LDC2005S15, LDC2005T32)
+ 4.thchs30：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载
+  这里采用thchs30，从http://www.openslr.org/18/ 或者参照它的README下载三个压缩包：
+ data_thchs30.tgz 6.4G Mirrors: China
+ test-noise.tgz 1.9G Mirrors: China
+ resource.tgz 24M Mirrors: China
+  在egs/thchs30/s5下新建文件夹thchs30-openslr，把三个文件解压在该文件夹下
+这个数据集包含以下内容：
+   数据集 音频时长(h) 句子数 词数     train(训练) 25 10000 198252   dev(开发) 2:14 893 17743   test(测试) 6:15 2495 49085    还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。
+其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</description>
+    </item>
     
     <item>
       <title>安装kaldi</title>
@@ -30,27 +51,6 @@ sudo pacman -S cuda  注意：对于Archlinux，由于源里的cuda更新比较�
 3.3编译 根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
 ./configure --openblas-root=../tools/OpenBLAS/install  如果没有找到cuda安装路径，提示：
 CUDA will not be used! If you have already installed cuda drivers and cuda toolkit, try using --cudatk-dir=.</description>
-    </item>
-    
-    <item>
-      <title>使用thchs30数据集</title>
-      <link>https://blog.codist.me/asr/thchs30/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.codist.me/asr/thchs30/</guid>
-      <description>1.下载数据集 Kaldi中文语音识别公共数据集有：
- 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kaldi-master/egs/aishell
- 2.gale_mandarin：中文新闻广播数据集(LDC2013S08, LDC2013S08）
- 3.hkust：中文电话数据集(LDC2005S15, LDC2005T32)
- 4.thchs30：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载
-  这里采用thchs30，从http://www.openslr.org/18/ 或者参照它的README下载三个压缩包：
- data_thchs30.tgz 6.4G Mirrors: China
- test-noise.tgz 1.9G Mirrors: China
- resource.tgz 24M Mirrors: China
-  在egs/thchs30/s5下新建文件夹thchs30-openslr，把三个文件解压在该文件夹下
-这个数据集包含以下内容：
-   数据集 音频时长(h) 句子数 词数     train(训练) 25 10000 198252   dev(开发) 2:14 893 17743   test(测试) 6:15 2495 49085    还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。
-其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</description>
     </item>
     
     <item>
