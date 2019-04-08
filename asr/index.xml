@@ -26,7 +26,8 @@ cd tools ./extras/check_dependencies.sh #检查依赖，如有问题参照仔细
 cd tools ./extras/install_openblas.sh  3.2安装cuda thchs30和aishell的训练都需要用到cuda，建议在编译安装的时候就把相关依赖一并装好。
 可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：https://developer.nvidia.com/cuda-downloads ，再手动安装。
 Archlinux可以直接从源里安装，Ubuntu等发行版类似：
-sudo pacman -S cuda  3.3编译 根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
+sudo pacman -S cuda  注意：对于Archlinux，由于源里的cuda更新比较频繁，编译安装的kaldi会依赖指定版本的cuda，如果cuda大版本更新，如10.0=&amp;gt;10.1，会使kaldi找不到旧版的cuda库而出错，建议添加cuda到忽略升级里，或每次更新cuda后重新编译安装kaldi/src
+3.3编译 根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
 ./configure --openblas-root=../tools/OpenBLAS/install  如果没有找到cuda安装路径，提示：
 CUDA will not be used! If you have already installed cuda drivers and cuda toolkit, try using --cudatk-dir=.</description>
     </item>
@@ -63,9 +64,23 @@ cd tools ./extras/install_kaldi_lm.sh  2.获取数据集 和thchs30类似，参�
 访问http://www.openslr.org/33/ ，下载两个压缩包：
 data_aishell.tgz [15G] ( speech data and transcripts ) Mirrors: China
 resource_aishell.tgz [1.2M] ( supplementary resources, incl. lexicon, speaker info ) Mirrors: China
-下载解压缩到一个目录，假设解压缩到aishell-openslr
+下载解压缩到一个目录，这里解压缩到aishell-openslr
 aishell-openslr/data_aishell/wav里的压缩包需要都解压出来，创建脚本local/untar.sh：
 #!/bin/bash remove_archive=false if [ &amp;quot;$1&amp;quot; == --remove-archive ]; then remove_archive=true shift fi if [ $# -ne 3 ]; then echo &amp;quot;Usage: $0 &amp;lt;data-base&amp;gt;&amp;quot; echo &amp;quot;e.g.: $0 /export/a05/xna/data&amp;quot; fi data=$1 part=&amp;quot;data_aishell&amp;quot; if [ ! -d &amp;quot;$data&amp;quot; ]; then echo &amp;quot;$0: no such directory $data&amp;quot; exit 1; fi if [ -f $data/$part/.</description>
+    </item>
+    
+    <item>
+      <title>使用cvte预训练模型</title>
+      <link>https://blog.codist.me/asr/cvte/</link>
+      <pubDate>Sun, 07 Apr 2019 18:48:52 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/asr/cvte/</guid>
+      <description>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但cvte没有开源数据集和模型配置
+下载 从 http://kaldi-asr.org/models/m2 下载 0002_cvte_chain_model.tar.gz(3.5G)
+解压缩到kaldi/egs下，注意kaldi/egs/换成安装kaldi对应的目录：
+tar -zxvf 0002_cvte_chain_model.tar.gz -C kaldi/egs/  解压生成目录kaldi/egs/cvte，按照cvte/README.txt链接steps，utils和score.sh，由于需要修改utils中的脚本，这里直接拷贝utils文件夹：
+cd kaldi/egs/cvte/s5/ ln -s ../../wsj/s5/steps steps #ln -s ../../wsj/s5/utils utils cp -r ../../wsj/s5/utils utils cd local/ ln -s ../steps/score_kaldi.sh score.sh  修改utils/lang/check_phones_compatible.sh为：
+# check if the files exist or not if [ ! -f $table_first ]; then if [ ! -f $table_second ]; then echo &amp;quot;$0: Error! Both of the two phones-symbol tables are absent.&amp;quot; echo &amp;quot;Please check your command&amp;quot; #exit 1; 这里注释掉 else # The phones-symbol-table1 is absent.</description>
     </item>
     
   </channel>
