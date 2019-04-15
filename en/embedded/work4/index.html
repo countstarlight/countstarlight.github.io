@@ -12,16 +12,16 @@
     <title>Serial-USB device on Linux :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1555341186" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1555341186" rel="stylesheet">
+    <link href="/css/nucleus.css?1555341602" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1555341602" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1555341186" rel="stylesheet">
-    <link href="/css/theme.css?1555341186" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1555341186" rel="stylesheet">
+    <link href="/css/auto-complete.css?1555341602" rel="stylesheet">
+    <link href="/css/theme.css?1555341602" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1555341602" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1555341186" rel="stylesheet">
+      <link href="/css/theme-blue.css?1555341602" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -55,13 +55,13 @@
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1555341186"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1555341602"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/\/en";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1555341186"></script>
+<script type="text/javascript" src="/js/search.js?1555341602"></script>
 
     
   </div>
@@ -548,13 +548,13 @@
 
 <h3 id="install-minicom">Install <code>minicom</code></h3>
 
-<pre><code class="language-shell">sudo aptitude update
+<pre><code class="language-bash">sudo aptitude update
 sudo aptitude install minicom
 </code></pre>
 
 <h3 id="plug-the-device-then-check-if-system-recognize-the-adapter">Plug the device then check if system recognize the adapter</h3>
 
-<pre><code class="language-shell">sudo dmesg | grep tty
+<pre><code class="language-bash">sudo dmesg | grep tty
 </code></pre>
 
 <h4 id="if-cannot-recognize-it-seems-to-be">if cannot recognize, it seems to be:</h4>
@@ -590,7 +590,7 @@ Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 <p>Now we know the vendor id and the product id of the usb-Serial Port converter, this will enable us to load the linux kernel module “usbserial” to activate the device, like this :</p>
 
-<pre><code class="language-shell">sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+<pre><code class="language-bash">sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
 </code></pre>
 
 <p>Run <code>dmesg</code> again and you shall see lines similar like this :</p>
@@ -606,7 +606,7 @@ usbcore: registered new interface driver usbserial_generic
 
 <p>Run:</p>
 
-<pre><code class="language-shell">sudo minicom -s
+<pre><code class="language-bash">sudo minicom -s
 </code></pre>
 
 <ul>
@@ -874,15 +874,15 @@ usbcore: registered new interface driver usbserial_generic
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1555341186"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1555341602"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1555341186"></script>
-    <script src="/js/learn.js?1555341186"></script>
-    <script src="/js/hugo-learn.js?1555341186"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1555341602"></script>
+    <script src="/js/learn.js?1555341602"></script>
+    <script src="/js/hugo-learn.js?1555341602"></script>
 
-    <link href="/mermaid/mermaid.css?1555341186" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1555341186"></script>
+    <link href="/mermaid/mermaid.css?1555341602" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1555341602"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

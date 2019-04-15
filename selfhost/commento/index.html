@@ -12,16 +12,16 @@
     <title>搭建博客评论系统 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1555341186" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1555341186" rel="stylesheet">
+    <link href="/css/nucleus.css?1555341602" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1555341602" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1555341186" rel="stylesheet">
-    <link href="/css/theme.css?1555341186" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1555341186" rel="stylesheet">
+    <link href="/css/auto-complete.css?1555341602" rel="stylesheet">
+    <link href="/css/theme.css?1555341602" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1555341602" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1555341186" rel="stylesheet">
+      <link href="/css/theme-blue.css?1555341602" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -55,13 +55,13 @@
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1555341186"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1555341602"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1555341186"></script>
+<script type="text/javascript" src="/js/search.js?1555341602"></script>
 
     
   </div>
@@ -736,20 +736,20 @@
 
 <p>安装 <code>yarn</code>：</p>
 
-<pre><code class="language-shell">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+<pre><code class="language-bash">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update &amp;&amp; sudo apt-get install yarn
 </code></pre>
 
 <p>安装<code>dep</code>（需要已经配置好的go环境）：</p>
 
-<pre><code class="language-shell">go get -u github.com/golang/dep/cmd/dep
+<pre><code class="language-bash">go get -u github.com/golang/dep/cmd/dep
 export PATH=$PATH:$GOPATH/bin
 </code></pre>
 
 <p>下载&amp;编译：</p>
 
-<pre><code class="language-shell">mkdir -p $GOPATH/gitlab.com/commento
+<pre><code class="language-bash">mkdir -p $GOPATH/gitlab.com/commento
 cd $GOPATH/gitlab.com/commento
 git clone https://gitlab.com/commento/commento.git
 make prod
@@ -757,7 +757,7 @@ make prod
 
 <p>在根目录下新建脚本<code>server.sh</code>：</p>
 
-<pre><code class="language-shell">#! /bin/bash
+<pre><code class="language-bash">#! /bin/bash
 
 # 绑定的域名
 export COMMENTO_ORIGIN=https://comment.example.com
@@ -784,7 +784,7 @@ export GITHUB_SECRET=
 
 <p>运行：</p>
 
-<pre><code class="language-shell">chmod +x server.sh
+<pre><code class="language-bash">chmod +x server.sh
 ./server.sh
 </code></pre>
 
@@ -1193,15 +1193,15 @@ export GITHUB_SECRET=
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1555341186"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1555341602"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1555341186"></script>
-    <script src="/js/learn.js?1555341186"></script>
-    <script src="/js/hugo-learn.js?1555341186"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1555341602"></script>
+    <script src="/js/learn.js?1555341602"></script>
+    <script src="/js/hugo-learn.js?1555341602"></script>
 
-    <link href="/mermaid/mermaid.css?1555341186" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1555341186"></script>
+    <link href="/mermaid/mermaid.css?1555341602" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1555341602"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

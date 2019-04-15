@@ -46,7 +46,7 @@
       <guid>https://blog.codist.me/en/embedded/work4/</guid>
       <description>&lt;h3 id=&#34;install-minicom&#34;&gt;Install &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo aptitude update
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude update
 sudo aptitude install minicom
 &lt;/code&gt;&lt;/pre&gt;
 

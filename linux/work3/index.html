@@ -12,16 +12,16 @@
     <title>Linux上摄像设备的使用 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1555341186" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1555341186" rel="stylesheet">
+    <link href="/css/nucleus.css?1555341602" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1555341602" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1555341186" rel="stylesheet">
-    <link href="/css/theme.css?1555341186" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1555341186" rel="stylesheet">
+    <link href="/css/auto-complete.css?1555341602" rel="stylesheet">
+    <link href="/css/theme.css?1555341602" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1555341602" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1555341186" rel="stylesheet">
+      <link href="/css/theme-blue.css?1555341602" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -55,13 +55,13 @@
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1555341186"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1555341602"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1555341186"></script>
+<script type="text/javascript" src="/js/search.js?1555341602"></script>
 
     
   </div>
@@ -778,12 +778,12 @@
 
 <li><p>列出所有的 <code>video4linux</code> 设备:</p>
 
-<pre><code class="language-shell">ls -ltr /dev/video*
+<pre><code class="language-bash">ls -ltr /dev/video*
 </code></pre></li>
 
 <li><p>得到的输出类似于：</p>
 
-<pre><code class="language-shell">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
+<pre><code class="language-bash">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
 </code></pre></li>
 </ul>
 
@@ -796,7 +796,7 @@
 
 <li><p>如果安装有mplayer，可以使用：</p>
 
-<pre><code class="language-shell">mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
+<pre><code class="language-bash">mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
 </code></pre></li>
 </ul>
 
@@ -811,12 +811,12 @@
 <ul>
 <li><p>use the software <em>mencoder</em>:</p>
 
-<pre><code class="language-shell">mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
+<pre><code class="language-bash">mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
 </code></pre></li>
 
 <li><p>or use the software <em>streamer</em>. Here are two examples:</p>
 
-<pre><code class="language-shell">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+<pre><code class="language-bash">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
 </code></pre></li>
 </ul>
 
@@ -828,7 +828,7 @@
 
 <p>查看摄像设备的视频输入，使用<code>cheese</code> 或 <a href="http://www.linuxintro.org/wiki/Mplayer">mplayer</a>:</p>
 
-<pre><code class="language-shell">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
+<pre><code class="language-bash">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
 </code></pre>
 
 <p>或者用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，你可以<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
@@ -841,12 +841,12 @@
 
 <p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, <a href="http://www.linuxintro.org/wiki/Open_a_console">open a console</a> and call</p>
 
-<pre><code class="language-shell">hwinfo --usb
+<pre><code class="language-bash">hwinfo --usb
 </code></pre>
 
 <p>If a Logitech Quickcam Messenger is plugged in the answer will be like:</p>
 
-<pre><code class="language-shell">06: USB 00.2: 0000 Unclassified device
+<pre><code class="language-bash">06: USB 00.2: 0000 Unclassified device
   [Created at usb.122]                
   UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
   Unique ID: Eopr.vE+cdFBwClB                                      
@@ -875,19 +875,19 @@
 
 <p>This means you can install and load the webcam driver like this:</p>
 
-<pre><code class="language-shell">yast -i gspcav-kmp-default
+<pre><code class="language-bash">yast -i gspcav-kmp-default
 modprobe gspca
 </code></pre>
 
 <p>Now you should see a video device:</p>
 
-<pre><code class="language-shell">ls /dev/video*
+<pre><code class="language-bash">ls /dev/video*
 /dev/video  /dev/video0
 </code></pre>
 
 <p>That means you can install and start your webcam-viewer-software. We choose gqcam:</p>
 
-<pre><code class="language-shell">yast -i gqcam
+<pre><code class="language-bash">yast -i gqcam
 gqcam
 </code></pre>
 
@@ -897,17 +897,17 @@ gqcam
 
 <p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. <a href="http://www.linuxintro.org/wiki/Open_a_console">Open a console</a>and type:</p>
 
-<pre><code class="language-shell">sudo apt-get install hwinfo
+<pre><code class="language-bash">sudo apt-get install hwinfo
 </code></pre>
 
 <p>Then call hwinfo:</p>
 
-<pre><code class="language-shell">hwinfo --usb
+<pre><code class="language-bash">hwinfo --usb
 </code></pre>
 
 <p>If a Logitech Quickcam Messenger is plugged in the response will be like:</p>
 
-<pre><code class="language-shell">04: USB 00.2: 0000 Unclassified device
+<pre><code class="language-bash">04: USB 00.2: 0000 Unclassified device
   [Created at usb.122]
   UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
   Unique ID: 4ajv.vE+cdFBwClB
@@ -933,18 +933,18 @@ gqcam
 
 <p>Activate the driver:</p>
 
-<pre><code class="language-shell">sudo modprobe gspca_zc3xx
+<pre><code class="language-bash">sudo modprobe gspca_zc3xx
 </code></pre>
 
 <p>Now you should be able to see the video device:</p>
 
-<pre><code class="language-shell">ls /dev/video*
+<pre><code class="language-bash">ls /dev/video*
 /dev/video0
 </code></pre>
 
 <p>You can now test your webcam using the software cheese:</p>
 
-<pre><code class="language-shell">sudo apt-get install cheese
+<pre><code class="language-bash">sudo apt-get install cheese
 cheese
 </code></pre>
 
@@ -952,7 +952,7 @@ cheese
 
 <p>If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:</p>
 
-<pre><code class="language-shell">yast -i uvcvideo_kmp_default
+<pre><code class="language-bash">yast -i uvcvideo_kmp_default
 modprobe uvcvideo
 </code></pre>
 
@@ -1387,15 +1387,15 @@ modprobe uvcvideo
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1555341186"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1555341602"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1555341186"></script>
-    <script src="/js/learn.js?1555341186"></script>
-    <script src="/js/hugo-learn.js?1555341186"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1555341602"></script>
+    <script src="/js/learn.js?1555341602"></script>
+    <script src="/js/hugo-learn.js?1555341602"></script>
 
-    <link href="/mermaid/mermaid.css?1555341186" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1555341186"></script>
+    <link href="/mermaid/mermaid.css?1555341602" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1555341602"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
