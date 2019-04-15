@@ -608,8 +608,6 @@ section.attachments.grey .attachments-files {
 }
 .children-li p {
     font-size: small;
-    font-style: italic;
-
 }
 .children-h2 p, .children-h3 p {
     font-size: small;
@@ -644,12 +642,9 @@ code + .copy-to-clipboard {
     top: 0;
 }
 pre {
-    padding: 1rem;
     margin: 2rem 0;
-    background: #1d1f21;
     border: 0;
     border-radius: 2px;
-    line-height: 1.15;
 }
 pre code {
     color: whitesmoke;
@@ -1078,12 +1073,10 @@ pre .copy-to-clipboard {
     position: absolute;
     right: 4px;
     top: 4px;
-    background-color: #4d5257;
     color: #ccc;
     border-radius: 2px;
 }
 pre .copy-to-clipboard:hover {
-    background-color: #656c72;
     color: #fff;
 }
 .parent-element {

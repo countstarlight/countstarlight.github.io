@@ -1,32 +1,4 @@
 /*commento.css*/
 .commento-root{
     overflow-x: initial;
-} 
-
-/*themes/hugo-theme-learn/static/css/theme.css*/
-pre {
-    padding: initial;
-    background: initial;
-    line-height: initial;
 }
-
-/*themes/hugo-theme-learn/static/css/theme.css*/
-pre .copy-to-clipboard {
-    background-color: initial;
-}
-
-/*themes/hugo-theme-learn/static/css/theme.css*/
-.children-li p {
-    font-style: initial;
-}
-
-/*
-#chapter p {
-    text-align: left;
-}
-
-.children p {
-    margin-top: initial;
-    margin-bottom: initial;
-}
-*/
