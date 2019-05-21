@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Qt Creator on Codist</title>
+    <title>Qt-creator on Codist</title>
     <link>https://blog.codist.me/en/tags/qt-creator/</link>
-    <description>Recent content in Qt Creator on Codist</description>
+    <description>Recent content in Qt-creator on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 26 Jul 2017 09:11:37 +0800</lastBuildDate>
     

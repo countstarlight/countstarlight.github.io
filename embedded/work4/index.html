@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta name="description" content="Codist&#39;s blog">
 <meta name="author" content="Codist">
 
@@ -12,16 +12,16 @@
     <title>Linux上通过串口连接嵌入式Linux终端 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1557590215" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1557590215" rel="stylesheet">
+    <link href="/css/nucleus.css?1558457983" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1558457983" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1557590215" rel="stylesheet">
-    <link href="/css/theme.css?1557590215" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1557590215" rel="stylesheet">
+    <link href="/css/auto-complete.css?1558457983" rel="stylesheet">
+    <link href="/css/theme.css?1558457983" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1558457983" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1557590215" rel="stylesheet">
+      <link href="/css/theme-blue.css?1558457983" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@ var _hmt = _hmt || [];
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://blog.codist.me/">
-  <img src="/images/favicon.png" height="200" width="200">
+  <img src="/images/favicon.png" height="200" width="238">
 </a>
 
     </div>
@@ -69,13 +69,13 @@ var _hmt = _hmt || [];
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1557590215"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1558457983"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1557590215"></script>
+<script type="text/javascript" src="/js/search.js?1558457983"></script>
 
     
   </div>
@@ -828,11 +828,13 @@ Bus 003 Device 008: ID 18f8:0f99 --- --- --- (注意这行是新加的！)
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </code></pre></li>
 
-<li><p>现在我们知道了usb转串口的 <code>vendor id</code> 和 <code>product id</code>，让我们加载Linux内核的<code>usbserial</code>模块来激活这个设备：</p>
+<li><p>现在我们知道了usb转串口的 <code>vendor id</code> 和 <code>product id</code>，让我们加载Linux内核的<code>usbserial</code>模块来激活这个设备：</p></li>
+</ul>
 
-<pre><code class="language-bash">sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
-</code></pre></li>
+<pre><code class="language-bash">  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+</code></pre>
 
+<ul>
 <li><p>再次运行 <code>dmesg</code> 命令，输出结果类似：</p>
 
 <pre><code>usbserial_generic 1-1:1.0: generic converter detected
@@ -1278,14 +1280,14 @@ usbcore: registered new interface driver usbserial_generic
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1557590215"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1558457983"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1557590215"></script>
-    <script src="/js/learn.js?1557590215"></script>
-    <script src="/js/hugo-learn.js?1557590215"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1558457983"></script>
+    <script src="/js/learn.js?1558457983"></script>
+    <script src="/js/hugo-learn.js?1558457983"></script>
 
-    <link href="/mermaid/mermaid.css?1557590215" type="text/css" rel="stylesheet" />
+    <link href="/mermaid/mermaid.css?1558457983" type="text/css" rel="stylesheet" />
     <script src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });

@@ -5,7 +5,7 @@
     <link>https://blog.codist.me/</link>
     <description>Recent content in 首页 on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 14 Mar 2019 16:32:45 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 18:48:52 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -50,8 +50,7 @@ echo &amp;quot;test&amp;quot; | gpg --clearsign  </description>
 1.下载源码 git clone https://github.com/kaldi-asr/kaldi.git  2.编译安装kaldi/tools 安装文档在kaldi/tools/INSTALL，很短，建议阅读一下
 开始编译：
 cd tools ./extras/check_dependencies.sh #检查依赖，如有问题参照仔细修改 #自动下载安装依赖 make -j 8  这会安装ATLAS headers, OpenFst, SCTK 和 sph2pipe
-注意：如果要使用特定版本的编译器，必须和后面编译安装kaldi/src的编译器一致，如之后我们编译安装cuda要用g++-7，需要指定要用的编译器：
- CXX=g++-7 extras/check_dependencies.sh make CXX=g++-7 -j 8  3.编译安装kaldi/src 3.1使用OpenBLAS 如果使用Ubuntu系统，源里有编译好的ATLAS库，可以直接安装，其他Linux发行版由于ATLAS安装复杂，需要调节cpu工作模式，这里用OpenBLAS替代：
+注意：如果要使用特定版本的编译器，必须和后面编译安装`kaldi/src`的编译器一致，如之后我们编译安装`cuda`要用`g++-7`，需要指定要用的编译器：  CXX=g++-7 extras/check_dependencies.sh make CXX=g++-7 -j 8  3.编译安装kaldi/src 3.1使用OpenBLAS 如果使用Ubuntu系统，源里有编译好的ATLAS库，可以直接安装，其他Linux发行版由于ATLAS安装复杂，需要调节cpu工作模式，这里用OpenBLAS替代：
 cd tools ./extras/install_openblas.sh  3.2安装cuda thchs30和aishell的训练都需要用到cuda，建议在编译安装的时候就把相关依赖一并装好。
 可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：https://developer.nvidia.com/cuda-downloads ，再手动安装。
 Archlinux可以直接从源里安装，Ubuntu等发行版类似：
@@ -138,11 +137,7 @@ cd kaldi/egs/cvte/s5/ ln -s ../../wsj/s5/steps steps #ln -s ../../wsj/s5/utils u
     设置 A-Download directory （将文件从设备传送到本地的路径）
  设置 B-Upload directory （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。
  按下 esc 然后选择 Save setup as dfl来保存设置：
-  2. 发送文件到设备  在minicom里（已经连接到设备的终端）
-rx filename  按下组合键 Ctrl + A，然后按下S
- 选择 xmodem
- 选择要发送的文件
-  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：
+  2. 发送文件到设备  在minicom里（已经连接到设备的终端）  rx filename   按下组合键 Ctrl + A，然后按下S 选择 xmodem 选择要发送的文件  3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序） 在minicom里（已经连接到设备的终端）：
 chmod +x filename #给文件授予执行权限 ./filename #运行  如果设备上的系统没有图形化环境 添加参数 -qws：</description>
     </item>
     
@@ -175,11 +170,10 @@ Bus 002 Device 002: ID 8087:8000 Intel Corp. Bus 002 Device 001: ID 1d6b:0002 Li
       <description>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入
 1. 查找设备  插上摄像设备（通常是通过USB）
  列出所有的 video4linux 设备:
-ls -ltr /dev/video*  得到的输出类似于：
-crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0   这里的摄像设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
+  ls -ltr /dev/video*   得到的输出类似于：  crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0  这里的摄像设备名称是 */dev/video0*，如果没有看到任何 /dev/video 文件，查看#排查问题。如果有多个 video4linux 设备，比如是一个tv card，摄像头设备应该显示为 /dev/video1 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。
 2.测试设备  如果安装有 vlc，可以启动它，选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play
  如果安装有mplayer，可以使用：
-mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30   3.使用设备 3.1录制视频 要捕获设备的视频输入，可以使用 cheese，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用vlc可以播放。</description>
+  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30  3.</description>
     </item>
     
     <item>
@@ -224,9 +218,7 @@ $$&lt;/p&gt;
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       
       <guid>https://blog.codist.me/android/work1/</guid>
-      <description>首先，在产品目录的init.XXX.rc文件中，添加相应的service，
-#start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log user root group log system class main disabled service logd /system/bin/sh /system/bin/logd.sh user system group log oneshot  然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,
-#!/system/bin/sh # #Global folder &amp;amp; cmd params # OUTPUT_DIR=/data LOG=Logs index=2 LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0 LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1 LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2 RM=rm MV=&amp;quot;mv&amp;quot; MKDIR=mkdir UMASK=umask #set default permission 0775 $UMASK 002 #Init the three folders i=0 while [ &amp;quot;$i&amp;quot; -le &amp;quot;$index&amp;quot; ] do $MKDIR -p ${LOG_DIR[$i]} i=$(($i+1)) done #Transfer the three folders ((i=$index-1)) $RM -r ${LOG_DIR[$index]}/* while [ &amp;quot;$i&amp;quot; -ge &amp;quot;0&amp;quot; ] do $MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]} i=$(($i-1)) done $RM -r ${LOG_DIR[0]}/* #start logcat service setprop service.</description>
+      <description></description>
     </item>
     
   </channel>

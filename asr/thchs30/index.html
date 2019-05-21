@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta name="description" content="训练thchs30数据集的一些细节，用训练好的模型在线解码">
 <meta name="author" content="Codist">
 
@@ -12,16 +12,16 @@
     <title>使用thchs30数据集 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1557590215" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1557590215" rel="stylesheet">
+    <link href="/css/nucleus.css?1558457983" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1558457983" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1557590215" rel="stylesheet">
-    <link href="/css/theme.css?1557590215" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1557590215" rel="stylesheet">
+    <link href="/css/auto-complete.css?1558457983" rel="stylesheet">
+    <link href="/css/theme.css?1558457983" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1558457983" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1557590215" rel="stylesheet">
+      <link href="/css/theme-blue.css?1558457983" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@ var _hmt = _hmt || [];
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://blog.codist.me/">
-  <img src="/images/favicon.png" height="200" width="200">
+  <img src="/images/favicon.png" height="200" width="238">
 </a>
 
     </div>
@@ -69,13 +69,13 @@ var _hmt = _hmt || [];
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1557590215"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1558457983"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1557590215"></script>
+<script type="text/javascript" src="/js/search.js?1558457983"></script>
 
     
   </div>
@@ -895,9 +895,9 @@ thchs=/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
 
 <p>分为几个过程：数据准备，monophone单音素训练， tri1三因素训练， trib2进行lda_mllt特征变换，trib3进行sat自然语言适应，trib4做quick，后面就是dnn了，本地不建议跑dnn。</p>
 
-<div class="notices note" ><p>建议将<code>run.sh</code>的几个过程分成多个脚本文件来跑，每段脚本里并发数量<code>n</code>必须相同，有些任务是是并发的<code>&amp;</code>，也就是当前脚本执行完也会继续进行，这些并发任务同样需要大量内存(5~8G)，建议用系统监视器监视当前内存占用，等内存恢复到正常水平后再进行下一段脚本。</p>
+<div class="notices note" >
+建议将`run.sh`的几个过程分成多个脚本文件来跑，每段脚本里并发数量`n`必须相同，有些任务是是并发的`&`，也就是当前脚本执行完也会继续进行，这些并发任务同样需要大量内存(5~8G)，建议用系统监视器监视当前内存占用，等内存恢复到正常水平后再进行下一段脚本。
 </div>
-
 
 <p><code>exp</code>目录是得到的结果，比如tri1，<code>decode_test_word/scoring_kaldi/best_wer</code>是它的错误率，36.15%。tri1下的final.mdl是得到的模型的链接文件，要用的是它链接到的具体文件。<code>graph_word</code>里的words.txt和HCLG.fst，一个是字典，一个是有限状态机。这3个文件用来识别。</p>
 
@@ -1606,14 +1606,14 @@ VTLN：特征级声道长度归一化</p>
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1557590215"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1558457983"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1557590215"></script>
-    <script src="/js/learn.js?1557590215"></script>
-    <script src="/js/hugo-learn.js?1557590215"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1558457983"></script>
+    <script src="/js/learn.js?1558457983"></script>
+    <script src="/js/hugo-learn.js?1558457983"></script>
 
-    <link href="/mermaid/mermaid.css?1557590215" type="text/css" rel="stylesheet" />
+    <link href="/mermaid/mermaid.css?1558457983" type="text/css" rel="stylesheet" />
     <script src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });

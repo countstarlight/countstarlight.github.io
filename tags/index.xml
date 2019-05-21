@@ -5,42 +5,24 @@
     <link>https://blog.codist.me/tags/</link>
     <description>Recent content in Tags on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 05 Nov 2016 19:41:01 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2019 18:48:52 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Android</title>
-      <link>https://blog.codist.me/tags/android/</link>
-      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
-      
-      <guid>https://blog.codist.me/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Asr</title>
+      <title>ASR</title>
       <link>https://blog.codist.me/tags/asr/</link>
-      <pubDate>Mon, 11 Mar 2019 19:19:26 +0800</pubDate>
+      <pubDate>Sun, 07 Apr 2019 18:48:52 +0800</pubDate>
       
       <guid>https://blog.codist.me/tags/asr/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Example</title>
-      <link>https://blog.codist.me/tags/example/</link>
-      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.codist.me/tags/example/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kaldi</title>
+      <title>kaldi</title>
       <link>https://blog.codist.me/tags/kaldi/</link>
-      <pubDate>Mon, 11 Mar 2019 19:19:26 +0800</pubDate>
+      <pubDate>Sun, 07 Apr 2019 18:48:52 +0800</pubDate>
       
       <guid>https://blog.codist.me/tags/kaldi/</guid>
       <description></description>
@@ -56,24 +38,6 @@
     </item>
     
     <item>
-      <title>Log</title>
-      <link>https://blog.codist.me/tags/log/</link>
-      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/tags/log/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Math</title>
-      <link>https://blog.codist.me/tags/math/</link>
-      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.codist.me/tags/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Minicom</title>
       <link>https://blog.codist.me/tags/minicom/</link>
       <pubDate>Wed, 26 Jul 2017 20:41:02 +0800</pubDate>
@@ -83,7 +47,7 @@
     </item>
     
     <item>
-      <title>Qt Creator</title>
+      <title>Qt-creator</title>
       <link>https://blog.codist.me/tags/qt-creator/</link>
       <pubDate>Wed, 26 Jul 2017 09:11:37 +0800</pubDate>
       
@@ -92,7 +56,43 @@
     </item>
     
     <item>
-      <title>Selinux</title>
+      <title>Serial-USB</title>
+      <link>https://blog.codist.me/tags/serial-usb/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/tags/serial-usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>example</title>
+      <link>https://blog.codist.me/tags/example/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.codist.me/tags/example/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>https://blog.codist.me/tags/math/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.codist.me/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>https://blog.codist.me/tags/android/</link>
+      <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
+      
+      <guid>https://blog.codist.me/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>selinux</title>
       <link>https://blog.codist.me/tags/selinux/</link>
       <pubDate>Sat, 05 Nov 2016 19:41:01 +0530</pubDate>
       
@@ -101,11 +101,11 @@
     </item>
     
     <item>
-      <title>Serial Usb</title>
-      <link>https://blog.codist.me/tags/serial-usb/</link>
-      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      <title>log</title>
+      <link>https://blog.codist.me/tags/log/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
       
-      <guid>https://blog.codist.me/tags/serial-usb/</guid>
+      <guid>https://blog.codist.me/tags/log/</guid>
       <description></description>
     </item>
     

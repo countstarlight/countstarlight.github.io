@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.55.0-DEV" />
+    <meta name="generator" content="Hugo 0.55.6" />
     <meta name="description" content="Codist&#39;s blog">
 <meta name="author" content="Codist">
 
@@ -12,16 +12,16 @@
     <title>Linux上摄像设备的使用 :: Codist</title>
 
     
-    <link href="/css/nucleus.css?1557590215" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1557590215" rel="stylesheet">
+    <link href="/css/nucleus.css?1558457983" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1558457983" rel="stylesheet">
     <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/css/perfect-scrollbar.min.css" rel="stylesheet">
-    <link href="/css/auto-complete.css?1557590215" rel="stylesheet">
-    <link href="/css/theme.css?1557590215" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1557590215" rel="stylesheet">
+    <link href="/css/auto-complete.css?1558457983" rel="stylesheet">
+    <link href="/css/theme.css?1558457983" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1558457983" rel="stylesheet">
     
-      <link href="/css/theme-blue.css?1557590215" rel="stylesheet">
+      <link href="/css/theme-blue.css?1558457983" rel="stylesheet">
     
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@ var _hmt = _hmt || [];
   <div id="header-wrapper">
     <div id="header">
       <a id="logo" href="https://blog.codist.me/">
-  <img src="/images/favicon.png" height="200" width="200">
+  <img src="/images/favicon.png" height="200" width="238">
 </a>
 
     </div>
@@ -69,13 +69,13 @@ var _hmt = _hmt || [];
 </div>
 
 <script type="text/javascript" src="https://cdn.bootcss.com/lunr.js/2.3.5/lunr.min.js"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1557590215"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1558457983"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/blog.codist.me\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1557590215"></script>
+<script type="text/javascript" src="/js/search.js?1558457983"></script>
 
     
   </div>
@@ -790,16 +790,18 @@ var _hmt = _hmt || [];
 <ul>
 <li><p>插上摄像设备（通常是通过USB）</p></li>
 
-<li><p>列出所有的 <code>video4linux</code> 设备:</p>
+<li><p>列出所有的 <code>video4linux</code> 设备:</p></li>
+</ul>
 
 <pre><code class="language-bash">ls -ltr /dev/video*
-</code></pre></li>
+</code></pre>
 
-<li><p>得到的输出类似于：</p>
+<ul>
+<li>得到的输出类似于：</li>
+</ul>
 
 <pre><code class="language-bash">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看<a href="#排查问题">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个<a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
 
@@ -808,11 +810,11 @@ var _hmt = _hmt || [];
 <ul>
 <li><p>如果安装有 <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p></li>
 
-<li><p>如果安装有mplayer，可以使用：</p>
-
-<pre><code class="language-bash">mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
-</code></pre></li>
+<li><p>如果安装有mplayer，可以使用：</p></li>
 </ul>
+
+<pre><code class="language-bash">  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
+</code></pre>
 
 <h3 id="3-使用设备">3.使用设备</h3>
 
@@ -823,16 +825,18 @@ var _hmt = _hmt || [];
 <p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
 
 <ul>
-<li><p>use the software <em>mencoder</em>:</p>
-
-<pre><code class="language-bash">mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
-</code></pre></li>
-
-<li><p>or use the software <em>streamer</em>. Here are two examples:</p>
-
-<pre><code class="language-bash">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
-</code></pre></li>
+<li>use the software <em>mencoder</em>:</li>
 </ul>
+
+<pre><code class="language-bash">  mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
+</code></pre>
+
+<ul>
+<li>or use the software <em>streamer</em>. Here are two examples:</li>
+</ul>
+
+<pre><code class="language-bash">  streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+</code></pre>
 
 <h4 id="3-2视频通话">3.2视频通话</h4>
 
@@ -1414,14 +1418,14 @@ modprobe uvcvideo
     <script src="https://cdn.bootcss.com/jquery.perfect-scrollbar/0.6.13/js/perfect-scrollbar.jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
     <script src="https://cdn.bootcss.com/featherlight/1.7.13/featherlight.min.js"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1557590215"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1558457983"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1557590215"></script>
-    <script src="/js/learn.js?1557590215"></script>
-    <script src="/js/hugo-learn.js?1557590215"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1558457983"></script>
+    <script src="/js/learn.js?1558457983"></script>
+    <script src="/js/hugo-learn.js?1558457983"></script>
 
-    <link href="/mermaid/mermaid.css?1557590215" type="text/css" rel="stylesheet" />
+    <link href="/mermaid/mermaid.css?1558457983" type="text/css" rel="stylesheet" />
     <script src="https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
