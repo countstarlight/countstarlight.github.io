@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Nelson Bighetti">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This is a brief guide to managing content with the Academic framework. Content can include news/blog posts, publications, projects, talks, widget pages, and much more. After you have read this guide about creating and managing content, you may also be interested to learn about writing content with Markdown, LaTeX, and Shortcodes.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://blog.codist.me/en/docs/managing-content/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://blog.codist.me/en/docs/managing-content/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Codist">
+  <meta property="og:url" content="https://blog.codist.me/en/docs/managing-content/">
+  <meta property="og:title" content="Managing content | Codist">
+  <meta property="og:description" content="This is a brief guide to managing content with the Academic framework. Content can include news/blog posts, publications, projects, talks, widget pages, and much more. After you have read this guide about creating and managing content, you may also be interested to learn about writing content with Markdown, LaTeX, and Shortcodes."><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2016-04-18T00:00:00&#43;08:00">
+  
+  <meta property="article:modified_time" content="2016-04-18T00:00:00&#43;08:00">
+  
+
+  
+
+  
+
+  <title>Managing content | Codist</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/en/">Codist</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#about">
+            <i class="fas fa-home" style="color: #00d1b2;"></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/en/docs/">
+            <i class="fas fa-book" style="color: #00d1b2;"></i>
+            <span>Documentation</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#featured">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/courses/">
+            
+            <span>Courses</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/front-matter/">content</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/front-matter/">Front Matter</a>
+      </li>
+      
+      <li class="active">
+        <a href="/en/docs/managing-content/">Managing content</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/writing-markdown-latex/">Writing content</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/jupyter/">Jupyter</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/deployment/">deploy</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/deployment/">Overview</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/domain/">Get Your Own Domain Name</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/customization/">features</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/customization/">Customization</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/language/">Language and translation</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/search/">Search</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/migrate-from-jekyll/">migrate</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/migrate-from-jekyll/">From Jekyll</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/migrate-from-wordpress/">From Wordpress</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/install/">setup</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/install/">Install</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/get-started/">Getting started</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/page-builder/">Build your homepage</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/update/">Update</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#featured-image">Featured image</a></li>
+<li><a href="#page-resources">Page resources</a></li>
+<li><a href="#page-features">Page features</a></li>
+<li><a href="#math-and-code">Math and Code</a></li>
+<li><a href="#header-image">Header image</a></li>
+</ul></li>
+<li><a href="#create-a-publication">Create a publication</a>
+<ul>
+<li><a href="#automatically">Automatically</a></li>
+<li><a href="#manually">Manually</a></li>
+</ul></li>
+<li><a href="#create-a-blog-post">Create a blog post</a></li>
+<li><a href="#create-a-project">Create a project</a></li>
+<li><a href="#create-a-talk">Create a talk</a></li>
+<li><a href="#create-slides">Create slides</a>
+<ul>
+<li><a href="#theming-a-slide-deck">Theming a slide deck</a></li>
+</ul></li>
+<li><a href="#create-a-course-or-documentation">Create a course or documentation</a>
+<ul>
+<li><a href="#organization">Organization</a></li>
+<li><a href="#renaming">Renaming</a></li>
+<li><a href="#listing-courses-and-documentation">Listing courses and documentation</a></li>
+<li><a href="#course-and-documentation-metadata">Course and documentation metadata</a></li>
+<li><a href="#menus">Menus</a></li>
+<li><a href="#pages">Pages</a></li>
+</ul></li>
+<li><a href="#create-a-widget-page">Create a widget page</a></li>
+<li><a href="#create-other-pages-e-g-cv">Create other pages (e.g. CV)</a></li>
+<li><a href="#manage-archive-pages">Manage archive pages</a></li>
+<li><a href="#removing-content">Removing content</a></li>
+<li><a href="#view-your-updated-site">View your updated site</a></li>
+<li><a href="#deploy-your-site">Deploy your site</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Managing content</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            <p>This is a brief guide to managing content with the Academic framework. Content can include news/blog posts, publications, projects, talks, widget pages, and much more. After you have read this guide about creating and managing content, you may also be interested to learn about <a href="/en/docs/writing-markdown-latex/" target="_blank">writing content with Markdown, LaTeX, and Shortcodes</a>.</p>
+
+<div class="alert alert-warning">
+  <div>
+    Most front matter snippets in the documentation have recently been converted <strong><a href="/en/docs/front-matter/">from TOML to YAML</a></strong>. The example publications, widgets, and configuration files remain in TOML format. Academic and Hugo continue to support both formats. An <a href="https://toolkit.site/format.html" target="_blank">online YAML&lt;&ndash;&gt;TOML converter is available</a> should you need it. This change is to make it easier to edit content in popular Markdown editors like <a href="https://www.typora.io" target="_blank">Typora</a> and <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>.
+  </div>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The following common metadata can be added to the <a href="/en/docs/front-matter/" target="_blank">front matter</a> of most types of page in Academic.</p>
+
+<p><strong>Core metadata:</strong></p>
+
+<ul>
+<li><strong>title</strong>: the title of your page</li>
+<li><strong>summary</strong>: a one-sentence summary of the content on your page. The summary can be shown on the homepage and can also benefit your search engine ranking.</li>
+<li><strong>date</strong>: the <a href="https://github.com/toml-lang/toml#local-date-time" target="_blank">RFC 3339 date</a> that the page was published. A future date will schedule the page to be published in the future. If you use the <code>hugo new ...</code> commands described on this page, the date will be filled automatically when you create a page. Also see <strong>lastmod</strong> and <strong>publishDate</strong>.</li>
+<li><strong>authors</strong>: display the authors of the page and link to their user profiles if they exist. To link to a user profile, <a href="/en/docs/get-started/#introduce-yourself" target="_blank">create a user</a> based on the <a href="https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/authors" target="_blank"><em>admin</em> template</a> and reference their username (the name of a user in your <code>authors</code> folder) in the <code>authors</code> field, e.g. <code>authors: [&quot;admin&quot;]</code>.</li>
+<li><strong>tags</strong>: tagging your content helps users to discover similar content on your site. Tags can improve search relevancy and are displayed after the page content and also in the <a href="/en/docs/page-builder/" target="_blank">Tag Cloud widget</a>. E.g. <code>tags: [&quot;Electronics&quot;, &quot;Diodes&quot;]</code>.</li>
+</ul>
+
+<p><strong>Popular metadata:</strong></p>
+
+<ul>
+<li><strong>subtitle</strong>: an optional subtitle that will be displayed under the title</li>
+<li><strong>featured</strong>: by setting <code>featured: true</code>, a page can be displayed in the <a href="/en/docs/page-builder/" target="_blank">Featured widget</a>. This is useful for <em>sticky, announcement blog posts</em> or <em>selected publications</em> etc.</li>
+<li><strong>categories</strong>: categorizing your content helps users to discover similar content on your site. Categories can improve search relevancy and display at the top of a page alongside a page&rsquo;s metadata. E.g. <code>categories: [&quot;Art&quot;]</code>.</li>
+<li><strong>lastmod</strong>: the <a href="https://github.com/toml-lang/toml#local-date-time" target="_blank">RFC 3339 date</a> that the page was last modified. If using Git, enable <code>enableGitInfo</code> in <code>config.toml</code> to have the page modification date automatically updated, rather than manually specifying <code>lastmod</code>.</li>
+<li><strong>publishDate</strong>: the <a href="https://github.com/toml-lang/toml#local-date-time" target="_blank">RFC 3339 date</a> that the page was published. You only need to specify this option if you wish to set <strong>date</strong> in the future but publish the page <em>now</em>, as is the case for publishing a journal article that is to appear in a journal etc.</li>
+<li><strong>draft</strong>: by setting <code>draft: true</code>, only you will see your page when you preview your site  locally on your computer</li>
+</ul>
+
+<p>A complete list of standard options can be found on the corresponding <a href="https://gohugo.io/content-management/front-matter/#predefined" target="_blank">Hugo docs page</a>.</p>
+
+<h3 id="featured-image">Featured image</h3>
+
+<p>To display a <strong>featured image</strong> in content pages, simply drag an image named <code>featured.*</code> (e.g. <code>featured.jpg</code>) into your page&rsquo;s folder.</p>
+
+<div class="alert alert-note">
+  <div>
+    If your page does not have its own folder (<a href="https://gohugo.io/content-management/page-bundles/" target="_blank"><em>page bundle</em></a>) within its section folder, you can refactor a page named <code>NAME.md</code> to <code>NAME/index.md</code>, creating the folder <code>NAME</code>. There is a <a href="https://github.com/sourcethemes/academic-scripts" target="_blank">tool to help automate this process</a>. Page bundles require Academic v3+ and Hugo v0.50+.
+  </div>
+</div>
+
+<p>Want to caption the image or set a focal point to influence how the image is cropped? The parameters below can be added to the bottom of your page front matter to customize the appearance of the image. The caption supports Markdown and can be used to write an image caption or credit. The focal point ensures that automatic resizes of the image keep the subject in view.</p>
+
+<pre><code class="language-yaml"># Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+  # Caption (optional)
+  caption: &quot;Photo by [Academic](https://sourcethemes.com/academic/)&quot;
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point: &quot;Center&quot;
+  # Show image only in page previews?
+  preview_only: false
+</code></pre>
+
+<h3 id="page-resources">Page resources</h3>
+
+<p>Buttons can be generated in the page header to link to associated resources.</p>
+
+<p>The example below shows how to create a Twitter link for a project and how to create a link to a post that was originally published on Medium:</p>
+
+<pre><code class="language-yaml">links:
+  - icon_pack: fab
+    icon: twitter
+    name: Follow
+    url: 'https://twitter.com/Twitter'
+  - icon_pack: fab
+    icon: medium
+    name: Originally published on Medium
+    url: 'https://medium.com'
+
+</code></pre>
+
+<p>The only required option is <code>url</code>, giving you the option to show a <em>text button</em>, an <em>icon button</em>, or a <em>combination of both</em>. <a href="/en/docs/page-builder/#icons" target="_blank">Learn more about icons</a>.</p>
+
+<div class="alert alert-warning">
+  <div>
+    Prior to 13th February 2019, <code>links</code> was known as <code>url_custom</code>.
+  </div>
+</div>
+
+<p>To generate a <strong>PDF button</strong>, add a PDF file with the same name as your page&rsquo;s own folder to your page&rsquo;s folder and a PDF link will be automatically generated. For example, if your page is located at <code>publication/photons/index.md</code>, place a PDF at <code>publication/photons/photons.pdf</code>. This can be useful for talks and publications.</p>
+
+<p>There are also several special built-in buttons that can be setup using <code>url_...</code> options in the front matter of some content types.</p>
+
+<h3 id="page-features">Page features</h3>
+
+<p>The following parameters can be added to the front matter of a page (such as a blog post) to control its features:</p>
+
+<pre><code class="language-yaml">reading_time: false  # Show estimated reading time?
+share: false  # Show social sharing links?
+profile: false  # Show author profile?
+comments: false  # Show comments?
+</code></pre>
+
+<h3 id="math-and-code">Math and Code</h3>
+
+<p>To enable <strong>LaTeX math</strong> rendering for a page, you should include <code>math: true</code> in the page&rsquo;s <a href="/en/docs/front-matter/" target="_blank">front matter</a>, as demonstrated in the included example site. Otherwise, to enable math on the homepage or for all pages, you must globally set <code>math = true</code> in <code>params.toml</code>.</p>
+
+<p>To disable <strong>source code highlighting</strong> for all pages, set <code>highlight = false</code> in <code>params.toml</code>. You can then enable source code highlighting only on pages that need it by setting <code>highlight: true</code> in that page&rsquo;s <a href="/en/docs/front-matter/" target="_blank">front matter</a>. See the <a href="/en/docs/writing-markdown-latex/#code-highlighting" target="_blank">code highlighting guide</a> for further details.</p>
+
+<h3 id="header-image">Header image</h3>
+
+<p>To display a full width <strong>header image</strong>, the header parameters below can be inserted towards the end of a page&rsquo;s <a href="/en/docs/front-matter/" target="_blank">front matter</a>. It is assumed that the image is located in your <code>static/img/</code> media library, so the full path in the example below will be <code>static/img/header.png</code>. The <code>caption</code> parameter supports Markdown and can be used to write an image caption or credit. This option can be particularly useful for adding to an archive page&rsquo;s <code>_index.md</code> (e.g. to display at <code>YOUR_URL/post/</code> for the blog post archive).</p>
+
+<pre><code class="language-yaml">header:
+  image: &quot;header.png&quot;
+  caption: &quot;Image credit: [**Academic**](https://github.com/gcushen/hugo-academic/)&quot;
+</code></pre>
+
+<h2 id="create-a-publication">Create a publication</h2>
+
+<h3 id="automatically">Automatically</h3>
+
+<p>The leading reference management tools enable you to export your publications to the open BibTeX format. If you are new to research we recommend managing references with <a href="https://www.zotero.org/" target="_blank">Zotero</a>, a popular open source tool.</p>
+
+<p>In your reference management tool, create a list of your own publications and export it as a <code>*.bib</code> BibTeX file.</p>
+
+<p>Python 3 is a prerequisite, so please <a href="https://realpython.com/installing-python/" target="_blank">install Python 3</a> if it&rsquo;s not already installed. Also, you should backup your website before continuing, or ensure that it is checked into Git so that you can review the changes that will be proposed by Academic&rsquo;s admin tool later on.</p>
+
+<p>Open your Terminal or Command Prompt app and install Academic&rsquo;s admin tool:</p>
+
+<pre><code class="language-python">pip3 install -U academic
+</code></pre>
+
+<p>Use the <code>cd</code> command to navigate to your website folder in the terminal.</p>
+
+<p>Then import your publications with:</p>
+
+<pre><code class="language-bash">academic import --bibtex &lt;path_to_your/publications.bib&gt;
+</code></pre>
+
+<p>The tool is in <em>beta</em> status and intended purely to help assist you, so the generated output in the <code>publication</code> folder should be reviewed prior to publishing your site. You can also consider enhancing the output by taking a look at the front matter parameters in the files alongside the details in the <em>Manually</em> section below.</p>
+
+<p>To contribute to the tool or submit feature requests and bug report, please check out the <a href="https://github.com/sourcethemes/academic-admin" target="_blank"><strong>Academic admin tool on GitHub</strong></a>.</p>
+
+<h3 id="manually">Manually</h3>
+
+<p>Alternatively, publications can be manually created using the command:</p>
+
+<pre><code>hugo new --kind publication publication/&lt;my-publication&gt;
+</code></pre>
+
+<p>where <code>&lt;my-publication&gt;</code> is the name of your publication, using hyphens (<code>-</code>) instead of spaces.</p>
+
+<p>Then edit the parameters in <code>content/publication/&lt;my-publication&gt;/index.md</code> to include the details of your publication. The main parameters include:</p>
+
+<ul>
+<li><strong>title:</strong> the title of your publication</li>
+<li><strong>date:</strong> the date that your publication was first published (must be in a valid TOML date format)</li>
+<li><strong>publication_types:</strong> use the following legend to specify the type of your publication, e.g. <code>&quot;1&quot;</code> for conference proceedings:
+
+<ul>
+<li>0 = Uncategorized</li>
+<li>1 = Conference paper</li>
+<li>2 = Journal article</li>
+<li>3 = Preprint / Working Paper</li>
+<li>4 = Report</li>
+<li>5 = Book</li>
+<li>6 = Book section</li>
+<li>7 = Thesis (<strong>v4.2+ required</strong>)</li>
+<li>8 = Patent (<strong>v4.2+ required</strong>)</li>
+</ul></li>
+<li><strong>publication:</strong> where your title was published - Markdown formatting is enabled here for italic etc.</li>
+<li><strong>abstract:</strong> the summary of your publication</li>
+</ul>
+
+<p>Further details on your publication can be written in the body of the document (after the YAML/TOML front matter) using <em>Markdown</em> for formatting. This text will be displayed on the publication&rsquo;s page.</p>
+
+<p>To enable visitors to read your work, either paste a link to your PDF in <code>url_pdf</code> or add a PDF file with the same name as your publication&rsquo;s own folder to your publication&rsquo;s folder and a PDF link will be automatically generated. For example, if your publication is located at <code>publication/photons/index.md</code>, place a PDF at <code>publication/photons/photons.pdf</code>.</p>
+
+<p>To enable visitors to easily cite your work, export a BibTeX citation file named <code>cite.bib</code> from your reference management tool to your publication&rsquo;s own folder and a citation link will be automatically generated.</p>
+
+<p><strong>Linking other resources</strong></p>
+
+<p>The <code>url_</code> links can either point to local or web content. Associated local publication content, may be copied to the publication&rsquo;s folder and referenced like <code>url_code = &quot;code.zip&quot;</code>.</p>
+
+<p>You can also <a href="#page-resources">associate custom link buttons with the publication</a>.</p>
+
+<div class="alert alert-warning">
+  <div>
+    Any double quotes (<code>&quot;</code>) or backslashes (e.g. LaTeX <code>\times</code>) occurring within the value of any frontmatter parameter (such as the <em>abstract</em>) should be escaped with a backslash (<code>\</code>). For example, the symbol <code>&quot;</code> and LaTeX text <code>\times</code> become <code>\&quot;</code> and <code>\\times</code>, respectively. Refer to the <a href="https://github.com/toml-lang/toml#user-content-string" target="_blank">TOML documentation</a> for more info.
+  </div>
+</div>
+
+<p><strong>Modifying Publication Types</strong></p>
+
+<p>To rename publication types in v4+, <a href="/en/docs/language/" target="_blank">edit the associated <code>pub_*</code> values in your language pack</a>. These values can be found in the default <a href="https://github.com/gcushen/hugo-academic/blob/master/i18n/en.yaml" target="_blank">English language pack</a> but may not have been translated to all of the other languages packs yet.</p>
+
+<p>To add or remove publication types in v4+, <a href="/en/docs/customization/#override-a-template" target="_blank">override</a> the <a href="https://github.com/gcushen/hugo-academic/blob/master/layouts/partials/pub_types.html" target="_blank">layouts/partials/pub_types.html</a> file with your own array using the Go templating language.</p>
+
+<h2 id="create-a-blog-post">Create a blog post</h2>
+
+<p>To create a blog/news article:</p>
+
+<pre><code>hugo new  --kind post post/my-article-name
+</code></pre>
+
+<p>Then edit the newly created file <code>content/post/my-article-name.md</code> with your full title and content.</p>
+
+<p>Hugo will automatically generate summaries of posts that appear on the homepage. If you are dissatisfied with an automated summary, you can either limit the summary length by appropriately placing <code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code> in the article body, or completely override the automated summary by adding a <code>summary</code> parameter to the <code>+++</code> preamble such that:</p>
+
+<pre><code>summary: &quot;Summary of my post.&quot;
+</code></pre>
+
+<p>To disable commenting for a specific post, you can add <code>disable_comments: true</code> to the post <code>+++</code> preamble. Or to disable commenting for all posts, you can either set <code>disqusShortname = &quot;&quot;</code> in <code>config.toml</code> or <code>disable_comments = true</code> in <code>params.toml</code>.</p>
+
+<h2 id="create-a-project">Create a project</h2>
+
+<p>To create a project:</p>
+
+<pre><code>hugo new  --kind project project/my-project-name
+</code></pre>
+
+<p>Then edit the newly created file <code>content/project/my-project-name.md</code>. Either you can link the project to an external project website by setting the <code>external_link: &quot;http://external-project.com&quot;</code> variable at the top of the file, or you can add content (below the final <code>---</code>) in order to render a project page on your website.</p>
+
+<h2 id="create-a-talk">Create a talk</h2>
+
+<p>To create a talk:</p>
+
+<pre><code>hugo new  --kind talk talk/my-talk-name
+</code></pre>
+
+<p>Then edit the newly created file <code>content/talk/my-talk-name.md</code> with your full talk title and details. Note that many of the talk parameters are similar to the publication parameters.</p>
+
+<h2 id="create-slides">Create slides</h2>
+
+<p>Slides can be created very efficiently using Markdown, presented to your audience, and shared on your site. Speaker notes included!</p>
+
+<p>See the <a href="https://themes.gohugo.io//theme/academic/slides/example-slides#/" target="_blank">slides demo</a> - although note that this demo is hosted by Hugo team and they have modified their demo to reduce functionality. Build the example site (<code>themes/academic/exampleSite/</code>) locally to see the full demo including speaker notes.</p>
+
+<p>Refer to the <a href="https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/slides/example-slides.md" target="_blank">example slide deck</a> at <code>themes/academic/exampleSite/content/slides/example/index.md</code> to learn how to get started.</p>
+
+<p>Link slides with a talk or publication by editing the external <code>url_slides</code> option or internal <code>slides</code> option in the talk/publication page to point to your slides. For example, <code>slides: &quot;example&quot;</code> points to the Markdown formatted slide deck in the example site at <code>slides/example/index.md</code>. See the full example front matter which includes <code>url_slides</code> and <code>slides</code> <a href="https://raw.githubusercontent.com/gcushen/hugo-academic/master/exampleSite/content/talk/example/index.md" target="_blank">here</a>.</p>
+
+<h3 id="theming-a-slide-deck">Theming a slide deck</h3>
+
+<p>Slide decks use their own theming system rather than the one configured in your site&rsquo;s <code>params.toml</code>. This enables the theme of each slide deck to be customized in its front matter.</p>
+
+<p>For a <em>light</em> themed slide deck, consider setting the following <code>slides</code> options in your slide deck&rsquo;s front matter:</p>
+
+<pre><code class="language-yaml">slides:
+  theme: &quot;white&quot;  # Reveal JS theme name
+  highlight_style: &quot;github&quot;  # Highlight JS theme name
+</code></pre>
+
+<p>For a <em>dark</em> themed slide deck, consider setting the following <code>slides</code> options in your slide deck&rsquo;s front matter:</p>
+
+<pre><code class="language-yaml">slides:
+  theme: &quot;black&quot;  # Reveal JS theme name
+  highlight_style: &quot;dracula&quot;  # Highlight JS theme name
+</code></pre>
+
+<p>Note that the <em>highlight_style</em> option is only available for slides made with Academic <strong>v4.3.0+</strong>.</p>
+
+<h2 id="create-a-course-or-documentation">Create a course or documentation</h2>
+
+<p>The <em>docs</em> feature is designed for <strong>knowledge sharing</strong>. Use cases include <strong>online courses, tutorials, software documentation, and knowledge bases</strong>.</p>
+
+<p><a href="https://github.com/sourcethemes/academic-www" target="_blank">This website is using</a> the <em>docs</em> feature for the purpose of documenting Academic. Also, there is a <a href="https://academic-demo.netlify.com/courses/" target="_blank">online course demo</a>.</p>
+
+<p>Refer to the <a href="https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/courses" target="_blank">example course</a> at <code>themes/academic/exampleSite/content/courses/</code> to learn how to get started.</p>
+
+<p>Continue reading below to learn more about creating courses, tutorials, and documentation using the <em>docs</em> feature.</p>
+
+<h3 id="organization">Organization</h3>
+
+<p>The <em>docs</em> feature can be used to create courses, tutorials, and documentation in the following file structure:</p>
+
+<pre><code>content/courses
+├── _index.md         # Lists your courses, tutorials, or documentation
+└── example           # Folder for your course/tutorial/documentation
+    ├── _index.md     # Overview of this course/tutorial/documentation
+    ├── example1.md   # A page
+    └── example2.md   # Another page
+└── course2           # Folder for another course/tutorial/documentation
+    ├── _index.md
+    ├── intro.md
+    └── ...
+</code></pre>
+
+<p>File and folder names should not contain spaces (use hyphens instead).</p>
+
+<h3 id="renaming">Renaming</h3>
+
+<p>The <code>courses</code> folder may be renamed. For example, we can rename it to <code>docs</code> for software/project documentation, or <code>tutorials</code> for creating an online course.</p>
+
+<p>After renaming or deleting the <code>courses</code> folder, you may wish to update any <code>[[main]]</code> menu links to it by editing your menu configuration at <code>config/_default/menus.toml</code>.</p>
+
+<p>For example, if you delete this folder, you can remove the following from your menu configuration:</p>
+
+<pre><code class="language-toml">[[main]]
+  name = &quot;Courses&quot;
+  url = &quot;courses/&quot;
+  weight = 50
+</code></pre>
+
+<p>Or, if you are creating a software documentation site, you can rename the <code>courses</code> folder to <code>docs</code> and update the associated <em>Courses</em> menu configuration to:</p>
+
+<pre><code class="language-toml">[[main]]
+  name = &quot;Docs&quot;
+  url = &quot;docs/&quot;
+  weight = 50
+</code></pre>
+
+<h3 id="listing-courses-and-documentation">Listing courses and documentation</h3>
+
+<p>The <code>content/courses/_index.md</code> file automatically lists any course, tutorial, or documentation folders within the <code>content/courses/</code> folder. Open the file to edit the page title.</p>
+
+<pre><code class="language-yaml">title: Courses
+layout: docs  # Do not modify.
+
+# Optional header image (relative to `static/img/` folder).
+header:
+  caption: &quot;&quot;
+  image: &quot;&quot;
+</code></pre>
+
+<h3 id="course-and-documentation-metadata">Course and documentation metadata</h3>
+
+<p>Edit the <code>_index.md</code> within your course/documentation folder (e.g. <code>content/courses/example/_index.md</code>) in order to specify a name and summary for your course/documentation.</p>
+
+<pre><code class="language-yaml"># Course title, summary, and position in the list.
+linktitle: An Example Course
+summary: Learn how to use Academic's docs layout for publishing online courses, software documentation, and tutorials.
+weight: 1
+
+# Page metadata.
+title: Overview
+date: &quot;2018-09-09T00:00:00Z&quot;
+lastmod: &quot;2018-09-09T00:00:00Z&quot;
+draft: false  # Is this a draft? true/false
+toc: true  # Show table of contents? true/false
+type: docs  # Do not modify.
+
+# Add menu entry to sidebar.
+# - name: Declare this menu item as a parent with ID `name`.
+# - weight: Position of link in menu.
+menu:
+  example:
+    name: Overview
+    weight: 1
+</code></pre>
+
+<h3 id="menus">Menus</h3>
+
+<p>If you use the <em>docs</em> layout, note that the name of the menu in the front matter should be in the form <code>menu: X:</code> where <code>X</code> is the folder name. Hence, if you rename the <code>courses/example/</code> folder, you should also rename the menu definitions in the front matter of files within <code>courses/example/</code> from <code>menu: example:</code> to <code>menu: &lt;NewFolderName&gt;:</code>.</p>
+
+<p>Hugo also offers an alternative approach of storing the menu for each course/documentation centrally in <code>config/_default/menus.toml</code> rather than in the front matter of each course/documentation page.</p>
+
+<p>Read more about Hugo&rsquo;s menu system <a href="https://gohugo.io/content-management/menus/" target="_blank">here</a>.</p>
+
+<h3 id="pages">Pages</h3>
+
+<p>You can create as many pages as your need. Each page should have a title, menu link (<code>menu</code>) to it, and a page <code>type</code> of <code>docs</code>.</p>
+
+<p><code>title</code> is the page title which appears in page header, whereas <code>linktitle</code> is the label for link to this page. If you remove <code>linktitle</code>, the menu link will display the page title.</p>
+
+<p>To show a table of contents generated from the headings on your page, set <code>toc</code> to <code>true</code>.</p>
+
+<p>To show a prev/next pager at the bottom of each docs section page, enable <code>docs_section_pager</code> in <code>params.toml</code> and then set the order of the pager by defining a <code>weight</code> for each page.</p>
+
+<p>An example course/documentation page is as follows:</p>
+
+<pre><code class="language-yaml">---
+title: Example Page 1
+linktitle: Tips 1-2
+toc: true
+type: docs
+date: &quot;2019-05-05T00:00:00Z&quot;
+draft: false
+menu:
+  example:
+    parent: Example Topic
+    weight: 1
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1
+---
+
+Content...
+</code></pre>
+
+<h2 id="create-a-widget-page">Create a widget page</h2>
+
+<p>So you would like to create a page which utilizes Academic&rsquo;s widget system, similar to the homepage?</p>
+
+<p>Create a new folder in your <code>content</code> folder, naming it with your new page name. In this example, we will create a <em>landing</em> page by creating a <code>content/landing/</code> folder to contain our new sections (widget instances).</p>
+
+<p>Within your new <code>content/landing/</code> folder, create a file named <code>index.md</code> containing the following YAML parameters:</p>
+
+<pre><code>---
+title: &quot;Landing Page&quot;  # Add a page title.
+summary: &quot;Hello!&quot;  # Add a page description.
+date: &quot;2019-01-01T00:00:00Z&quot;  # Add today's date.
+type: &quot;widget_page&quot;  # Page type is a Widget Page
+---
+</code></pre>
+
+<p>Now, we can <a href="/en/docs/page-builder/" target="_blank"><strong>use the page builder to add sections</strong></a> into your <code>content/landing/</code> folder. Widgets can also be copied from your <code>content/home/</code> folder or the <code>themes/academic/exampleSite/content/home/</code> demo site folder.</p>
+
+<p>We can also <a href="/en/docs/get-started/#menu" target="_blank">create a menu link</a> to our new Widget Page. Given a Widget Page folder named <code>landing</code>, open <code>config/_default/menu.toml</code> in your editor and add:</p>
+
+<pre><code class="language-toml">[[main]]
+  name = &quot;My Widget Page&quot;  # Title of the link.
+  url = &quot;landing/&quot;  # Widget Page folder name.
+  weight = 2  # Position of the link in the navigation bar.
+</code></pre>
+
+<div class="alert alert-warning">
+  <div>
+    To create the new widget pages, an Academic version from <strong>18 March 2019</strong> onwards is required (corresponding to <em>v4.2 dev</em> or greater).
+  </div>
+</div>
+
+<h2 id="create-other-pages-e-g-cv">Create other pages (e.g. CV)</h2>
+
+<p>For other types of content, it is possible to create your own custom pages. For example, let&rsquo;s create a <code>cv.md</code> page for your Curriculum Vitae in your <code>content</code> folder. Copy across the frontmatter from the top of one of your post files, adapting it as necessary, and editing your Markdown content below. You can then link to your new page by adding the code <code>[My CV]{{&lt; ref &quot;cv.md&quot; &gt;}}</code> to any of your existing content.</p>
+
+<p>Alternatively, for the above example, we could use a PDF of your Curriculum Vitae. For this purpose, create a folder called <code>files</code> within your <code>static</code> folder and move a PDF file named <code>cv.pdf</code> to that location, so we have a <code>static/files/cv.pdf</code> file path. The PDF can then be linked to from any content by using the code: <code>{{% staticref &quot;files/cv.pdf&quot; %}}Download my CV{{% /staticref %}}</code>.</p>
+
+<h2 id="manage-archive-pages">Manage archive pages</h2>
+
+<p>The archive (or <em>node index</em>) pages (e.g. <code>/post/</code>) are the special pages which list all of your content. They can exist for blog posts, publications, and talks. The homepage widgets will automatically link to the archive pages when you have more items of content than can be displayed in the widget. Therefore, if you don&rsquo;t have much content, you may not see the automatic links yet - but you can also manually link to them using a normal Markdown formatted link in your content.</p>
+
+<p>You can edit the title and add your own content, such as an introduction, by copying the following content <code>_index.md</code> files from the example site to the same structure within your <code>content/</code> folder:</p>
+
+<pre><code>/themes/academic/exampleSite/content/post/_index.md
+/themes/academic/exampleSite/content/publication/_index.md
+/themes/academic/exampleSite/content/talk/_index.md
+</code></pre>
+
+<p>Then edit the <code>title</code> parameter in each <code>_index.md</code> as desired and add any content after the front matter. You will notice that the <code>_index.md</code> files differ slightly, with some having special options available for the associated content type. For example, <code>publication/_index.md</code> contains an option for setting the citation style of the listings which appear on the publication archive page.</p>
+
+<h2 id="removing-content">Removing content</h2>
+
+<p>To remove content permanently, simply delete the relevant page file/folder within your <code>content/</code> folder.</p>
+
+<p>To temporarily unpublish content, set <code>draft: true</code> at the top of a page&rsquo;s front matter.</p>
+
+<h2 id="view-your-updated-site">View your updated site</h2>
+
+<p>After you have made changes to your site, you can view it by running the <code>hugo server</code> command and then opening <a href="http://localhost:1313" target="_blank">localhost:1313</a> in your web browser.</p>
+
+<h2 id="deploy-your-site">Deploy your site</h2>
+
+<p>Finally, you can <a href="/en/docs/deployment/" target="_blank">deploy your site</a>.</p>
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/en/docs/front-matter/" rel="next">Front Matter</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/en/docs/writing-markdown-latex/" rel="prev">Writing content with Markdown, LaTeX, and Shortcodes</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Apr 18, 2016
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2016-2019 Codist &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/en/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
+
+  </body>
+</html>
+
+

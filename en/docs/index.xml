@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Codist</title>
+    <link>https://blog.codist.me/en/docs/</link>
+    <description>Recent content in Getting started on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016-{year} Codist</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/en/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install</title>
+      <link>https://blog.codist.me/en/docs/install/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/install/</guid>
+      <description>You can choose from one of the following four methods to install:
+ one-click install using your web browser (recommended) install on your computer using Git with the Command Prompt/Terminal app install on your computer by downloading the ZIP files install on your computer with RStudio  After installing, check out the guide to personalizing your site.
+Install with web browser Install Academic with Netlify
+ One-click install of Academic creates an academic-kickstart repository in your GitHub or GitLab account Netlify will provide you with a customizable URL to access your new site, or get your own domain Shortly after editing content in your repository, your site will automatically update To edit your site in a Markdown editor on your computer, perform the steps in the Install with Git section below  Once you have followed the link above to automatically install Academic, head on over to your new academic-kickstart repository in your GitHub (or GitLab) account and personalize your site by editing the files in config/_default/.</description>
+    </item>
+    
+    <item>
+      <title>Getting started</title>
+      <link>https://blog.codist.me/en/docs/get-started/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/get-started/</guid>
+      <description>This quick tutorial will show you how to setup and use Academic.
+Choose the right theme for you Check out the available color themes and have fun choosing a design you love.
+Once you have settled on a theme, edit your config/_default/params.toml file in a text editor and set the color_theme option to the name of the chosen theme.
+ If you are unfamiliar with setting options in a TOML file, you can learn more about this human-friendly configuration syntax here.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started With the Page Builder</title>
+      <link>https://blog.codist.me/en/docs/page-builder/</link>
+      <pubDate>Tue, 19 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/page-builder/</guid>
+      <description>Building beautiful pages is easy with Academic&amp;rsquo;s widget system. No programming is required!
+Loading pre-made layouts is a great way to kickstart your new homepage. Academic Kickstart comes with some popular Sections preconfigured for this purpose. A Widget can be added inside each Section. Hence, you can have multiple instances of widgets, such as listing recent pages of different content types or categories.
+Widgets empower you to fully customize your site.</description>
+    </item>
+    
+    <item>
+      <title>Update</title>
+      <link>https://blog.codist.me/en/docs/update/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/update/</guid>
+      <description>The update process consists of:
+ Preparation Updating Academic Migrating your content front matter and configuration by applying any relevant breaking changes  Feel free to star Academic on Github to help keep track of updates and check out the release notes to learn what&amp;rsquo;s new.
+Preparation Before updating Academic, it is strongly recommended to make a full backup of your website folder (including themes/academic/).
+Then, record your current version, so that after you update Academic, you can apply any relevant breaking changes to the TOML/YAML site configuration and front matter in your content/ folder.</description>
+    </item>
+    
+    <item>
+      <title>Front Matter</title>
+      <link>https://blog.codist.me/en/docs/front-matter/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/front-matter/</guid>
+      <description>Front matter allows page-specific metadata and functionality to be included at the top of a Markdown file.
+In the documentation and the example site, we will predominantly use YAML to format the front matter of content files and TOML to format the configuration files and widget files. This is because TOML is more human-friendly but popular Markdown editors primarily support YAML front matter in content files.
+For editing your content locally on your computer, we recommend Typora or Visual Studio Code.</description>
+    </item>
+    
+    <item>
+      <title>Managing content</title>
+      <link>https://blog.codist.me/en/docs/managing-content/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/managing-content/</guid>
+      <description>&lt;p&gt;This is a brief guide to managing content with the Academic framework. Content can include news/blog posts, publications, projects, talks, widget pages, and much more. After you have read this guide about creating and managing content, you may also be interested to learn about &lt;a href=&#34;https://blog.codist.me/en/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;writing content with Markdown, LaTeX, and Shortcodes&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Writing content with Markdown, LaTeX, and Shortcodes</title>
+      <link>https://blog.codist.me/en/docs/writing-markdown-latex/</link>
+      <pubDate>Sun, 17 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/writing-markdown-latex/</guid>
+      <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34; target=&#34;_blank&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Display Jupyter Notebooks with Academic</title>
+      <link>https://blog.codist.me/en/docs/jupyter/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/jupyter/</guid>
+      <description>In this guide, we&amp;rsquo;ll learn how to blog in Academic using Jupyter Notebooks.
+Here&amp;rsquo;s a snippet from a Jupyter notebook, for example:
+print(&amp;quot;I am a Jupyter Notebook!&amp;quot;)  I am a Jupyter Notebook!  Install Python and Jupyter Install Anaconda which includes Python 3 and Jupyter notebook.
+Otherwise, for advanced users, install Jupyter notebook with pip3 install jupyter.
+Create a new blog post as usual Run the following commands in your Terminal, substituting &amp;lt;MY_WEBSITE_FOLDER&amp;gt; and my-post with the file path to your Academic website folder and a name for your blog post (without spaces), respectively:</description>
+    </item>
+    
+    <item>
+      <title>Overview</title>
+      <link>https://blog.codist.me/en/docs/deployment/</link>
+      <pubDate>Sun, 24 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/deployment/</guid>
+      <description>Sites built using Academic can be deployed in a large variety of ways due to the static nature of the generated website. The recommended deployment method alongside a few of the other most popular techniques are described below.
+If using Netlify, your site will be built automatically, otherwise run the hugo command in your terminal to generate your site in the public/ folder - now it is ready to copy across to your host.</description>
+    </item>
+    
+    <item>
+      <title>Get Your Own Domain Name</title>
+      <link>https://blog.codist.me/en/docs/domain/</link>
+      <pubDate>Sun, 24 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/domain/</guid>
+      <description>If you choose a deployment option such as Netlify or Github pages, you will be automatically assigned a free URL for your website. You can further personalize your website with your own domain name.
+We can highly recommend Namecheap for registering a domain, as they provide great value for money whilst providing fast support. To find a good domain that is available, try a mix of your first and last names or initials, with either a .</description>
+    </item>
+    
+    <item>
+      <title>Customization</title>
+      <link>https://blog.codist.me/en/docs/customization/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/customization/</guid>
+      <description>It is possible to carry out many customizations without editing any code in the themes/academic/ folder, making it easier to update the framework in the future.
+Custom theme To customize the color theme, you can copy a theme such as themes/academic/data/themes/default.toml to data/themes/default.toml (at the root of your site, not in themes/academic/), creating the data/themes/ folders if they do not already exist. Now you can adjust the colors within your theme file.</description>
+    </item>
+    
+    <item>
+      <title>Language and translation</title>
+      <link>https://blog.codist.me/en/docs/language/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/language/</guid>
+      <description>Both the interface and content language can be changed to suit your needs. Interface The Interface Language is used to change the language throughout your site. The following interface languages are currently available: English, 中文 (简体), Español, Português, Deutsch, Euskara, Français,</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://blog.codist.me/en/docs/search/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/search/</guid>
+      <description>Empower your users to search your website content for keywords so that they can quickly discover relevant content.
+If search is enabled, a search icon will automatically appear in the navigation bar and a search box will appear in the sidebar of any content using the docs/tutorial layout (as can be seen on this site). Clicking the search icon will toggle the search dialog.
+Keyboard shortcuts are available to facilitate searching.</description>
+    </item>
+    
+    <item>
+      <title>Migrate from Jekyll</title>
+      <link>https://blog.codist.me/en/docs/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/migrate-from-jekyll/</guid>
+      <description>Here are a few tips for migrating an existing website from Jekyll to Hugo. These tips can be applied in conjunction with following Hugo Academic&amp;rsquo;s getting started guide.
+Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like</description>
+    </item>
+    
+    <item>
+      <title>Migrate from Wordpress</title>
+      <link>https://blog.codist.me/en/docs/migrate-from-wordpress/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/migrate-from-wordpress/</guid>
+      <description>To migrate your website from Wordpress to Academic is a two phase process:
+Phase One First, install the WordPress to Jekyll Exporter plugin into your Wordpress installation by following these steps:
+ Place the WordPress to Jekyll Exporter plugin in /wp-content/plugins/ folder Activate plugin in WordPress dashboard Select Export to Jekyll from the Tools menu  The WordPress plugin converts all posts, pages, taxonomies, metadata, and settings to Markdown and YAML with just a single click.</description>
+    </item>
+    
+    <item>
+      <title>Feedback &amp; Contributing</title>
+      <link>https://blog.codist.me/en/docs/contribute/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/contribute/</guid>
+      <description>Please use the issue tracker to report bugs or submit feature requests. Alternatively, feel free to modify the code and submit a pull request on Github.
+For general questions about Hugo, there is a Hugo discussion forum.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://blog.codist.me/en/docs/faq/</link>
+      <pubDate>Sun, 10 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/faq/</guid>
+      <description>Troubleshoot common issues.</description>
+    </item>
+    
+  </channel>
+</rss>

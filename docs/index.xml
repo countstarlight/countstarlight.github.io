@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codist</title>
+    <link>https://blog.codist.me/docs/</link>
+    <description>Recent content on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <copyright>&amp;copy; 2016-{year} Codist</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>搭建博客评论系统</title>
+      <link>https://blog.codist.me/docs/selfhost-commento/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/selfhost-commento/</guid>
+      <description>在Debian9上用开源的Commento搭建博客评论系统 安装 yarn： curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn 安装dep（需要已</description>
+    </item>
+    
+    <item>
+      <title>SET容器 - 自定义排序和去重</title>
+      <link>https://blog.codist.me/docs/stl-set/</link>
+      <pubDate>Thu, 14 Mar 2019 16:32:45 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/stl-set/</guid>
+      <description>std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的</description>
+    </item>
+    
+    <item>
+      <title>安装kaldi</title>
+      <link>https://blog.codist.me/docs/kaldi-install/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/kaldi-install/</guid>
+      <description>环境 操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。 需要安装有git，subvers</description>
+    </item>
+    
+    <item>
+      <title>使用thchs30数据集</title>
+      <link>https://blog.codist.me/docs/kaldi-thchs30/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/kaldi-thchs30/</guid>
+      <description>1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald</description>
+    </item>
+    
+    <item>
+      <title>使用aishell数据集</title>
+      <link>https://blog.codist.me/docs/kaldi-aishell/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/kaldi-aishell/</guid>
+      <description>1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载</description>
+    </item>
+    
+    <item>
+      <title>使用cvte预训练模型</title>
+      <link>https://blog.codist.me/docs/kaldi-cvte/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/kaldi-cvte/</guid>
+      <description>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置 获取模型 从 http://kaldi-asr.org/models/m2 下载 0002_cvte_chain_model.tar.gz(3.5G) 解压缩到kaldi/</description>
+    </item>
+    
+    <item>
+      <title>Linux上摄像设备的使用</title>
+      <link>https://blog.codist.me/docs/linux-webcam/</link>
+      <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/linux-webcam/</guid>
+      <description>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入 1. 查找设备 插上摄像设备（通常是通过USB） 列出所有的 video4linux 设备: ls</description>
+    </item>
+    
+    <item>
+      <title>将Android的系统日志输出到文件</title>
+      <link>https://blog.codist.me/docs/android-log/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/android-log/</guid>
+      <description>首先，在产品目录的init.XXX.rc文件中，添加相应的service， #start log service start logd on property:service.logcat.enable=1 start logcat_service on property:service.logcat.enable=0 stop logcat_service #log services service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f</description>
+    </item>
+    
+    <item>
+      <title>Linux上通过串口连接嵌入式Linux终端</title>
+      <link>https://blog.codist.me/docs/embedded-serial-usb/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/embedded-serial-usb/</guid>
+      <description>1. 安装 minicom Debian/Ubuntu： sudo aptitude update sudo aptitude install minicom 2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty 如果没有检测到设备，得到的结果类似： [ 0.000000] console</description>
+    </item>
+    
+    <item>
+      <title>用minicom通过串口发送文件</title>
+      <link>https://blog.codist.me/docs/embedded-minicom/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/embedded-minicom/</guid>
+      <description>1. 设置文件路径 设置需要传送的文件所在的路径 按下组合键 Ctrl + A , 再按下 O 选择 Filenames and paths： 设置 A-Download directory （将文件从设备传送到本地的路径） 设置 B-Upload directory （将</description>
+    </item>
+    
+    <item>
+      <title>Git 用GPG签名</title>
+      <link>https://blog.codist.me/docs/git-gpg/</link>
+      <pubDate>Mon, 11 Mar 2019 20:03:50 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/docs/git-gpg/</guid>
+      <description>1. 生成GPG key gpg --full-generate-key 加密方式选择RSA and RSA 过期时间输入：4096 valid选择默认 填写信息后生成成功。 2.导出公钥 gpg --list-secret-keys --keyid-format LONG rsa4096/后面</description>
+    </item>
+    
+  </channel>
+</rss>

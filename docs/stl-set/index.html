@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Codist">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/docs/stl-set/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://blog.codist.me/docs/stl-set/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Codist">
+  <meta property="og:url" content="https://blog.codist.me/docs/stl-set/">
+  <meta property="og:title" content="SET容器 - 自定义排序和去重 | Codist">
+  <meta property="og:description" content="std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:locale" content="zh-Hans">
+  
+  <meta property="article:published_time" content="2019-03-14T16:32:45&#43;08:00">
+  
+  <meta property="article:modified_time" content="2019-03-14T16:32:45&#43;08:00">
+  
+
+  
+
+  
+
+  <title>SET容器 - 自定义排序和去重 | Codist</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Codist</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/">
+            <i class="fas fa-book" style="color: #00d1b2;"></i>
+            <span>文档</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/android-log/">Android底层</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/android-log/">将Android的系统日志输出到文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/stl-set/">C&#43;&#43; STL</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/docs/stl-set/">SET容器 - 自定义排序和去重</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/git-gpg/">Git使用</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/git-gpg/">Git 用GPG签名</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/kaldi-install/">基于kaldi的中文语音识别</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/kaldi-install/">安装kaldi</a>
+      </li>
+      
+      <li >
+        <a href="/docs/kaldi-thchs30/">使用thchs30数据集</a>
+      </li>
+      
+      <li >
+        <a href="/docs/kaldi-aishell/">使用aishell数据集</a>
+      </li>
+      
+      <li >
+        <a href="/docs/kaldi-cvte/">使用cvte预训练模型</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/embedded-serial-usb/">嵌入式开发</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/embedded-serial-usb/">Linux上通过串口连接嵌入式Linux终端</a>
+      </li>
+      
+      <li >
+        <a href="/docs/embedded-minicom/">用minicom通过串口发送文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/linux-webcam/">桌面Linux</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/linux-webcam/">Linux上摄像设备的使用</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/selfhost-commento/">自建代码托管&amp;CI/CD</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/docs/selfhost-commento/">搭建博客评论系统</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">在本页</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-使用内置的比较函数-less">1.使用内置的比较函数<code>less</code></a></li>
+<li><a href="#2-定义比较函数对自定义结构体-类-排序">2.定义比较函数对自定义结构体(类)排序</a>
+<ul>
+<li><a href="#2-1重载操作符">2.1重载操作符 <code>&lt;</code></a></li>
+<li><a href="#2-2重载操作符">2.2重载操作符 <code>()</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">回到顶部</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">SET容器 - 自定义排序和去重</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p><code>std::set</code>，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。</p>
+
+<h2 id="1-使用内置的比较函数-less">1.使用内置的比较函数<code>less</code></h2>
+
+<p>定义内置类型的<code>set</code>对象，限制：</p>
+
+<ul>
+<li>用于比较内置类型，如<code>int</code>，<code>char</code></li>
+<li>只能对一个内置类型进行排序或去重</li>
+</ul>
+
+<p>示例排序(<code>c++11</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+    }
+    std::cout &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    //iteratorz，迭代器，用于遍历容器内元素和元素数据类型
+    for (set&lt;int&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; *i &lt;&lt; &quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+<p>输出：</p>
+
+<pre><code>10 20
+</code></pre>
+
+<h2 id="2-定义比较函数对自定义结构体-类-排序">2.定义比较函数对自定义结构体(类)排序</h2>
+
+<h3 id="2-1重载操作符">2.1重载操作符 <code>&lt;</code></h3>
+
+<p>不能重载<code>&lt;=</code>或<code>&gt;=</code>，几乎所有的方法或容器都需要排序来满足数学意义上的标准严格弱序化，否则这些方法或容器的行为将不可预知。</p>
+
+<p>严格弱序化需要满足：</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">关系</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">f(x,x) = false</td>
+<td align="center">相同为假</td>
+</tr>
+
+<tr>
+<td align="center">if f(x,y) then !f(y,x)</td>
+<td align="center">如果 x &lt; y(x &gt; y) 为真，则 x &gt; y (x &lt; y) 为假</td>
+</tr>
+
+<tr>
+<td align="center">if f(x,y) and f(y,z) then f(x,z)</td>
+<td align="center">如果 x &gt; y (x &lt; y) 且 y &gt; z (y &lt; z)，则x &gt; z(x &lt; z)</td>
+</tr>
+
+<tr>
+<td align="center">if !f(x,y)&amp;&amp;!f(y,x) then x==y; if x==y and y==z then x==z</td>
+<td align="center">如果 x &lt; y 为假且 x &gt; y 为假，则 x = y</td>
+</tr>
+</tbody>
+</table>
+
+<p>set容器在判定已有元素a和新插入元素b是否相等时：</p>
+
+<ul>
+<li>1.将a作为左操作数，b为右操作数，调用比较函数，得到返回值</li>
+<li>2.将b作为左操作数，a为右操作数，再调用一次比较函数，得到返回值</li>
+<li>3.如果前两步返回值都为<code>false</code>，则<code>a=b</code>，b不会被插入set容器；如果前两步返回值都为<code>true</code>，则可能得到不可预知的结果。</li>
+</ul>
+
+<p>由上述，必须满足：<strong>比较函数对相同元素返回<code>false</code></strong></p>
+
+<p>示例，对结构体<code>Stu</code>按照id排序，如果id相同，对<code>name</code>按照字典序排序，同时去重(<code>c++11</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
+    Stu() {}
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
+        }
+    }
+};
+
+int main() {
+    std::set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;)); //重复数据
+    //对应insert，先调用存储对象构造函数，在内存中生成对象，然后拷贝至容器中，c++98不支持
+    testSet.emplace(1, &quot;wang&quot;);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; &quot;id: &quot; &lt;&lt; i.id &lt;&lt; &quot; &quot;
+                  &lt;&lt; &quot;name: &quot; &lt;&lt; i.name &lt;&lt; std::endl;
+    }
+    return 0;
+}
+</code></pre>
+
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+
+<pre><code class="language-cpp">#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
+    Stu() {}
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
+        }
+    }
+};
+
+int main() {
+    set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(1, &quot;wang&quot;));
+    for (set&lt;Stu&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; &quot;id: &quot; &lt;&lt; i-&gt;id &lt;&lt; &quot; &quot;
+             &lt;&lt; &quot;name: &quot; &lt;&lt; i-&gt;name &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+
+<p>输出：</p>
+
+<pre><code>id: 1 name: wang
+id: 2 name: li
+id: 2 name: zhang
+</code></pre>
+
+<h3 id="2-2重载操作符">2.2重载操作符 <code>()</code></h3>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/docs/selfhost-commento/" rel="next">搭建博客评论系统</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">下一页</div>
+    <a href="/docs/kaldi-install/" rel="prev">安装kaldi</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          最近更新于 Mar 14, 2019
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2016-2019 Codist &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "搜索...",
+        'results': "搜索结果",
+        'no_results': "没有找到结果"
+      };
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
+
+  </body>
+</html>
+
+

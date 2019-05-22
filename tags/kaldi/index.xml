@@ -5,81 +5,47 @@
     <link>https://blog.codist.me/tags/kaldi/</link>
     <description>Recent content in kaldi on Codist</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 07 Apr 2019 18:48:52 +0800</lastBuildDate>
+    <language>zh-Hans</language>
+    <copyright>&amp;copy; 2016-{year} Codist</copyright>
+    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/tags/kaldi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>安装kaldi</title>
-      <link>https://blog.codist.me/asr/kaldi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.codist.me/docs/kaldi-install/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/asr/kaldi/</guid>
-      <description>环境 操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。
-需要安装有git，subversion，make以及gcc等编译工具链
-1.下载源码 git clone https://github.com/kaldi-asr/kaldi.git  2.编译安装kaldi/tools 安装文档在kaldi/tools/INSTALL，很短，建议阅读一下
-开始编译：
-cd tools ./extras/check_dependencies.sh #检查依赖，如有问题参照仔细修改 #自动下载安装依赖 make -j 8  这会安装ATLAS headers, OpenFst, SCTK 和 sph2pipe
-注意：如果要使用特定版本的编译器，必须和后面编译安装`kaldi/src`的编译器一致，如之后我们编译安装`cuda`要用`g++-7`，需要指定要用的编译器：  CXX=g++-7 extras/check_dependencies.sh make CXX=g++-7 -j 8  3.编译安装kaldi/src 3.1使用OpenBLAS 如果使用Ubuntu系统，源里有编译好的ATLAS库，可以直接安装，其他Linux发行版由于ATLAS安装复杂，需要调节cpu工作模式，这里用OpenBLAS替代：
-cd tools ./extras/install_openblas.sh  3.2安装cuda thchs30和aishell的训练都需要用到cuda，建议在编译安装的时候就把相关依赖一并装好。
-可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：https://developer.nvidia.com/cuda-downloads ，再手动安装。
-Archlinux可以直接从源里安装，Ubuntu等发行版类似：
-sudo pacman -S cuda  注意：对于Archlinux，由于源里的cuda更新比较频繁，编译安装的kaldi会依赖指定版本的cuda，如果cuda大版本更新，如10.0=&amp;gt;10.1，会使kaldi找不到旧版的cuda库而出错，建议添加cuda到忽略升级里，或每次更新cuda后重新编译安装kaldi/src
-3.3编译 根据安装文档下载编译依赖(这里使用OpenBLAS)，需要硬盘上有20G的空闲空间：
-./configure --openblas-root=../tools/OpenBLAS/install  如果没有找到cuda安装路径，提示：
-CUDA will not be used! If you have already installed cuda drivers and cuda toolkit, try using --cudatk-dir=.</description>
+      <guid>https://blog.codist.me/docs/kaldi-install/</guid>
+      <description>环境 操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。 需要安装有git，subvers</description>
     </item>
     
     <item>
       <title>使用thchs30数据集</title>
-      <link>https://blog.codist.me/asr/thchs30/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.codist.me/docs/kaldi-thchs30/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/asr/thchs30/</guid>
-      <description>1.下载数据集 Kaldi中文语音识别公共数据集有：
- 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kaldi-master/egs/aishell
- 2.gale_mandarin：中文新闻广播数据集(LDC2013S08, LDC2013S08）
- 3.hkust：中文电话数据集(LDC2005S15, LDC2005T32)
- 4.thchs30：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载
-  这里采用thchs30，从http://www.openslr.org/18/ 或者参照它的README下载三个压缩包：
- data_thchs30.tgz 6.4G Mirrors: China
- test-noise.tgz 1.9G Mirrors: China
- resource.tgz 24M Mirrors: China
-  在egs/thchs30/s5下新建文件夹thchs30-openslr，把三个文件解压在该文件夹下
-这个数据集包含以下内容：
-   数据集 音频时长(h) 句子数 词数     train(训练) 25 10000 198252   dev(开发) 2:14 893 17743   test(测试) 6:15 2495 49085    还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。
-其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</description>
+      <guid>https://blog.codist.me/docs/kaldi-thchs30/</guid>
+      <description>1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald</description>
     </item>
     
     <item>
       <title>使用aishell数据集</title>
-      <link>https://blog.codist.me/asr/aishell/</link>
-      <pubDate>Mon, 11 Mar 2019 19:19:26 +0800</pubDate>
+      <link>https://blog.codist.me/docs/kaldi-aishell/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/asr/aishell/</guid>
-      <description>1.安装依赖 安装train_lm.sh：
-cd tools ./extras/install_kaldi_lm.sh  2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载数据集或运行s5/run.sh会自动下载并解压缩数据集，这里只演示手动下载数据集。
-访问http://www.openslr.org/33/ ，下载两个压缩包：
-data_aishell.tgz [15G] ( speech data and transcripts ) Mirrors: China
-resource_aishell.tgz [1.2M] ( supplementary resources, incl. lexicon, speaker info ) Mirrors: China
-下载解压缩到一个目录，这里解压缩到aishell-openslr
-aishell-openslr/data_aishell/wav里的压缩包需要都解压出来，创建脚本local/untar.sh：
-#!/bin/bash remove_archive=false if [ &amp;quot;$1&amp;quot; == --remove-archive ]; then remove_archive=true shift fi if [ $# -ne 3 ]; then echo &amp;quot;Usage: $0 &amp;lt;data-base&amp;gt;&amp;quot; echo &amp;quot;e.g.: $0 /export/a05/xna/data&amp;quot; fi data=$1 part=&amp;quot;data_aishell&amp;quot; if [ ! -d &amp;quot;$data&amp;quot; ]; then echo &amp;quot;$0: no such directory $data&amp;quot; exit 1; fi if [ -f $data/$part/.</description>
+      <guid>https://blog.codist.me/docs/kaldi-aishell/</guid>
+      <description>1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载</description>
     </item>
     
     <item>
       <title>使用cvte预训练模型</title>
-      <link>https://blog.codist.me/asr/cvte/</link>
-      <pubDate>Sun, 07 Apr 2019 18:48:52 +0800</pubDate>
+      <link>https://blog.codist.me/docs/kaldi-cvte/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/asr/cvte/</guid>
-      <description>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置
-获取模型 从 http://kaldi-asr.org/models/m2 下载 0002_cvte_chain_model.tar.gz(3.5G)
-解压缩到kaldi/egs下，注意kaldi/egs/换成安装kaldi对应的目录：
-tar -zxvf 0002_cvte_chain_model.tar.gz -C kaldi/egs/  解压生成目录kaldi/egs/cvte，按照cvte/README.txt链接steps，utils和score.sh，由于需要修改utils中的脚本，这里直接拷贝utils文件夹：
-cd kaldi/egs/cvte/s5/ ln -s ../../wsj/s5/steps steps #ln -s ../../wsj/s5/utils utils cp -r ../../wsj/s5/utils utils cd local/ ln -s ../steps/score_kaldi.sh score.sh  修改解码脚本 修改utils/lang/check_phones_compatible.sh为：
-# check if the files exist or not if [ ! -f $table_first ]; then if [ ! -f $table_second ]; then echo &amp;quot;$0: Error! Both of the two phones-symbol tables are absent.</description>
+      <guid>https://blog.codist.me/docs/kaldi-cvte/</guid>
+      <description>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置 获取模型 从 http://kaldi-asr.org/models/m2 下载 0002_cvte_chain_model.tar.gz(3.5G) 解压缩到kaldi/</description>
     </item>
     
   </channel>
