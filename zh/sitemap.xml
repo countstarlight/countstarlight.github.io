@@ -23,6 +23,16 @@
   </url>
   
   <url>
+    <loc>https://blog.codist.me/homo/datase/</loc>
+    <lastmod>2019-06-13T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/homo/config/</loc>
+    <lastmod>2019-06-13T23:15:58+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/docs/stl-set/</loc>
     <lastmod>2019-03-14T16:32:45+08:00</lastmod>
     <xhtml:link
@@ -174,7 +184,7 @@
   
   <url>
     <loc>https://blog.codist.me/</loc>
-    <lastmod>2019-06-13T00:00:00+08:00</lastmod>
+    <lastmod>2019-06-13T23:15:58+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
