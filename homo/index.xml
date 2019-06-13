@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homo 文档 on Codist</title>
+    <title>概述 on Codist</title>
     <link>https://blog.codist.me/homo/</link>
-    <description>Recent content in Homo 文档 on Codist</description>
+    <description>Recent content in 概述 on Codist</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
@@ -11,6 +11,37 @@
     
 	    <atom:link href="https://blog.codist.me/homo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>安装</title>
+      <link>https://blog.codist.me/homo/get-started/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/homo/get-started/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-系统依赖&#34;&gt;1.系统依赖&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-portaudio&#34;&gt;1.1 PortAudio&lt;/h3&gt;
+
+&lt;p&gt;Homo 使用 &lt;code&gt;PortAudio&lt;/code&gt; 从音频硬件读取和处理音频，这个库通常已经被安装&lt;/p&gt;
+
+&lt;p&gt;Debian / Ubuntu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install portaudio
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Arch Linux / Manjaro Linux:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 需要安装 pulseaudio-alsa 使得和 pulseaudio 一起工作时不会造成崩溃
+sudo pacman -S portaudio pulseaudio-alsa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-2-cmusphinx&#34;&gt;1.2 CMUSphinx&lt;/h3&gt;
+
+&lt;p&gt;Homo 借助 &lt;code&gt;CMUSphinx&lt;/code&gt; 实现离线唤醒，控制语音录制开始和结束的时机&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
