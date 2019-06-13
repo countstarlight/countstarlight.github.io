@@ -4,12 +4,12 @@
     <title>Tags on Codist</title>
     <link>https://blog.codist.me/tags/</link>
     <description>Recent content in Tags on Codist</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
     <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.codist.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://blog.codist.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

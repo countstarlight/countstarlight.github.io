@@ -4,11 +4,11 @@
     <title>Publication_types on Codist</title>
     <link>https://blog.codist.me/publication_types/</link>
     <description>Recent content in Publication_types on Codist</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
     
-	<atom:link href="https://blog.codist.me/publication_types/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://blog.codist.me/publication_types/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

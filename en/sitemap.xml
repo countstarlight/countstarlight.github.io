@@ -5,46 +5,16 @@
   <url>
     <loc>https://blog.codist.me/en/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/courses/example/example1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/courses/example/example1/"
-                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/en/courses/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/courses/example/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/courses/example/"
-                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/en/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/courses/example/example2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/courses/example/example2/"
-                />
   </url>
   
   <url>
@@ -231,62 +201,22 @@
   <url>
     <loc>https://blog.codist.me/en/talk/example/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/talk/example/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/talk/example/"
-                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/en/talk/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/talk/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/talk/"
-                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/en/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/slides/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/slides/"
-                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/en/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/slides/example/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/slides/example/"
-                />
   </url>
   
   <url>
@@ -493,16 +423,6 @@
   
   <url>
     <loc>https://blog.codist.me/en/courses/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/courses/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/courses/"
-                />
   </url>
   
   <url>

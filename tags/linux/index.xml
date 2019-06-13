@@ -4,12 +4,12 @@
     <title>Linux on Codist</title>
     <link>https://blog.codist.me/tags/linux/</link>
     <description>Recent content in Linux on Codist</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
     <lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.codist.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://blog.codist.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,84 @@
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
       <guid>https://blog.codist.me/docs/embedded-serial-usb/</guid>
-      <description>1. 安装 minicom Debian/Ubuntu： sudo aptitude update sudo aptitude install minicom 2. 插上设备并查看系统是否已经检测到设备 sudo dmesg | grep tty 如果没有检测到设备，得到的结果类似： [ 0.000000] console</description>
+      <description>
+
+&lt;h3 id=&#34;1-安装-minicom&#34;&gt;1. 安装 &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Debian/Ubuntu：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude update
+sudo aptitude install minicom
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-插上设备并查看系统是否已经检测到设备&#34;&gt;2. 插上设备并查看系统是否已经检测到设备&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo dmesg | grep tty
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;如果没有检测到设备-得到的结果类似&#34;&gt;如果没有检测到设备，得到的结果类似：&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;[    0.000000] console [tty0] enabled
+[    8.264501] systemd[1]: Created slice system-getty.slice.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;拔下usb转串口线，输入命令 &lt;code&gt;lsusb&lt;/code&gt;会看到一些已经连接到usb的设备：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+Bus 003 Device 006: ID 13d3:3402 IMC Networks  
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;再次插上usb转串口线，再次运行命令 &lt;code&gt;lsusb&lt;/code&gt;，会看到输出结果相比之前增加了一行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 004: ID 13d3:5188 IMC Networks 
+Bus 003 Device 006: ID 13d3:3402 IMC Networks 
+Bus 003 Device 008: ID 18f8:0f99 --- --- --- (注意这行是新加的！)
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;现在我们知道了usb转串口的 &lt;code&gt;vendor id&lt;/code&gt; 和 &lt;code&gt;product id&lt;/code&gt;，让我们加载Linux内核的&lt;code&gt;usbserial&lt;/code&gt;模块来激活这个设备：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;再次运行 &lt;code&gt;dmesg&lt;/code&gt; 命令，输出结果类似：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;usbserial_generic 1-1:1.0: generic converter detected
+usb 1-1: generic converter now attached to ttyUSB0
+usbcore: registered new interface driver usbserial_generic 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;可以把自动加载&lt;code&gt;usbserial&lt;/code&gt;模块添加到开机启动里，编辑文件&lt;code&gt;/etc/modules&lt;/code&gt;，添加一行：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  usbserial vendor=0x18f8 product=0x0f99
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;3-连接到设备&#34;&gt;3. 连接到设备&lt;/h3&gt;
+
+&lt;p&gt;假设设备路径为 &lt;code&gt;/dev/ttyUSB0&lt;/code&gt;，运行命令:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo minicom -s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;code&gt;Serial port setup&lt;/code&gt;里修改第一行为&lt;code&gt;/dev/ttyUSB0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;选择&lt;code&gt;Save setup as dfl&lt;/code&gt;保存设置&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +104,71 @@
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
       <guid>https://blog.codist.me/docs/embedded-minicom/</guid>
-      <description>1. 设置文件路径 设置需要传送的文件所在的路径 按下组合键 Ctrl + A , 再按下 O 选择 Filenames and paths： 设置 A-Download directory （将文件从设备传送到本地的路径） 设置 B-Upload directory （将</description>
+      <description>
+
+&lt;h3 id=&#34;1-设置文件路径&#34;&gt;1. 设置文件路径&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;设置需要传送的文件所在的路径&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;按下组合键 &lt;code&gt;Ctrl + A&lt;/code&gt; , 再按下 &lt;code&gt;O&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选择 &lt;code&gt;Filenames and paths&lt;/code&gt;：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/1.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;设置 &lt;code&gt;A-Download directory&lt;/code&gt; （将文件从设备传送到本地的路径）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置 &lt;code&gt;B-Upload directory&lt;/code&gt; （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/2.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;按下 &lt;code&gt;esc&lt;/code&gt; 然后选择 &lt;code&gt;Save setup as dfl&lt;/code&gt;来保存设置：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/3.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-发送文件到设备&#34;&gt;2. 发送文件到设备&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在&lt;code&gt;minicom&lt;/code&gt;里（已经连接到设备的终端）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rx filename
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;按下组合键 &lt;code&gt;Ctrl + A&lt;/code&gt;，然后按下&lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;选择 &lt;code&gt;xmodem&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;选择要发送的文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;3-在设备上运行刚才发送过去的文件-假设是qt图形界面程序&#34;&gt;3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序）&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code&gt;minicom&lt;/code&gt;里（已经连接到设备的终端）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x filename     #给文件授予执行权限
+./filename             #运行
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;如果设备上的系统没有图形化环境&#34;&gt;如果设备上的系统没有图形化环境&lt;/h4&gt;
+
+&lt;p&gt;添加参数 &lt;code&gt;-qws&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./filename -qws
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;如果希望旋转屏幕显示&#34;&gt;如果希望旋转屏幕显示&lt;/h4&gt;
+
+&lt;p&gt;添加参数 &lt;code&gt;-display&lt;/code&gt; 以及要旋转的角度（顺时针）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./filename -display &amp;quot;Transformed:Rot270&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

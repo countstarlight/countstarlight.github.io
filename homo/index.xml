@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Codist</title>
-    <link>https://blog.codist.me/categories/</link>
-    <description>Recent content in Categories on Codist</description>
+    <title>Homo 文档 on Codist</title>
+    <link>https://blog.codist.me/homo/</link>
+    <description>Recent content in Homo 文档 on Codist</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
+    <lastBuildDate>Thu, 13 Jun 2019 00:00:00 +0800</lastBuildDate>
     
-	    <atom:link href="https://blog.codist.me/categories/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://blog.codist.me/homo/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
