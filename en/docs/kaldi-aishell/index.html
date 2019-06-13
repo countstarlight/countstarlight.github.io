@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Codist">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载">
+
+  
+  <link rel="alternate" hreflang="zh" href="https://blog.codist.me/docs/kaldi-aishell/">
+  
+  <link rel="alternate" hreflang="en-us" href="https://blog.codist.me/en/docs/kaldi-aishell/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://blog.codist.me/en/docs/kaldi-aishell/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Codist">
+  <meta property="og:url" content="https://blog.codist.me/en/docs/kaldi-aishell/">
+  <meta property="og:title" content="使用aishell数据集 | Codist">
+  <meta property="og:description" content="1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2017-12-03T00:00:00&#43;08:00">
+  
+  <meta property="article:modified_time" content="2017-12-03T00:00:00&#43;08:00">
+  
+
+  
+
+  
+
+  <title>使用aishell数据集 | Codist</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/en/">Codist</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#about">
+            <i class="fas fa-home" style="color: #00d1b2;"></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/en/docs/">
+            <i class="fas fa-book" style="color: #00d1b2;"></i>
+            <span>Documentation</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#featured">
+            
+            <span>Publications</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/courses/">
+            
+            <span>Courses</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            <span>English</span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="https://blog.codist.me/docs/kaldi-aishell/">
+                <span>中文 (简体)</span>
+              </a>
+            </li>
+            
+          </ul>
+        </li>
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/android-log/">Android底层</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/android-log/">将Android的系统日志输出到文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/stl-set/">C&#43;&#43; STL</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/stl-set/">SET容器 - 自定义排序和去重</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/git-gpg/">Git使用</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/git-gpg/">Git 用GPG签名</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/kaldi-install/">中文语音识别</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/kaldi-install/">安装kaldi</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/kaldi-thchs30/">使用thchs30数据集</a>
+      </li>
+      
+      <li class="active">
+        <a href="/en/docs/kaldi-aishell/">使用aishell数据集</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/kaldi-cvte/">使用cvte预训练模型</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/embedded-serial-usb/">嵌入式</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/embedded-serial-usb/">Linux上通过串口连接嵌入式Linux终端</a>
+      </li>
+      
+      <li >
+        <a href="/en/docs/embedded-minicom/">用minicom通过串口发送文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/linux-webcam/">桌面Linux</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/linux-webcam/">Linux上摄像设备的使用</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/en/docs/selfhost-commento/">自建服务</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/en/docs/selfhost-commento/">搭建博客评论系统</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">On this page</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-安装依赖">1.安装依赖</a></li>
+<li><a href="#2-获取数据集">2.获取数据集</a></li>
+<li><a href="#3-训练">3.训练</a>
+<ul>
+<li><a href="#3-1修改训练脚本">3.1修改训练脚本</a></li>
+<li><a href="#3-2训练">3.2训练</a></li>
+</ul></li>
+<li><a href="#4-识别-在线解码">4.识别&ndash;在线解码</a>
+<ul>
+<li><a href="#4-1生成配置文件">4.1生成配置文件</a>
+<ul>
+<li><a href="#4-1-1使用-nnet3-模型">4.1.1使用<code>nnet3</code>模型</a></li>
+<li><a href="#4-1-2使用-chain-模型-未经测试">4.1.2使用<code>chain</code>模型(未经测试)</a></li>
+</ul></li>
+<li><a href="#4-2解码">4.2解码</a>
+<ul>
+<li><a href="#4-2-1使用-nnet3-模型-未经测试">4.2.1使用<code>nnet3</code>模型(未经测试)</a></li>
+<li><a href="#4-2-2使用-chain-模型-未经测试">4.2.2使用<code>chain</code>模型(未经测试)</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Back to top</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">使用aishell数据集</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="1-安装依赖">1.安装依赖</h2>
+
+<p>安装<code>train_lm.sh</code>：</p>
+
+<pre><code class="language-bash">cd tools
+./extras/install_kaldi_lm.sh
+</code></pre>
+
+<h2 id="2-获取数据集">2.获取数据集</h2>
+
+<p>和thchs30类似，参照<code>egs/aishell/README.txt</code>，手动下载数据集或运行<code>s5/run.sh</code>会自动下载并解压缩数据集，这里只演示手动下载数据集。</p>
+
+<p>访问<a href="http://www.openslr.org/33/" target="_blank">http://www.openslr.org/33/</a> ，下载两个压缩包：</p>
+
+<p><a href="http://www.openslr.org/resources/33/data_aishell.tgz" target="_blank">data_aishell.tgz </a>[15G]   ( speech data and transcripts )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/data_aishell.tgz" target="_blank">China</a><br />
+<a href="http://www.openslr.org/resources/33/resource_aishell.tgz" target="_blank">resource_aishell.tgz </a>[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz" target="_blank">China</a></p>
+
+<p>下载解压缩到一个目录，这里解压缩到<code>aishell-openslr</code></p>
+
+<p><code>aishell-openslr/data_aishell/wav</code>里的压缩包需要都解压出来，创建脚本<code>local/untar.sh</code>：</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+remove_archive=false
+
+if [ &quot;$1&quot; == --remove-archive ]; then
+  remove_archive=true
+  shift
+fi
+
+if [ $# -ne 3 ]; then
+  echo &quot;Usage: $0 &lt;data-base&gt;&quot;
+  echo &quot;e.g.: $0 /export/a05/xna/data&quot;
+fi
+
+data=$1
+part=&quot;data_aishell&quot;
+
+if [ ! -d &quot;$data&quot; ]; then
+  echo &quot;$0: no such directory $data&quot;
+  exit 1;
+fi
+
+if [ -f $data/$part/.complete ]; then
+  echo &quot;$0: data part $part was already successfully extracted, nothing to do.&quot;
+  exit 0;
+fi
+
+touch $data/$part/.complete
+
+if [ $part == &quot;data_aishell&quot; ]; then
+  cd $data/$part/wav
+  for wav in ./*.tar.gz; do
+    echo &quot;Extracting wav from $wav&quot;
+    tar -zxf $wav &amp;&amp; rm $wav
+  done
+fi
+
+echo &quot;$0: Successfully downloaded and un-tarred $data/$part.tgz&quot;
+
+exit 0;
+</code></pre>
+
+<p>修改训练脚本<code>run.sh</code>：</p>
+
+<p>修改数据集存放路径</p>
+
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
+</code></pre>
+
+<p>修改下载解压缩数据集为我们新建的解压缩脚本</p>
+
+<pre><code class="language-bash">#local/download_and_untar.sh $data $data_url data_aishell || exit 1;
+#local/download_and_untar.sh $data $data_url resource_aishell || exit 1;
+
+local/untar.sh $data || exit 1;
+</code></pre>
+
+<p>这样在首次运行训练脚本时会执行我们的解压缩脚本，对wav文件进行批量解压缩</p>
+
+<h2 id="3-训练">3.训练</h2>
+
+<h3 id="3-1修改训练脚本">3.1修改训练脚本</h3>
+
+<p>修改<code>cmd.sh</code>：</p>
+
+<pre><code class="language-bash">#export train_cmd=&quot;queue.pl --mem 2G&quot;
+#export decode_cmd=&quot;queue.pl --mem 4G&quot;
+#export mkgraph_cmd=&quot;queue.pl --mem 8G&quot;
+
+export train_cmd=run.pl
+export decode_cmd=&quot;run.pl --mem 4G&quot;
+export mkgraph_cmd=&quot;run.pl --mem 8G&quot;
+</code></pre>
+
+<p>和thchs30一样，建议对训练脚本<code>run.sh</code>分成多个文件，run1.sh&hellip;，分次执行，公共的内容是：</p>
+
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
+
+. ./cmd.sh
+</code></pre>
+
+<h3 id="3-2训练">3.2训练</h3>
+
+<pre><code class="language-bash">./run.sh # run1.sh run2.sh ...
+</code></pre>
+
+<h2 id="4-识别-在线解码">4.识别&ndash;在线解码</h2>
+
+<p>以aishell的<code>chain</code>模型为例</p>
+
+<h3 id="4-1生成配置文件">4.1生成配置文件</h3>
+
+<p>所有操作都在<code>aishell/s5</code>下</p>
+
+<h4 id="4-1-1使用-nnet3-模型">4.1.1使用<code>nnet3</code>模型</h4>
+
+<p>1.建立需要的软链接：</p>
+
+<pre><code class="language-bash">cd exp/nnet3/tdnn_sp
+ln -s 0.mdl final.mdl
+</code></pre>
+
+<p>2.生成配置文件</p>
+
+<pre><code class="language-bash">./steps/online/nnet3/prepare_online_decoding.sh \
+ --add-pitch true \
+ --mfcc-config conf/mfcc_hires.conf \
+ data/lang \
+ exp/nnet3/extractor \
+ exp/nnet3/tdnn_sp \
+ exp/nnet3/nnet_online
+</code></pre>
+
+<ul>
+<li><p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p></li>
+
+<li><p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p></li>
+
+<li><p><code>data/lang</code>：nnet3模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p></li>
+
+<li><p><code>exp/nnet3/tdnn_sp</code>：nnet3模型</p></li>
+
+<li><p><code>exp/nnet3/nnet_online</code>：生成的配置文件存放的目录，自己定义</p></li>
+</ul>
+
+<h4 id="4-1-2使用-chain-模型-未经测试">4.1.2使用<code>chain</code>模型(未经测试)</h4>
+
+<pre><code class="language-bash">./steps/online/nnet3/prepare_online_decoding.sh \
+ --add-pitch true \
+ --mfcc-config conf/mfcc_hires.conf \
+ data/lang \
+ exp/nnet3/extractor \
+ exp/chain/tdnn_1a_sp \
+ exp/chain/nnet_online
+</code></pre>
+
+<ul>
+<li><p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p></li>
+
+<li><p><code>--mfcc-config</code>：mfcc使用的配置文件，<strong>注意这里我们使用的是<code>mfcc_hires.conf</code></strong></p></li>
+
+<li><p><code>data/lang_chain</code>：存储chain模型解码网络图中<code>G.fst</code>和<code>L.fst</code>文件以及词汇表<code>words.txt</code>文件</p></li>
+
+<li><p><code>exp/chain/tdnn_1a_sp</code>：存储chain模型</p></li>
+
+<li><p><code>exp/chain/nnet_online</code>：生成的配置文件存放的目录，自己定义</p></li>
+</ul>
+
+<h3 id="4-2解码">4.2解码</h3>
+
+<h4 id="4-2-1使用-nnet3-模型-未经测试">4.2.1使用<code>nnet3</code>模型(未经测试)</h4>
+
+<pre><code class="language-bash">online2-wav-nnet3-latgen-faster \
+  --config=exp/nnet3/nnet_online/conf/online.conf \
+  --do-endpointing=false \
+  --frames-per-chunk=20 \
+  --extra-left-context-initial=0 \
+  --online=true \
+  --frame-subsampling-factor=3 \
+  --min-active=200 \
+  --max-active=7000 \
+  --beam=15.0 \
+  --lattice-beam=6.0 \
+  --acoustic-scale=1.0 \
+  --word-symbol-table=s5/data/lang/words.txt \
+  s5/exp/chain/tdnn_1a_sp/final.mdl \
+  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst \
+  ark:s5/data/test/spk2utt \
+  scp:s5/data/test/wav.scp \
+  ark,t:20190308.txt
+</code></pre>
+
+<h4 id="4-2-2使用-chain-模型-未经测试">4.2.2使用<code>chain</code>模型(未经测试)</h4>
+
+<pre><code class="language-bash">online2-wav-nnet3-latgen-faster \
+  --config=s5/exp/chain/nnet_online/conf/online.conf \
+  --do-endpointing=false \
+  --frames-per-chunk=20 \
+  --extra-left-context-initial=0 \
+  --online=true \
+  --frame-subsampling-factor=3 \
+  --min-active=200 \
+  --max-active=7000 \
+  --beam=15.0 \
+  --lattice-beam=6.0 \
+  --acoustic-scale=1.0 \
+  --word-symbol-table=s5/data/lang/words.txt \
+  s5/exp/chain/tdnn_1a_sp/final.mdl \
+  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst \
+  ark:s5/data/test/spk2utt \
+  scp:s5/data/test/wav.scp \
+  ark,t:20190308.txt
+</code></pre>
+
+          </div>
+
+          
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/en/tags/kaldi/">kaldi</a>
+  
+  <a class="badge badge-light" href="/en/tags/asr/">ASR</a>
+  
+</div>
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/en/docs/kaldi-thchs30/" rel="next">使用thchs30数据集</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/en/docs/kaldi-cvte/" rel="prev">使用cvte预训练模型</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Dec 3, 2017
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2016-2019 Codist &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/en/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
+
+  </body>
+</html>
+
+

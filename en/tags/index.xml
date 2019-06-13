@@ -7,44 +7,71 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    <lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.codist.me/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Source Themes</title>
-      <link>https://blog.codist.me/en/tags/source-themes/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <title>ASR</title>
+      <link>https://blog.codist.me/en/tags/asr/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/en/tags/source-themes/</guid>
+      <guid>https://blog.codist.me/en/tags/asr/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Deep Learning</title>
-      <link>https://blog.codist.me/en/tags/deep-learning/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>kaldi</title>
+      <link>https://blog.codist.me/en/tags/kaldi/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/en/tags/deep-learning/</guid>
+      <guid>https://blog.codist.me/en/tags/kaldi/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Demo</title>
-      <link>https://blog.codist.me/en/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Linux</title>
+      <link>https://blog.codist.me/en/tags/linux/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
-      <guid>https://blog.codist.me/en/tags/demo/</guid>
+      <guid>https://blog.codist.me/en/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Academic</title>
-      <link>https://blog.codist.me/en/tags/academic/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <title>Minicom</title>
+      <link>https://blog.codist.me/en/tags/minicom/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
-      <guid>https://blog.codist.me/en/tags/academic/</guid>
+      <guid>https://blog.codist.me/en/tags/minicom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serial-USB</title>
+      <link>https://blog.codist.me/en/tags/serial-usb/</link>
+      <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/tags/serial-usb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>https://blog.codist.me/en/tags/android/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>log</title>
+      <link>https://blog.codist.me/en/tags/log/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/tags/log/</guid>
       <description></description>
     </item>
     

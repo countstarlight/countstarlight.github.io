@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASR on Codist</title>
+    <link>https://blog.codist.me/en/tags/asr/</link>
+    <description>Recent content in ASR on Codist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016-{year} Codist</copyright>
+    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.codist.me/en/tags/asr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装kaldi</title>
+      <link>https://blog.codist.me/en/docs/kaldi-install/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/kaldi-install/</guid>
+      <description>环境 操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如ATLAS，安装不会遇到太多问题。 需要安装有git，subvers</description>
+    </item>
+    
+    <item>
+      <title>使用thchs30数据集</title>
+      <link>https://blog.codist.me/en/docs/kaldi-thchs30/</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/kaldi-thchs30/</guid>
+      <description>1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald</description>
+    </item>
+    
+    <item>
+      <title>使用aishell数据集</title>
+      <link>https://blog.codist.me/en/docs/kaldi-aishell/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/kaldi-aishell/</guid>
+      <description>1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载</description>
+    </item>
+    
+    <item>
+      <title>使用cvte预训练模型</title>
+      <link>https://blog.codist.me/en/docs/kaldi-cvte/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/kaldi-cvte/</guid>
+      <description>cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置 获取模型 从 http://kaldi-asr.org/models/m2 下载 0002_cvte_chain_model.tar.gz(3.5G) 解压缩到kaldi/</description>
+    </item>
+    
+  </channel>
+</rss>

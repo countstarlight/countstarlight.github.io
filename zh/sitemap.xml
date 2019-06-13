@@ -50,56 +50,166 @@
   <url>
     <loc>https://blog.codist.me/docs/selfhost-commento/</loc>
     <lastmod>2016-04-20T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/selfhost-commento/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/selfhost-commento/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/stl-set/</loc>
     <lastmod>2019-03-14T16:32:45+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/stl-set/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/stl-set/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/kaldi-install/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/kaldi-install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/kaldi-install/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/kaldi-thchs30/</loc>
     <lastmod>2016-04-18T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/kaldi-thchs30/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/kaldi-thchs30/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/kaldi-aishell/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/kaldi-aishell/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/kaldi-aishell/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/kaldi-cvte/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/kaldi-cvte/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/kaldi-cvte/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/linux-webcam/</loc>
     <lastmod>2017-07-20T14:54:35+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/linux-webcam/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/linux-webcam/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/android-log/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/android-log/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/android-log/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/embedded-serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/embedded-serial-usb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/embedded-serial-usb/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/embedded-minicom/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/embedded-minicom/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/embedded-minicom/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/docs/git-gpg/</loc>
     <lastmod>2019-03-11T20:03:50+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/git-gpg/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/git-gpg/"
+                />
   </url>
   
   <url>
@@ -183,6 +293,16 @@
     <loc>https://blog.codist.me/tags/asr/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/asr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/asr/"
+                />
   </url>
   
   <url>
@@ -205,6 +325,16 @@
     <loc>https://blog.codist.me/tags/kaldi/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/kaldi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/kaldi/"
+                />
   </url>
   
   <url>
@@ -226,30 +356,80 @@
     <loc>https://blog.codist.me/tags/linux/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/linux/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/tags/minicom/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/minicom/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/minicom/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/tags/serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/serial-usb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/serial-usb/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/tags/android/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/android/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/android/"
+                />
   </url>
   
   <url>
     <loc>https://blog.codist.me/tags/log/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/log/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/log/"
+                />
   </url>
   
   <url>
