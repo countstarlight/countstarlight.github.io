@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en-us">
 
 <head>
 
@@ -28,12 +28,12 @@
   
     
   
-  <meta name="description" content="Homo 的示例配置文件在 conf/example_app.ini，在运行前，需要拷贝一份到项目根目录下的 app.ini: cd homo cp conf/example_app.ini conf/app.ini 注意：一般情况下不需要修改配置">
+  <meta name="description" content="1.运行自然语言理解引擎 进入nlu的文件夹，source对应的python虚拟环境并启动http服务器： cd nlu source env3.6/bin/activate python -m rasa_nlu.server \ -c configs/rasa/config_jieba_mitie_sklearn.yml \ --path models 或者直接运">
 
   
-  <link rel="alternate" hreflang="en" href="https://blog.codist.me/en/homo/config/">
+  <link rel="alternate" hreflang="zh" href="https://blog.codist.me/homo/run/">
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/homo/config/">
+  <link rel="alternate" hreflang="en-us" href="https://blog.codist.me/en/homo/run/">
 
   
 
@@ -98,7 +98,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://blog.codist.me/homo/config/">
+  <link rel="canonical" href="https://blog.codist.me/en/homo/run/">
 
   
   
@@ -110,12 +110,12 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Codist">
-  <meta property="og:url" content="https://blog.codist.me/homo/config/">
-  <meta property="og:title" content="配置 | Codist">
-  <meta property="og:description" content="Homo 的示例配置文件在 conf/example_app.ini，在运行前，需要拷贝一份到项目根目录下的 app.ini: cd homo cp conf/example_app.ini conf/app.ini 注意：一般情况下不需要修改配置"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:url" content="https://blog.codist.me/en/homo/run/">
+  <meta property="og:title" content="运行 | Codist">
+  <meta property="og:description" content="1.运行自然语言理解引擎 进入nlu的文件夹，source对应的python虚拟环境并启动http服务器： cd nlu source env3.6/bin/activate python -m rasa_nlu.server \ -c configs/rasa/config_jieba_mitie_sklearn.yml \ --path models 或者直接运"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-06-13T00:00:00&#43;08:00">
+  <meta property="article:published_time" content="2019-06-14T00:00:00&#43;08:00">
   
   <meta property="article:modified_time" content="2019-06-14T00:00:00&#43;08:00">
   
@@ -129,7 +129,7 @@
 
 
 
-  <title>配置 | Codist</title>
+  <title>运行 | Codist</title>
 
 </head>
 
@@ -142,7 +142,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>搜索</h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -151,7 +151,7 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
         
       </div>
@@ -173,10 +173,10 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Codist</a>
+      <a class="navbar-brand" href="/en/">Codist</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars"></i></span>
       </button>
       
@@ -205,7 +205,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/docs/"><i class="fas fa-book"></i><span>博客</span></a>
+          <a class="nav-link " href="/en/docs/"><i class="fas fa-book"></i><span>Blog</span></a>
         </li>
 
         
@@ -227,7 +227,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/homo/"><i class="fas fa-book"></i><span>Homo 文档</span></a>
+          <a class="nav-link  active" href="/en/homo/"><i class="fas fa-book"></i><span>Homo Document</span></a>
         </li>
 
         
@@ -250,13 +250,13 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
             <i class="fas fa-globe" aria-hidden="true"></i>
-            <span>中文 (简体)</span>
+            <span>English</span>
           </a>
           <ul class="dropdown-menu">
             
             <li class="dropdown-item my-0 py-0 mx-0 px-0">
-              <a href="https://blog.codist.me/en/homo/config/">
-                <span>English</span>
+              <a href="https://blog.codist.me/homo/run/">
+                <span>中文 (简体)</span>
               </a>
             </li>
             
@@ -294,7 +294,7 @@
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
   
 </form>
 
@@ -302,28 +302,28 @@
   
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/homo/">概述</a>
+    <a class="docs-toc-link" href="/en/homo/">概述</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/homo/install/">开始</a>
+    <a class="docs-toc-link" href="/en/homo/install/">开始</a>
     <ul class="nav docs-sidenav">
       
       <li >
-        <a href="/homo/install/">安装</a>
+        <a href="/en/homo/install/">安装</a>
       </li>
       
       <li >
-        <a href="/homo/dataset/">获取数据</a>
+        <a href="/en/homo/dataset/">获取数据</a>
+      </li>
+      
+      <li >
+        <a href="/en/homo/config/">配置</a>
       </li>
       
       <li class="active">
-        <a href="/homo/config/">配置</a>
-      </li>
-      
-      <li >
-        <a href="/homo/run/">运行</a>
+        <a href="/en/homo/run/">运行</a>
       </li>
       
     </ul>
@@ -332,11 +332,11 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/homo/wake-up/">进阶</a>
+    <a class="docs-toc-link" href="/en/homo/wake-up/">进阶</a>
     <ul class="nav docs-sidenav">
       
       <li >
-        <a href="/homo/wake-up/">自定义唤醒词</a>
+        <a href="/en/homo/wake-up/">自定义唤醒词</a>
       </li>
       
     </ul>
@@ -352,14 +352,21 @@
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
       <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">在本页</a></li>
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
       <nav id="TableOfContents">
 <ul>
 <li>
 <ul>
-<li><a href="#配置文件各参数介绍">配置文件各参数介绍</a></li>
+<li><a href="#1-运行自然语言理解引擎">1.运行自然语言理解引擎</a></li>
+<li><a href="#2-运行文本情感分析引擎">2.运行文本情感分析引擎</a></li>
+<li><a href="#3-运行主程序">3.运行主程序</a>
+<ul>
+<li><a href="#3-1-离线模式">3.1 离线模式</a></li>
+<li><a href="#3-2-无唤醒模式">3.2 无唤醒模式</a></li>
+<li><a href="#3-3-调试模式">3.3 调试模式</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -373,95 +380,105 @@
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">配置</h1>
+          <h1 itemprop="name">运行</h1>
 
           <div class="article-style" itemprop="articleBody">
             
 
-<p>Homo 的示例配置文件在 <code>conf/example_app.ini</code>，在运行前，需要拷贝一份到项目根目录下的 <code>app.ini</code>:</p>
+<h2 id="1-运行自然语言理解引擎">1.运行自然语言理解引擎</h2>
 
-<pre><code class="language-bash">cd homo
-cp conf/example_app.ini conf/app.ini
+<p>进入<code>nlu</code>的文件夹，<code>source</code>对应的python虚拟环境并启动http服务器：</p>
+
+<pre><code class="language-bash">cd nlu
+source env3.6/bin/activate
+
+python -m rasa_nlu.server \
+       -c configs/rasa/config_jieba_mitie_sklearn.yml \
+       --path models
 </code></pre>
 
-<div class="alert alert-note">
-  <div>
-    注意：一般情况下<strong>不需要</strong>修改配置文件<code>app.ini</code>，程序在每次启动时都会对未填的项用默认配置填充
-  </div>
-</div>
+<p>或者直接运行脚本<code>nlu_server.sh</code>：</p>
 
-<h2 id="配置文件各参数介绍">配置文件各参数介绍</h2>
-
-<pre><code class="language-ini">[portaudio]
-; PocketSphinx 将 PortAudio 录制到的原始音频(16kHz)存储在这个路径下
-; 默认值: tmp/record
-RAW_DIR =
-; 保存用于语音识别的临时文件名
-; 默认值: tmp/record/input.pcm
-INPUT_RAW =
-; 保存用于语音识别的临时文件编码成的wav文件名
-; 默认值: tmp/record/input.wav
-INPUT_WAV =
-
-[sphinx]
-; 英文 hmm 模型路径
-; 默认值: sphinx/en-us/en-us
-EN_HMM_DIR =
-; Homo唤醒词词典路径
-; 默认值: sphinx/homo/homo.dic
-EN_DICT_FILE =
-; Homo lm 模型路径
-; 默认值: sphinx/homo/homo.lm.bin
-EN_LM_FILE =
-; 在PocketSphinx基础上降低开始录制用于语音识别音频的阈值，越小越灵敏
-; 最小值为0，将完全由PocketSphinx控制
-; 默认值: 50000
-RECORD_THRESHOLD =
-; 保存PocketSphinx的日志文件名
-; 默认值: log/sphinx.log
-LOG_FILE =
-
-[nlu]
-; Rasa NLU 对话服务的API(已弃用),
-; 默认值: http://localhost:5005/conversations/default/respond
-CONVERSATION_API =
-; Rasa NlU进行意图识别和实体提取的API,
-; 默认值: http://localhost:5000/parse
-PARSE_API =
-; 使用的Rasa NLU的模型所属项目
-; 默认值: rasa
-PROJECT =
-; 使用的Rasa NLU的模型
-; 默认值: ini
-MODEL =
-
-[baidu]
-; 百度语音识别的API
-; 默认值: http://vop.baidu.com/server_api
-ASR_API =
-; 百度语音合成的API
-; 默认值: http://tsn.baidu.com/text2audio
-TTS_API =
-; 百度语音平台的认证API
-; 默认值: https://openapi.baidu.com/oauth/2.0/token
-VOICE_AUTH_URL =
-; 百度语音API的key
-; 由于免费API有并发限制，建议自己注册
-; 默认值: MDNsII2jkUtbF729GQOZt7FS
-VOICE_API_KEY =
-; 百度语音API的secret
-; 由于免费API有并发限制，建议自己注册
-; 默认值: 0vWCVCLsbWHMSH1wjvxaDq4VmvCZM2O9
-VOICE_API_SECRET =
-
-[tts]
-; 保存合成的临时语音文件的目录
-; 默认值: tmp/tts
-TTS_DIR =
-; 保存合成的临时语音文件名
-; 默认值: tmp/tts/tmp.wav
-TTS_OUT_FILE =
+<pre><code class="language-bash">cd nlu
+./nlu_server.sh
 </code></pre>
+
+<h2 id="2-运行文本情感分析引擎">2.运行文本情感分析引擎</h2>
+
+<p>进入<code>sentiment</code>文件夹，<code>source</code>对应的python虚拟环境并启动http服务器：</p>
+
+<pre><code class="language-bash">cd sentiment
+source env3.6/bin/activate
+python server.py
+</code></pre>
+
+<p>或直接运行脚本：</p>
+
+<pre><code class="language-bash">cd sentiment
+./server.sh 
+</code></pre>
+
+<p><strong>注意：加载word2vec模型需要花费5~7分钟时间</strong></p>
+
+<h2 id="3-运行主程序">3.运行主程序</h2>
+
+<pre><code class="language-bash">./homo-webview
+</code></pre>
+
+<p>查看帮助使用 <code>-h</code> 或 <code>--help</code>：</p>
+
+<pre><code>$ ./homo-webview -h
+NAME:
+   Homo Webview - Help
+
+USAGE:
+   homo-webview [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d      start homo webview in debug mode [$HOMO_WEBVIEW_DEBUG]
+   --offline, -o    disable speech recognition and text to speech [$HOMO_WEBVIEW_OFFLINE]
+   --fall, -f       disable wakeup [$HOMO_WEBVIEW_FALL]
+   --interrupt, -i  can interrupt the playing voice [$HOMO_WEBVIEW_INTERRUPT]
+   --help, -h       show help
+   --version, -v    print the version
+</code></pre>
+
+<p>所有参数均可以叠加使用，如 <code>./homo-webview -o -f -d</code></p>
+
+<h3 id="3-1-离线模式">3.1 离线模式</h3>
+
+<p>使用 <code>-o</code> 或 <code>--offline</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -o
+</code></pre>
+
+<p>该模式下完全不需要网络，语音识别和语音合成功能关闭，只能通过键入文本交互</p>
+
+<h3 id="3-2-无唤醒模式">3.2 无唤醒模式</h3>
+
+<p>使用 <code>-f</code> 或 <code>--fall</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -f
+</code></pre>
+
+<p>该模式下不需要唤醒，直接启动界面</p>
+
+<h3 id="3-3-调试模式">3.3 调试模式</h3>
+
+<p>使用 <code>-d</code> 或 <code>--debug</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -d
+</code></pre>
+
+<p>在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号</p>
+
+<p>界面右键可以调用控制台查看和调试html和js/css</p>
 
           </div>
 
@@ -477,16 +494,10 @@ TTS_OUT_FILE =
   
   
   <div class="post-nav-item">
-    <div class="meta-nav">上一页</div>
-    <a href="/homo/dataset/" rel="next">获取数据</a>
+    <div class="meta-nav">Previous</div>
+    <a href="/en/homo/config/" rel="next">配置</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">下一页</div>
-    <a href="/homo/run/" rel="prev">运行</a>
-  </div>
   
 </div>
 
@@ -495,7 +506,7 @@ TTS_OUT_FILE =
         </div>
 
         <div class="body-footer">
-          最近更新于 Jun 14, 2019
+          Last updated on Jun 14, 2019
         </div>
 
       </article>
@@ -560,17 +571,17 @@ TTS_OUT_FILE =
     
     
     <script>
-      const search_index_filename = "/index.json";
+      const search_index_filename = "/en/index.json";
       const i18n = {
-        'placeholder': "搜索...",
-        'results': "搜索结果",
-        'no_results': "没有找到结果"
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
       };
       const content_type = {
-        'post': "文章",
-        'project': "项目",
-        'publication' : "出版物",
-        'talk' : "演讲"
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
         };
     </script>
     
@@ -641,7 +652,7 @@ TTS_OUT_FILE =
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">引用</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -651,10 +662,10 @@ TTS_OUT_FILE =
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 复制
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 下载
+          <i class="fas fa-download"></i> Download
         </a>
         <div id="modal-error"></div>
       </div>

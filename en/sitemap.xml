@@ -3,18 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.codist.me/en/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/courses/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>https://blog.codist.me/en/homo/wake-up/</loc>
+    <lastmod>2019-06-13T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/wake-up/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/wake-up/"
+                />
   </url>
   
   <url>
@@ -29,6 +29,66 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.codist.me/en/docs/selfhost-commento/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/en/homo/install/</loc>
+    <lastmod>2019-06-13T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/install/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/install/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/en/homo/dataset/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/dataset/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/dataset/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/en/homo/config/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/config/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/config/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/en/homo/run/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/run/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/run/"
                 />
   </url>
   
@@ -184,7 +244,7 @@
   
   <url>
     <loc>https://blog.codist.me/en/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -199,24 +259,18 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/talk/example/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>https://blog.codist.me/en/homo/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/"
+                />
   </url>
   
   <url>
@@ -364,7 +418,7 @@
   
   <url>
     <loc>https://blog.codist.me/en/docs/</loc>
-    <lastmod>2019-05-24T00:00:00+08:00</lastmod>
+    <lastmod>2017-09-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -419,10 +473,6 @@
                 hreflang="en"
                 href="https://blog.codist.me/en/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/en/courses/</loc>
   </url>
   
   <url>
