@@ -14,10 +14,10 @@
     
     <item>
       <title>安装</title>
-      <link>https://blog.codist.me/homo/get-started/</link>
+      <link>https://blog.codist.me/homo/install/</link>
       <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/homo/get-started/</guid>
+      <guid>https://blog.codist.me/homo/install/</guid>
       <description>
 
 &lt;p&gt;首先获取Homo源码:&lt;/p&gt;
@@ -143,9 +143,28 @@ make webview
 
 &lt;p&gt;获取Homo运行所需的数据&lt;/p&gt;
 
-&lt;h2 id=&#34;1-自然语言理解部分&#34;&gt;1. 自然语言理解部分&lt;/h2&gt;
+&lt;h2 id=&#34;1-离线唤醒部分&#34;&gt;1. 离线唤醒部分&lt;/h2&gt;
 
-&lt;h3 id=&#34;1-1-中文维基百科mitie模型&#34;&gt;1.1 中文维基百科MITIE模型&lt;/h3&gt;
+&lt;h3 id=&#34;1-1-中文语音模型&#34;&gt;1.1 中文语音模型&lt;/h3&gt;
+
+&lt;p&gt;这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练&lt;/p&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/&#34; target=&#34;_blank&#34;&gt;中文(普通话)预训练语音模型&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压到 &lt;code&gt;homo/sphinx/cmusphinx-zh-cn-5.2&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-2-英文语音模型&#34;&gt;1.2 英文语音模型&lt;/h3&gt;
+
+&lt;p&gt;Homo 默认使用的唤醒词是 &lt;code&gt;homo&lt;/code&gt;，需要使用英文语音模型&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&#34;https://blog.codist.me/homo/install/&#34; target=&#34;_blank&#34;&gt;安装&lt;/a&gt; &lt;code&gt;PocketSphinx&lt;/code&gt; 时，&lt;code&gt;git clone&lt;/code&gt; 得到的源码里已经包含训练好的模型文件，直接将文件夹 &lt;code&gt;pocketsphinx/model/en-us&lt;/code&gt; 拷贝到 &lt;code&gt;homo/sphinx/&lt;/code&gt; 里：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp -r pocketsphinx/model/en-us homo/sphinx/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-自然语言理解部分&#34;&gt;2. 自然语言理解部分&lt;/h2&gt;
+
+&lt;h3 id=&#34;2-1-中文维基百科mitie模型&#34;&gt;2.1 中文维基百科MITIE模型&lt;/h3&gt;
 
 &lt;p&gt;来自 &lt;a href=&#34;http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html&#34; target=&#34;_blank&#34;&gt;用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜&lt;/a&gt;&lt;/p&gt;
 

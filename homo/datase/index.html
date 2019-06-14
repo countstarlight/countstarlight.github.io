@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="获取Homo运行所需的数据 1. 自然语言理解部分 1.1 中文维基百科MITIE模型 来自 用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜 下载 total_word_feature_extractor_chi.dat: 链">
+  <meta name="description" content="获取Homo运行所需的数据 1. 离线唤醒部分 1.1 中文语音模型 这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练 下载 中文(普通话)预训练">
 
   
   <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/homo/datase/">
@@ -110,7 +110,7 @@
   <meta property="og:site_name" content="Codist">
   <meta property="og:url" content="https://blog.codist.me/homo/datase/">
   <meta property="og:title" content="获取数据 | Codist">
-  <meta property="og:description" content="获取Homo运行所需的数据 1. 自然语言理解部分 1.1 中文维基百科MITIE模型 来自 用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜 下载 total_word_feature_extractor_chi.dat: 链"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:description" content="获取Homo运行所需的数据 1. 离线唤醒部分 1.1 中文语音模型 这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练 下载 中文(普通话)预训练"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
   <meta property="og:locale" content="zh-Hans">
   
   <meta property="article:published_time" content="2019-06-13T00:00:00&#43;08:00">
@@ -289,11 +289,11 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/homo/get-started/">开始</a>
+    <a class="docs-toc-link" href="/homo/install/">开始</a>
     <ul class="nav docs-sidenav">
       
       <li >
-        <a href="/homo/get-started/">安装</a>
+        <a href="/homo/install/">安装</a>
       </li>
       
       <li class="active">
@@ -324,9 +324,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#1-自然语言理解部分">1. 自然语言理解部分</a>
+<li><a href="#1-离线唤醒部分">1. 离线唤醒部分</a>
 <ul>
-<li><a href="#1-1-中文维基百科mitie模型">1.1 中文维基百科MITIE模型</a></li>
+<li><a href="#1-1-中文语音模型">1.1 中文语音模型</a></li>
+<li><a href="#1-2-英文语音模型">1.2 英文语音模型</a></li>
+</ul></li>
+<li><a href="#2-自然语言理解部分">2. 自然语言理解部分</a>
+<ul>
+<li><a href="#2-1-中文维基百科mitie模型">2.1 中文维基百科MITIE模型</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -348,9 +353,28 @@
 
 <p>获取Homo运行所需的数据</p>
 
-<h2 id="1-自然语言理解部分">1. 自然语言理解部分</h2>
+<h2 id="1-离线唤醒部分">1. 离线唤醒部分</h2>
 
-<h3 id="1-1-中文维基百科mitie模型">1.1 中文维基百科MITIE模型</h3>
+<h3 id="1-1-中文语音模型">1.1 中文语音模型</h3>
+
+<p>这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练</p>
+
+<p>下载 <a href="https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/" target="_blank">中文(普通话)预训练语音模型</a></p>
+
+<p>解压到 <code>homo/sphinx/cmusphinx-zh-cn-5.2</code></p>
+
+<h3 id="1-2-英文语音模型">1.2 英文语音模型</h3>
+
+<p>Homo 默认使用的唤醒词是 <code>homo</code>，需要使用英文语音模型</p>
+
+<p>在<a href="/homo/install/" target="_blank">安装</a> <code>PocketSphinx</code> 时，<code>git clone</code> 得到的源码里已经包含训练好的模型文件，直接将文件夹 <code>pocketsphinx/model/en-us</code> 拷贝到 <code>homo/sphinx/</code> 里：</p>
+
+<pre><code class="language-bash">cp -r pocketsphinx/model/en-us homo/sphinx/
+</code></pre>
+
+<h2 id="2-自然语言理解部分">2. 自然语言理解部分</h2>
+
+<h3 id="2-1-中文维基百科mitie模型">2.1 中文维基百科MITIE模型</h3>
 
 <p>来自 <a href="http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html" target="_blank">用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜</a></p>
 
@@ -376,7 +400,7 @@
   
   <div class="post-nav-item">
     <div class="meta-nav">上一页</div>
-    <a href="/homo/get-started/" rel="next">安装</a>
+    <a href="/homo/install/" rel="next">安装</a>
   </div>
   
   
