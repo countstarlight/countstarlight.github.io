@@ -282,11 +282,11 @@ TTS_OUT_FILE =
     </item>
     
     <item>
-      <title>部署</title>
-      <link>https://blog.codist.me/homo/deploy/</link>
+      <title>运行</title>
+      <link>https://blog.codist.me/homo/run/</link>
       <pubDate>Fri, 14 Jun 2019 00:00:00 +0800</pubDate>
       
-      <guid>https://blog.codist.me/homo/deploy/</guid>
+      <guid>https://blog.codist.me/homo/run/</guid>
       <description>
 
 &lt;h2 id=&#34;1-运行自然语言理解引擎&#34;&gt;1.运行自然语言理解引擎&lt;/h2&gt;
@@ -381,6 +381,8 @@ GLOBAL OPTIONS:
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号&lt;/p&gt;
+
+&lt;p&gt;界面右键可以调用控制台查看和调试html和js/css&lt;/p&gt;
 </description>
     </item>
     
