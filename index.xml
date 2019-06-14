@@ -7,10 +7,19 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 23:15:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0800</lastBuildDate>
     
 	    <atom:link href="https://blog.codist.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>自定义唤醒词</title>
+      <link>https://blog.codist.me/homo/wake-up/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/homo/wake-up/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>搭建博客评论系统</title>
@@ -244,7 +253,7 @@ make webview
     <item>
       <title>配置</title>
       <link>https://blog.codist.me/homo/config/</link>
-      <pubDate>Thu, 13 Jun 2019 23:15:58 +0800</pubDate>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
       
       <guid>https://blog.codist.me/homo/config/</guid>
       <description>
@@ -333,6 +342,109 @@ TTS_DIR =
 ; 默认值: tmp/tts/tmp.wav
 TTS_OUT_FILE =
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>部署</title>
+      <link>https://blog.codist.me/homo/deploy/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/homo/deploy/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-运行自然语言理解引擎&#34;&gt;1.运行自然语言理解引擎&lt;/h2&gt;
+
+&lt;p&gt;进入&lt;code&gt;nlu&lt;/code&gt;的文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
+source env3.6/bin/activate
+
+python -m rasa_nlu.server \
+       -c configs/rasa/config_jieba_mitie_sklearn.yml \
+       --path models
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或者直接运行脚本&lt;code&gt;nlu_server.sh&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
+./nlu_server.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-运行文本情感分析引擎&#34;&gt;2.运行文本情感分析引擎&lt;/h2&gt;
+
+&lt;p&gt;进入&lt;code&gt;sentiment&lt;/code&gt;文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
+source env3.6/bin/activate
+python server.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或直接运行脚本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
+./server.sh 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：加载word2vec模型需要花费5~7分钟时间&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-运行主程序&#34;&gt;3.运行主程序&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看帮助使用 &lt;code&gt;-h&lt;/code&gt; 或 &lt;code&gt;--help&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./homo-webview -h
+NAME:
+   Homo Webview - Help
+
+USAGE:
+   homo-webview [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d      start homo webview in debug mode [$HOMO_WEBVIEW_DEBUG]
+   --offline, -o    disable speech recognition and text to speech [$HOMO_WEBVIEW_OFFLINE]
+   --fall, -f       disable wakeup [$HOMO_WEBVIEW_FALL]
+   --interrupt, -i  can interrupt the playing voice [$HOMO_WEBVIEW_INTERRUPT]
+   --help, -h       show help
+   --version, -v    print the version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所有参数均可以叠加使用，如 &lt;code&gt;./homo-webview -o -f -d&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-1-离线模式&#34;&gt;3.1 离线模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-o&lt;/code&gt; 或 &lt;code&gt;--offline&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -o
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该模式下完全不需要网络，语音识别和语音合成功能关闭，只能通过键入文本交互&lt;/p&gt;
+
+&lt;h3 id=&#34;3-2-无唤醒模式&#34;&gt;3.2 无唤醒模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-f&lt;/code&gt; 或 &lt;code&gt;--fall&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该模式下不需要唤醒，直接启动界面&lt;/p&gt;
+
+&lt;h3 id=&#34;3-3-调试模式&#34;&gt;3.3 调试模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-d&lt;/code&gt; 或 &lt;code&gt;--debug&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号&lt;/p&gt;
 </description>
     </item>
     

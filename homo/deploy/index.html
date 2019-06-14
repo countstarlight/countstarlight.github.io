@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Codist 的个人主页">
+  <meta name="description" content="1.运行自然语言理解引擎 进入nlu的文件夹，source对应的python虚拟环境并启动http服务器： cd nlu source env3.6/bin/activate python -m rasa_nlu.server \ -c configs/rasa/config_jieba_mitie_sklearn.yml \ --path models 或者直接运">
 
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/homo/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/homo/deploy/">
 
   
 
@@ -91,15 +91,12 @@
   
 
   
-  <link rel="alternate" href="/homo/index.xml" type="application/rss+xml" title="Codist">
-  <link rel="feed" href="/homo/index.xml" type="application/rss+xml" title="Codist">
-  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://blog.codist.me/homo/">
+  <link rel="canonical" href="https://blog.codist.me/homo/deploy/">
 
   
   
@@ -111,12 +108,14 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Codist">
-  <meta property="og:url" content="https://blog.codist.me/homo/">
-  <meta property="og:title" content="概述 | Codist">
-  <meta property="og:description" content="Codist 的个人主页"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:url" content="https://blog.codist.me/homo/deploy/">
+  <meta property="og:title" content="部署 | Codist">
+  <meta property="og:description" content="1.运行自然语言理解引擎 进入nlu的文件夹，source对应的python虚拟环境并启动http服务器： cd nlu source env3.6/bin/activate python -m rasa_nlu.server \ -c configs/rasa/config_jieba_mitie_sklearn.yml \ --path models 或者直接运"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
   <meta property="og:locale" content="zh-Hans">
   
-  <meta property="og:updated_time" content="2019-06-13T00:00:00&#43;08:00">
+  <meta property="article:published_time" content="2019-06-14T00:00:00&#43;08:00">
+  
+  <meta property="article:modified_time" content="2019-06-14T00:00:00&#43;08:00">
   
 
   
@@ -128,7 +127,7 @@
 
 
 
-  <title>概述 | Codist</title>
+  <title>部署 | Codist</title>
 
 </head>
 
@@ -284,7 +283,7 @@
 <nav class="collapse docs-links" id="docs-nav">
   
   
-  <div class="docs-toc-item active">
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="/homo/">概述</a>
 
   </div>
@@ -305,7 +304,7 @@
         <a href="/homo/config/">配置</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/homo/deploy/">部署</a>
       </li>
       
@@ -342,7 +341,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#第一步">第一步</a></li>
+<li><a href="#1-运行自然语言理解引擎">1.运行自然语言理解引擎</a></li>
+<li><a href="#2-运行文本情感分析引擎">2.运行文本情感分析引擎</a></li>
+<li><a href="#3-运行主程序">3.运行主程序</a>
+<ul>
+<li><a href="#3-1-离线模式">3.1 离线模式</a></li>
+<li><a href="#3-2-无唤醒模式">3.2 无唤醒模式</a></li>
+<li><a href="#3-3-调试模式">3.3 调试模式</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -356,20 +362,103 @@
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">概述</h1>
+          <h1 itemprop="name">部署</h1>
 
           <div class="article-style" itemprop="articleBody">
             
 
-<p>Homo 是一个高性能，易于扩展且完全开源的自然交互系统</p>
+<h2 id="1-运行自然语言理解引擎">1.运行自然语言理解引擎</h2>
 
-<h2 id="第一步">第一步</h2>
+<p>进入<code>nlu</code>的文件夹，<code>source</code>对应的python虚拟环境并启动http服务器：</p>
 
-<p><a href="/homo/install/" target="_blank">安装</a> - 安装Homo到你的平台</p>
+<pre><code class="language-bash">cd nlu
+source env3.6/bin/activate
 
-<p><a href="/homo/dataset/" target="_blank">获取数据</a> - 获取Homo运行所需的数据</p>
+python -m rasa_nlu.server \
+       -c configs/rasa/config_jieba_mitie_sklearn.yml \
+       --path models
+</code></pre>
 
-<p><a href="/homo/config/" target="_blank">配置</a> - 详细了解Homo的配置项</p>
+<p>或者直接运行脚本<code>nlu_server.sh</code>：</p>
+
+<pre><code class="language-bash">cd nlu
+./nlu_server.sh
+</code></pre>
+
+<h2 id="2-运行文本情感分析引擎">2.运行文本情感分析引擎</h2>
+
+<p>进入<code>sentiment</code>文件夹，<code>source</code>对应的python虚拟环境并启动http服务器：</p>
+
+<pre><code class="language-bash">cd sentiment
+source env3.6/bin/activate
+python server.py
+</code></pre>
+
+<p>或直接运行脚本：</p>
+
+<pre><code class="language-bash">cd sentiment
+./server.sh 
+</code></pre>
+
+<p><strong>注意：加载word2vec模型需要花费5~7分钟时间</strong></p>
+
+<h2 id="3-运行主程序">3.运行主程序</h2>
+
+<pre><code class="language-bash">./homo-webview
+</code></pre>
+
+<p>查看帮助使用 <code>-h</code> 或 <code>--help</code>：</p>
+
+<pre><code>$ ./homo-webview -h
+NAME:
+   Homo Webview - Help
+
+USAGE:
+   homo-webview [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d      start homo webview in debug mode [$HOMO_WEBVIEW_DEBUG]
+   --offline, -o    disable speech recognition and text to speech [$HOMO_WEBVIEW_OFFLINE]
+   --fall, -f       disable wakeup [$HOMO_WEBVIEW_FALL]
+   --interrupt, -i  can interrupt the playing voice [$HOMO_WEBVIEW_INTERRUPT]
+   --help, -h       show help
+   --version, -v    print the version
+</code></pre>
+
+<p>所有参数均可以叠加使用，如 <code>./homo-webview -o -f -d</code></p>
+
+<h3 id="3-1-离线模式">3.1 离线模式</h3>
+
+<p>使用 <code>-o</code> 或 <code>--offline</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -o
+</code></pre>
+
+<p>该模式下完全不需要网络，语音识别和语音合成功能关闭，只能通过键入文本交互</p>
+
+<h3 id="3-2-无唤醒模式">3.2 无唤醒模式</h3>
+
+<p>使用 <code>-f</code> 或 <code>--fall</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -f
+</code></pre>
+
+<p>该模式下不需要唤醒，直接启动界面</p>
+
+<h3 id="3-3-调试模式">3.3 调试模式</h3>
+
+<p>使用 <code>-d</code> 或 <code>--debug</code>：</p>
+
+<pre><code class="language-bash">./homo-webview -d
+</code></pre>
+
+<p>在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号</p>
 
           </div>
 
@@ -381,6 +470,13 @@
           <div class="article-widget">
             
 <div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/homo/config/" rel="next">配置</a>
+  </div>
   
   
 </div>
@@ -419,9 +515,6 @@
 
     
     
-    
-    <script src="/js/mathjax-config.js"></script>
-    
 
     
     
@@ -440,8 +533,6 @@
       
 
       
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 
