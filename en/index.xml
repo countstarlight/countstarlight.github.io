@@ -104,19 +104,21 @@ export GITHUB_SECRET=
 
 &lt;h2 id=&#34;1-1-系统依赖&#34;&gt;1.1 系统依赖&lt;/h2&gt;
 
-&lt;h3 id=&#34;1-1-1-portaudio&#34;&gt;1.1.1 PortAudio&lt;/h3&gt;
+&lt;h3 id=&#34;1-1-1-portaudio-和-swig&#34;&gt;1.1.1 PortAudio 和 SWIG&lt;/h3&gt;
 
 &lt;p&gt;Homo 使用 &lt;code&gt;PortAudio&lt;/code&gt; 从音频硬件读取和处理音频，这个库通常已经被安装&lt;/p&gt;
 
+&lt;p&gt;&lt;code&gt;sphinxbase&lt;/code&gt; 依赖 &lt;code&gt;swig&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;Debian / Ubuntu:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install portaudio
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install portaudio19-dev swig
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Arch Linux / Manjaro Linux:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 需要安装 pulseaudio-alsa 使得和 pulseaudio 一起工作时不会造成崩溃
-sudo pacman -S portaudio pulseaudio-alsa
+sudo pacman -S portaudio pulseaudio-alsa swig
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;1-1-2-pocketsphinx&#34;&gt;1.1.2 PocketSphinx&lt;/h3&gt;
@@ -199,6 +201,9 @@ sudo tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
 &lt;p&gt;编译 &lt;code&gt;homo-webview&lt;/code&gt;：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd homo
+# 生成资源文件
+make gen
+# 编译
 make webview
 &lt;/code&gt;&lt;/pre&gt;
 

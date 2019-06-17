@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="首先获取Homo源码: git clone https://github.com/countstarlight/homo.git 开始安装依赖 1.安装依赖 1.1 系统依赖 1.1.1 PortAudio Homo 使用 PortAudio 从音频硬件读取和处理音频，这个库通常已经被安装 Debian / Ubuntu: sudo apt-get install portaudio Arch Linux /">
+  <meta name="description" content="首先获取Homo源码: git clone https://github.com/countstarlight/homo.git 开始安装依赖 1.安装依赖 1.1 系统依赖 1.1.1 PortAudio 和 SWIG Homo 使用 PortAudio 从音频硬件读取和处理音频，这个库通常已经被安装 sphinxbase 依赖 swig Debian / Ubuntu: sudo">
 
   
   <link rel="alternate" hreflang="zh" href="https://blog.codist.me/homo/install/">
@@ -112,7 +112,7 @@
   <meta property="og:site_name" content="Codist">
   <meta property="og:url" content="https://blog.codist.me/en/homo/install/">
   <meta property="og:title" content="安装 | Codist">
-  <meta property="og:description" content="首先获取Homo源码: git clone https://github.com/countstarlight/homo.git 开始安装依赖 1.安装依赖 1.1 系统依赖 1.1.1 PortAudio Homo 使用 PortAudio 从音频硬件读取和处理音频，这个库通常已经被安装 Debian / Ubuntu: sudo apt-get install portaudio Arch Linux /"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:description" content="首先获取Homo源码: git clone https://github.com/countstarlight/homo.git 开始安装依赖 1.安装依赖 1.1 系统依赖 1.1.1 PortAudio 和 SWIG Homo 使用 PortAudio 从音频硬件读取和处理音频，这个库通常已经被安装 sphinxbase 依赖 swig Debian / Ubuntu: sudo"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-06-13T00:00:00&#43;08:00">
@@ -361,7 +361,7 @@
 <ul>
 <li><a href="#1-1-系统依赖">1.1 系统依赖</a>
 <ul>
-<li><a href="#1-1-1-portaudio">1.1.1 PortAudio</a></li>
+<li><a href="#1-1-1-portaudio-和-swig">1.1.1 PortAudio 和 SWIG</a></li>
 <li><a href="#1-1-2-pocketsphinx">1.1.2 PocketSphinx</a></li>
 </ul></li>
 <li><a href="#1-2-python依赖">1.2 Python依赖</a>
@@ -399,19 +399,21 @@
 
 <h2 id="1-1-系统依赖">1.1 系统依赖</h2>
 
-<h3 id="1-1-1-portaudio">1.1.1 PortAudio</h3>
+<h3 id="1-1-1-portaudio-和-swig">1.1.1 PortAudio 和 SWIG</h3>
 
 <p>Homo 使用 <code>PortAudio</code> 从音频硬件读取和处理音频，这个库通常已经被安装</p>
 
+<p><code>sphinxbase</code> 依赖 <code>swig</code></p>
+
 <p>Debian / Ubuntu:</p>
 
-<pre><code class="language-bash">sudo apt-get install portaudio
+<pre><code class="language-bash">sudo apt-get install portaudio19-dev swig
 </code></pre>
 
 <p>Arch Linux / Manjaro Linux:</p>
 
 <pre><code class="language-bash"># 需要安装 pulseaudio-alsa 使得和 pulseaudio 一起工作时不会造成崩溃
-sudo pacman -S portaudio pulseaudio-alsa
+sudo pacman -S portaudio pulseaudio-alsa swig
 </code></pre>
 
 <h3 id="1-1-2-pocketsphinx">1.1.2 PocketSphinx</h3>
@@ -494,6 +496,9 @@ sudo tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
 <p>编译 <code>homo-webview</code>：</p>
 
 <pre><code class="language-bash">cd homo
+# 生成资源文件
+make gen
+# 编译
 make webview
 </code></pre>
 
