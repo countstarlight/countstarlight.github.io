@@ -40,22 +40,38 @@
 
 &lt;h2 id=&#34;1-1-系统依赖&#34;&gt;1.1 系统依赖&lt;/h2&gt;
 
-&lt;h3 id=&#34;1-1-1-portaudio&#34;&gt;1.1.1 PortAudio&lt;/h3&gt;
+&lt;h3 id=&#34;1-1-1-portaudio-和-swig&#34;&gt;1.1.1 PortAudio 和 SWIG&lt;/h3&gt;
 
 &lt;p&gt;Homo 使用 &lt;code&gt;PortAudio&lt;/code&gt; 从音频硬件读取和处理音频，这个库通常已经被安装&lt;/p&gt;
 
+&lt;p&gt;&lt;code&gt;sphinxbase&lt;/code&gt; 依赖 &lt;code&gt;swig&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;Debian / Ubuntu:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install portaudio
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install portaudio19-dev swig
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Arch Linux / Manjaro Linux:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 需要安装 pulseaudio-alsa 使得和 pulseaudio 一起工作时不会造成崩溃
-sudo pacman -S portaudio pulseaudio-alsa
+sudo pacman -S portaudio pulseaudio-alsa swig
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;1-1-2-pocketsphinx&#34;&gt;1.1.2 PocketSphinx&lt;/h3&gt;
+&lt;h3 id=&#34;1-1-2-webview&#34;&gt;1.1.2 WebView&lt;/h3&gt;
+
+&lt;p&gt;Homo的图形界面实现&lt;/p&gt;
+
+&lt;p&gt;Debian / Ubuntu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install libwebkit2gtk-4.0-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Arch Linux / Manjaro Linux:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pacman -S webkit2gtk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-1-3-pocketsphinx&#34;&gt;1.1.3 PocketSphinx&lt;/h3&gt;
 
 &lt;p&gt;Homo 借助 &lt;code&gt;PocketSphinx&lt;/code&gt; 实现离线唤醒，控制语音录制开始和结束的时机&lt;/p&gt;
 
