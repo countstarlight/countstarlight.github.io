@@ -18,7 +18,12 @@
       <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
       
       <guid>https://blog.codist.me/homo/wake-up/</guid>
-      <description></description>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    该页面不再维护，已经迁移到：&lt;a href=&#34;https://homo.codist.me/docs/wake-up/&#34;&gt;https://homo.codist.me/docs/wake-up/&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -228,6 +233,12 @@ id: 2 name: zhang
       
       <guid>https://blog.codist.me/homo/install/</guid>
       <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    该页面不再维护，已经迁移到：&lt;a href=&#34;https://homo.codist.me/docs/install/&#34;&gt;https://homo.codist.me/docs/install/&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;首先获取Homo源码:&lt;/p&gt;
 
@@ -455,6 +466,12 @@ ln -s /storage/external/ /data/www/sdcard
       
       <guid>https://blog.codist.me/homo/dataset/</guid>
       <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    该页面不再维护，已经迁移到：&lt;a href=&#34;https://homo.codist.me/docs/dataset/&#34;&gt;https://homo.codist.me/docs/dataset/&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;p&gt;获取Homo运行所需的数据&lt;/p&gt;
 
@@ -1316,6 +1333,12 @@ fi
       <guid>https://blog.codist.me/homo/config/</guid>
       <description>
 
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    该页面不再维护，已经迁移到：&lt;a href=&#34;https://homo.codist.me/docs/config/&#34;&gt;https://homo.codist.me/docs/config/&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;p&gt;Homo 的示例配置文件在 &lt;code&gt;conf/example_app.ini&lt;/code&gt;，在运行前，需要拷贝一份到项目根目录下的 &lt;code&gt;app.ini&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd homo
@@ -1676,6 +1699,12 @@ modprobe uvcvideo
       
       <guid>https://blog.codist.me/homo/run/</guid>
       <description>
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    该页面不再维护，已经迁移到：&lt;a href=&#34;https://homo.codist.me/docs/run/&#34;&gt;https://homo.codist.me/docs/run/&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&#34;1-运行自然语言理解引擎&#34;&gt;1.运行自然语言理解引擎&lt;/h2&gt;
 
