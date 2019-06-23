@@ -18,17 +18,32 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/docs/selfhost-commento/</loc>
-    <lastmod>2016-04-20T00:00:00+08:00</lastmod>
+    <loc>https://blog.codist.me/docs/stl-set/</loc>
+    <lastmod>2019-03-14T16:32:45+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/selfhost-commento/"
+                href="https://blog.codist.me/en/docs/stl-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/selfhost-commento/"
+                href="https://blog.codist.me/docs/stl-set/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/docs/</loc>
+    <lastmod>2017-09-03T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/"
                 />
   </url>
   
@@ -48,6 +63,21 @@
   </url>
   
   <url>
+    <loc>https://blog.codist.me/docs/android-log/</loc>
+    <lastmod>2016-06-11T19:00:10+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/docs/android-log/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/docs/android-log/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/homo/dataset/</loc>
     <lastmod>2019-06-14T00:00:00+08:00</lastmod>
     <xhtml:link
@@ -59,51 +89,6 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://blog.codist.me/homo/dataset/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/homo/config/</loc>
-    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/homo/config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/homo/config/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/homo/run/</loc>
-    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/homo/run/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/homo/run/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.codist.me/docs/stl-set/</loc>
-    <lastmod>2019-03-14T16:32:45+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/docs/stl-set/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/docs/stl-set/"
                 />
   </url>
   
@@ -168,6 +153,21 @@
   </url>
   
   <url>
+    <loc>https://blog.codist.me/homo/config/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/homo/config/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/homo/config/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.codist.me/docs/linux-webcam/</loc>
     <lastmod>2017-07-20T14:54:35+08:00</lastmod>
     <xhtml:link
@@ -183,17 +183,22 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/docs/android-log/</loc>
-    <lastmod>2016-06-11T19:00:10+08:00</lastmod>
+    <loc>https://blog.codist.me/docs/linux-xrandr/</loc>
+    <lastmod>2019-06-23T00:31:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/homo/run/</loc>
+    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/android-log/"
+                href="https://blog.codist.me/en/homo/run/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/android-log/"
+                href="https://blog.codist.me/homo/run/"
                 />
   </url>
   
@@ -244,7 +249,7 @@
   
   <url>
     <loc>https://blog.codist.me/</loc>
-    <lastmod>2019-06-14T00:00:00+08:00</lastmod>
+    <lastmod>2019-06-23T00:31:19+08:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -417,17 +422,17 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/docs/</loc>
-    <lastmod>2017-09-03T00:00:00+08:00</lastmod>
+    <loc>https://blog.codist.me/docs/selfhost-commento/</loc>
+    <lastmod>2016-04-20T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/"
+                href="https://blog.codist.me/en/docs/selfhost-commento/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/"
+                href="https://blog.codist.me/docs/selfhost-commento/"
                 />
   </url>
   

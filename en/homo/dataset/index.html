@@ -265,10 +265,6 @@
         
 
         
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
 
       </ul>
 
@@ -394,7 +390,7 @@
 
 <p>这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练</p>
 
-<p>下载 <a href="https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/" target="_blank">中文(普通话)预训练语音模型</a></p>
+<p>下载 <a href="https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/">中文(普通话)预训练语音模型</a></p>
 
 <p>解压到 <code>homo/sphinx/cmusphinx-zh-cn-5.2</code></p>
 
@@ -402,7 +398,7 @@
 
 <p>Homo 默认使用的唤醒词是 <code>homo</code>，需要使用英文语音模型</p>
 
-<p>在<a href="/en/homo/install/" target="_blank">安装</a> <code>PocketSphinx</code> 时，<code>git clone</code> 得到的源码里已经包含训练好的模型文件，直接将文件夹 <code>pocketsphinx/model/en-us</code> 拷贝到 <code>homo/sphinx/</code> 里：</p>
+<p>在<a href="/en/homo/install/">安装</a> <code>PocketSphinx</code> 时，<code>git clone</code> 得到的源码里已经包含训练好的模型文件，直接将文件夹 <code>pocketsphinx/model/en-us</code> 拷贝到 <code>homo/sphinx/</code> 里：</p>
 
 <pre><code class="language-bash">cp -r pocketsphinx/model/en-us homo/sphinx/
 </code></pre>
@@ -411,7 +407,7 @@
 
 <h3 id="2-1-中文维基百科mitie模型">2.1 中文维基百科MITIE模型</h3>
 
-<p>来自 <a href="http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html" target="_blank">用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜</a></p>
+<p>来自 <a href="http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html">用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜</a></p>
 
 <p>下载 <code>total_word_feature_extractor_chi.dat</code>:</p>
 

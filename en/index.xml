@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Jun 2019 00:31:19 +0800</lastBuildDate>
     
 	    <atom:link href="https://blog.codist.me/en/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,70 +19,6 @@
       
       <guid>https://blog.codist.me/en/homo/wake-up/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>搭建博客评论系统</title>
-      <link>https://blog.codist.me/en/docs/selfhost-commento/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/docs/selfhost-commento/</guid>
-      <description>&lt;p&gt;在Debian9上用开源的&lt;a href=&#34;https://gitlab.com/commento/commento&#34; target=&#34;_blank&#34;&gt;Commento&lt;/a&gt;搭建博客评论系统&lt;/p&gt;
-
-&lt;p&gt;安装 &lt;code&gt;yarn&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装&lt;code&gt;dep&lt;/code&gt;（需要已经配置好的go环境）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;go get -u github.com/golang/dep/cmd/dep
-export PATH=$PATH:$GOPATH/bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;下载&amp;amp;编译：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p $GOPATH/gitlab.com/commento
-cd $GOPATH/gitlab.com/commento
-git clone https://gitlab.com/commento/commento.git
-make prod
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在根目录下新建脚本&lt;code&gt;server.sh&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#! /bin/bash
-
-# 绑定的域名
-export COMMENTO_ORIGIN=https://comment.example.com
-
-# 绑定的端口，可以用nginx反向代理到这个端口
-export COMMENTO_PORT=8002
- 
-# 数据库 PostgreSQL 设置
-export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable
-
-# 关闭注册，首次需要注册账号，之后可以关闭注册
-#export COMMENTO_FORBID_NEW_OWNERS=true
-
-#
-# github oauth，其他类似
-#
-export GITHUB_KEY=
-
-export GITHUB_SECRET=
-
-./build/prod/commento
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;运行：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x server.sh
-./server.sh
-&lt;/code&gt;&lt;/pre&gt;
-</description>
     </item>
     
     <item>
@@ -121,7 +57,21 @@ export GITHUB_SECRET=
 sudo pacman -S portaudio pulseaudio-alsa swig
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;1-1-2-pocketsphinx&#34;&gt;1.1.2 PocketSphinx&lt;/h3&gt;
+&lt;h3 id=&#34;1-1-2-webview&#34;&gt;1.1.2 WebView&lt;/h3&gt;
+
+&lt;p&gt;Homo的图形界面实现&lt;/p&gt;
+
+&lt;p&gt;Debian / Ubuntu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install libwebkit2gtk-4.0-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Arch Linux / Manjaro Linux:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo pacman -S webkit2gtk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-1-3-pocketsphinx&#34;&gt;1.1.3 PocketSphinx&lt;/h3&gt;
 
 &lt;p&gt;Homo 借助 &lt;code&gt;PocketSphinx&lt;/code&gt; 实现离线唤醒，控制语音录制开始和结束的时机&lt;/p&gt;
 
@@ -188,11 +138,11 @@ pip install -r requirements.txt
 
 &lt;h1 id=&#34;2-编译主程序&#34;&gt;2.编译主程序&lt;/h1&gt;
 
-&lt;p&gt;这需要你确保已经配置好&lt;a href=&#34;https://golang.org/&#34; target=&#34;_blank&#34;&gt;Go&lt;/a&gt;开发环境:&lt;/p&gt;
+&lt;p&gt;这需要你确保已经配置好&lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;开发环境:&lt;/p&gt;
 
 &lt;p&gt;Linux:&lt;/p&gt;
 
-&lt;p&gt;从 &lt;a href=&#34;https://golang.org/dl/&#34; target=&#34;_blank&#34;&gt;https://golang.org/dl/&lt;/a&gt;下载 Linux 对应的&lt;code&gt;.tar.gz&lt;/code&gt;文件，假设下载到的是 &lt;code&gt;go1.12.6.linux-amd64.tar.gz&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;从 &lt;a href=&#34;https://golang.org/dl/&#34;&gt;https://golang.org/dl/&lt;/a&gt;下载 Linux 对应的&lt;code&gt;.tar.gz&lt;/code&gt;文件，假设下载到的是 &lt;code&gt;go1.12.6.linux-amd64.tar.gz&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 直接解压缩到 /usr/local
 sudo tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz
@@ -208,250 +158,6 @@ make webview
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;生成的文件为：&lt;code&gt;homo-webview&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>获取数据</title>
-      <link>https://blog.codist.me/en/homo/dataset/</link>
-      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/homo/dataset/</guid>
-      <description>
-
-&lt;p&gt;获取Homo运行所需的数据&lt;/p&gt;
-
-&lt;h2 id=&#34;1-离线唤醒部分&#34;&gt;1. 离线唤醒部分&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-1-中文语音模型&#34;&gt;1.1 中文语音模型&lt;/h3&gt;
-
-&lt;p&gt;这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练&lt;/p&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/&#34; target=&#34;_blank&#34;&gt;中文(普通话)预训练语音模型&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压到 &lt;code&gt;homo/sphinx/cmusphinx-zh-cn-5.2&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;1-2-英文语音模型&#34;&gt;1.2 英文语音模型&lt;/h3&gt;
-
-&lt;p&gt;Homo 默认使用的唤醒词是 &lt;code&gt;homo&lt;/code&gt;，需要使用英文语音模型&lt;/p&gt;
-
-&lt;p&gt;在&lt;a href=&#34;https://blog.codist.me/en/homo/install/&#34; target=&#34;_blank&#34;&gt;安装&lt;/a&gt; &lt;code&gt;PocketSphinx&lt;/code&gt; 时，&lt;code&gt;git clone&lt;/code&gt; 得到的源码里已经包含训练好的模型文件，直接将文件夹 &lt;code&gt;pocketsphinx/model/en-us&lt;/code&gt; 拷贝到 &lt;code&gt;homo/sphinx/&lt;/code&gt; 里：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp -r pocketsphinx/model/en-us homo/sphinx/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;2-自然语言理解部分&#34;&gt;2. 自然语言理解部分&lt;/h2&gt;
-
-&lt;h3 id=&#34;2-1-中文维基百科mitie模型&#34;&gt;2.1 中文维基百科MITIE模型&lt;/h3&gt;
-
-&lt;p&gt;来自 &lt;a href=&#34;http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html&#34; target=&#34;_blank&#34;&gt;用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;下载 &lt;code&gt;total_word_feature_extractor_chi.dat&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;链接：https://pan.baidu.com/s/1kNENvlHLYWZIddmtWJ7Pdg 密码：p4vx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;放置到 &lt;code&gt;homo/nlu/data/rasa/total_word_feature_extractor_chi.dat&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>配置</title>
-      <link>https://blog.codist.me/en/homo/config/</link>
-      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/homo/config/</guid>
-      <description>
-
-&lt;p&gt;Homo 的示例配置文件在 &lt;code&gt;conf/example_app.ini&lt;/code&gt;，在运行前，需要拷贝一份到项目根目录下的 &lt;code&gt;app.ini&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd homo
-cp conf/example_app.ini conf/app.ini
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    注意：一般情况下&lt;strong&gt;不需要&lt;/strong&gt;修改配置文件&lt;code&gt;app.ini&lt;/code&gt;，程序在每次启动时都会对未填的项用默认配置填充
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;配置文件各参数介绍&#34;&gt;配置文件各参数介绍&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[portaudio]
-; PocketSphinx 将 PortAudio 录制到的原始音频(16kHz)存储在这个路径下
-; 默认值: tmp/record
-RAW_DIR =
-; 保存用于语音识别的临时文件名
-; 默认值: tmp/record/input.pcm
-INPUT_RAW =
-; 保存用于语音识别的临时文件编码成的wav文件名
-; 默认值: tmp/record/input.wav
-INPUT_WAV =
-
-[sphinx]
-; 英文 hmm 模型路径
-; 默认值: sphinx/en-us/en-us
-EN_HMM_DIR =
-; Homo唤醒词词典路径
-; 默认值: sphinx/homo/homo.dic
-EN_DICT_FILE =
-; Homo lm 模型路径
-; 默认值: sphinx/homo/homo.lm.bin
-EN_LM_FILE =
-; 在PocketSphinx基础上降低开始录制用于语音识别音频的阈值，越小越灵敏
-; 最小值为0，将完全由PocketSphinx控制
-; 默认值: 50000
-RECORD_THRESHOLD =
-; 保存PocketSphinx的日志文件名
-; 默认值: log/sphinx.log
-LOG_FILE =
-
-[nlu]
-; Rasa NLU 对话服务的API(已弃用),
-; 默认值: http://localhost:5005/conversations/default/respond
-CONVERSATION_API =
-; Rasa NlU进行意图识别和实体提取的API,
-; 默认值: http://localhost:5000/parse
-PARSE_API =
-; 使用的Rasa NLU的模型所属项目
-; 默认值: rasa
-PROJECT =
-; 使用的Rasa NLU的模型
-; 默认值: ini
-MODEL =
-
-[baidu]
-; 百度语音识别的API
-; 默认值: http://vop.baidu.com/server_api
-ASR_API =
-; 百度语音合成的API
-; 默认值: http://tsn.baidu.com/text2audio
-TTS_API =
-; 百度语音平台的认证API
-; 默认值: https://openapi.baidu.com/oauth/2.0/token
-VOICE_AUTH_URL =
-; 百度语音API的key
-; 由于免费API有并发限制，建议自己注册
-; 默认值: MDNsII2jkUtbF729GQOZt7FS
-VOICE_API_KEY =
-; 百度语音API的secret
-; 由于免费API有并发限制，建议自己注册
-; 默认值: 0vWCVCLsbWHMSH1wjvxaDq4VmvCZM2O9
-VOICE_API_SECRET =
-
-[tts]
-; 保存合成的临时语音文件的目录
-; 默认值: tmp/tts
-TTS_DIR =
-; 保存合成的临时语音文件名
-; 默认值: tmp/tts/tmp.wav
-TTS_OUT_FILE =
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>运行</title>
-      <link>https://blog.codist.me/en/homo/run/</link>
-      <pubDate>Fri, 14 Jun 2019 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/homo/run/</guid>
-      <description>
-
-&lt;h2 id=&#34;1-运行自然语言理解引擎&#34;&gt;1.运行自然语言理解引擎&lt;/h2&gt;
-
-&lt;p&gt;进入&lt;code&gt;nlu&lt;/code&gt;的文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
-source env3.6/bin/activate
-
-python -m rasa_nlu.server \
-       -c configs/rasa/config_jieba_mitie_sklearn.yml \
-       --path models
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;或者直接运行脚本&lt;code&gt;nlu_server.sh&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
-./nlu_server.sh
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;2-运行文本情感分析引擎&#34;&gt;2.运行文本情感分析引擎&lt;/h2&gt;
-
-&lt;p&gt;进入&lt;code&gt;sentiment&lt;/code&gt;文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
-source env3.6/bin/activate
-python server.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;或直接运行脚本：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
-./server.sh 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;注意：加载word2vec模型需要花费5~7分钟时间&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;3-运行主程序&#34;&gt;3.运行主程序&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看帮助使用 &lt;code&gt;-h&lt;/code&gt; 或 &lt;code&gt;--help&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ ./homo-webview -h
-NAME:
-   Homo Webview - Help
-
-USAGE:
-   homo-webview [global options] command [command options] [arguments...]
-
-VERSION:
-   0.0.1
-
-COMMANDS:
-     help, h  Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --debug, -d      start homo webview in debug mode [$HOMO_WEBVIEW_DEBUG]
-   --offline, -o    disable speech recognition and text to speech [$HOMO_WEBVIEW_OFFLINE]
-   --fall, -f       disable wakeup [$HOMO_WEBVIEW_FALL]
-   --interrupt, -i  can interrupt the playing voice [$HOMO_WEBVIEW_INTERRUPT]
-   --help, -h       show help
-   --version, -v    print the version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;所有参数均可以叠加使用，如 &lt;code&gt;./homo-webview -o -f -d&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-1-离线模式&#34;&gt;3.1 离线模式&lt;/h3&gt;
-
-&lt;p&gt;使用 &lt;code&gt;-o&lt;/code&gt; 或 &lt;code&gt;--offline&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -o
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;该模式下完全不需要网络，语音识别和语音合成功能关闭，只能通过键入文本交互&lt;/p&gt;
-
-&lt;h3 id=&#34;3-2-无唤醒模式&#34;&gt;3.2 无唤醒模式&lt;/h3&gt;
-
-&lt;p&gt;使用 &lt;code&gt;-f&lt;/code&gt; 或 &lt;code&gt;--fall&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;该模式下不需要唤醒，直接启动界面&lt;/p&gt;
-
-&lt;h3 id=&#34;3-3-调试模式&#34;&gt;3.3 调试模式&lt;/h3&gt;
-
-&lt;p&gt;使用 &lt;code&gt;-d&lt;/code&gt; 或 &lt;code&gt;--debug&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -d
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号&lt;/p&gt;
-
-&lt;p&gt;界面右键可以调用控制台查看和调试html和js/css&lt;/p&gt;
 </description>
     </item>
     
@@ -656,6 +362,337 @@ id: 2 name: zhang
     </item>
     
     <item>
+      <title>获取数据</title>
+      <link>https://blog.codist.me/en/homo/dataset/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/homo/dataset/</guid>
+      <description>
+
+&lt;p&gt;获取Homo运行所需的数据&lt;/p&gt;
+
+&lt;h2 id=&#34;1-离线唤醒部分&#34;&gt;1. 离线唤醒部分&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-中文语音模型&#34;&gt;1.1 中文语音模型&lt;/h3&gt;
+
+&lt;p&gt;这里直接使用官方训练好的中文普通话模型，之后再讨论如何自己训练&lt;/p&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/Mandarin/&#34;&gt;中文(普通话)预训练语音模型&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压到 &lt;code&gt;homo/sphinx/cmusphinx-zh-cn-5.2&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-2-英文语音模型&#34;&gt;1.2 英文语音模型&lt;/h3&gt;
+
+&lt;p&gt;Homo 默认使用的唤醒词是 &lt;code&gt;homo&lt;/code&gt;，需要使用英文语音模型&lt;/p&gt;
+
+&lt;p&gt;在&lt;a href=&#34;https://blog.codist.me/en/homo/install/&#34;&gt;安装&lt;/a&gt; &lt;code&gt;PocketSphinx&lt;/code&gt; 时，&lt;code&gt;git clone&lt;/code&gt; 得到的源码里已经包含训练好的模型文件，直接将文件夹 &lt;code&gt;pocketsphinx/model/en-us&lt;/code&gt; 拷贝到 &lt;code&gt;homo/sphinx/&lt;/code&gt; 里：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cp -r pocketsphinx/model/en-us homo/sphinx/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-自然语言理解部分&#34;&gt;2. 自然语言理解部分&lt;/h2&gt;
+
+&lt;h3 id=&#34;2-1-中文维基百科mitie模型&#34;&gt;2.1 中文维基百科MITIE模型&lt;/h3&gt;
+
+&lt;p&gt;来自 &lt;a href=&#34;http://www.crownpku.com/2017/07/27/%E7%94%A8Rasa_NLU%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E6%96%87NLU%E7%B3%BB%E7%BB%9F.html&#34;&gt;用Rasa NLU构建自己的中文NLU系统 - 羊肉泡馍与糖蒜&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载 &lt;code&gt;total_word_feature_extractor_chi.dat&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;链接：https://pan.baidu.com/s/1kNENvlHLYWZIddmtWJ7Pdg 密码：p4vx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;放置到 &lt;code&gt;homo/nlu/data/rasa/total_word_feature_extractor_chi.dat&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>将Android的系统日志输出到文件</title>
+      <link>https://blog.codist.me/en/docs/android-log/</link>
+      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/android-log/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先，在产品目录的init.XXX.rc文件中，添加相应的service，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#start log service
+start logd
+
+on property:service.logcat.enable=1
+start logcat_service
+
+on property:service.logcat.enable=0
+stop logcat_service
+
+#log services
+service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
+
+user root
+group log system
+class main
+   disabled
+
+service logd /system/bin/sh /system/bin/logd.sh
+user system
+group log
+oneshot
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/system/bin/sh
+
+#
+#Global folder &amp;amp; cmd params
+#
+
+OUTPUT_DIR=/data
+LOG=Logs
+index=2
+
+LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0
+LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1
+LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2
+
+RM=rm
+MV=&amp;quot;mv&amp;quot;
+MKDIR=mkdir
+UMASK=umask
+
+
+#set default permission 0775
+$UMASK 002
+
+#Init the three folders
+
+i=0
+while [ &amp;quot;$i&amp;quot; -le &amp;quot;$index&amp;quot; ]
+do
+$MKDIR -p ${LOG_DIR[$i]}
+i=$(($i+1))
+done
+
+#Transfer the three folders
+((i=$index-1))
+$RM -r ${LOG_DIR[$index]}/*
+while [ &amp;quot;$i&amp;quot; -ge &amp;quot;0&amp;quot; ]
+do
+$MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]}
+i=$(($i-1))
+done
+$RM -r ${LOG_DIR[0]}/*
+
+#start logcat service
+setprop service.logcat.enable 1
+
+mkdir /data/www
+cp -R /system/var/www/    /data/
+ln -s /storage/external/ /data/www/sdcard
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>https://blog.codist.me/en/homo/config/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/homo/config/</guid>
+      <description>
+
+&lt;p&gt;Homo 的示例配置文件在 &lt;code&gt;conf/example_app.ini&lt;/code&gt;，在运行前，需要拷贝一份到项目根目录下的 &lt;code&gt;app.ini&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd homo
+cp conf/example_app.ini conf/app.ini
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意：一般情况下&lt;strong&gt;不需要&lt;/strong&gt;修改配置文件&lt;code&gt;app.ini&lt;/code&gt;，程序在每次启动时都会对未填的项用默认配置填充
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;配置文件各参数介绍&#34;&gt;配置文件各参数介绍&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ini&#34;&gt;[portaudio]
+; PocketSphinx 将 PortAudio 录制到的原始音频(16kHz)存储在这个路径下
+; 默认值: tmp/record
+RAW_DIR =
+; 保存用于语音识别的临时文件名
+; 默认值: tmp/record/input.pcm
+INPUT_RAW =
+; 保存用于语音识别的临时文件编码成的wav文件名
+; 默认值: tmp/record/input.wav
+INPUT_WAV =
+
+[sphinx]
+; 英文 hmm 模型路径
+; 默认值: sphinx/en-us/en-us
+EN_HMM_DIR =
+; Homo唤醒词词典路径
+; 默认值: sphinx/homo/homo.dic
+EN_DICT_FILE =
+; Homo lm 模型路径
+; 默认值: sphinx/homo/homo.lm.bin
+EN_LM_FILE =
+; 在PocketSphinx基础上降低开始录制用于语音识别音频的阈值，越小越灵敏
+; 最小值为0，将完全由PocketSphinx控制
+; 默认值: 50000
+RECORD_THRESHOLD =
+; 保存PocketSphinx的日志文件名
+; 默认值: log/sphinx.log
+LOG_FILE =
+
+[nlu]
+; Rasa NLU 对话服务的API(已弃用),
+; 默认值: http://localhost:5005/conversations/default/respond
+CONVERSATION_API =
+; Rasa NlU进行意图识别和实体提取的API,
+; 默认值: http://localhost:5000/parse
+PARSE_API =
+; 使用的Rasa NLU的模型所属项目
+; 默认值: rasa
+PROJECT =
+; 使用的Rasa NLU的模型
+; 默认值: ini
+MODEL =
+
+[baidu]
+; 百度语音识别的API
+; 默认值: http://vop.baidu.com/server_api
+ASR_API =
+; 百度语音合成的API
+; 默认值: http://tsn.baidu.com/text2audio
+TTS_API =
+; 百度语音平台的认证API
+; 默认值: https://openapi.baidu.com/oauth/2.0/token
+VOICE_AUTH_URL =
+; 百度语音API的key
+; 由于免费API有并发限制，建议自己注册
+; 默认值: MDNsII2jkUtbF729GQOZt7FS
+VOICE_API_KEY =
+; 百度语音API的secret
+; 由于免费API有并发限制，建议自己注册
+; 默认值: 0vWCVCLsbWHMSH1wjvxaDq4VmvCZM2O9
+VOICE_API_SECRET =
+
+[tts]
+; 保存合成的临时语音文件的目录
+; 默认值: tmp/tts
+TTS_DIR =
+; 保存合成的临时语音文件名
+; 默认值: tmp/tts/tmp.wav
+TTS_OUT_FILE =
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>运行</title>
+      <link>https://blog.codist.me/en/homo/run/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/homo/run/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-运行自然语言理解引擎&#34;&gt;1.运行自然语言理解引擎&lt;/h2&gt;
+
+&lt;p&gt;进入&lt;code&gt;nlu&lt;/code&gt;的文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
+source env3.6/bin/activate
+
+python -m rasa_nlu.server \
+       -c configs/rasa/config_jieba_mitie_sklearn.yml \
+       --path models
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或者直接运行脚本&lt;code&gt;nlu_server.sh&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd nlu
+./nlu_server.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-运行文本情感分析引擎&#34;&gt;2.运行文本情感分析引擎&lt;/h2&gt;
+
+&lt;p&gt;进入&lt;code&gt;sentiment&lt;/code&gt;文件夹，&lt;code&gt;source&lt;/code&gt;对应的python虚拟环境并启动http服务器：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
+source env3.6/bin/activate
+python server.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或直接运行脚本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd sentiment
+./server.sh 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：加载word2vec模型需要花费5~7分钟时间&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;3-运行主程序&#34;&gt;3.运行主程序&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看帮助使用 &lt;code&gt;-h&lt;/code&gt; 或 &lt;code&gt;--help&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./homo-webview -h
+NAME:
+   Homo Webview - Help
+
+USAGE:
+   homo-webview [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug, -d      start homo webview in debug mode [$HOMO_WEBVIEW_DEBUG]
+   --offline, -o    disable speech recognition and text to speech [$HOMO_WEBVIEW_OFFLINE]
+   --fall, -f       disable wakeup [$HOMO_WEBVIEW_FALL]
+   --interrupt, -i  can interrupt the playing voice [$HOMO_WEBVIEW_INTERRUPT]
+   --help, -h       show help
+   --version, -v    print the version
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;所有参数均可以叠加使用，如 &lt;code&gt;./homo-webview -o -f -d&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-1-离线模式&#34;&gt;3.1 离线模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-o&lt;/code&gt; 或 &lt;code&gt;--offline&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -o
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该模式下完全不需要网络，语音识别和语音合成功能关闭，只能通过键入文本交互&lt;/p&gt;
+
+&lt;h3 id=&#34;3-2-无唤醒模式&#34;&gt;3.2 无唤醒模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-f&lt;/code&gt; 或 &lt;code&gt;--fall&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;该模式下不需要唤醒，直接启动界面&lt;/p&gt;
+
+&lt;h3 id=&#34;3-3-调试模式&#34;&gt;3.3 调试模式&lt;/h3&gt;
+
+&lt;p&gt;使用 &lt;code&gt;-d&lt;/code&gt; 或 &lt;code&gt;--debug&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./homo-webview -d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在该模式下，将会输出更为详细的日志信息，包括函数所在的代码文件和行号&lt;/p&gt;
+
+&lt;p&gt;界面右键可以调用控制台查看和调试html和js/css&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>安装kaldi</title>
       <link>https://blog.codist.me/en/docs/kaldi-install/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
@@ -711,7 +748,7 @@ make CXX=g++-7 -j 8
 
 &lt;p&gt;thchs30和aishell的训练都需要用到&lt;code&gt;cuda&lt;/code&gt;，建议在编译安装的时候就把相关依赖一并装好。&lt;/p&gt;
 
-&lt;p&gt;可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：&lt;a href=&#34;https://developer.nvidia.com/cuda-downloads&#34; target=&#34;_blank&#34;&gt;https://developer.nvidia.com/cuda-downloads&lt;/a&gt; ，再手动安装。&lt;/p&gt;
+&lt;p&gt;可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：&lt;a href=&#34;https://developer.nvidia.com/cuda-downloads&#34;&gt;https://developer.nvidia.com/cuda-downloads&lt;/a&gt; ，再手动安装。&lt;/p&gt;
 
 &lt;p&gt;Archlinux可以直接从源里安装，Ubuntu等发行版类似：&lt;/p&gt;
 
@@ -777,17 +814,17 @@ make -j 8
 
 &lt;li&gt;&lt;p&gt;3.&lt;code&gt;hkust&lt;/code&gt;：中文电话数据集(LDC2005S15, LDC2005T32)&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;4.&lt;code&gt;thchs30&lt;/code&gt;：清华大学30小时的数据集，可以在&lt;a href=&#34;http://www.openslr.org/18/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 下载&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.&lt;code&gt;thchs30&lt;/code&gt;：清华大学30小时的数据集，可以在&lt;a href=&#34;http://www.openslr.org/18/&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 下载&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;这里采用&lt;code&gt;thchs30&lt;/code&gt;，从&lt;a href=&#34;http://www.openslr.org/18/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 或者参照它的&lt;a href=&#34;http://data.cslt.org/thchs30/README.html&#34; target=&#34;_blank&#34;&gt;README&lt;/a&gt;下载三个压缩包：&lt;/p&gt;
+&lt;p&gt;这里采用&lt;code&gt;thchs30&lt;/code&gt;，从&lt;a href=&#34;http://www.openslr.org/18/&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 或者参照它的&lt;a href=&#34;http://data.cslt.org/thchs30/README.html&#34;&gt;README&lt;/a&gt;下载三个压缩包：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/data_thchs30.tgz&#34; target=&#34;_blank&#34;&gt;data_thchs30.tgz &lt;/a&gt;&lt;a href=&#34;speech data and transcripts&#34; target=&#34;_blank&#34;&gt;6.4G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/data_thchs30.tgz&#34;&gt;data_thchs30.tgz &lt;/a&gt;&lt;a href=&#34;speech data and transcripts&#34;&gt;6.4G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/test-noise.tgz&#34; target=&#34;_blank&#34;&gt;test-noise.tgz &lt;/a&gt;&lt;a href=&#34;standard 0db noisy test data&#34; target=&#34;_blank&#34;&gt;1.9G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/test-noise.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/test-noise.tgz&#34;&gt;test-noise.tgz &lt;/a&gt;&lt;a href=&#34;standard 0db noisy test data&#34;&gt;1.9G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/test-noise.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/resource.tgz&#34; target=&#34;_blank&#34;&gt;resource.tgz &lt;/a&gt;&lt;a href=&#34;supplementary resources, incl. lexicon for training data, noise samples&#34; target=&#34;_blank&#34;&gt;24M&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/resource.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/resource.tgz&#34;&gt;resource.tgz &lt;/a&gt;&lt;a href=&#34;supplementary resources, incl. lexicon for training data, noise samples&#34;&gt;24M&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/resource.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;在egs/thchs30/s5下新建文件夹&lt;code&gt;thchs30-openslr&lt;/code&gt;，把三个文件解压在该文件夹下&lt;/p&gt;
@@ -1001,7 +1038,7 @@ ac_model_type=tri1
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./run.sh --test-mode live
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果提示portaudio错误，可参考&lt;a href=&#34;https://blog.csdn.net/u012236368/article/details/71628777&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/u012236368/article/details/71628777&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果提示portaudio错误，可参考&lt;a href=&#34;https://blog.csdn.net/u012236368/article/details/71628777&#34;&gt;https://blog.csdn.net/u012236368/article/details/71628777&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;识别wav文件：&lt;/p&gt;
 
@@ -1057,7 +1094,7 @@ audio=${data_file}/audio
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./run.sh --test-mode simulated
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果要运行dnn，首先要将nnet1转成nnet2。可以参考&lt;a href=&#34;http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2&#34; target=&#34;_blank&#34;&gt;链接1&lt;/a&gt;和&lt;a href=&#34;https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/&#34; target=&#34;_blank&#34;&gt;链接2&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果要运行dnn，首先要将nnet1转成nnet2。可以参考&lt;a href=&#34;http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2&#34;&gt;链接1&lt;/a&gt;和&lt;a href=&#34;https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/&#34;&gt;链接2&lt;/a&gt;。&lt;/p&gt;
 
 &lt;h2 id=&#34;4-算法解读&#34;&gt;4.算法解读&lt;/h2&gt;
 
@@ -1201,10 +1238,10 @@ VTLN：特征级声道长度归一化&lt;/p&gt;
 
 &lt;p&gt;和thchs30类似，参照&lt;code&gt;egs/aishell/README.txt&lt;/code&gt;，手动下载数据集或运行&lt;code&gt;s5/run.sh&lt;/code&gt;会自动下载并解压缩数据集，这里只演示手动下载数据集。&lt;/p&gt;
 
-&lt;p&gt;访问&lt;a href=&#34;http://www.openslr.org/33/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/33/&lt;/a&gt; ，下载两个压缩包：&lt;/p&gt;
+&lt;p&gt;访问&lt;a href=&#34;http://www.openslr.org/33/&#34;&gt;http://www.openslr.org/33/&lt;/a&gt; ，下载两个压缩包：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/33/data_aishell.tgz&#34; target=&#34;_blank&#34;&gt;data_aishell.tgz &lt;/a&gt;[15G]   ( speech data and transcripts )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/data_aishell.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.openslr.org/resources/33/resource_aishell.tgz&#34; target=&#34;_blank&#34;&gt;resource_aishell.tgz &lt;/a&gt;[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/33/data_aishell.tgz&#34;&gt;data_aishell.tgz &lt;/a&gt;[15G]   ( speech data and transcripts )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/data_aishell.tgz&#34;&gt;China&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.openslr.org/resources/33/resource_aishell.tgz&#34;&gt;resource_aishell.tgz &lt;/a&gt;[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;下载解压缩到一个目录，这里解压缩到&lt;code&gt;aishell-openslr&lt;/code&gt;&lt;/p&gt;
 
@@ -1422,7 +1459,7 @@ ln -s 0.mdl final.mdl
 
 &lt;h2 id=&#34;获取模型&#34;&gt;获取模型&lt;/h2&gt;
 
-&lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34; target=&#34;_blank&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 &lt;a href=&#34;http://kaldi-asr.org/models/2/0002_cvte_chain_model.tar.gz&#34; target=&#34;_blank&#34;&gt;0002_cvte_chain_model.tar.gz&lt;/a&gt;(3.5G)&lt;/p&gt;
+&lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 &lt;a href=&#34;http://kaldi-asr.org/models/2/0002_cvte_chain_model.tar.gz&#34;&gt;0002_cvte_chain_model.tar.gz&lt;/a&gt;(3.5G)&lt;/p&gt;
 
 &lt;p&gt;解压缩到&lt;code&gt;kaldi/egs&lt;/code&gt;下，注意&lt;code&gt;kaldi/egs/&lt;/code&gt;换成安装kaldi对应的目录：&lt;/p&gt;
 
@@ -1499,12 +1536,12 @@ fi
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;这里的摄像设备名称是 &lt;code&gt;*/dev/video0*&lt;/code&gt;，如果没有看到任何 &lt;code&gt;/dev/video&lt;/code&gt; 文件，查看&lt;a href=&#34;#排查问题&#34;&gt;#排查问题&lt;/a&gt;。如果有多个 &lt;code&gt;video4linux&lt;/code&gt; 设备，比如是一个&lt;a href=&#34;http://www.linuxintro.org/wiki/Tv_card&#34; target=&#34;_blank&#34;&gt;tv card&lt;/a&gt;，摄像头设备应该显示为 &lt;code&gt;/dev/video1&lt;/code&gt; 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。&lt;/p&gt;
+&lt;p&gt;这里的摄像设备名称是 &lt;code&gt;*/dev/video0*&lt;/code&gt;，如果没有看到任何 &lt;code&gt;/dev/video&lt;/code&gt; 文件，查看&lt;a href=&#34;#排查问题&#34;&gt;#排查问题&lt;/a&gt;。如果有多个 &lt;code&gt;video4linux&lt;/code&gt; 设备，比如是一个&lt;a href=&#34;http://www.linuxintro.org/wiki/Tv_card&#34;&gt;tv card&lt;/a&gt;，摄像头设备应该显示为 &lt;code&gt;/dev/video1&lt;/code&gt; 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。&lt;/p&gt;
 
 &lt;h3 id=&#34;2-测试设备&#34;&gt;2.测试设备&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;如果安装有 &lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34; target=&#34;_blank&#34;&gt;vlc&lt;/a&gt;，可以启动它，选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = &lt;em&gt;/dev/video0&lt;/em&gt; -&amp;gt; Play&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果安装有 &lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34;&gt;vlc&lt;/a&gt;，可以启动它，选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = &lt;em&gt;/dev/video0&lt;/em&gt; -&amp;gt; Play&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;如果安装有mplayer，可以使用：&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1516,7 +1553,7 @@ fi
 
 &lt;h4 id=&#34;3-1录制视频&#34;&gt;3.1录制视频&lt;/h4&gt;
 
-&lt;p&gt;要捕获设备的视频输入，可以使用 &lt;a href=&#34;http://en.wikipedia.org/wiki/Cheese_%28software%29&#34; target=&#34;_blank&#34;&gt;cheese&lt;/a&gt;，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用&lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34; target=&#34;_blank&#34;&gt;vlc&lt;/a&gt;可以播放。&lt;/p&gt;
+&lt;p&gt;要捕获设备的视频输入，可以使用 &lt;a href=&#34;http://en.wikipedia.org/wiki/Cheese_%28software%29&#34;&gt;cheese&lt;/a&gt;，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用&lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34;&gt;vlc&lt;/a&gt;可以播放。&lt;/p&gt;
 
 &lt;p&gt;You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can&lt;/p&gt;
 
@@ -1536,16 +1573,16 @@ fi
 
 &lt;h4 id=&#34;3-2视频通话&#34;&gt;3.2视频通话&lt;/h4&gt;
 
-&lt;p&gt;视频通话，&lt;a href=&#34;http://www.linuxintro.org/wiki/Use_skype_under_Linux&#34; target=&#34;_blank&#34;&gt;在Linux上使用skype&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;视频通话，&lt;a href=&#34;http://www.linuxintro.org/wiki/Use_skype_under_Linux&#34;&gt;在Linux上使用skype&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&#34;3-3查看视频输入&#34;&gt;3.3查看视频输入&lt;/h4&gt;
 
-&lt;p&gt;查看摄像设备的视频输入，使用&lt;code&gt;cheese&lt;/code&gt; 或 &lt;a href=&#34;http://www.linuxintro.org/wiki/Mplayer&#34; target=&#34;_blank&#34;&gt;mplayer&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;查看摄像设备的视频输入，使用&lt;code&gt;cheese&lt;/code&gt; 或 &lt;a href=&#34;http://www.linuxintro.org/wiki/Mplayer&#34;&gt;mplayer&lt;/a&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;或者用&lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34; target=&#34;_blank&#34;&gt;vlc&lt;/a&gt;，你可以&lt;a href=&#34;http://www.linuxintro.org/wiki/Run_vlc_as_root&#34; target=&#34;_blank&#34;&gt;用root权限运行vlc&lt;/a&gt;，来查看你的摄像设备 &lt;code&gt;/dev/video0&lt;/code&gt;，启动vlc并选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play&lt;/p&gt;
+&lt;p&gt;或者用&lt;a href=&#34;http://www.linuxintro.org/wiki/Vlc&#34;&gt;vlc&lt;/a&gt;，你可以&lt;a href=&#34;http://www.linuxintro.org/wiki/Run_vlc_as_root&#34;&gt;用root权限运行vlc&lt;/a&gt;，来查看你的摄像设备 &lt;code&gt;/dev/video0&lt;/code&gt;，启动vlc并选择 Media -&amp;gt; Open Capture Device -&amp;gt; Video device name = /dev/video0 -&amp;gt; Play&lt;/p&gt;
 
 &lt;h3 id=&#34;排查问题&#34;&gt;排查问题&lt;/h3&gt;
 
@@ -1553,7 +1590,7 @@ fi
 
 &lt;h3 id=&#34;suse-linux-11-0-and-earlier&#34;&gt;SUSE Linux 11.0 and earlier&lt;/h3&gt;
 
-&lt;p&gt;This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, &lt;a href=&#34;http://www.linuxintro.org/wiki/Open_a_console&#34; target=&#34;_blank&#34;&gt;open a console&lt;/a&gt; and call&lt;/p&gt;
+&lt;p&gt;This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, &lt;a href=&#34;http://www.linuxintro.org/wiki/Open_a_console&#34;&gt;open a console&lt;/a&gt; and call&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hwinfo --usb
 &lt;/code&gt;&lt;/pre&gt;
@@ -1609,7 +1646,7 @@ gqcam
 
 &lt;h3 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h3&gt;
 
-&lt;p&gt;This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software &lt;strong&gt;hwinfo&lt;/strong&gt;. &lt;a href=&#34;http://www.linuxintro.org/wiki/Open_a_console&#34; target=&#34;_blank&#34;&gt;Open a console&lt;/a&gt;and type:&lt;/p&gt;
+&lt;p&gt;This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software &lt;strong&gt;hwinfo&lt;/strong&gt;. &lt;a href=&#34;http://www.linuxintro.org/wiki/Open_a_console&#34;&gt;Open a console&lt;/a&gt;and type:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo apt-get install hwinfo
 &lt;/code&gt;&lt;/pre&gt;
@@ -1681,107 +1718,123 @@ modprobe uvcvideo
 &lt;li&gt;Philips Webcam SPC220NC&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;A general list of working webcams can be found at &lt;a href=&#34;http://mxhaard.free.fr/spca5xx.html&#34; target=&#34;_blank&#34;&gt;http://mxhaard.free.fr/spca5xx.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A general list of working webcams can be found at &lt;a href=&#34;http://mxhaard.free.fr/spca5xx.html&#34;&gt;http://mxhaard.free.fr/spca5xx.html&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.&lt;/p&gt;
 
 &lt;h3 id=&#34;see-also&#34;&gt;See also&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.linuxintro.org/wiki/Hardware&#34; target=&#34;_blank&#34;&gt;hardware&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.opensuse.org/Webcam&#34; target=&#34;_blank&#34;&gt;http://en.opensuse.org/Webcam&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.linux.com/feature/126186&#34; target=&#34;_blank&#34;&gt;http://www.linux.com/feature/126186&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/&#34; target=&#34;_blank&#34;&gt;http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.goldmann.de/webcam-linux_tipp_408.html&#34; target=&#34;_blank&#34;&gt;http://www.goldmann.de/webcam-linux_tipp_408.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://wiki.ubuntuusers.de/Webcam&#34; target=&#34;_blank&#34;&gt;http://wiki.ubuntuusers.de/Webcam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.linuxintro.org/wiki/Hardware&#34;&gt;hardware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.opensuse.org/Webcam&#34;&gt;http://en.opensuse.org/Webcam&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.linux.com/feature/126186&#34;&gt;http://www.linux.com/feature/126186&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/&#34;&gt;http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.goldmann.de/webcam-linux_tipp_408.html&#34;&gt;http://www.goldmann.de/webcam-linux_tipp_408.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.ubuntuusers.de/Webcam&#34;&gt;http://wiki.ubuntuusers.de/Webcam&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>将Android的系统日志输出到文件</title>
-      <link>https://blog.codist.me/en/docs/android-log/</link>
-      <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
+      <title>屏幕输出管理: Xrandr</title>
+      <link>https://blog.codist.me/en/docs/xrandr/</link>
+      <pubDate>Sun, 23 Jun 2019 00:31:19 +0800</pubDate>
       
-      <guid>https://blog.codist.me/en/docs/android-log/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;首先，在产品目录的init.XXX.rc文件中，添加相应的service，&lt;/p&gt;
+      <guid>https://blog.codist.me/en/docs/xrandr/</guid>
+      <description>
 
-&lt;pre&gt;&lt;code&gt;#start log service
-start logd
+&lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;
 
-on property:service.logcat.enable=1
-start logcat_service
+&lt;p&gt;xrandr 用于控制输出设备（显示器，投影仪等）的屏幕分辨率和方向（旋转角度）&lt;/p&gt;
 
-on property:service.logcat.enable=0
-stop logcat_service
+&lt;p&gt;在主流Linux发行版上，都可以在桌面环境的系统设置里修改输出设备的设置，如kde的系统设置(System Setting)的显示和监视器(Display and Monitor)里，可以直接修改输出设备的显示方式，分辨率等&lt;/p&gt;
 
-#log services
-service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
+&lt;p&gt;也可以通过 快捷键 &lt;code&gt;Win + P&lt;/code&gt;，唤起快速配置界面，选择输出设备的显示方式（复制，扩展，关闭其中一个输出设备等）&lt;/p&gt;
 
-user root
-group log system
-class main
-   disabled
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
 
-service logd /system/bin/sh /system/bin/logd.sh
-user system
-group log
-oneshot
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;注意！！！&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,&lt;/p&gt;
+&lt;p&gt;xrandr会保存你的设置，这意味着，如果你在使用配置界面或快速配置界面设置了对一个输出方式的配置，如 &lt;code&gt;HDMI-1&lt;/code&gt;的配置，下一次连接到该输出方式后，保存的配置即生效&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;#!/system/bin/sh
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这会导致一个&lt;strong&gt;非常严重&lt;/strong&gt;的问题，&lt;strong&gt;如果你在首次使用某一个设备时配置失误，下次连接到该设备时，错误的配置项会立即生效&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在生产环境，如工作中使用投影仪进行屏幕共享时，请&lt;strong&gt;多加注意&lt;/strong&gt;，这可能导致你在整个演示时间无法分享屏幕&lt;/p&gt;
+
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+
+&lt;p&gt;在这里，我们讨论如何配置或修改 &lt;code&gt;xrandr&lt;/code&gt; 的配置&lt;/p&gt;
+
+&lt;p&gt;首先，&lt;strong&gt;&lt;code&gt;xrandr&lt;/code&gt; 没有配置文件&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>搭建博客评论系统</title>
+      <link>https://blog.codist.me/en/docs/selfhost-commento/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      
+      <guid>https://blog.codist.me/en/docs/selfhost-commento/</guid>
+      <description>&lt;p&gt;在Debian9上用开源的&lt;a href=&#34;https://gitlab.com/commento/commento&#34;&gt;Commento&lt;/a&gt;搭建博客评论系统&lt;/p&gt;
+
+&lt;p&gt;安装 &lt;code&gt;yarn&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;安装&lt;code&gt;dep&lt;/code&gt;（需要已经配置好的go环境）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;go get -u github.com/golang/dep/cmd/dep
+export PATH=$PATH:$GOPATH/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下载&amp;amp;编译：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p $GOPATH/gitlab.com/commento
+cd $GOPATH/gitlab.com/commento
+git clone https://gitlab.com/commento/commento.git
+make prod
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在根目录下新建脚本&lt;code&gt;server.sh&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#! /bin/bash
+
+# 绑定的域名
+export COMMENTO_ORIGIN=https://comment.example.com
+
+# 绑定的端口，可以用nginx反向代理到这个端口
+export COMMENTO_PORT=8002
+ 
+# 数据库 PostgreSQL 设置
+export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable
+
+# 关闭注册，首次需要注册账号，之后可以关闭注册
+#export COMMENTO_FORBID_NEW_OWNERS=true
 
 #
-#Global folder &amp;amp; cmd params
+# github oauth，其他类似
 #
+export GITHUB_KEY=
 
-OUTPUT_DIR=/data
-LOG=Logs
-index=2
+export GITHUB_SECRET=
 
-LOG_DIR[0]=$OUTPUT_DIR/$LOG/Log.0
-LOG_DIR[1]=$OUTPUT_DIR/$LOG/Log.1
-LOG_DIR[2]=$OUTPUT_DIR/$LOG/Log.2
+./build/prod/commento
 
-RM=rm
-MV=&amp;quot;mv&amp;quot;
-MKDIR=mkdir
-UMASK=umask
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;运行：&lt;/p&gt;
 
-#set default permission 0775
-$UMASK 002
-
-#Init the three folders
-
-i=0
-while [ &amp;quot;$i&amp;quot; -le &amp;quot;$index&amp;quot; ]
-do
-$MKDIR -p ${LOG_DIR[$i]}
-i=$(($i+1))
-done
-
-#Transfer the three folders
-((i=$index-1))
-$RM -r ${LOG_DIR[$index]}/*
-while [ &amp;quot;$i&amp;quot; -ge &amp;quot;0&amp;quot; ]
-do
-$MV ${LOG_DIR[$i]}/* ${LOG_DIR[$i+1]}
-i=$(($i-1))
-done
-$RM -r ${LOG_DIR[0]}/*
-
-#start logcat service
-setprop service.logcat.enable 1
-
-mkdir /data/www
-cp -R /system/var/www/    /data/
-ln -s /storage/external/ /data/www/sdcard
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x server.sh
+./server.sh
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -2124,7 +2177,7 @@ usbcore: registered new interface driver usbserial_generic
 &lt;ul&gt;
 &lt;li&gt;Follow the [guide to create a new theme]()&lt;/li&gt;
 &lt;li&gt;Upload your theme file to a new Github repository&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-www/issues&#34; target=&#34;_blank&#34;&gt;Open a ticket&lt;/a&gt; with a link to your theme&amp;rsquo;s Github repository and a screenshot&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-www/issues&#34;&gt;Open a ticket&lt;/a&gt; with a link to your theme&amp;rsquo;s Github repository and a screenshot&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

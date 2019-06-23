@@ -265,10 +265,6 @@
         
 
         
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
 
       </ul>
 
@@ -362,7 +358,8 @@
 <li><a href="#1-1-系统依赖">1.1 系统依赖</a>
 <ul>
 <li><a href="#1-1-1-portaudio-和-swig">1.1.1 PortAudio 和 SWIG</a></li>
-<li><a href="#1-1-2-pocketsphinx">1.1.2 PocketSphinx</a></li>
+<li><a href="#1-1-2-webview">1.1.2 WebView</a></li>
+<li><a href="#1-1-3-pocketsphinx">1.1.3 PocketSphinx</a></li>
 </ul></li>
 <li><a href="#1-2-python依赖">1.2 Python依赖</a>
 <ul>
@@ -416,7 +413,21 @@
 sudo pacman -S portaudio pulseaudio-alsa swig
 </code></pre>
 
-<h3 id="1-1-2-pocketsphinx">1.1.2 PocketSphinx</h3>
+<h3 id="1-1-2-webview">1.1.2 WebView</h3>
+
+<p>Homo的图形界面实现</p>
+
+<p>Debian / Ubuntu:</p>
+
+<pre><code class="language-bash">sudo apt-get install libwebkit2gtk-4.0-dev
+</code></pre>
+
+<p>Arch Linux / Manjaro Linux:</p>
+
+<pre><code class="language-bash">sudo pacman -S webkit2gtk
+</code></pre>
+
+<h3 id="1-1-3-pocketsphinx">1.1.3 PocketSphinx</h3>
 
 <p>Homo 借助 <code>PocketSphinx</code> 实现离线唤醒，控制语音录制开始和结束的时机</p>
 
@@ -483,11 +494,11 @@ pip install -r requirements.txt
 
 <h1 id="2-编译主程序">2.编译主程序</h1>
 
-<p>这需要你确保已经配置好<a href="https://golang.org/" target="_blank">Go</a>开发环境:</p>
+<p>这需要你确保已经配置好<a href="https://golang.org/">Go</a>开发环境:</p>
 
 <p>Linux:</p>
 
-<p>从 <a href="https://golang.org/dl/" target="_blank">https://golang.org/dl/</a>下载 Linux 对应的<code>.tar.gz</code>文件，假设下载到的是 <code>go1.12.6.linux-amd64.tar.gz</code>:</p>
+<p>从 <a href="https://golang.org/dl/">https://golang.org/dl/</a>下载 Linux 对应的<code>.tar.gz</code>文件，假设下载到的是 <code>go1.12.6.linux-amd64.tar.gz</code>:</p>
 
 <pre><code class="language-bash"># 直接解压缩到 /usr/local
 sudo tar -C /usr/local -xzf go1.12.6.linux-amd64.tar.gz

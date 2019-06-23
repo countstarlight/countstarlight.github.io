@@ -68,7 +68,7 @@ make CXX=g++-7 -j 8
 
 &lt;p&gt;thchs30和aishell的训练都需要用到&lt;code&gt;cuda&lt;/code&gt;，建议在编译安装的时候就把相关依赖一并装好。&lt;/p&gt;
 
-&lt;p&gt;可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：&lt;a href=&#34;https://developer.nvidia.com/cuda-downloads&#34; target=&#34;_blank&#34;&gt;https://developer.nvidia.com/cuda-downloads&lt;/a&gt; ，再手动安装。&lt;/p&gt;
+&lt;p&gt;可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：&lt;a href=&#34;https://developer.nvidia.com/cuda-downloads&#34;&gt;https://developer.nvidia.com/cuda-downloads&lt;/a&gt; ，再手动安装。&lt;/p&gt;
 
 &lt;p&gt;Archlinux可以直接从源里安装，Ubuntu等发行版类似：&lt;/p&gt;
 
@@ -134,17 +134,17 @@ make -j 8
 
 &lt;li&gt;&lt;p&gt;3.&lt;code&gt;hkust&lt;/code&gt;：中文电话数据集(LDC2005S15, LDC2005T32)&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;4.&lt;code&gt;thchs30&lt;/code&gt;：清华大学30小时的数据集，可以在&lt;a href=&#34;http://www.openslr.org/18/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 下载&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.&lt;code&gt;thchs30&lt;/code&gt;：清华大学30小时的数据集，可以在&lt;a href=&#34;http://www.openslr.org/18/&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 下载&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;这里采用&lt;code&gt;thchs30&lt;/code&gt;，从&lt;a href=&#34;http://www.openslr.org/18/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 或者参照它的&lt;a href=&#34;http://data.cslt.org/thchs30/README.html&#34; target=&#34;_blank&#34;&gt;README&lt;/a&gt;下载三个压缩包：&lt;/p&gt;
+&lt;p&gt;这里采用&lt;code&gt;thchs30&lt;/code&gt;，从&lt;a href=&#34;http://www.openslr.org/18/&#34;&gt;http://www.openslr.org/18/&lt;/a&gt; 或者参照它的&lt;a href=&#34;http://data.cslt.org/thchs30/README.html&#34;&gt;README&lt;/a&gt;下载三个压缩包：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/data_thchs30.tgz&#34; target=&#34;_blank&#34;&gt;data_thchs30.tgz &lt;/a&gt;&lt;a href=&#34;speech data and transcripts&#34; target=&#34;_blank&#34;&gt;6.4G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/data_thchs30.tgz&#34;&gt;data_thchs30.tgz &lt;/a&gt;&lt;a href=&#34;speech data and transcripts&#34;&gt;6.4G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/test-noise.tgz&#34; target=&#34;_blank&#34;&gt;test-noise.tgz &lt;/a&gt;&lt;a href=&#34;standard 0db noisy test data&#34; target=&#34;_blank&#34;&gt;1.9G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/test-noise.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/test-noise.tgz&#34;&gt;test-noise.tgz &lt;/a&gt;&lt;a href=&#34;standard 0db noisy test data&#34;&gt;1.9G&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/test-noise.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/resource.tgz&#34; target=&#34;_blank&#34;&gt;resource.tgz &lt;/a&gt;&lt;a href=&#34;supplementary resources, incl. lexicon for training data, noise samples&#34; target=&#34;_blank&#34;&gt;24M&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/resource.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/18/resource.tgz&#34;&gt;resource.tgz &lt;/a&gt;&lt;a href=&#34;supplementary resources, incl. lexicon for training data, noise samples&#34;&gt;24M&lt;/a&gt;   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/18/resource.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;在egs/thchs30/s5下新建文件夹&lt;code&gt;thchs30-openslr&lt;/code&gt;，把三个文件解压在该文件夹下&lt;/p&gt;
@@ -358,7 +358,7 @@ ac_model_type=tri1
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./run.sh --test-mode live
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果提示portaudio错误，可参考&lt;a href=&#34;https://blog.csdn.net/u012236368/article/details/71628777&#34; target=&#34;_blank&#34;&gt;https://blog.csdn.net/u012236368/article/details/71628777&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果提示portaudio错误，可参考&lt;a href=&#34;https://blog.csdn.net/u012236368/article/details/71628777&#34;&gt;https://blog.csdn.net/u012236368/article/details/71628777&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;识别wav文件：&lt;/p&gt;
 
@@ -414,7 +414,7 @@ audio=${data_file}/audio
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./run.sh --test-mode simulated
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;如果要运行dnn，首先要将nnet1转成nnet2。可以参考&lt;a href=&#34;http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2&#34; target=&#34;_blank&#34;&gt;链接1&lt;/a&gt;和&lt;a href=&#34;https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/&#34; target=&#34;_blank&#34;&gt;链接2&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果要运行dnn，首先要将nnet1转成nnet2。可以参考&lt;a href=&#34;http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2&#34;&gt;链接1&lt;/a&gt;和&lt;a href=&#34;https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/&#34;&gt;链接2&lt;/a&gt;。&lt;/p&gt;
 
 &lt;h2 id=&#34;4-算法解读&#34;&gt;4.算法解读&lt;/h2&gt;
 
@@ -558,10 +558,10 @@ VTLN：特征级声道长度归一化&lt;/p&gt;
 
 &lt;p&gt;和thchs30类似，参照&lt;code&gt;egs/aishell/README.txt&lt;/code&gt;，手动下载数据集或运行&lt;code&gt;s5/run.sh&lt;/code&gt;会自动下载并解压缩数据集，这里只演示手动下载数据集。&lt;/p&gt;
 
-&lt;p&gt;访问&lt;a href=&#34;http://www.openslr.org/33/&#34; target=&#34;_blank&#34;&gt;http://www.openslr.org/33/&lt;/a&gt; ，下载两个压缩包：&lt;/p&gt;
+&lt;p&gt;访问&lt;a href=&#34;http://www.openslr.org/33/&#34;&gt;http://www.openslr.org/33/&lt;/a&gt; ，下载两个压缩包：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/33/data_aishell.tgz&#34; target=&#34;_blank&#34;&gt;data_aishell.tgz &lt;/a&gt;[15G]   ( speech data and transcripts )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/data_aishell.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://www.openslr.org/resources/33/resource_aishell.tgz&#34; target=&#34;_blank&#34;&gt;resource_aishell.tgz &lt;/a&gt;[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz&#34; target=&#34;_blank&#34;&gt;China&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.openslr.org/resources/33/data_aishell.tgz&#34;&gt;data_aishell.tgz &lt;/a&gt;[15G]   ( speech data and transcripts )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/data_aishell.tgz&#34;&gt;China&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://www.openslr.org/resources/33/resource_aishell.tgz&#34;&gt;resource_aishell.tgz &lt;/a&gt;[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: &lt;a href=&#34;http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz&#34;&gt;China&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;下载解压缩到一个目录，这里解压缩到&lt;code&gt;aishell-openslr&lt;/code&gt;&lt;/p&gt;
 
@@ -779,7 +779,7 @@ ln -s 0.mdl final.mdl
 
 &lt;h2 id=&#34;获取模型&#34;&gt;获取模型&lt;/h2&gt;
 
-&lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34; target=&#34;_blank&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 &lt;a href=&#34;http://kaldi-asr.org/models/2/0002_cvte_chain_model.tar.gz&#34; target=&#34;_blank&#34;&gt;0002_cvte_chain_model.tar.gz&lt;/a&gt;(3.5G)&lt;/p&gt;
+&lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 &lt;a href=&#34;http://kaldi-asr.org/models/2/0002_cvte_chain_model.tar.gz&#34;&gt;0002_cvte_chain_model.tar.gz&lt;/a&gt;(3.5G)&lt;/p&gt;
 
 &lt;p&gt;解压缩到&lt;code&gt;kaldi/egs&lt;/code&gt;下，注意&lt;code&gt;kaldi/egs/&lt;/code&gt;换成安装kaldi对应的目录：&lt;/p&gt;
 

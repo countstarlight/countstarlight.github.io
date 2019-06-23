@@ -205,7 +205,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/docs/"><i class="fas fa-book"></i><span>博客</span></a>
+          <a class="nav-link  active" href="/docs/"><i class="fas fa-blog"></i><span>博客</span></a>
         </li>
 
         
@@ -265,10 +265,6 @@
         
 
         
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
 
       </ul>
 
@@ -302,19 +298,6 @@
   
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/docs/android-log/">Android底层</a>
-    <ul class="nav docs-sidenav">
-      
-      <li >
-        <a href="/docs/android-log/">将Android的系统日志输出到文件</a>
-      </li>
-      
-    </ul>
-    
-
-  </div>
-  
-  <div class="docs-toc-item">
     <a class="docs-toc-link" href="/docs/stl-set/">C&#43;&#43; STL</a>
     <ul class="nav docs-sidenav">
       
@@ -328,11 +311,11 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/docs/git-gpg/">Git使用</a>
+    <a class="docs-toc-link" href="/docs/android-log/">Android底层</a>
     <ul class="nav docs-sidenav">
       
       <li >
-        <a href="/docs/git-gpg/">Git 用GPG签名</a>
+        <a href="/docs/android-log/">将Android的系统日志输出到文件</a>
       </li>
       
     </ul>
@@ -366,6 +349,23 @@
   </div>
   
   <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/linux-webcam/">桌面Linux</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/docs/linux-webcam/">Linux上摄像设备的使用</a>
+      </li>
+      
+      <li >
+        <a href="/docs/linux-xrandr/">屏幕输出管理: Xrandr</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="/docs/embedded-serial-usb/">嵌入式</a>
     <ul class="nav docs-sidenav">
       
@@ -383,11 +383,11 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/docs/linux-webcam/">桌面Linux</a>
+    <a class="docs-toc-link" href="/docs/git-gpg/">Git使用</a>
     <ul class="nav docs-sidenav">
       
-      <li class="active">
-        <a href="/docs/linux-webcam/">Linux上摄像设备的使用</a>
+      <li >
+        <a href="/docs/git-gpg/">Git 用GPG签名</a>
       </li>
       
     </ul>
@@ -478,12 +478,12 @@
 <pre><code class="language-bash">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
 </code></pre>
 
-<p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看<a href="#排查问题">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个<a href="http://www.linuxintro.org/wiki/Tv_card" target="_blank">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
+<p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看<a href="#排查问题">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个<a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
 
 <h3 id="2-测试设备">2.测试设备</h3>
 
 <ul>
-<li><p>如果安装有 <a href="http://www.linuxintro.org/wiki/Vlc" target="_blank">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p></li>
+<li><p>如果安装有 <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p></li>
 
 <li><p>如果安装有mplayer，可以使用：</p></li>
 </ul>
@@ -495,7 +495,7 @@
 
 <h4 id="3-1录制视频">3.1录制视频</h4>
 
-<p>要捕获设备的视频输入，可以使用 <a href="http://en.wikipedia.org/wiki/Cheese_%28software%29" target="_blank">cheese</a>，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用<a href="http://www.linuxintro.org/wiki/Vlc" target="_blank">vlc</a>可以播放。</p>
+<p>要捕获设备的视频输入，可以使用 <a href="http://en.wikipedia.org/wiki/Cheese_%28software%29">cheese</a>，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>可以播放。</p>
 
 <p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
 
@@ -515,16 +515,16 @@
 
 <h4 id="3-2视频通话">3.2视频通话</h4>
 
-<p>视频通话，<a href="http://www.linuxintro.org/wiki/Use_skype_under_Linux" target="_blank">在Linux上使用skype</a>.</p>
+<p>视频通话，<a href="http://www.linuxintro.org/wiki/Use_skype_under_Linux">在Linux上使用skype</a>.</p>
 
 <h4 id="3-3查看视频输入">3.3查看视频输入</h4>
 
-<p>查看摄像设备的视频输入，使用<code>cheese</code> 或 <a href="http://www.linuxintro.org/wiki/Mplayer" target="_blank">mplayer</a>:</p>
+<p>查看摄像设备的视频输入，使用<code>cheese</code> 或 <a href="http://www.linuxintro.org/wiki/Mplayer">mplayer</a>:</p>
 
 <pre><code class="language-bash">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
 </code></pre>
 
-<p>或者用<a href="http://www.linuxintro.org/wiki/Vlc" target="_blank">vlc</a>，你可以<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root" target="_blank">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
+<p>或者用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，你可以<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
 
 <h3 id="排查问题">排查问题</h3>
 
@@ -532,7 +532,7 @@
 
 <h3 id="suse-linux-11-0-and-earlier">SUSE Linux 11.0 and earlier</h3>
 
-<p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, <a href="http://www.linuxintro.org/wiki/Open_a_console" target="_blank">open a console</a> and call</p>
+<p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, <a href="http://www.linuxintro.org/wiki/Open_a_console">open a console</a> and call</p>
 
 <pre><code class="language-bash">hwinfo --usb
 </code></pre>
@@ -588,7 +588,7 @@ gqcam
 
 <h3 id="ubuntu">Ubuntu</h3>
 
-<p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. <a href="http://www.linuxintro.org/wiki/Open_a_console" target="_blank">Open a console</a>and type:</p>
+<p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. <a href="http://www.linuxintro.org/wiki/Open_a_console">Open a console</a>and type:</p>
 
 <pre><code class="language-bash">sudo apt-get install hwinfo
 </code></pre>
@@ -660,19 +660,19 @@ modprobe uvcvideo
 <li>Philips Webcam SPC220NC</li>
 </ul>
 
-<p>A general list of working webcams can be found at <a href="http://mxhaard.free.fr/spca5xx.html" target="_blank">http://mxhaard.free.fr/spca5xx.html</a>.</p>
+<p>A general list of working webcams can be found at <a href="http://mxhaard.free.fr/spca5xx.html">http://mxhaard.free.fr/spca5xx.html</a>.</p>
 
 <p>The guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.</p>
 
 <h3 id="see-also">See also</h3>
 
 <ul>
-<li><a href="http://www.linuxintro.org/wiki/Hardware" target="_blank">hardware</a></li>
-<li><a href="http://en.opensuse.org/Webcam" target="_blank">http://en.opensuse.org/Webcam</a></li>
-<li><a href="http://www.linux.com/feature/126186" target="_blank">http://www.linux.com/feature/126186</a></li>
-<li><a href="http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/" target="_blank">http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/</a></li>
-<li><a href="http://www.goldmann.de/webcam-linux_tipp_408.html" target="_blank">http://www.goldmann.de/webcam-linux_tipp_408.html</a></li>
-<li><a href="http://wiki.ubuntuusers.de/Webcam" target="_blank">http://wiki.ubuntuusers.de/Webcam</a></li>
+<li><a href="http://www.linuxintro.org/wiki/Hardware">hardware</a></li>
+<li><a href="http://en.opensuse.org/Webcam">http://en.opensuse.org/Webcam</a></li>
+<li><a href="http://www.linux.com/feature/126186">http://www.linux.com/feature/126186</a></li>
+<li><a href="http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/">http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/</a></li>
+<li><a href="http://www.goldmann.de/webcam-linux_tipp_408.html">http://www.goldmann.de/webcam-linux_tipp_408.html</a></li>
+<li><a href="http://wiki.ubuntuusers.de/Webcam">http://wiki.ubuntuusers.de/Webcam</a></li>
 </ul>
 
           </div>
@@ -697,7 +697,7 @@ modprobe uvcvideo
   
   <div class="post-nav-item">
     <div class="meta-nav">下一页</div>
-    <a href="/docs/android-log/" rel="prev">将Android的系统日志输出到文件</a>
+    <a href="/docs/linux-xrandr/" rel="prev">屏幕输出管理: Xrandr</a>
   </div>
   
 </div>
