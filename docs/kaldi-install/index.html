@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -430,20 +430,18 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#环境">环境</a></li>
-<li><a href="#1-下载源码">1.下载源码</a></li>
-<li><a href="#2-编译安装-kaldi-tools">2.编译安装<code>kaldi/tools</code></a></li>
-<li><a href="#3-编译安装-kaldi-src">3.编译安装<code>kaldi/src</code></a>
-<ul>
-<li><a href="#3-1使用-openblas">3.1使用<code>OpenBLAS</code></a></li>
-<li><a href="#3-2安装-cuda">3.2安装<code>cuda</code></a></li>
-<li><a href="#3-3编译">3.3编译</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#环境">环境</a></li>
+    <li><a href="#1下载源码">1.下载源码</a></li>
+    <li><a href="#2编译安装kalditools">2.编译安装kaldi/tools</a></li>
+    <li><a href="#3编译安装kaldisrc">3.编译安装kaldi/src</a>
+      <ul>
+        <li><a href="#31使用openblas">3.1使用OpenBLAS</a></li>
+        <li><a href="#32安装cuda">3.2安装cuda</a></li>
+        <li><a href="#33编译">3.3编译</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
       <div class="connect-widget">
@@ -476,100 +474,49 @@
           <h1 itemprop="name">安装kaldi</h1>
 
           <div class="article-style" itemprop="articleBody">
-            
-
-<h2 id="环境">环境</h2>
-
+            <h2 id="环境">环境</h2>
 <p>操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如<code>ATLAS</code>，安装不会遇到太多问题。</p>
-
 <p>需要安装有<code>git</code>，<code>subversion</code>，<code>make</code>以及<code>gcc</code>等编译工具链</p>
-
-<h2 id="1-下载源码">1.下载源码</h2>
-
-<pre><code class="language-bash">git clone https://github.com/kaldi-asr/kaldi.git
-</code></pre>
-
-<h2 id="2-编译安装-kaldi-tools">2.编译安装<code>kaldi/tools</code></h2>
-
+<h2 id="1下载源码">1.下载源码</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/kaldi-asr/kaldi.git
+</code></pre></div><h2 id="2编译安装kalditools">2.编译安装<code>kaldi/tools</code></h2>
 <p>安装文档在<code>kaldi/tools/INSTALL</code>，很短，建议阅读一下</p>
-
 <p>开始编译：</p>
-
-<pre><code class="language-bash">cd tools
-./extras/check_dependencies.sh #检查依赖，如有问题参照仔细修改
-#自动下载安装依赖
-make -j 8
-</code></pre>
-
-<div class="alert alert-note">
-  <div>
-    <p>注意：如果要使用特定版本的编译器，必须和后面编译安装<code>kaldi/src</code>的编译器一致，如之后我们编译安装<code>cuda</code>要用<code>g++-7</code>，需要指定要用的编译器：</p>
-
-<pre><code class="language-bash">CXX=g++-7 extras/check_dependencies.sh
-make CXX=g++-7 -j 8
-</code></pre>
-
-  </div>
-</div>
-
-<h2 id="3-编译安装-kaldi-src">3.编译安装<code>kaldi/src</code></h2>
-
-<h3 id="3-1使用-openblas">3.1使用<code>OpenBLAS</code></h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd tools
+./extras/check_dependencies.sh <span style="color:#75715e">#检查依赖，如有问题参照仔细修改</span>
+<span style="color:#75715e">#自动下载安装依赖</span>
+make -j <span style="color:#ae81ff">8</span>
+</code></pre></div><!-- raw HTML omitted -->
+<h2 id="3编译安装kaldisrc">3.编译安装<code>kaldi/src</code></h2>
+<h3 id="31使用openblas">3.1使用<code>OpenBLAS</code></h3>
 <p>如果使用Ubuntu系统，源里有编译好的<code>ATLAS</code>库，可以直接安装，其他Linux发行版由于<code>ATLAS</code>安装复杂，需要调节cpu工作模式，这里用<code>OpenBLAS</code>替代：</p>
-
-<pre><code class="language-bash">cd tools
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd tools
 ./extras/install_openblas.sh
-</code></pre>
-
-<h3 id="3-2安装-cuda">3.2安装<code>cuda</code></h3>
-
+</code></pre></div><h3 id="32安装cuda">3.2安装<code>cuda</code></h3>
 <p>thchs30和aishell的训练都需要用到<code>cuda</code>，建议在编译安装的时候就把相关依赖一并装好。</p>
-
-<p>可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：<a href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a> ，再手动安装。</p>
-
+<p>可以手动在nvidia官网下载cuda工具集，根据对应的显卡和平台：https://developer.nvidia.com/cuda-downloads ，再手动安装。</p>
 <p>Archlinux可以直接从源里安装，Ubuntu等发行版类似：</p>
-
-<pre><code class="language-bash">sudo pacman -S cuda
-</code></pre>
-
-<p>注意：对于Archlinux，由于源里的cuda更新比较频繁，编译安装的kaldi会依赖指定版本的cuda，如果cuda大版本更新，如<code>10.0=&gt;10.1</code>，会使kaldi找不到旧版的cuda库而出错，建议添加cuda到忽略升级里，或每次更新cuda后重新编译安装<code>kaldi/src</code></p>
-
-<h3 id="3-3编译">3.3编译</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S cuda
+</code></pre></div><p>注意：对于Archlinux，由于源里的cuda更新比较频繁，编译安装的kaldi会依赖指定版本的cuda，如果cuda大版本更新，如<code>10.0=&gt;10.1</code>，会使kaldi找不到旧版的cuda库而出错，建议添加cuda到忽略升级里，或每次更新cuda后重新编译安装<code>kaldi/src</code></p>
+<h3 id="33编译">3.3编译</h3>
 <p>根据安装文档下载编译依赖(这里使用<code>OpenBLAS</code>)，需要硬盘上有20G的空闲空间：</p>
-
-<pre><code class="language-bash">./configure  --openblas-root=../tools/OpenBLAS/install
-</code></pre>
-
-<p>如果没有找到<code>cuda</code>安装路径，提示：</p>
-
-<pre><code class="language-bash">CUDA will not be used! If you have already installed cuda drivers 
-and cuda toolkit, try using --cudatk-dir=... option.  Note: this is
-only relevant for neural net experiments
-</code></pre>
-
-<p>按照提示指定<code>cuda</code>安装路径，Archlinux安装路径在<code>/opt/cuda/</code>：</p>
-
-<pre><code class="language-bash">./configure  --openblas-root=../tools/OpenBLAS/install --cudatk-dir=/opt/cuda/
-</code></pre>
-
-<p>如果提示<code>g++</code>版本问题：</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure  --openblas-root<span style="color:#f92672">=</span>../tools/OpenBLAS/install
+</code></pre></div><p>如果没有找到<code>cuda</code>安装路径，提示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CUDA will not be used! If you have already installed cuda drivers 
+and cuda toolkit, try using --cudatk-dir<span style="color:#f92672">=</span>... option.  Note: this is
+only relevant <span style="color:#66d9ef">for</span> neural net experiments
+</code></pre></div><p>按照提示指定<code>cuda</code>安装路径，Archlinux安装路径在<code>/opt/cuda/</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure  --openblas-root<span style="color:#f92672">=</span>../tools/OpenBLAS/install --cudatk-dir<span style="color:#f92672">=</span>/opt/cuda/
+</code></pre></div><p>如果提示<code>g++</code>版本问题：</p>
 <pre><code>Configuring dynamically loaded OpenBlas since --static-math=no (the default)
 Successfully configured for Linux with OpenBLAS from /home/countstarlight/data/Documents/kaldi/tools/OpenBLAS/install
 ***configure failed: CUDA 10_0 does not support g++ (g++-8.2.1).
                  You need g++ &lt; 8.0. ***
-</code></pre>
-
-<p>比如这里提示cuda10只支持<code>g++</code>8.0以下的版本，不需要降级，从源里安装低版本的<code>g++</code>，Archlinux会在安装<code>cuda</code>时自动安装适合版本的<code>g++</code>，Ubuntu等发行版类似，指定用低版本的<code>g++</code>，这里我们用<code>g++-7</code>：</p>
-
-<pre><code class="language-bash">CXX=g++-7 ./configure  --openblas-root=../tools/OpenBLAS/install --cudatk-dir=/opt/cuda/ --shared
-make depend -j 8
-make -j 8
-</code></pre>
-
-<p>这样就已经编译好训练需要的工具，之后进行在线解码和处理一些数据集需要额外安装一些工具</p>
+</code></pre><p>比如这里提示cuda10只支持<code>g++ </code>8.0以下的版本，不需要降级，从源里安装低版本的<code>g++</code>，Archlinux会在安装<code>cuda</code>时自动安装适合版本的<code>g++</code>，Ubuntu等发行版类似，指定用低版本的<code>g++</code>，这里我们用<code>g++-7</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CXX<span style="color:#f92672">=</span>g++-7 ./configure  --openblas-root<span style="color:#f92672">=</span>../tools/OpenBLAS/install --cudatk-dir<span style="color:#f92672">=</span>/opt/cuda/ --shared
+make depend -j <span style="color:#ae81ff">8</span>
+make -j <span style="color:#ae81ff">8</span>
+</code></pre></div><p>这样就已经编译好训练需要的工具，之后进行在线解码和处理一些数据集需要额外安装一些工具</p>
 
           </div>
 
@@ -631,7 +578,7 @@ make -j 8
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     由 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 的 <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> 强力驱动
 
@@ -746,7 +693,7 @@ make -j 8
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

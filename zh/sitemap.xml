@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -175,7 +175,6 @@
   <url>
     <loc>https://blog.codist.me/</loc>
     <lastmod>2019-06-23T00:31:19+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -191,7 +190,6 @@
   <url>
     <loc>https://blog.codist.me/tags/asr/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -205,25 +203,8 @@
   </url>
   
   <url>
-    <loc>https://blog.codist.me/tags/</loc>
-    <lastmod>2017-12-03T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.codist.me/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://blog.codist.me/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.codist.me/tags/kaldi/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -233,6 +214,21 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://blog.codist.me/tags/kaldi/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.codist.me/tags/</loc>
+    <lastmod>2017-12-03T00:00:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.codist.me/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://blog.codist.me/tags/"
                 />
   </url>
   
@@ -254,7 +250,6 @@
   <url>
     <loc>https://blog.codist.me/tags/linux/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -270,7 +265,6 @@
   <url>
     <loc>https://blog.codist.me/tags/minicom/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -286,7 +280,6 @@
   <url>
     <loc>https://blog.codist.me/tags/serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -302,7 +295,6 @@
   <url>
     <loc>https://blog.codist.me/tags/android/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -318,7 +310,6 @@
   <url>
     <loc>https://blog.codist.me/tags/log/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -362,7 +353,6 @@
   
   <url>
     <loc>https://blog.codist.me/authors/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -377,7 +367,6 @@
   
   <url>
     <loc>https://blog.codist.me/categories/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -392,7 +381,6 @@
   
   <url>
     <loc>https://blog.codist.me/publication_types/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

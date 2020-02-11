@@ -18,71 +18,55 @@
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
       
       <guid>https://blog.codist.me/docs/embedded-minicom/</guid>
-      <description>
-
-&lt;h3 id=&#34;1-设置文件路径&#34;&gt;1. 设置文件路径&lt;/h3&gt;
-
+      <description>&lt;h3 id=&#34;1-设置文件路径&#34;&gt;1. 设置文件路径&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;设置需要传送的文件所在的路径&lt;/p&gt;
-
+&lt;li&gt;
+&lt;p&gt;设置需要传送的文件所在的路径&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;按下组合键 &lt;code&gt;Ctrl + A&lt;/code&gt; , 再按下 &lt;code&gt;O&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;选择 &lt;code&gt;Filenames and paths&lt;/code&gt;：&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按下组合键 &lt;code&gt;Ctrl + A&lt;/code&gt; , 再按下 &lt;code&gt;O&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择 &lt;code&gt;Filenames and paths&lt;/code&gt;：&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/1.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;设置 &lt;code&gt;A-Download directory&lt;/code&gt; （将文件从设备传送到本地的路径）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;设置 &lt;code&gt;B-Upload directory&lt;/code&gt; （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/2.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;按下 &lt;code&gt;esc&lt;/code&gt; 然后选择 &lt;code&gt;Save setup as dfl&lt;/code&gt;来保存设置：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/3.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置 &lt;code&gt;A-Download directory&lt;/code&gt; （将文件从设备传送到本地的路径）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;设置 &lt;code&gt;B-Upload directory&lt;/code&gt; （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/2.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按下 &lt;code&gt;esc&lt;/code&gt; 然后选择 &lt;code&gt;Save setup as dfl&lt;/code&gt;来保存设置：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.codist.me/images/work6/3.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;2-发送文件到设备&#34;&gt;2. 发送文件到设备&lt;/h3&gt;
-
 &lt;ul&gt;
 &lt;li&gt;在&lt;code&gt;minicom&lt;/code&gt;里（已经连接到设备的终端）&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rx filename
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rx filename
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;按下组合键 &lt;code&gt;Ctrl + A&lt;/code&gt;，然后按下&lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;选择 &lt;code&gt;xmodem&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;选择要发送的文件&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&#34;3-在设备上运行刚才发送过去的文件-假设是qt图形界面程序&#34;&gt;3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序）&lt;/h3&gt;
-
+&lt;h3 id=&#34;3-在设备上运行刚才发送过去的文件假设是qt图形界面程序&#34;&gt;3. 在设备上运行刚才发送过去的文件（假设是Qt图形界面程序）&lt;/h3&gt;
 &lt;p&gt;在&lt;code&gt;minicom&lt;/code&gt;里（已经连接到设备的终端）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x filename     #给文件授予执行权限
-./filename             #运行
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;如果设备上的系统没有图形化环境&#34;&gt;如果设备上的系统没有图形化环境&lt;/h4&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;chmod +x filename     &lt;span style=&#34;color:#75715e&#34;&gt;#给文件授予执行权限&lt;/span&gt;
+./filename             &lt;span style=&#34;color:#75715e&#34;&gt;#运行&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;如果设备上的系统没有图形化环境&#34;&gt;如果设备上的系统没有图形化环境&lt;/h4&gt;
 &lt;p&gt;添加参数 &lt;code&gt;-qws&lt;/code&gt;：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./filename -qws
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;如果希望旋转屏幕显示&#34;&gt;如果希望旋转屏幕显示&lt;/h4&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./filename -qws
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;如果希望旋转屏幕显示&#34;&gt;如果希望旋转屏幕显示&lt;/h4&gt;
 &lt;p&gt;添加参数 &lt;code&gt;-display&lt;/code&gt; 以及要旋转的角度（顺时针）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./filename -display &amp;quot;Transformed:Rot270&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./filename -display &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Transformed:Rot270&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

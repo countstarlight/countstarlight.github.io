@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -430,20 +430,15 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-安装-minicom">1. 安装 <code>minicom</code></a></li>
-<li><a href="#2-插上设备并查看系统是否已经检测到设备">2. 插上设备并查看系统是否已经检测到设备</a>
-<ul>
-<li><a href="#如果没有检测到设备-得到的结果类似">如果没有检测到设备，得到的结果类似：</a></li>
-</ul></li>
-<li><a href="#3-连接到设备">3. 连接到设备</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-安装-minicom">1. 安装 minicom</a></li>
+        <li><a href="#2-插上设备并查看系统是否已经检测到设备">2. 插上设备并查看系统是否已经检测到设备</a></li>
+        <li><a href="#3-连接到设备">3. 连接到设备</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
       <div class="connect-widget">
@@ -476,30 +471,18 @@
           <h1 itemprop="name">Linux上通过串口连接嵌入式Linux终端</h1>
 
           <div class="article-style" itemprop="articleBody">
-            
-
-<h3 id="1-安装-minicom">1. 安装 <code>minicom</code></h3>
-
+            <h3 id="1-安装-minicom">1. 安装 <code>minicom</code></h3>
 <p>Debian/Ubuntu：</p>
-
-<pre><code class="language-bash">sudo aptitude update
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo aptitude update
 sudo aptitude install minicom
-</code></pre>
-
-<h3 id="2-插上设备并查看系统是否已经检测到设备">2. 插上设备并查看系统是否已经检测到设备</h3>
-
-<pre><code class="language-bash">sudo dmesg | grep tty
-</code></pre>
-
-<h4 id="如果没有检测到设备-得到的结果类似">如果没有检测到设备，得到的结果类似：</h4>
-
+</code></pre></div><h3 id="2-插上设备并查看系统是否已经检测到设备">2. 插上设备并查看系统是否已经检测到设备</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dmesg | grep tty
+</code></pre></div><h4 id="如果没有检测到设备得到的结果类似">如果没有检测到设备，得到的结果类似：</h4>
 <pre><code>[    0.000000] console [tty0] enabled
 [    8.264501] systemd[1]: Created slice system-getty.slice.
-</code></pre>
-
-<ul>
-<li><p>拔下usb转串口线，输入命令 <code>lsusb</code>会看到一些已经连接到usb的设备：</p>
-
+</code></pre><ul>
+<li>
+<p>拔下usb转串口线，输入命令 <code>lsusb</code>会看到一些已经连接到usb的设备：</p>
 <pre><code>Bus 002 Device 002: ID 8087:8000 Intel Corp. 
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 8087:8008 Intel Corp. 
@@ -509,9 +492,8 @@ Bus 003 Device 004: ID 13d3:5188 IMC Networks
 Bus 003 Device 006: ID 13d3:3402 IMC Networks  
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </code></pre></li>
-
-<li><p>再次插上usb转串口线，再次运行命令 <code>lsusb</code>，会看到输出结果相比之前增加了一行：</p>
-
+<li>
+<p>再次插上usb转串口线，再次运行命令 <code>lsusb</code>，会看到输出结果相比之前增加了一行：</p>
 <pre><code>Bus 002 Device 002: ID 8087:8000 Intel Corp. 
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 8087:8008 Intel Corp. 
@@ -522,36 +504,23 @@ Bus 003 Device 006: ID 13d3:3402 IMC Networks
 Bus 003 Device 008: ID 18f8:0f99 --- --- --- (注意这行是新加的！)
 Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </code></pre></li>
-
-<li><p>现在我们知道了usb转串口的 <code>vendor id</code> 和 <code>product id</code>，让我们加载Linux内核的<code>usbserial</code>模块来激活这个设备：</p></li>
-</ul>
-
-<pre><code class="language-bash">  sudo modprobe usbserial vendor=0x18f8 product=0x0f99 
-</code></pre>
-
-<ul>
-<li><p>再次运行 <code>dmesg</code> 命令，输出结果类似：</p>
-
+<li>
+<p>现在我们知道了usb转串口的 <code>vendor id</code> 和 <code>product id</code>，让我们加载Linux内核的<code>usbserial</code>模块来激活这个设备：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe usbserial vendor<span style="color:#f92672">=</span>0x18f8 product<span style="color:#f92672">=</span>0x0f99 
+</code></pre></div></li>
+<li>
+<p>再次运行 <code>dmesg</code> 命令，输出结果类似：</p>
 <pre><code>usbserial_generic 1-1:1.0: generic converter detected
 usb 1-1: generic converter now attached to ttyUSB0
 usbcore: registered new interface driver usbserial_generic 
+</code></pre><p>可以把自动加载<code>usbserial</code>模块添加到开机启动里，编辑文件<code>/etc/modules</code>，添加一行：</p>
+<pre><code>usbserial vendor=0x18f8 product=0x0f99
 </code></pre></li>
 </ul>
-
-<p>可以把自动加载<code>usbserial</code>模块添加到开机启动里，编辑文件<code>/etc/modules</code>，添加一行：</p>
-
-<pre><code>  usbserial vendor=0x18f8 product=0x0f99
-</code></pre>
-
 <h3 id="3-连接到设备">3. 连接到设备</h3>
-
 <p>假设设备路径为 <code>/dev/ttyUSB0</code>，运行命令:</p>
-
-<pre><code class="language-bash">sudo minicom -s
-</code></pre>
-
-<p>在<code>Serial port setup</code>里修改第一行为<code>/dev/ttyUSB0</code></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo minicom -s
+</code></pre></div><p>在<code>Serial port setup</code>里修改第一行为<code>/dev/ttyUSB0</code></p>
 <p>选择<code>Save setup as dfl</code>保存设置</p>
 
           </div>
@@ -614,7 +583,7 @@ usbcore: registered new interface driver usbserial_generic
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
@@ -729,7 +698,7 @@ usbcore: registered new interface driver usbserial_generic
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

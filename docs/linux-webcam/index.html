@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -430,28 +430,21 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#1-查找设备">1. 查找设备</a></li>
-<li><a href="#2-测试设备">2.测试设备</a></li>
-<li><a href="#3-使用设备">3.使用设备</a>
-<ul>
-<li><a href="#3-1录制视频">3.1录制视频</a></li>
-<li><a href="#3-2视频通话">3.2视频通话</a></li>
-<li><a href="#3-3查看视频输入">3.3查看视频输入</a></li>
-</ul></li>
-<li><a href="#排查问题">排查问题</a></li>
-<li><a href="#suse-linux-11-0-and-earlier">SUSE Linux 11.0 and earlier</a></li>
-<li><a href="#ubuntu">Ubuntu</a></li>
-<li><a href="#other-webcams">Other webcams</a></li>
-<li><a href="#testbed">Testbed</a></li>
-<li><a href="#see-also">See also</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-查找设备">1. 查找设备</a></li>
+        <li><a href="#2测试设备">2.测试设备</a></li>
+        <li><a href="#3使用设备">3.使用设备</a></li>
+        <li><a href="#排查问题">排查问题</a></li>
+        <li><a href="#suse-linux-110-and-earlier">SUSE Linux 11.0 and earlier</a></li>
+        <li><a href="#ubuntu">Ubuntu</a></li>
+        <li><a href="#other-webcams">Other webcams</a></li>
+        <li><a href="#testbed">Testbed</a></li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
       <div class="connect-widget">
@@ -484,216 +477,143 @@
           <h1 itemprop="name">Linux上摄像设备的使用</h1>
 
           <div class="article-style" itemprop="articleBody">
-            
-
-<p>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入</p>
-
+            <p>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入</p>
 <h3 id="1-查找设备">1. 查找设备</h3>
-
 <ul>
-<li><p>插上摄像设备（通常是通过USB）</p></li>
-
-<li><p>列出所有的 <code>video4linux</code> 设备:</p></li>
+<li>
+<p>插上摄像设备（通常是通过USB）</p>
+</li>
+<li>
+<p>列出所有的 <code>video4linux</code> 设备:</p>
+</li>
 </ul>
-
-<pre><code class="language-bash">ls -ltr /dev/video*
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -ltr /dev/video*
+</code></pre></div><ul>
 <li>得到的输出类似于：</li>
 </ul>
-
-<pre><code class="language-bash">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
-</code></pre>
-
-<p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看<a href="#排查问题">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个<a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
-
-<h3 id="2-测试设备">2.测试设备</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crw-rw----+ <span style="color:#ae81ff">1</span> root video 81, <span style="color:#ae81ff">0</span> Nov <span style="color:#ae81ff">11</span> 09:06 /dev/video0
+</code></pre></div><p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看<a href="#%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个<a href="http://www.linuxintro.org/wiki/Tv_card">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
+<h3 id="2测试设备">2.测试设备</h3>
 <ul>
-<li><p>如果安装有 <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p></li>
-
-<li><p>如果安装有mplayer，可以使用：</p></li>
+<li>
+<p>如果安装有 <a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p>
+</li>
+<li>
+<p>如果安装有mplayer，可以使用：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mplayer tv:// -tv driver<span style="color:#f92672">=</span>v4l2:width<span style="color:#f92672">=</span>640:height<span style="color:#f92672">=</span>480:device<span style="color:#f92672">=</span>/dev/video0 -fps <span style="color:#ae81ff">30</span>
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-bash">  mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
-</code></pre>
-
-<h3 id="3-使用设备">3.使用设备</h3>
-
-<h4 id="3-1录制视频">3.1录制视频</h4>
-
+<h3 id="3使用设备">3.使用设备</h3>
+<h4 id="31录制视频">3.1录制视频</h4>
 <p>要捕获设备的视频输入，可以使用 <a href="http://en.wikipedia.org/wiki/Cheese_%28software%29">cheese</a>，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>可以播放。</p>
-
 <p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
-
 <ul>
-<li>use the software <em>mencoder</em>:</li>
+<li>
+<p>use the software <em>mencoder</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mencoder tv:// -tv driver<span style="color:#f92672">=</span>v4l2:width<span style="color:#f92672">=</span>320:height<span style="color:#f92672">=</span>240:device<span style="color:#f92672">=</span>/dev/video0 -nosound -ovc lavc -o myvideo.avi
+</code></pre></div></li>
+<li>
+<p>or use the software <em>streamer</em>. Here are two examples:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-bash">  mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
-</code></pre>
-
-<ul>
-<li>or use the software <em>streamer</em>. Here are two examples:</li>
-</ul>
-
-<pre><code class="language-bash">  streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
-</code></pre>
-
-<h4 id="3-2视频通话">3.2视频通话</h4>
-
+<h4 id="32视频通话">3.2视频通话</h4>
 <p>视频通话，<a href="http://www.linuxintro.org/wiki/Use_skype_under_Linux">在Linux上使用skype</a>.</p>
-
-<h4 id="3-3查看视频输入">3.3查看视频输入</h4>
-
+<h4 id="33查看视频输入">3.3查看视频输入</h4>
 <p>查看摄像设备的视频输入，使用<code>cheese</code> 或 <a href="http://www.linuxintro.org/wiki/Mplayer">mplayer</a>:</p>
-
-<pre><code class="language-bash">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
-</code></pre>
-
-<p>或者用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，你可以<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mplayer -fps <span style="color:#ae81ff">30</span> -cache <span style="color:#ae81ff">128</span> -tv driver<span style="color:#f92672">=</span>v4l2:width<span style="color:#f92672">=</span>640:height<span style="color:#f92672">=</span>480:device<span style="color:#f92672">=</span>/dev/video0 tv://
+</code></pre></div><p>或者用<a href="http://www.linuxintro.org/wiki/Vlc">vlc</a>，你可以<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
 <h3 id="排查问题">排查问题</h3>
-
 <p>Troubleshooting heavily depends on the distribution and version you are using. If you have done cabling correctly and a device file /dev/video* does not appear, your kernel probably does not know the hardware. In this case you may have to install the device driver separately because it may not be part of the kernel.</p>
-
-<h3 id="suse-linux-11-0-and-earlier">SUSE Linux 11.0 and earlier</h3>
-
+<h3 id="suse-linux-110-and-earlier">SUSE Linux 11.0 and earlier</h3>
 <p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, <a href="http://www.linuxintro.org/wiki/Open_a_console">open a console</a> and call</p>
-
-<pre><code class="language-bash">hwinfo --usb
-</code></pre>
-
-<p>If a Logitech Quickcam Messenger is plugged in the answer will be like:</p>
-
-<pre><code class="language-bash">06: USB 00.2: 0000 Unclassified device
-  [Created at usb.122]                
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hwinfo --usb
+</code></pre></div><p>If a Logitech Quickcam Messenger is plugged in the answer will be like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">06: USB 00.2: <span style="color:#ae81ff">0000</span> Unclassified device
+  <span style="color:#f92672">[</span>Created at usb.122<span style="color:#f92672">]</span>                
   UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
   Unique ID: Eopr.vE+cdFBwClB                                      
   Parent ID: uIhY.uOe2OKugI8D                                      
   SysFS ID: /devices/pci0000:00/0000:00:1a.2/usb3/3-1/3-1:1.2      
   SysFS BusID: 3-1:1.2                                             
   Hardware Class: unknown                                          
-  Model: &quot;Logitech QuickCam Messanger&quot;                             
+  Model: <span style="color:#e6db74">&#34;Logitech QuickCam Messanger&#34;</span>                             
   Hotplug: USB                                                     
-  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;                              
-  Device: usb 0x08da &quot;QuickCam Messanger&quot;                          
-  Revision: &quot;1.00&quot;                                                 
-  Driver: &quot;snd-usb-audio&quot;                                          
-  Driver Modules: &quot;snd_usb_audio&quot;                                  
-  Speed: 12 Mbps                                                   
-  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;    
-  Driver Info #0:                                                  
+  Vendor: usb 0x046d <span style="color:#e6db74">&#34;Logitech, Inc.&#34;</span>                              
+  Device: usb 0x08da <span style="color:#e6db74">&#34;QuickCam Messanger&#34;</span>                          
+  Revision: <span style="color:#e6db74">&#34;1.00&#34;</span>                                                 
+  Driver: <span style="color:#e6db74">&#34;snd-usb-audio&#34;</span>                                          
+  Driver Modules: <span style="color:#e6db74">&#34;snd_usb_audio&#34;</span>                                  
+  Speed: <span style="color:#ae81ff">12</span> Mbps                                                   
+  Module Alias: <span style="color:#e6db74">&#34;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&#34;</span>    
+  Driver Info <span style="color:#75715e">#0:</span>                                                  
     Driver Status: quickcam_messenger is active                    
-    Driver Activation Cmd: &quot;modprobe quickcam_messenger&quot;
-  Driver Info #1:                                                  
+    Driver Activation Cmd: <span style="color:#e6db74">&#34;modprobe quickcam_messenger&#34;</span>
+  Driver Info <span style="color:#75715e">#1:</span>                                                  
     Driver Status: gspca is active                                 
-    Driver Activation Cmd: &quot;modprobe gspca&quot;
-  Config Status: cfg=new, avail=yes, need=no, active=unknown       
-  Attached to: #20 (Hub)
-</code></pre>
-
-<p>This means you can install and load the webcam driver like this:</p>
-
-<pre><code class="language-bash">yast -i gspcav-kmp-default
+    Driver Activation Cmd: <span style="color:#e6db74">&#34;modprobe gspca&#34;</span>
+  Config Status: cfg<span style="color:#f92672">=</span>new, avail<span style="color:#f92672">=</span>yes, need<span style="color:#f92672">=</span>no, active<span style="color:#f92672">=</span>unknown       
+  Attached to: <span style="color:#75715e">#20 (Hub)</span>
+</code></pre></div><p>This means you can install and load the webcam driver like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yast -i gspcav-kmp-default
 modprobe gspca
-</code></pre>
-
-<p>Now you should see a video device:</p>
-
-<pre><code class="language-bash">ls /dev/video*
+</code></pre></div><p>Now you should see a video device:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls /dev/video*
 /dev/video  /dev/video0
-</code></pre>
-
-<p>That means you can install and start your webcam-viewer-software. We choose gqcam:</p>
-
-<pre><code class="language-bash">yast -i gqcam
+</code></pre></div><p>That means you can install and start your webcam-viewer-software. We choose gqcam:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yast -i gqcam
 gqcam
-</code></pre>
-
-<p>It works. You see a video what from what is going on in front of your webcam.</p>
-
+</code></pre></div><p>It works. You see a video what from what is going on in front of your webcam.</p>
 <h3 id="ubuntu">Ubuntu</h3>
-
 <p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. <a href="http://www.linuxintro.org/wiki/Open_a_console">Open a console</a>and type:</p>
-
-<pre><code class="language-bash">sudo apt-get install hwinfo
-</code></pre>
-
-<p>Then call hwinfo:</p>
-
-<pre><code class="language-bash">hwinfo --usb
-</code></pre>
-
-<p>If a Logitech Quickcam Messenger is plugged in the response will be like:</p>
-
-<pre><code class="language-bash">04: USB 00.2: 0000 Unclassified device
-  [Created at usb.122]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install hwinfo
+</code></pre></div><p>Then call hwinfo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hwinfo --usb
+</code></pre></div><p>If a Logitech Quickcam Messenger is plugged in the response will be like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">04: USB 00.2: <span style="color:#ae81ff">0000</span> Unclassified device
+  <span style="color:#f92672">[</span>Created at usb.122<span style="color:#f92672">]</span>
   UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
   Unique ID: 4ajv.vE+cdFBwClB
   Parent ID: k4bc._Mkd+LmXb03
   SysFS ID: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-1/1-1:1.2
   SysFS BusID: 1-1:1.2
   Hardware Class: unknown
-  Model: &quot;Logitech QuickCam Messanger&quot;
+  Model: <span style="color:#e6db74">&#34;Logitech QuickCam Messanger&#34;</span>
   Hotplug: USB
-  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;
-  Device: usb 0x08da &quot;QuickCam Messanger&quot;
-  Revision: &quot;1.00&quot;
-  Driver: &quot;snd-usb-audio&quot;
-  Driver Modules: &quot;snd_usb_audio&quot;
-  Speed: 12 Mbps
-  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;
-  Driver Info #0:
+  Vendor: usb 0x046d <span style="color:#e6db74">&#34;Logitech, Inc.&#34;</span>
+  Device: usb 0x08da <span style="color:#e6db74">&#34;QuickCam Messanger&#34;</span>
+  Revision: <span style="color:#e6db74">&#34;1.00&#34;</span>
+  Driver: <span style="color:#e6db74">&#34;snd-usb-audio&#34;</span>
+  Driver Modules: <span style="color:#e6db74">&#34;snd_usb_audio&#34;</span>
+  Speed: <span style="color:#ae81ff">12</span> Mbps
+  Module Alias: <span style="color:#e6db74">&#34;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&#34;</span>
+  Driver Info <span style="color:#75715e">#0:</span>
     Driver Status: gspca_zc3xx is active
-    Driver Activation Cmd: &quot;modprobe gspca_zc3xx&quot;
-  Config Status: cfg=new, avail=yes, need=no, active=unknown
-  Attached to: #8 (Hub)
-</code></pre>
-
-<p>Activate the driver:</p>
-
-<pre><code class="language-bash">sudo modprobe gspca_zc3xx
-</code></pre>
-
-<p>Now you should be able to see the video device:</p>
-
-<pre><code class="language-bash">ls /dev/video*
+    Driver Activation Cmd: <span style="color:#e6db74">&#34;modprobe gspca_zc3xx&#34;</span>
+  Config Status: cfg<span style="color:#f92672">=</span>new, avail<span style="color:#f92672">=</span>yes, need<span style="color:#f92672">=</span>no, active<span style="color:#f92672">=</span>unknown
+  Attached to: <span style="color:#75715e">#8 (Hub)</span>
+</code></pre></div><p>Activate the driver:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe gspca_zc3xx
+</code></pre></div><p>Now you should be able to see the video device:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls /dev/video*
 /dev/video0
-</code></pre>
-
-<p>You can now test your webcam using the software cheese:</p>
-
-<pre><code class="language-bash">sudo apt-get install cheese
+</code></pre></div><p>You can now test your webcam using the software cheese:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install cheese
 cheese
-</code></pre>
-
-<h3 id="other-webcams">Other webcams</h3>
-
+</code></pre></div><h3 id="other-webcams">Other webcams</h3>
 <p>If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:</p>
-
-<pre><code class="language-bash">yast -i uvcvideo_kmp_default
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yast -i uvcvideo_kmp_default
 modprobe uvcvideo
-</code></pre>
-
-<p>and start gqcam again.</p>
-
+</code></pre></div><p>and start gqcam again.</p>
 <h3 id="testbed">Testbed</h3>
-
 <p>The following webcams have been found working with this tutorial:</p>
-
 <ul>
 <li>Logitech Quickcam messenger</li>
 <li>Philips Webcam SPC220NC</li>
 </ul>
-
 <p>A general list of working webcams can be found at <a href="http://mxhaard.free.fr/spca5xx.html">http://mxhaard.free.fr/spca5xx.html</a>.</p>
-
 <p>The guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.</p>
-
 <h3 id="see-also">See also</h3>
-
 <ul>
 <li><a href="http://www.linuxintro.org/wiki/Hardware">hardware</a></li>
 <li><a href="http://en.opensuse.org/Webcam">http://en.opensuse.org/Webcam</a></li>
@@ -755,7 +675,7 @@ modprobe uvcvideo
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     由 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 的 <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> 强力驱动
 
@@ -870,7 +790,7 @@ modprobe uvcvideo
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

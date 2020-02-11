@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="在Debian9上用开源的Commento搭建博客评论系统 安装 yarn： curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;&amp; sudo apt-get install yarn 安装dep（需要已">
+  <meta name="description" content="在Debian9上用开源的Commento搭建博客评论系统 安装 yarn： curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;&amp; sudo apt-get install yarn 安装dep（需要已">
 
   
   <link rel="alternate" hreflang="zh" href="https://blog.codist.me/docs/selfhost-commento/">
@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -112,7 +112,7 @@
   <meta property="og:site_name" content="Codist">
   <meta property="og:url" content="https://blog.codist.me/en/docs/selfhost-commento/">
   <meta property="og:title" content="搭建博客评论系统 | Codist">
-  <meta property="og:description" content="在Debian9上用开源的Commento搭建博客评论系统 安装 yarn： curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;&amp; sudo apt-get install yarn 安装dep（需要已"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
+  <meta property="og:description" content="在Debian9上用开源的Commento搭建博客评论系统 安装 yarn： curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo &#34;deb https://dl.yarnpkg.com/debian/ stable main&#34; | sudo tee /etc/apt/sources.list.d/yarn.list sudo apt-get update &amp;&amp; sudo apt-get install yarn 安装dep（需要已"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2016-04-20T00:00:00&#43;08:00">
@@ -429,7 +429,7 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      
+      <nav id="TableOfContents"></nav>
 
       <div class="connect-widget">
   <ul class="connect-links fa-ul">
@@ -462,61 +462,46 @@
 
           <div class="article-style" itemprop="articleBody">
             <p>在Debian9上用开源的<a href="https://gitlab.com/commento/commento">Commento</a>搭建博客评论系统</p>
-
 <p>安装 <code>yarn</code>：</p>
-
-<pre><code class="language-bash">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update &amp;&amp; sudo apt-get install yarn
-</code></pre>
-
-<p>安装<code>dep</code>（需要已经配置好的go环境）：</p>
-
-<pre><code class="language-bash">go get -u github.com/golang/dep/cmd/dep
-export PATH=$PATH:$GOPATH/bin
-</code></pre>
-
-<p>下载&amp;编译：</p>
-
-<pre><code class="language-bash">mkdir -p $GOPATH/gitlab.com/commento
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo <span style="color:#e6db74">&#34;deb https://dl.yarnpkg.com/debian/ stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update <span style="color:#f92672">&amp;&amp;</span> sudo apt-get install yarn
+</code></pre></div><p>安装<code>dep</code>（需要已经配置好的go环境）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get -u github.com/golang/dep/cmd/dep
+export PATH<span style="color:#f92672">=</span>$PATH:$GOPATH/bin
+</code></pre></div><p>下载&amp;编译：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p $GOPATH/gitlab.com/commento
 cd $GOPATH/gitlab.com/commento
 git clone https://gitlab.com/commento/commento.git
 make prod
-</code></pre>
+</code></pre></div><p>在根目录下新建脚本<code>server.sh</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#! /bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># 绑定的域名</span>
+export COMMENTO_ORIGIN<span style="color:#f92672">=</span>https://comment.example.com
 
-<p>在根目录下新建脚本<code>server.sh</code>：</p>
-
-<pre><code class="language-bash">#! /bin/bash
-
-# 绑定的域名
-export COMMENTO_ORIGIN=https://comment.example.com
-
-# 绑定的端口，可以用nginx反向代理到这个端口
-export COMMENTO_PORT=8002
+<span style="color:#75715e"># 绑定的端口，可以用nginx反向代理到这个端口</span>
+export COMMENTO_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8002</span>
  
-# 数据库 PostgreSQL 设置
-export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable
+<span style="color:#75715e"># 数据库 PostgreSQL 设置</span>
+export COMMENTO_POSTGRES<span style="color:#f92672">=</span>postgres://postgres:password@127.0.0.1:5432/comment?sslmode<span style="color:#f92672">=</span>disable
 
-# 关闭注册，首次需要注册账号，之后可以关闭注册
-#export COMMENTO_FORBID_NEW_OWNERS=true
+<span style="color:#75715e"># 关闭注册，首次需要注册账号，之后可以关闭注册</span>
+<span style="color:#75715e">#export COMMENTO_FORBID_NEW_OWNERS=true</span>
 
 #
-# github oauth，其他类似
+<span style="color:#75715e"># github oauth，其他类似</span>
 #
-export GITHUB_KEY=
+export GITHUB_KEY<span style="color:#f92672">=</span>
 
-export GITHUB_SECRET=
+export GITHUB_SECRET<span style="color:#f92672">=</span>
 
 ./build/prod/commento
 
-</code></pre>
-
-<p>运行：</p>
-
-<pre><code class="language-bash">chmod +x server.sh
+</code></pre></div><p>运行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chmod +x server.sh
 ./server.sh
-</code></pre>
-
+</code></pre></div>
           </div>
 
           
@@ -569,7 +554,7 @@ export GITHUB_SECRET=
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
@@ -684,7 +669,7 @@ export GITHUB_SECRET=
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

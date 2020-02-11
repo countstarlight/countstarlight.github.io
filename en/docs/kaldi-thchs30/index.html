@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -430,26 +430,25 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-下载数据集">1.下载数据集</a></li>
-<li><a href="#2-训练">2.训练</a>
-<ul>
-<li><a href="#2-1修改训练脚本">2.1修改训练脚本</a></li>
-<li><a href="#2-2运行训练">2.2运行训练</a></li>
-</ul></li>
-<li><a href="#3-在线识别">3.在线识别</a>
-<ul>
-<li><a href="#3-1安装portaudio">3.1安装PortAudio</a></li>
-<li><a href="#3-2建立相关目录">3.2建立相关目录</a></li>
-<li><a href="#3-3修改脚本文件">3.3修改脚本文件</a></li>
-<li><a href="#3-4识别">3.4识别</a></li>
-<li><a href="#3-5运行其他模型">3.5运行其他模型</a></li>
-</ul></li>
-<li><a href="#4-算法解读">4.算法解读</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1下载数据集">1.下载数据集</a></li>
+    <li><a href="#2训练">2.训练</a>
+      <ul>
+        <li><a href="#21修改训练脚本">2.1修改训练脚本</a></li>
+        <li><a href="#22运行训练">2.2运行训练</a></li>
+      </ul>
+    </li>
+    <li><a href="#3在线识别">3.在线识别</a>
+      <ul>
+        <li><a href="#31安装portaudio">3.1安装PortAudio</a></li>
+        <li><a href="#32建立相关目录">3.2建立相关目录</a></li>
+        <li><a href="#33修改脚本文件">3.3修改脚本文件</a></li>
+        <li><a href="#34识别">3.4识别</a></li>
+        <li><a href="#35运行其他模型">3.5运行其他模型</a></li>
+      </ul>
+    </li>
+    <li><a href="#4算法解读">4.算法解读</a></li>
+  </ul>
 </nav>
 
       <div class="connect-widget">
@@ -482,36 +481,36 @@
           <h1 itemprop="name">使用thchs30数据集</h1>
 
           <div class="article-style" itemprop="articleBody">
-            
-
-<h2 id="1-下载数据集">1.下载数据集</h2>
-
+            <h2 id="1下载数据集">1.下载数据集</h2>
 <p>Kaldi中文语音识别公共数据集有：</p>
-
 <ul>
-<li><p>1.<code>aishell</code>：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见<code>kaldi-master/egs/aishell</code></p></li>
-
-<li><p>2.<code>gale_mandarin</code>：中文新闻广播数据集(LDC2013S08, LDC2013S08）</p></li>
-
-<li><p>3.<code>hkust</code>：中文电话数据集(LDC2005S15, LDC2005T32)</p></li>
-
-<li><p>4.<code>thchs30</code>：清华大学30小时的数据集，可以在<a href="http://www.openslr.org/18/">http://www.openslr.org/18/</a> 下载</p></li>
+<li>
+<p>1.<code>aishell</code>：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见<code>kaldi-master/egs/aishell</code></p>
+</li>
+<li>
+<p>2.<code>gale_mandarin</code>：中文新闻广播数据集(LDC2013S08, LDC2013S08）</p>
+</li>
+<li>
+<p>3.<code>hkust</code>：中文电话数据集(LDC2005S15, LDC2005T32)</p>
+</li>
+<li>
+<p>4.<code>thchs30</code>：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载</p>
+</li>
 </ul>
-
-<p>这里采用<code>thchs30</code>，从<a href="http://www.openslr.org/18/">http://www.openslr.org/18/</a> 或者参照它的<a href="http://data.cslt.org/thchs30/README.html">README</a>下载三个压缩包：</p>
-
+<p>这里采用<code>thchs30</code>，从http://www.openslr.org/18/ 或者参照它的<a href="http://data.cslt.org/thchs30/README.html">README</a>下载三个压缩包：</p>
 <ul>
-<li><p><a href="http://www.openslr.org/resources/18/data_thchs30.tgz">data_thchs30.tgz </a><a href="speech data and transcripts">6.4G</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz">China</a></p></li>
-
-<li><p><a href="http://www.openslr.org/resources/18/test-noise.tgz">test-noise.tgz </a><a href="standard 0db noisy test data">1.9G</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/test-noise.tgz">China</a></p></li>
-
-<li><p><a href="http://www.openslr.org/resources/18/resource.tgz">resource.tgz </a><a href="supplementary resources, incl. lexicon for training data, noise samples">24M</a>   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/resource.tgz">China</a></p></li>
+<li>
+<p><a href="http://www.openslr.org/resources/18/data_thchs30.tgz">data_thchs30.tgz </a>[6.4G]   ( speech data and transcripts )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz">China</a></p>
+</li>
+<li>
+<p><a href="http://www.openslr.org/resources/18/test-noise.tgz">test-noise.tgz </a>[1.9G]   ( standard 0db noisy test data )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/test-noise.tgz">China</a></p>
+</li>
+<li>
+<p><a href="http://www.openslr.org/resources/18/resource.tgz">resource.tgz </a>[24M]   ( supplementary resources, incl. lexicon for training data, noise samples )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/resource.tgz">China</a></p>
+</li>
 </ul>
-
 <p>在egs/thchs30/s5下新建文件夹<code>thchs30-openslr</code>，把三个文件解压在该文件夹下</p>
-
 <p>这个数据集包含以下内容：</p>
-
 <table>
 <thead>
 <tr>
@@ -521,7 +520,6 @@
 <th>词数</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>train(训练)</td>
@@ -529,14 +527,12 @@
 <td>10000</td>
 <td>198252</td>
 </tr>
-
 <tr>
 <td>dev(开发)</td>
 <td>2:14</td>
 <td>893</td>
 <td>17743</td>
 </tr>
-
 <tr>
 <td>test(测试)</td>
 <td>6:15</td>
@@ -545,287 +541,185 @@
 </tr>
 </tbody>
 </table>
-
 <p>还有训练好的语言模型word.3gram.lm和phone.3gram.lm以及相应的词典lexicon.txt。</p>
-
 <p>其中dev的作用是在某些步骤与train进行交叉验证的，如local/nnet/run_dnn.sh同时用到exp/tri4b_ali和exp/tri4b_ali_cv。训练和测试的目标数据也分为两类：word（词）和phone（音素）。</p>
-
 <ul>
-<li><p><code>local/thchs-30_data_prep.sh</code>：主要工作是从$thchs/data_thchs30（下载的数据）三部分分别生成word.txt（词序列），phone.txt（音素序列），text（与word.txt相同），wav.scp（语音），utt2pk（句子与说话人的映射），spk2utt（说话人与句子的映射）</p></li>
-
-<li><p><code>#produce MFCC features</code>：提取MFCC特征，分为两步，先通过steps/make_mfcc.sh提取MFCC特征，再通过steps/compute_cmvn_stats.sh计算倒谱均值和方差归一化。</p></li>
-
-<li><p><code>#prepare language stuff</code>：构建一个包含训练和解码用到的词的词典。而语言模型已经由王东老师处理好了，如果不打算改语言模型，这段代码也不需要修改。</p>
-
+<li>
+<p><code>local/thchs-30_data_prep.sh</code>：主要工作是从$thchs/data_thchs30（下载的数据）三部分分别生成word.txt（词序列），phone.txt（音素序列），text（与word.txt相同），wav.scp（语音），utt2pk（句子与说话人的映射），spk2utt（说话人与句子的映射）</p>
+</li>
+<li>
+<p><code>#produce MFCC features</code>：提取MFCC特征，分为两步，先通过steps/make_mfcc.sh提取MFCC特征，再通过steps/compute_cmvn_stats.sh计算倒谱均值和方差归一化。</p>
+</li>
+<li>
+<p><code>#prepare language stuff</code>：构建一个包含训练和解码用到的词的词典。而语言模型已经由王东老师处理好了，如果不打算改语言模型，这段代码也不需要修改。</p>
 <ul>
 <li>a)基于词的语言模型包含48k基于三元词的词，从gigaword语料库中随机选择文本信息进行训练得到，训练文本包含772000个句子，总计1800万词，1.15亿汉字</li>
 <li>b)基于音素的语言模型包含218个基于三元音的中文声调，从只有200万字的样本训练得到，之所以选择这么小的样本是因为在模型中尽可能少地保留语言信息，可以使得到的性能更直接地反映声学模型的质量。</li>
 <li>c)这两个语言模型都是由SRILM工具训练得到。</li>
-</ul></li>
 </ul>
-
-<h2 id="2-训练">2.训练</h2>
-
-<h3 id="2-1修改训练脚本">2.1修改训练脚本</h3>
-
+</li>
+</ul>
+<h2 id="2训练">2.训练</h2>
+<h3 id="21修改训练脚本">2.1修改训练脚本</h3>
 <p>1.首先修改<code>s5/cmd.sh</code>脚本，把原脚本注释掉，修改为本地运行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#export train_cmd=queue.pl</span>
+<span style="color:#75715e">#export decode_cmd=&#34;queue.pl --mem 4G&#34;</span>
+<span style="color:#75715e">#export mkgraph_cmd=&#34;queue.pl --mem 8G&#34;</span>
+<span style="color:#75715e">#export cuda_cmd=&#34;queue.pl --gpu 1&#34;</span>
 
-<pre><code class="language-bash">#export train_cmd=queue.pl
-#export decode_cmd=&quot;queue.pl --mem 4G&quot;
-#export mkgraph_cmd=&quot;queue.pl --mem 8G&quot;
-#export cuda_cmd=&quot;queue.pl --gpu 1&quot;
-
-export train_cmd=run.pl
-export decode_cmd=&quot;run.pl --mem 4G&quot;
-export mkgraph_cmd=&quot;run.pl --mem 8G&quot;
-export cuda_cmd=&quot;run.pl --gpu 1&quot;
-</code></pre>
-
-<p>2.然后修改<code>s5/run.sh</code>脚本，需要修改两个地方：</p>
-
+export train_cmd<span style="color:#f92672">=</span>run.pl
+export decode_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 4G&#34;</span>
+export mkgraph_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 8G&#34;</span>
+export cuda_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --gpu 1&#34;</span>
+</code></pre></div><p>2.然后修改<code>s5/run.sh</code>脚本，需要修改两个地方：</p>
 <p>第一个地方是修改并行任务的数量，cpu核心数*2：</p>
-
-<pre><code class="language-bash">  n=8      #parallel jobs
-</code></pre>
-
-<p>第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：</p>
-
-<pre><code class="language-bash">#corpus and trans directory
-#thchs=/nfs/public/materials/data/thchs30-openslr
-thchs=/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
-</code></pre>
-
-<h3 id="2-2运行训练">2.2运行训练</h3>
-
-<pre><code class="language-bash">./run.sh
-</code></pre>
-
-<p>分为几个过程：数据准备，monophone单音素训练， tri1三因素训练， trib2进行lda_mllt特征变换，trib3进行sat自然语言适应，trib4做quick，后面就是dnn了，本地不建议跑dnn。</p>
-
-<div class="alert alert-note">
-  <div>
-    建议将<code>run.sh</code>的几个过程分成多个脚本文件来跑，每段脚本里并发数量<code>n</code>必须相同，有些任务是是并发的<code>&amp;</code>，也就是当前脚本执行完也会继续进行，这些并发任务同样需要大量内存(5~8G)，建议用系统监视器监视当前内存占用，等内存恢复到正常水平后再进行下一段脚本。
-  </div>
-</div>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">n<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>      <span style="color:#75715e">#parallel jobs</span>
+</code></pre></div><p>第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#corpus and trans directory</span>
+<span style="color:#75715e">#thchs=/nfs/public/materials/data/thchs30-openslr</span>
+thchs<span style="color:#f92672">=</span>/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
+</code></pre></div><h3 id="22运行训练">2.2运行训练</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh
+</code></pre></div><p>分为几个过程：数据准备，monophone单音素训练， tri1三因素训练， trib2进行lda_mllt特征变换，trib3进行sat自然语言适应，trib4做quick，后面就是dnn了，本地不建议跑dnn。</p>
+<!-- raw HTML omitted -->
 <p><code>exp</code>目录是得到的结果，比如tri1，<code>decode_test_word/scoring_kaldi/best_wer</code>是它的错误率，36.15%。tri1下的final.mdl是得到的模型的链接文件，要用的是它链接到的具体文件。<code>graph_word</code>里的words.txt和HCLG.fst，一个是字典，一个是有限状态机。这3个文件用来识别。</p>
-
-<h2 id="3-在线识别">3.在线识别</h2>
-
+<h2 id="3在线识别">3.在线识别</h2>
 <p>这里的“在线”是指一句话还没有说完，即还没有将一句话完整的音频传入就开始识别。</p>
-
-<h3 id="3-1安装portaudio">3.1安装PortAudio</h3>
-
+<h3 id="31安装portaudio">3.1安装PortAudio</h3>
 <p>1.先修改<code>tools/extras/install_portaudio.sh</code>，取消对<code>jack</code>的依赖：</p>
-
-<pre><code class="language-bash">#./configure --prefix=`pwd`/install --with-pic
-./configure --prefix=`pwd`/install --with-pic --without-jack
-</code></pre>
-
-<p>2.安装PortAudio：</p>
-
-<pre><code class="language-bash">cd tools
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#./configure --prefix=`pwd`/install --with-pic</span>
+./configure --prefix<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/install --with-pic --without-jack
+</code></pre></div><p>2.安装PortAudio：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd tools
 ./extras/install_portaudio.sh
-</code></pre>
-
-<p>3.编译扩展程序：</p>
-
-<pre><code class="language-bash">cd src
-make ext -j 8
-</code></pre>
-
-<p>生成的文件在src/onlinebin，其中：</p>
-
+</code></pre></div><p>3.编译扩展程序：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd src
+make ext -j <span style="color:#ae81ff">8</span>
+</code></pre></div><p>生成的文件在src/onlinebin，其中：</p>
 <ul>
 <li><code>online-wav-gmm-decode-faster</code> ：从wav文件读取</li>
 <li><code>online-gmm-decode-faster</code>：从麦克风输入声音</li>
 </ul>
-
 <p>4.测试一下麦克风是否正常：</p>
-
-<pre><code class="language-bash">arecord -f cd -r 16000 -d 5 test.wav
-</code></pre>
-
-<p>16位，16khz，录音5秒，保存文件为<code>test.wav</code>。</p>
-
-<h3 id="3-2建立相关目录">3.2建立相关目录</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">arecord -f cd -r <span style="color:#ae81ff">16000</span> -d <span style="color:#ae81ff">5</span> test.wav
+</code></pre></div><p>16位，16khz，录音5秒，保存文件为<code>test.wav</code>。</p>
+<h3 id="32建立相关目录">3.2建立相关目录</h3>
 <p>复制官方online demo文件到<code>thchs30</code>目录，并建立目录：</p>
-
-<pre><code class="language-bash">cp -r egs/voxforge/online_demo egs/thchs30/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp -r egs/voxforge/online_demo egs/thchs30/
 cd egs/thchs30/online_demo
-#audio用于存放测试用的wav文件(16位，16khz)
+<span style="color:#75715e">#audio用于存放测试用的wav文件(16位，16khz)</span>
 mkdir -p online-data/audio
-#从wav文件读取需要用到
+<span style="color:#75715e">#从wav文件读取需要用到</span>
 touch online-data/audio/trans.txt
-#models用于存放模型文件
+<span style="color:#75715e">#models用于存放模型文件</span>
 mkdir -p online-data/models/tri1
-</code></pre>
-
-<p>将<code>s5/exp/tri1</code>中训练得到的：
-* <code>35.mdl</code>：模型文件，<code>final.mdl</code>链接到这个文件
-* <code>graph_word/words.txt</code>：字典
-* <code>graph_word/HCLG.fst</code>：有限状态机</p>
-
+</code></pre></div><p>将<code>s5/exp/tri1</code>中训练得到的：</p>
+<ul>
+<li><code>35.mdl</code>：模型文件，<code>final.mdl</code>链接到这个文件</li>
+<li><code>graph_word/words.txt</code>：字典</li>
+<li><code>graph_word/HCLG.fst</code>：有限状态机</li>
+</ul>
 <p>复制到<code>online-data/models/tri1</code>下。</p>
-
-<h3 id="3-3修改脚本文件">3.3修改脚本文件</h3>
-
+<h3 id="33修改脚本文件">3.3修改脚本文件</h3>
 <p>1.编辑<code>online_demo/run.sh</code>，注释掉如下代码（这段是voxforge例子中下载测试语料和识别模型的。我们测试语料自己准备，模型就是tri1了）：</p>
-
-<pre><code class="language-bash">#if [ ! -s ${data_file}.tar.bz2 ]; then
-#    echo &quot;Downloading test models and data ...&quot;
-#    wget -T 10 -t 3 $data_url;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#if [ ! -s ${data_file}.tar.bz2 ]; then</span>
+<span style="color:#75715e">#    echo &#34;Downloading test models and data ...&#34;</span>
+<span style="color:#75715e">#    wget -T 10 -t 3 $data_url;</span>
 #
-#    if [ ! -s ${data_file}.tar.bz2 ]; then
-#        echo &quot;Download of $data_file has failed!&quot;
-#        exit 1
-#    fi
-#fi
-</code></pre>
-
-<p>2.修改模型路径为tri1：</p>
-
-<pre><code class="language-bash">#ac_model_type=tri2b_mmi
-ac_model_type=tri1
-</code></pre>
-
-<p>3.修改相关文件路径：</p>
-
-<pre><code class="language-bash"> #       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
- #          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \
- #          $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
-         online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
-           --beam=12.0 --acoustic-scale=0.0769 $ac_model/35.mdl $ac_model/HCLG.fst \
-           $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
-</code></pre>
-
-<pre><code class="language-bash">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
-#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
-#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \
-#            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
-#            ark,t:$decode_dir/ali.txt $trans_matrix;;
-        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
-            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
-            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst \
-            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
-            ark,t:$decode_dir/ali.txt $trans_matrix;;
-</code></pre>
-
-<h3 id="3-4识别">3.4识别</h3>
-
+<span style="color:#75715e">#    if [ ! -s ${data_file}.tar.bz2 ]; then</span>
+<span style="color:#75715e">#        echo &#34;Download of $data_file has failed!&#34;</span>
+<span style="color:#75715e">#        exit 1</span>
+<span style="color:#75715e">#    fi</span>
+<span style="color:#75715e">#fi</span>
+</code></pre></div><p>2.修改模型路径为tri1：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#ac_model_type=tri2b_mmi</span>
+ac_model_type<span style="color:#f92672">=</span>tri1
+</code></pre></div><p>3.修改相关文件路径：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \</span>
+ <span style="color:#75715e">#          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \</span>
+ <span style="color:#75715e">#          $ac_model/words.txt &#39;1:2:3:4:5&#39; $trans_matrix;;</span>
+         online-gmm-decode-faster --rt-min<span style="color:#f92672">=</span>0.5 --rt-max<span style="color:#f92672">=</span>0.7 --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>           --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>           $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> $trans_matrix;;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\</span>
+<span style="color:#75715e">#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \</span>
+<span style="color:#75715e">#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \</span>
+<span style="color:#75715e">#            $ac_model/words.txt &#39;1:2:3:4:5&#39; ark,t:$decode_dir/trans.txt \</span>
+<span style="color:#75715e">#            ark,t:$decode_dir/ali.txt $trans_matrix;;</span>
+        online-wav-gmm-decode-faster --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rt-min<span style="color:#f92672">=</span>0.8 --rt-max<span style="color:#f92672">=</span>0.85<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> ark,t:$decode_dir/trans.txt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            ark,t:$decode_dir/ali.txt $trans_matrix;;
+</code></pre></div><h3 id="34识别">3.4识别</h3>
 <p>从麦克风识别：</p>
-
-<pre><code class="language-bash">./run.sh --test-mode live
-</code></pre>
-
-<p>如果提示portaudio错误，可参考<a href="https://blog.csdn.net/u012236368/article/details/71628777">https://blog.csdn.net/u012236368/article/details/71628777</a></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode live
+</code></pre></div><p>如果提示portaudio错误，可参考https://blog.csdn.net/u012236368/article/details/71628777</p>
 <p>识别wav文件：</p>
-
-<pre><code class="language-bash">./run.sh --test-mode simulated
-</code></pre>
-
-<h3 id="3-5运行其他模型">3.5运行其他模型</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode simulated
+</code></pre></div><h3 id="35运行其他模型">3.5运行其他模型</h3>
 <p>tri2b（tri3和tri4同理），把<code>s5/exp/tri2b</code>下的<code>12.mat</code>，<code>35.mdl</code>复制到<code>models/tri2b</code>下，再拷贝其他相应的文件（同tri1的思路），所以/tri2目录下包括如下文件：<code>12.mat</code>、<code>35.mdl</code>、<code>HCLG.fst</code>、<code>words.txt</code>。接着修改run.sh：</p>
-
-<pre><code class="language-bash"># Change this to &quot;tri2a&quot; if you like to test using a ML-trained model
-#ac_model_type=tri2b_mmi
-ac_model_type=tri2b
-</code></pre>
-
-<p>把<code>12.mat</code>引入命令中：</p>
-
-<pre><code class="language-bash">ac_model=${data_file}/models/$ac_model_type
-#trans_matrix=&quot;&quot;
-trans_matrix=&quot;$ac_model/12.mat&quot;
-audio=${data_file}/audio
-</code></pre>
-
-<p>添加2个参数<code>--left-context=3</code> <code>--right-context=3</code>：</p>
-
-<pre><code class="language-bash"> #       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
- #          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \
- #          $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
-         online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
-           --beam=12.0 --acoustic-scale=0.0769 --left-context=3 --right-context=3 $ac_model/35.mdl $ac_model/HCLG.fst \
-           $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
-</code></pre>
-
-<pre><code class="language-bash">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
-#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
-#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \
-#            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
-#            ark,t:$decode_dir/ali.txt $trans_matrix;;
-        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
-            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 --left-context=3 --right-context=3 \
-            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst \
-            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
-            ark,t:$decode_dir/ali.txt $trans_matrix;;
-</code></pre>
-
-<p>从麦克风识别：</p>
-
-<pre><code class="language-bash">./run.sh --test-mode live
-</code></pre>
-
-<p>识别wav文件：</p>
-
-<pre><code class="language-bash">./run.sh --test-mode simulated
-</code></pre>
-
-<p>如果要运行dnn，首先要将nnet1转成nnet2。可以参考<a href="http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2">链接1</a>和<a href="https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/">链接2</a>。</p>
-
-<h2 id="4-算法解读">4.算法解读</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Change this to &#34;tri2a&#34; if you like to test using a ML-trained model</span>
+<span style="color:#75715e">#ac_model_type=tri2b_mmi</span>
+ac_model_type<span style="color:#f92672">=</span>tri2b
+</code></pre></div><p>把<code>12.mat</code>引入命令中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ac_model<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>data_file<span style="color:#e6db74">}</span>/models/$ac_model_type
+<span style="color:#75715e">#trans_matrix=&#34;&#34;</span>
+trans_matrix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$ac_model<span style="color:#e6db74">/12.mat</span><span style="color:#e6db74">&#34;</span>
+audio<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>data_file<span style="color:#e6db74">}</span>/audio
+</code></pre></div><p>添加2个参数<code>--left-context=3</code> <code>--right-context=3</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \</span>
+ <span style="color:#75715e">#          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \</span>
+ <span style="color:#75715e">#          $ac_model/words.txt &#39;1:2:3:4:5&#39; $trans_matrix;;</span>
+         online-gmm-decode-faster --rt-min<span style="color:#f92672">=</span>0.5 --rt-max<span style="color:#f92672">=</span>0.7 --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>           --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 --left-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --right-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>           $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> $trans_matrix;;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\</span>
+<span style="color:#75715e">#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \</span>
+<span style="color:#75715e">#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \</span>
+<span style="color:#75715e">#            $ac_model/words.txt &#39;1:2:3:4:5&#39; ark,t:$decode_dir/trans.txt \</span>
+<span style="color:#75715e">#            ark,t:$decode_dir/ali.txt $trans_matrix;;</span>
+        online-wav-gmm-decode-faster --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rt-min<span style="color:#f92672">=</span>0.8 --rt-max<span style="color:#f92672">=</span>0.85<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 --left-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --right-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> ark,t:$decode_dir/trans.txt <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>            ark,t:$decode_dir/ali.txt $trans_matrix;;
+</code></pre></div><p>从麦克风识别：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode live
+</code></pre></div><p>识别wav文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode simulated
+</code></pre></div><p>如果要运行dnn，首先要将nnet1转成nnet2。可以参考<a href="http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2">链接1</a>和<a href="https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/">链接2</a>。</p>
+<h2 id="4算法解读">4.算法解读</h2>
 <p>1.首先用标准的13维MFCC加上一阶和二阶导数训练单音素GMM系统，采用倒谱均值归一化（CMN）来降低通道效应。然后基于具有由LDA和MLLT变换的特征的单音系统构造三音GMM系统，最后的GMM系统用于为随后的DNN训练生成状态对齐。</p>
-
 <p>2.基于GMM系统提供的对齐来训练DNN系统，特征是40维FBank，并且相邻的帧由11帧窗口（每侧5个窗口）连接。连接的特征被LDA转换，其中维度降低到200。然后应用全局均值和方差归一化以获得DNN输入。DNN架构由4个隐藏层组成，每个层由1200个单元组成，输出层由3386个单元组成。 基线DNN模型用交叉熵的标准训练。 使用随机梯度下降（SGD）算法来执行优化。 将迷你批量大小设定为256，初始学习率设定为0.008。</p>
-
 <p>3.被噪声干扰的语音可以使用基于深度自动编码器（DAE）的噪声消除方法。DAE是自动编码器（AE）的一种特殊实现，通过在模型训练中对输入特征引入随机破坏。已经表明，该模型学习低维度特征的能力非常强大，并且可以用于恢复被噪声破坏的信号。在实践中，DAE被用作前端管道的特定组件。输入是11维Fbank特征（在均值归一化之后），输出是对应于中心帧的噪声消除特征。然后对输出进行LDA变换，提取全局标准化的常规Fbank特征，然后送到DNN声学模型（用纯净语音进行训练）。</p>
-
 <p>训练与解码脚本解读</p>
-
 <p>本节结合官方文档对主要脚本进行解读。
 以下流程中的符号解释：-&gt;表示下一步，{}表示循环，[]表示括号内每一个都要进行一次，()表示不同分支下可能进行的操作 </p>
-
 <p>1.train_mono.sh 用来训练单音子隐马尔科夫模型，一共进行40次迭代，每两次迭代进行一次对齐操作</p>
-
 <p>gmm-init-mono-&gt;compile-train-graphs-&gt;align-equal-compiled-&gt;gmm-est-&gt;
 {gmm-align-compiled-&gt;gmm-acc-stats-ali-&gt;gmm-est}40-&gt;analyze_alignments.sh</p>
-
 <p>2.train_deltas.sh 用来训练与上下文相关的三音子模型</p>
-
 <p>check_phones_compatible.sh-&gt;acc-tree-stats-&gt;sum-tree-stats-&gt;cluster-phones-&gt;compile-questions-&gt;
 build-tree-&gt;gmm-init-model-&gt;gmm-mixup-&gt;convert-ali-&gt;compile-train-graphs-&gt;
 {gmm-align-compiled-&gt;gmm-acc-stats-ali-&gt;gmm-est}35-&gt;analyze_alignments.sh</p>
-
 <p>3.train_lda_mllt.sh 用来进行线性判别分析和最大似然线性转换</p>
-
 <p>check_phones_compatible.sh-&gt;split_data.sh-&gt;ali-to-post-&gt;est-lda-&gt;acc-tree-stats-&gt;sum-tree-stats-&gt;
 cluster-phones-&gt;compile-questions-&gt;build-tree-&gt;gmm-init-model-&gt;convert-ali-&gt;compile-train-graphs-&gt;
 {gmm-align-compiled-&gt;gmm-acc-stats-ali-&gt;gmm-est}35-&gt;analyze_alignments.sh</p>
-
 <p>4.train_sat.sh 用来训练发音人自适应，基于特征空间最大似然线性回归</p>
-
 <p>check_phones_compatible.sh-&gt;ali-to-post-&gt;acc-tree-stats-&gt;sum-tree-stats-&gt;cluster-phones-&gt;compile-questions-&gt;
 build-tree-&gt;gmm-init-model-&gt;gmm-mixup-&gt;convert-ali-&gt;compile-train-graphs-&gt;
 {gmm-align-compiled-&gt;(ali-to-post-&gt;)gmm-acc-stats-ali-&gt;gmm-est}35-&gt;ali-to-post-&gt;
 gmm-est-&gt;analyze_alignments.sh</p>
-
 <p>5.train_quick.sh 用来在现有特征上训练模型。
 对于当前模型中在树构建之后的每个状态，它基于树统计中的计数的重叠判断的相似性来选择旧模型中最接近的状态。</p>
-
 <p>check_phones_compatible.sh-&gt;ali-to-post-&gt;est-lda-&gt;acc-tree-stats-&gt;sum-tree-stats-&gt;
 cluster-phones-&gt;compile-questions-&gt;build-tree-&gt;gmm-init-model-&gt;convert-ali-&gt;compile-train-graphs-&gt;
 {gmm-align-compiled-&gt;gmm-acc-stats-ali-&gt;gmm-est}20-&gt;analyze_alignments.sh</p>
-
 <p>6.run_dnn.sh 用来训练DNN，包括xent和MPE，</p>
-
 <p>{make_fbank.sh-&gt;compute_cmvn_stats.sh}[train,dev,test]-&gt;train.sh-&gt;{decode.sh}[phone,word]-&gt;
 align.sh-&gt;make_denlats.sh-&gt;train_mpe.sh-&gt;{{decode.sh}[phone,word]}3</p>
-
 <p>7.train_mpe.sh 用来训练dnn的序列辨别MEP/sMBR。
 这个阶段训练神经网络以联合优化整个句子，这比帧级训练更接近于一般ASR目标。
 sMBR的目的是最大化从参考转录对齐导出的状态标签的期望正确率，而使用网格框架来表示竞争假设。
@@ -834,43 +728,30 @@ sMBR的目的是最大化从参考转录对齐导出的状态标签的期望正�
 在第一轮迭代后重新生成词图，我们观察到快速收敛。
 我们支持MMI, BMMI, MPE 和sMBR训练。所有的技术在Switchboard 100h集上是相同的，仅仅在sMBR好一点点。
 在sMBR优化中，我们在计算近似正确率的时候忽略了静音帧。</p>
-
 <p>{nnet-train-mpe-sequential}3-&gt;make_priors.sh</p>
-
 <p>8.train_dae.sh 用来实验基于dae的去噪效果</p>
-
 <p>compute_cmvn_stats.sh-&gt;{add-noise-mod.py-&gt;make_fbank.sh-&gt;compute_cmvn_stats.sh}[train,dev,test]-&gt;
 train.sh-&gt;nnet-concat-&gt;{{decode.sh}[phone,word]}[train,dev,test]</p>
-
 <p>9.train.sh 用来训练深度神经网络模型，帧交叉熵训练，该相位训练将帧分类为三音状态的DNN。这是通过小批量随机梯度下降完成的。
 默认使用Sigmoid隐藏单元，Softmax输出单元和完全连接的AffineTransform层，学习率是0.008，小批量的大小为256。
 我们没有使用动量或正则化（注：最佳学习率和隐藏单元的类型不同，sigmoid的值为0.008,tanh为0.00001。
 通过‘–feature-transform’和‘-dbn’将input——transform和预训练的DBN传入此脚本，只有输出层被随机初始化。
 我们使用提前停止来防止过度拟合，为此我们测量交叉验证集合（即保持集合）上的目标函数，
 因此需要两对特征对齐dir来执行监督训练</p>
-
 <p>feat-to-dim-&gt;nnet-initialize-&gt;compute-cmvn-stats-&gt;nnet-forward-&gt;nnet-concat-&gt;cmvn-to-nnet-&gt;
 feat-to-dim-&gt;apply-cmvn-&gt;nnet-forward-&gt;nnet-initialize-&gt;train_scheduler.sh</p>
-
 <p>10.train_scheduler.sh 典型的情况就是，train_scheduler.sh被train.sh调用。
 一开始需要在交叉验证集上运行，主函数需要根据$iter来控制迭代次数和学习率。
 学习率会随着目标函数相对性的提高而变化：
 如果提高大于’start_halving_impr=0.01’，初始化学习率保持常数
 否则学习率在每次迭代中乘以’halving_factor=0.5’来缩小
 最后，如果提高小于’end_halving_impr=0.001’，训练终止。</p>
-
 <p>11.mkgraph.sh 用来建立一个完全的识别网络 </p>
-
 <p>12.decode.sh 用来解码并生成词错率结果 </p>
-
 <p>13.align_si.sh 对制定的数据进行对齐，作为新模型的输入 </p>
-
 <p>14.make_fmllr_feats.sh 用来保存FMLLR特征 </p>
-
 <p>15.pretrain_dbn.sh 深度神经网络预训练脚本 </p>
-
 <p>16.decode_fmllr.sh 对发音人自适应的模型进行解码操作 </p>
-
 <p>17.nnet-train-frmshuff.cc 最普遍使用的神经网络训练工具，执行一次迭代训练。过程：
 –feature-transform 即时特征扩展
 NN输入-目标对的每帧重排
@@ -878,14 +759,11 @@ NN输入-目标对的每帧重排
 支持的每帧目标函数（选项 - 对象函数）：
 Xent：每帧交叉熵
 Mse：每帧均方误差 </p>
-
 <p>18.nnet-forward.cc 通过神经网络转发数据，默认使用CPU。选项：
 –apply-log :产生神经网络的对数输出(比如：得到对数后验概率)
 –no-softmax :从模型中去掉soft-max层
 —class-frame-counts：从声学得分中减去计算对数的计数</p>
-
 <p>专有缩写中文解释</p>
-
 <p>cmvn：倒谱均值和方差归一化
 fft：快速傅里叶变换
 GMM：高斯混合模型
@@ -957,7 +835,7 @@ VTLN：特征级声道长度归一化</p>
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
@@ -1072,7 +950,7 @@ VTLN：特征级声道长度归一化</p>
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

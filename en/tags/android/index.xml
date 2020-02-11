@@ -19,33 +19,32 @@
       
       <guid>https://blog.codist.me/en/docs/android-log/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;首先，在产品目录的init.XXX.rc文件中，添加相应的service，&lt;/p&gt;
-
+&lt;li&gt;首先，在产品目录的init.XXX.rc文件中，添加相应的service，&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;#start log service
-start logd
+ start logd
 
 on property:service.logcat.enable=1
-start logcat_service
+    start logcat_service
 
 on property:service.logcat.enable=0
-stop logcat_service
+    stop logcat_service
 
 #log services
 service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
 
-user root
-group log system
-class main
-   disabled
+    user root
+    group log system
+    class main
+       disabled
 
 service logd /system/bin/sh /system/bin/logd.sh
-user system
-group log
-oneshot
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,&lt;/p&gt;
-
+    user system
+    group log
+    oneshot
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;#!/system/bin/sh
 
 #
@@ -94,9 +93,7 @@ setprop service.logcat.enable 1
 mkdir /data/www
 cp -R /system/var/www/    /data/
 ln -s /storage/external/ /data/www/sdcard
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

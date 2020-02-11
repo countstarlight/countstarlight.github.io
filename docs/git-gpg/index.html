@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -430,14 +430,12 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#1-生成gpg-key">1. 生成GPG key</a></li>
-<li><a href="#2-导出公钥">2.导出公钥</a></li>
-<li><a href="#3-配置git">3.配置git</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1-生成gpg-key">1. 生成GPG key</a></li>
+    <li><a href="#2导出公钥">2.导出公钥</a></li>
+    <li><a href="#3配置git">3.配置git</a></li>
+    <li><a href="#4导入已有文件">4.导入已有文件</a></li>
+  </ul>
 </nav>
 
       <div class="connect-widget">
@@ -470,55 +468,37 @@
           <h1 itemprop="name">Git 用GPG签名</h1>
 
           <div class="article-style" itemprop="articleBody">
-            
-
-<h2 id="1-生成gpg-key">1. 生成GPG key</h2>
-
-<pre><code class="language-bash">gpg --full-generate-key
-</code></pre>
-
-<ul>
+            <h2 id="1-生成gpg-key">1. 生成GPG key</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --full-generate-key
+</code></pre></div><ul>
 <li>加密方式选择RSA and RSA</li>
 <li>过期时间输入：4096</li>
 <li>valid选择默认</li>
 </ul>
-
 <p>填写信息后生成成功。</p>
-
-<h2 id="2-导出公钥">2.导出公钥</h2>
-
-<pre><code class="language-bash">gpg --list-secret-keys --keyid-format LONG
-</code></pre>
-
-<p><code>rsa4096/</code>后面的就是 <code>GPG key ID</code></p>
-
-<pre><code class="language-bash">gpg --armor --export &lt;要导出的GPG Key ID&gt;
-</code></pre>
-
-<p>将得到的一大段公钥粘贴到git平台。</p>
-
-<h2 id="3-配置git">3.配置git</h2>
-
+<h2 id="2导出公钥">2.导出公钥</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --list-secret-keys --keyid-format LONG
+</code></pre></div><p><code>rsa4096/</code>后面的就是 <code>GPG key ID</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --armor --export &lt;要导出的GPG Key ID&gt;
+</code></pre></div><p>将得到的一大段公钥粘贴到git平台。</p>
+<h2 id="3配置git">3.配置git</h2>
 <p>1.设置签名用的<code>GPG key ID</code></p>
-
-<pre><code class="language-bash">git config --global user.signingkey &lt;GPG Key ID&gt;
-</code></pre>
-
-<p>2.设置gpg签名用的程序</p>
-
-<pre><code class="language-bash">git config --global gpg.program gpg
-</code></pre>
-
-<p>3.启用gpg签名</p>
-
-<pre><code class="language-bash">git config --global commit.gpgsign true
-</code></pre>
-
-<p>测试签名</p>
-
-<pre><code class="language-bash">echo &quot;test&quot; | gpg --clearsign
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global user.signingkey &lt;GPG Key ID&gt;
+</code></pre></div><p>2.设置gpg签名用的程序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global gpg.program gpg
+</code></pre></div><p>3.启用gpg签名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global commit.gpgsign true
+</code></pre></div><p>测试签名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;test&#34;</span> | gpg --clearsign
+</code></pre></div><h2 id="4导入已有文件">4.导入已有文件</h2>
+<p>导入备份的 <code>.gnupg</code> 文件夹</p>
+<p>列出文件夹中的签名：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --homedir<span style="color:#f92672">=</span>.gnupg --list-secret-keys
+</code></pre></div><p>导出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --homedir<span style="color:#f92672">=</span>.gnupg --export-secret-keys &lt;GPG Key ID&gt; &gt; old.asc
+</code></pre></div><p>导入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gpg --import old.asc
+</code></pre></div>
           </div>
 
           
@@ -571,7 +551,7 @@
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     由 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 的 <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> 强力驱动
 
@@ -686,7 +666,7 @@
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];

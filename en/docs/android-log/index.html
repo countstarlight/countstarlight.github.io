@@ -84,7 +84,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.747d92dc45be93ba6055a623fe5bcc0a.css">
+  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
 
   
 
@@ -429,7 +429,7 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      
+      <nav id="TableOfContents"></nav>
 
       <div class="connect-widget">
   <ul class="connect-links fa-ul">
@@ -462,33 +462,32 @@
 
           <div class="article-style" itemprop="articleBody">
             <ul>
-<li><p>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</p>
-
+<li>首先，在产品目录的init.XXX.rc文件中，添加相应的service，</li>
+</ul>
 <pre><code>#start log service
-start logd
+ start logd
 
 on property:service.logcat.enable=1
-start logcat_service
+    start logcat_service
 
 on property:service.logcat.enable=0
-stop logcat_service
+    stop logcat_service
 
 #log services
 service logcat_service /system/bin/logcat -b system -b events -b main -b radio -k -n 10 -v threadtime -r5000 -f /data/Logs/Log.0/logcat.log
 
-user root
-group log system
-class main
-   disabled
+    user root
+    group log system
+    class main
+       disabled
 
 service logd /system/bin/sh /system/bin/logd.sh
-user system
-group log
-oneshot
-</code></pre></li>
-
-<li><p>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</p>
-
+    user system
+    group log
+    oneshot
+</code></pre><ul>
+<li>然后，在目标平台的system/bin下添加脚本文件logd.sh，处理存储的log日志，以及设置属性，开启logcat_service,</li>
+</ul>
 <pre><code>#!/system/bin/sh
 
 #
@@ -537,9 +536,7 @@ setprop service.logcat.enable 1
 mkdir /data/www
 cp -R /system/var/www/    /data/
 ln -s /storage/external/ /data/www/sdcard
-</code></pre></li>
-</ul>
-
+</code></pre>
           </div>
 
           
@@ -600,7 +597,7 @@ ln -s /storage/external/ /data/www/sdcard
   
 
   <p class="powered-by">
-    &copy; 2016-2019 Codist &middot; 
+    © 2016-2020 Codist &middot; 
 
     Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
@@ -715,7 +712,7 @@ ln -s /storage/external/ /data/www/sdcard
     
     
     
-    <script src="/js/academic.min.9ef1b53ee2bde6c7f33b150c6ba4d452.js"></script>
+    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
 
     <script>
     var _hmt = _hmt || [];
