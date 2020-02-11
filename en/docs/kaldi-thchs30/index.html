@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
 
   
 
@@ -31,14 +31,12 @@
   <meta name="description" content="1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald">
 
   
-  <link rel="alternate" hreflang="zh" href="https://blog.codist.me/docs/kaldi-thchs30/">
+  <link rel="alternate" hreflang="zh" href="https://codist.me/docs/kaldi-thchs30/">
   
-  <link rel="alternate" hreflang="en-us" href="https://blog.codist.me/en/docs/kaldi-thchs30/">
+  <link rel="alternate" hreflang="en-us" href="https://codist.me/en/docs/kaldi-thchs30/">
 
   
 
-
-  
 
   
   
@@ -48,12 +46,15 @@
 
   
   
+
+  
+  
   
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -64,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -74,51 +75,217 @@
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78646709-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-78646709-1', {});
+
   
-  
-  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://blog.codist.me/en/docs/kaldi-thchs30/">
+  
 
+  <link rel="manifest" href="/en/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://codist.me/en/docs/kaldi-thchs30/">
+
+  
   
   
   
   
     
-    
   
-  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@source_themes">
+  <meta property="twitter:creator" content="@source_themes">
   
   <meta property="og:site_name" content="Codist">
-  <meta property="og:url" content="https://blog.codist.me/en/docs/kaldi-thchs30/">
+  <meta property="og:url" content="https://codist.me/en/docs/kaldi-thchs30/">
   <meta property="og:title" content="使用thchs30数据集 | Codist">
-  <meta property="og:description" content="1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:description" content="1.下载数据集 Kaldi中文语音识别公共数据集有： 1.aishell：AI SHELL公司开源178小时中文语音语料及基本训练脚本，见kald"><meta property="og:image" content="https://codist.me/img/screenshot.png">
+  <meta property="twitter:image" content="https://codist.me/img/screenshot.png"><meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2016-04-18T00:00:00&#43;08:00">
+    
+      <meta property="article:published_time" content="2016-04-18T00:00:00&#43;08:00">
+    
+    <meta property="article:modified_time" content="2016-04-18T00:00:00&#43;08:00">
   
-  <meta property="article:modified_time" content="2016-04-18T00:00:00&#43;08:00">
+
   
+
+
+
+  
+
 
   
 
@@ -136,8 +303,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -155,7 +321,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -172,24 +338,43 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-      <a class="navbar-brand" href="/en/">Codist</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/en/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/en/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -244,41 +429,44 @@
         
 
       
+
+        
       </ul>
-      <ul class="navbar-nav ml-auto">
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
       
 
-        
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
 
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            <i class="fas fa-globe" aria-hidden="true"></i>
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item i18n-active font-weight-bold">
             <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://codist.me/docs/kaldi-thchs30/">
+            <span>中文 (简体)</span>
           </a>
-          <ul class="dropdown-menu">
-            
-            <li class="dropdown-item my-0 py-0 mx-0 px-0">
-              <a href="https://blog.codist.me/docs/kaldi-thchs30/">
-                <span>中文 (简体)</span>
-              </a>
-            </li>
-            
-          </ul>
-        </li>
-        
+          
+        </div>
+      </li>
+      
 
-        
+    </ul>
 
-      </ul>
-
-    </div>
   </div>
 </nav>
 
@@ -294,17 +482,28 @@
 
 
 
+  
+    
+  
+
+
+
+
 <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
   
 </form>
 
 <nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
   
   
   <div class="docs-toc-item">
@@ -475,12 +674,12 @@
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
-      <article class="article" itemscope itemtype="http://schema.org/Article">
+      <article class="article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">使用thchs30数据集</h1>
+          <h1>使用thchs30数据集</h1>
 
-          <div class="article-style" itemprop="articleBody">
+          <div class="article-style">
             <h2 id="1下载数据集">1.下载数据集</h2>
 <p>Kaldi中文语音识别公共数据集有：</p>
 <ul>
@@ -497,16 +696,23 @@
 <p>4.<code>thchs30</code>：清华大学30小时的数据集，可以在http://www.openslr.org/18/ 下载</p>
 </li>
 </ul>
-<p>这里采用<code>thchs30</code>，从http://www.openslr.org/18/ 或者参照它的<a href="http://data.cslt.org/thchs30/README.html">README</a>下载三个压缩包：</p>
+<p>这里采用<code>thchs30</code>，从http://www.openslr.org/18/ 或者参照它的
+<a href="http://data.cslt.org/thchs30/README.html" target="_blank" rel="noopener">README</a>下载三个压缩包：</p>
 <ul>
 <li>
-<p><a href="http://www.openslr.org/resources/18/data_thchs30.tgz">data_thchs30.tgz </a>[6.4G]   ( speech data and transcripts )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz">China</a></p>
+<p>
+<a href="http://www.openslr.org/resources/18/data_thchs30.tgz" target="_blank" rel="noopener">data_thchs30.tgz </a>[6.4G]   ( speech data and transcripts )   Mirrors: 
+<a href="http://cn-mirror.openslr.org/resources/18/data_thchs30.tgz" target="_blank" rel="noopener">China</a></p>
 </li>
 <li>
-<p><a href="http://www.openslr.org/resources/18/test-noise.tgz">test-noise.tgz </a>[1.9G]   ( standard 0db noisy test data )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/test-noise.tgz">China</a></p>
+<p>
+<a href="http://www.openslr.org/resources/18/test-noise.tgz" target="_blank" rel="noopener">test-noise.tgz </a>[1.9G]   ( standard 0db noisy test data )   Mirrors: 
+<a href="http://cn-mirror.openslr.org/resources/18/test-noise.tgz" target="_blank" rel="noopener">China</a></p>
 </li>
 <li>
-<p><a href="http://www.openslr.org/resources/18/resource.tgz">resource.tgz </a>[24M]   ( supplementary resources, incl. lexicon for training data, noise samples )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/18/resource.tgz">China</a></p>
+<p>
+<a href="http://www.openslr.org/resources/18/resource.tgz" target="_blank" rel="noopener">resource.tgz </a>[24M]   ( supplementary resources, incl. lexicon for training data, noise samples )   Mirrors: 
+<a href="http://cn-mirror.openslr.org/resources/18/resource.tgz" target="_blank" rel="noopener">China</a></p>
 </li>
 </ul>
 <p>在egs/thchs30/s5下新建文件夹<code>thchs30-openslr</code>，把三个文件解压在该文件夹下</p>
@@ -562,58 +768,71 @@
 <h2 id="2训练">2.训练</h2>
 <h3 id="21修改训练脚本">2.1修改训练脚本</h3>
 <p>1.首先修改<code>s5/cmd.sh</code>脚本，把原脚本注释掉，修改为本地运行：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#export train_cmd=queue.pl</span>
-<span style="color:#75715e">#export decode_cmd=&#34;queue.pl --mem 4G&#34;</span>
-<span style="color:#75715e">#export mkgraph_cmd=&#34;queue.pl --mem 8G&#34;</span>
-<span style="color:#75715e">#export cuda_cmd=&#34;queue.pl --gpu 1&#34;</span>
+<pre><code class="language-bash">#export train_cmd=queue.pl
+#export decode_cmd=&quot;queue.pl --mem 4G&quot;
+#export mkgraph_cmd=&quot;queue.pl --mem 8G&quot;
+#export cuda_cmd=&quot;queue.pl --gpu 1&quot;
 
-export train_cmd<span style="color:#f92672">=</span>run.pl
-export decode_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 4G&#34;</span>
-export mkgraph_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 8G&#34;</span>
-export cuda_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --gpu 1&#34;</span>
-</code></pre></div><p>2.然后修改<code>s5/run.sh</code>脚本，需要修改两个地方：</p>
+export train_cmd=run.pl
+export decode_cmd=&quot;run.pl --mem 4G&quot;
+export mkgraph_cmd=&quot;run.pl --mem 8G&quot;
+export cuda_cmd=&quot;run.pl --gpu 1&quot;
+</code></pre>
+<p>2.然后修改<code>s5/run.sh</code>脚本，需要修改两个地方：</p>
 <p>第一个地方是修改并行任务的数量，cpu核心数*2：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">n<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>      <span style="color:#75715e">#parallel jobs</span>
-</code></pre></div><p>第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#corpus and trans directory</span>
-<span style="color:#75715e">#thchs=/nfs/public/materials/data/thchs30-openslr</span>
-thchs<span style="color:#f92672">=</span>/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
-</code></pre></div><h3 id="22运行训练">2.2运行训练</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh
-</code></pre></div><p>分为几个过程：数据准备，monophone单音素训练， tri1三因素训练， trib2进行lda_mllt特征变换，trib3进行sat自然语言适应，trib4做quick，后面就是dnn了，本地不建议跑dnn。</p>
-<!-- raw HTML omitted -->
+<pre><code class="language-bash">n=8      #parallel jobs
+</code></pre>
+<p>第二个地方是修改数据集放的位置，修改为上面解压出的目录路径：</p>
+<pre><code class="language-bash">#corpus and trans directory
+#thchs=/nfs/public/materials/data/thchs30-openslr
+thchs=/home/countstarlight/data/Documents/kaldi/egs/thchs30/s5/thchs30-openslr
+</code></pre>
+<h3 id="22运行训练">2.2运行训练</h3>
+<pre><code class="language-bash">./run.sh
+</code></pre>
+<p>分为几个过程：数据准备，monophone单音素训练， tri1三因素训练， trib2进行lda_mllt特征变换，trib3进行sat自然语言适应，trib4做quick，后面就是dnn了，本地不建议跑dnn。</p>
+<div class="alert alert-note">
+  <div>
+    建议将<code>run.sh</code>的几个过程分成多个脚本文件来跑，每段脚本里并发数量<code>n</code>必须相同，有些任务是是并发的<code>&amp;</code>，也就是当前脚本执行完也会继续进行，这些并发任务同样需要大量内存(5~8G)，建议用系统监视器监视当前内存占用，等内存恢复到正常水平后再进行下一段脚本。
+  </div>
+</div>
 <p><code>exp</code>目录是得到的结果，比如tri1，<code>decode_test_word/scoring_kaldi/best_wer</code>是它的错误率，36.15%。tri1下的final.mdl是得到的模型的链接文件，要用的是它链接到的具体文件。<code>graph_word</code>里的words.txt和HCLG.fst，一个是字典，一个是有限状态机。这3个文件用来识别。</p>
 <h2 id="3在线识别">3.在线识别</h2>
 <p>这里的“在线”是指一句话还没有说完，即还没有将一句话完整的音频传入就开始识别。</p>
 <h3 id="31安装portaudio">3.1安装PortAudio</h3>
 <p>1.先修改<code>tools/extras/install_portaudio.sh</code>，取消对<code>jack</code>的依赖：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#./configure --prefix=`pwd`/install --with-pic</span>
-./configure --prefix<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/install --with-pic --without-jack
-</code></pre></div><p>2.安装PortAudio：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd tools
+<pre><code class="language-bash">#./configure --prefix=`pwd`/install --with-pic
+./configure --prefix=`pwd`/install --with-pic --without-jack
+</code></pre>
+<p>2.安装PortAudio：</p>
+<pre><code class="language-bash">cd tools
 ./extras/install_portaudio.sh
-</code></pre></div><p>3.编译扩展程序：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd src
-make ext -j <span style="color:#ae81ff">8</span>
-</code></pre></div><p>生成的文件在src/onlinebin，其中：</p>
+</code></pre>
+<p>3.编译扩展程序：</p>
+<pre><code class="language-bash">cd src
+make ext -j 8
+</code></pre>
+<p>生成的文件在src/onlinebin，其中：</p>
 <ul>
 <li><code>online-wav-gmm-decode-faster</code> ：从wav文件读取</li>
 <li><code>online-gmm-decode-faster</code>：从麦克风输入声音</li>
 </ul>
 <p>4.测试一下麦克风是否正常：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">arecord -f cd -r <span style="color:#ae81ff">16000</span> -d <span style="color:#ae81ff">5</span> test.wav
-</code></pre></div><p>16位，16khz，录音5秒，保存文件为<code>test.wav</code>。</p>
+<pre><code class="language-bash">arecord -f cd -r 16000 -d 5 test.wav
+</code></pre>
+<p>16位，16khz，录音5秒，保存文件为<code>test.wav</code>。</p>
 <h3 id="32建立相关目录">3.2建立相关目录</h3>
 <p>复制官方online demo文件到<code>thchs30</code>目录，并建立目录：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp -r egs/voxforge/online_demo egs/thchs30/
+<pre><code class="language-bash">cp -r egs/voxforge/online_demo egs/thchs30/
 cd egs/thchs30/online_demo
-<span style="color:#75715e">#audio用于存放测试用的wav文件(16位，16khz)</span>
+#audio用于存放测试用的wav文件(16位，16khz)
 mkdir -p online-data/audio
-<span style="color:#75715e">#从wav文件读取需要用到</span>
+#从wav文件读取需要用到
 touch online-data/audio/trans.txt
-<span style="color:#75715e">#models用于存放模型文件</span>
+#models用于存放模型文件
 mkdir -p online-data/models/tri1
-</code></pre></div><p>将<code>s5/exp/tri1</code>中训练得到的：</p>
+</code></pre>
+<p>将<code>s5/exp/tri1</code>中训练得到的：</p>
 <ul>
 <li><code>35.mdl</code>：模型文件，<code>final.mdl</code>链接到这个文件</li>
 <li><code>graph_word/words.txt</code>：字典</li>
@@ -622,73 +841,87 @@ mkdir -p online-data/models/tri1
 <p>复制到<code>online-data/models/tri1</code>下。</p>
 <h3 id="33修改脚本文件">3.3修改脚本文件</h3>
 <p>1.编辑<code>online_demo/run.sh</code>，注释掉如下代码（这段是voxforge例子中下载测试语料和识别模型的。我们测试语料自己准备，模型就是tri1了）：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#if [ ! -s ${data_file}.tar.bz2 ]; then</span>
-<span style="color:#75715e">#    echo &#34;Downloading test models and data ...&#34;</span>
-<span style="color:#75715e">#    wget -T 10 -t 3 $data_url;</span>
+<pre><code class="language-bash">#if [ ! -s ${data_file}.tar.bz2 ]; then
+#    echo &quot;Downloading test models and data ...&quot;
+#    wget -T 10 -t 3 $data_url;
 #
-<span style="color:#75715e">#    if [ ! -s ${data_file}.tar.bz2 ]; then</span>
-<span style="color:#75715e">#        echo &#34;Download of $data_file has failed!&#34;</span>
-<span style="color:#75715e">#        exit 1</span>
-<span style="color:#75715e">#    fi</span>
-<span style="color:#75715e">#fi</span>
-</code></pre></div><p>2.修改模型路径为tri1：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#ac_model_type=tri2b_mmi</span>
-ac_model_type<span style="color:#f92672">=</span>tri1
-</code></pre></div><p>3.修改相关文件路径：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \</span>
- <span style="color:#75715e">#          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \</span>
- <span style="color:#75715e">#          $ac_model/words.txt &#39;1:2:3:4:5&#39; $trans_matrix;;</span>
-         online-gmm-decode-faster --rt-min<span style="color:#f92672">=</span>0.5 --rt-max<span style="color:#f92672">=</span>0.7 --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>           --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>           $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> $trans_matrix;;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\</span>
-<span style="color:#75715e">#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \</span>
-<span style="color:#75715e">#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \</span>
-<span style="color:#75715e">#            $ac_model/words.txt &#39;1:2:3:4:5&#39; ark,t:$decode_dir/trans.txt \</span>
-<span style="color:#75715e">#            ark,t:$decode_dir/ali.txt $trans_matrix;;</span>
-        online-wav-gmm-decode-faster --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rt-min<span style="color:#f92672">=</span>0.8 --rt-max<span style="color:#f92672">=</span>0.85<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> ark,t:$decode_dir/trans.txt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            ark,t:$decode_dir/ali.txt $trans_matrix;;
-</code></pre></div><h3 id="34识别">3.4识别</h3>
+#    if [ ! -s ${data_file}.tar.bz2 ]; then
+#        echo &quot;Download of $data_file has failed!&quot;
+#        exit 1
+#    fi
+#fi
+</code></pre>
+<p>2.修改模型路径为tri1：</p>
+<pre><code class="language-bash">#ac_model_type=tri2b_mmi
+ac_model_type=tri1
+</code></pre>
+<p>3.修改相关文件路径：</p>
+<pre><code class="language-bash"> #       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
+ #          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \
+ #          $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
+         online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
+           --beam=12.0 --acoustic-scale=0.0769 $ac_model/35.mdl $ac_model/HCLG.fst \
+           $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
+</code></pre>
+<pre><code class="language-bash">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
+#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
+#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \
+#            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
+#            ark,t:$decode_dir/ali.txt $trans_matrix;;
+        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
+            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
+            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst \
+            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
+            ark,t:$decode_dir/ali.txt $trans_matrix;;
+</code></pre>
+<h3 id="34识别">3.4识别</h3>
 <p>从麦克风识别：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode live
-</code></pre></div><p>如果提示portaudio错误，可参考https://blog.csdn.net/u012236368/article/details/71628777</p>
+<pre><code class="language-bash">./run.sh --test-mode live
+</code></pre>
+<p>如果提示portaudio错误，可参考https://blog.csdn.net/u012236368/article/details/71628777</p>
 <p>识别wav文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode simulated
-</code></pre></div><h3 id="35运行其他模型">3.5运行其他模型</h3>
+<pre><code class="language-bash">./run.sh --test-mode simulated
+</code></pre>
+<h3 id="35运行其他模型">3.5运行其他模型</h3>
 <p>tri2b（tri3和tri4同理），把<code>s5/exp/tri2b</code>下的<code>12.mat</code>，<code>35.mdl</code>复制到<code>models/tri2b</code>下，再拷贝其他相应的文件（同tri1的思路），所以/tri2目录下包括如下文件：<code>12.mat</code>、<code>35.mdl</code>、<code>HCLG.fst</code>、<code>words.txt</code>。接着修改run.sh：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Change this to &#34;tri2a&#34; if you like to test using a ML-trained model</span>
-<span style="color:#75715e">#ac_model_type=tri2b_mmi</span>
-ac_model_type<span style="color:#f92672">=</span>tri2b
-</code></pre></div><p>把<code>12.mat</code>引入命令中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ac_model<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>data_file<span style="color:#e6db74">}</span>/models/$ac_model_type
-<span style="color:#75715e">#trans_matrix=&#34;&#34;</span>
-trans_matrix<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$ac_model<span style="color:#e6db74">/12.mat</span><span style="color:#e6db74">&#34;</span>
-audio<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>data_file<span style="color:#e6db74">}</span>/audio
-</code></pre></div><p>添加2个参数<code>--left-context=3</code> <code>--right-context=3</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e">#       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \</span>
- <span style="color:#75715e">#          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \</span>
- <span style="color:#75715e">#          $ac_model/words.txt &#39;1:2:3:4:5&#39; $trans_matrix;;</span>
-         online-gmm-decode-faster --rt-min<span style="color:#f92672">=</span>0.5 --rt-max<span style="color:#f92672">=</span>0.7 --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>           --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 --left-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --right-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>           $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> $trans_matrix;;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\</span>
-<span style="color:#75715e">#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \</span>
-<span style="color:#75715e">#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \</span>
-<span style="color:#75715e">#            $ac_model/words.txt &#39;1:2:3:4:5&#39; ark,t:$decode_dir/trans.txt \</span>
-<span style="color:#75715e">#            ark,t:$decode_dir/ali.txt $trans_matrix;;</span>
-        online-wav-gmm-decode-faster --verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> --rt-min<span style="color:#f92672">=</span>0.8 --rt-max<span style="color:#f92672">=</span>0.85<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span> --beam<span style="color:#f92672">=</span>12.0 --acoustic-scale<span style="color:#f92672">=</span>0.0769 --left-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> --right-context<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            $ac_model/words.txt <span style="color:#e6db74">&#39;1:2:3:4:5&#39;</span> ark,t:$decode_dir/trans.txt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>            ark,t:$decode_dir/ali.txt $trans_matrix;;
-</code></pre></div><p>从麦克风识别：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode live
-</code></pre></div><p>识别wav文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh --test-mode simulated
-</code></pre></div><p>如果要运行dnn，首先要将nnet1转成nnet2。可以参考<a href="http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2">链接1</a>和<a href="https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/">链接2</a>。</p>
+<pre><code class="language-bash"># Change this to &quot;tri2a&quot; if you like to test using a ML-trained model
+#ac_model_type=tri2b_mmi
+ac_model_type=tri2b
+</code></pre>
+<p>把<code>12.mat</code>引入命令中：</p>
+<pre><code class="language-bash">ac_model=${data_file}/models/$ac_model_type
+#trans_matrix=&quot;&quot;
+trans_matrix=&quot;$ac_model/12.mat&quot;
+audio=${data_file}/audio
+</code></pre>
+<p>添加2个参数<code>--left-context=3</code> <code>--right-context=3</code>：</p>
+<pre><code class="language-bash"> #       online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
+ #          --beam=12.0 --acoustic-scale=0.0769 $ac_model/model $ac_model/HCLG.fst \
+ #          $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
+         online-gmm-decode-faster --rt-min=0.5 --rt-max=0.7 --max-active=4000 \
+           --beam=12.0 --acoustic-scale=0.0769 --left-context=3 --right-context=3 $ac_model/35.mdl $ac_model/HCLG.fst \
+           $ac_model/words.txt '1:2:3:4:5' $trans_matrix;;
+</code></pre>
+<pre><code class="language-bash">#        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
+#            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \
+#            scp:$decode_dir/input.scp $ac_model/model $ac_model/HCLG.fst \
+#            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
+#            ark,t:$decode_dir/ali.txt $trans_matrix;;
+        online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\
+            --max-active=4000 --beam=12.0 --acoustic-scale=0.0769 --left-context=3 --right-context=3 \
+            scp:$decode_dir/input.scp $ac_model/35.mdl $ac_model/HCLG.fst \
+            $ac_model/words.txt '1:2:3:4:5' ark,t:$decode_dir/trans.txt \
+            ark,t:$decode_dir/ali.txt $trans_matrix;;
+</code></pre>
+<p>从麦克风识别：</p>
+<pre><code class="language-bash">./run.sh --test-mode live
+</code></pre>
+<p>识别wav文件：</p>
+<pre><code class="language-bash">./run.sh --test-mode simulated
+</code></pre>
+<p>如果要运行dnn，首先要将nnet1转成nnet2。可以参考
+<a href="http://kaldi-asr.org/doc/dnn1.html#dnn1_conversion_to_dnn2" target="_blank" rel="noopener">链接1</a>和
+<a href="https://sourceforge.net/p/kaldi/discussion/1355348/thread/1ff78ec8/" target="_blank" rel="noopener">链接2</a>。</p>
 <h2 id="4算法解读">4.算法解读</h2>
 <p>1.首先用标准的13维MFCC加上一阶和二阶导数训练单音素GMM系统，采用倒谱均值归一化（CMN）来降低通道效应。然后基于具有由LDA和MLLT变换的特征的单音系统构造三音GMM系统，最后的GMM系统用于为随后的DNN训练生成状态对齐。</p>
 <p>2.基于GMM系统提供的对齐来训练DNN系统，特征是40维FBank，并且相邻的帧由11帧窗口（每侧5个窗口）连接。连接的特征被LDA转换，其中维度降低到200。然后应用全局均值和方差归一化以获得DNN输入。DNN架构由4个隐藏层组成，每个层由1200个单元组成，输出层由3386个单元组成。 基线DNN模型用交叉熵的标准训练。 使用随机梯度下降（SGD）算法来执行优化。 将迷你批量大小设定为256，初始学习率设定为0.008。</p>
@@ -815,7 +1048,13 @@ VTLN：特征级声道长度归一化</p>
         </div>
 
         <div class="body-footer">
-          Last updated on Apr 18, 2016
+          <p>Last updated on Apr 18, 2016</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -837,7 +1076,7 @@ VTLN：特征级声道长度归一化</p>
   <p class="powered-by">
     © 2016-2020 Codist &middot; 
 
-    Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+    Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
     
   </p>
@@ -853,25 +1092,24 @@ VTLN：特征级声道长度归一化</p>
 
     
     
-
-    
-    
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/plaintext.min.js"></script>
         
       
 
-      
-      
     
 
     
@@ -879,22 +1117,23 @@ VTLN：特征级声道长度归一化</p>
 
     
     
+    <script>const code_highlighting = true;</script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const isSiteThemeDark = false;</script>
     
 
+    
+    
+    
+    
     
     
     <script>
-      const search_index_filename = "/en/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "results found",
-        'no_results': "No results found"
-      };
+      const search_config = {"indexURI":"/en/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
       const content_type = {
         'post': "Posts",
         'project': "Projects",
@@ -938,6 +1177,9 @@ VTLN：特征级声道长度归一化</p>
 
     
     
+
+    
+    
     
     
     
@@ -950,7 +1192,7 @@ VTLN：特征级声道长度归一化</p>
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     <script>
     var _hmt = _hmt || [];
@@ -963,6 +1205,7 @@ VTLN：特征级声道长度归一化</p>
 </script>
 
 
+  
   
 
   

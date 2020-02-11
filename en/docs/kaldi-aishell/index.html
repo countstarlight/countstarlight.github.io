@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
 
   
 
@@ -31,14 +31,12 @@
   <meta name="description" content="1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载">
 
   
-  <link rel="alternate" hreflang="zh" href="https://blog.codist.me/docs/kaldi-aishell/">
+  <link rel="alternate" hreflang="zh" href="https://codist.me/docs/kaldi-aishell/">
   
-  <link rel="alternate" hreflang="en-us" href="https://blog.codist.me/en/docs/kaldi-aishell/">
+  <link rel="alternate" hreflang="en-us" href="https://codist.me/en/docs/kaldi-aishell/">
 
   
 
-
-  
 
   
   
@@ -48,12 +46,15 @@
 
   
   
+
+  
+  
   
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -64,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -74,51 +75,217 @@
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78646709-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-78646709-1', {});
+
   
-  
-  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://blog.codist.me/en/docs/kaldi-aishell/">
+  
 
+  <link rel="manifest" href="/en/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://codist.me/en/docs/kaldi-aishell/">
+
+  
   
   
   
   
     
-    
   
-  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@source_themes">
+  <meta property="twitter:creator" content="@source_themes">
   
   <meta property="og:site_name" content="Codist">
-  <meta property="og:url" content="https://blog.codist.me/en/docs/kaldi-aishell/">
+  <meta property="og:url" content="https://codist.me/en/docs/kaldi-aishell/">
   <meta property="og:title" content="使用aishell数据集 | Codist">
-  <meta property="og:description" content="1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
+  <meta property="og:description" content="1.安装依赖 安装train_lm.sh： cd tools ./extras/install_kaldi_lm.sh 2.获取数据集 和thchs30类似，参照egs/aishell/README.txt，手动下载"><meta property="og:image" content="https://codist.me/img/screenshot.png">
+  <meta property="twitter:image" content="https://codist.me/img/screenshot.png"><meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2017-12-03T00:00:00&#43;08:00">
+    
+      <meta property="article:published_time" content="2017-12-03T00:00:00&#43;08:00">
+    
+    <meta property="article:modified_time" content="2017-12-03T00:00:00&#43;08:00">
   
-  <meta property="article:modified_time" content="2017-12-03T00:00:00&#43;08:00">
+
   
+
+
+
+  
+
 
   
 
@@ -136,8 +303,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -155,7 +321,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -172,24 +338,43 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-      <a class="navbar-brand" href="/en/">Codist</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/en/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/en/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -244,41 +429,44 @@
         
 
       
+
+        
       </ul>
-      <ul class="navbar-nav ml-auto">
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
       
 
-        
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
 
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            <i class="fas fa-globe" aria-hidden="true"></i>
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item i18n-active font-weight-bold">
             <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://codist.me/docs/kaldi-aishell/">
+            <span>中文 (简体)</span>
           </a>
-          <ul class="dropdown-menu">
-            
-            <li class="dropdown-item my-0 py-0 mx-0 px-0">
-              <a href="https://blog.codist.me/docs/kaldi-aishell/">
-                <span>中文 (简体)</span>
-              </a>
-            </li>
-            
-          </ul>
-        </li>
-        
+          
+        </div>
+      </li>
+      
 
-        
+    </ul>
 
-      </ul>
-
-    </div>
   </div>
 </nav>
 
@@ -294,17 +482,28 @@
 
 
 
+  
+    
+  
+
+
+
+
 <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
   
 </form>
 
 <nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
   
   
   <div class="docs-toc-item">
@@ -472,109 +671,122 @@
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
-      <article class="article" itemscope itemtype="http://schema.org/Article">
+      <article class="article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">使用aishell数据集</h1>
+          <h1>使用aishell数据集</h1>
 
-          <div class="article-style" itemprop="articleBody">
+          <div class="article-style">
             <h2 id="1安装依赖">1.安装依赖</h2>
 <p>安装<code>train_lm.sh</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd tools
+<pre><code class="language-bash">cd tools
 ./extras/install_kaldi_lm.sh
-</code></pre></div><h2 id="2获取数据集">2.获取数据集</h2>
+</code></pre>
+<h2 id="2获取数据集">2.获取数据集</h2>
 <p>和thchs30类似，参照<code>egs/aishell/README.txt</code>，手动下载数据集或运行<code>s5/run.sh</code>会自动下载并解压缩数据集，这里只演示手动下载数据集。</p>
 <p>访问http://www.openslr.org/33/ ，下载两个压缩包：</p>
-<p><a href="http://www.openslr.org/resources/33/data_aishell.tgz">data_aishell.tgz </a>[15G]   ( speech data and transcripts )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/data_aishell.tgz">China</a><br>
-<a href="http://www.openslr.org/resources/33/resource_aishell.tgz">resource_aishell.tgz </a>[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: <a href="http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz">China</a></p>
+<p>
+<a href="http://www.openslr.org/resources/33/data_aishell.tgz" target="_blank" rel="noopener">data_aishell.tgz </a>[15G]   ( speech data and transcripts )   Mirrors: 
+<a href="http://cn-mirror.openslr.org/resources/33/data_aishell.tgz" target="_blank" rel="noopener">China</a><br>
+
+<a href="http://www.openslr.org/resources/33/resource_aishell.tgz" target="_blank" rel="noopener">resource_aishell.tgz </a>[1.2M]   ( supplementary resources, incl. lexicon, speaker info )   Mirrors: 
+<a href="http://cn-mirror.openslr.org/resources/33/resource_aishell.tgz" target="_blank" rel="noopener">China</a></p>
 <p>下载解压缩到一个目录，这里解压缩到<code>aishell-openslr</code></p>
 <p><code>aishell-openslr/data_aishell/wav</code>里的压缩包需要都解压出来，创建脚本<code>local/untar.sh</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-remove_archive<span style="color:#f92672">=</span>false
+<pre><code class="language-bash">#!/bin/bash
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> --remove-archive <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  remove_archive<span style="color:#f92672">=</span>true
+remove_archive=false
+
+if [ &quot;$1&quot; == --remove-archive ]; then
+  remove_archive=true
   shift
-<span style="color:#66d9ef">fi</span>
+fi
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -ne <span style="color:#ae81ff">3</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Usage: </span>$0<span style="color:#e6db74"> &lt;data-base&gt;</span><span style="color:#e6db74">&#34;</span>
-  echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">e.g.: </span>$0<span style="color:#e6db74"> /export/a05/xna/data</span><span style="color:#e6db74">&#34;</span>
-<span style="color:#66d9ef">fi</span>
+if [ $# -ne 3 ]; then
+  echo &quot;Usage: $0 &lt;data-base&gt;&quot;
+  echo &quot;e.g.: $0 /export/a05/xna/data&quot;
+fi
 
-data<span style="color:#f92672">=</span>$1
-part<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data_aishell&#34;</span>
+data=$1
+part=&quot;data_aishell&quot;
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d <span style="color:#e6db74">&#34;</span>$data<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">: no such directory </span>$data<span style="color:#e6db74">&#34;</span>
+if [ ! -d &quot;$data&quot; ]; then
+  echo &quot;$0: no such directory $data&quot;
   exit 1;
-<span style="color:#66d9ef">fi</span>
+fi
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f $data/$part/.complete <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-  echo <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">: data part </span>$part<span style="color:#e6db74"> was already successfully extracted, nothing to do.</span><span style="color:#e6db74">&#34;</span>
+if [ -f $data/$part/.complete ]; then
+  echo &quot;$0: data part $part was already successfully extracted, nothing to do.&quot;
   exit 0;
-<span style="color:#66d9ef">fi</span>
+fi
 
 touch $data/$part/.complete
 
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $part <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;data_aishell&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+if [ $part == &quot;data_aishell&quot; ]; then
   cd $data/$part/wav
-  <span style="color:#66d9ef">for</span> wav in ./*.tar.gz; <span style="color:#66d9ef">do</span>
-    echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Extracting wav from </span>$wav<span style="color:#e6db74">&#34;</span>
-    tar -zxf $wav <span style="color:#f92672">&amp;&amp;</span> rm $wav
-  <span style="color:#66d9ef">done</span>
-<span style="color:#66d9ef">fi</span>
+  for wav in ./*.tar.gz; do
+    echo &quot;Extracting wav from $wav&quot;
+    tar -zxf $wav &amp;&amp; rm $wav
+  done
+fi
 
-echo <span style="color:#e6db74">&#34;</span>$0<span style="color:#e6db74">: Successfully downloaded and un-tarred </span>$data<span style="color:#e6db74">/</span>$part<span style="color:#e6db74">.tgz</span><span style="color:#e6db74">&#34;</span>
+echo &quot;$0: Successfully downloaded and un-tarred $data/$part.tgz&quot;
 
 exit 0;
-</code></pre></div><p>修改训练脚本<code>run.sh</code>：</p>
+</code></pre>
+<p>修改训练脚本<code>run.sh</code>：</p>
 <p>修改数据集存放路径</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#data=/export/a05/xna/data</span>
-data<span style="color:#f92672">=</span>aishell-openslr <span style="color:#75715e">#替换为你解压缩出数据集的路径</span>
-data_url<span style="color:#f92672">=</span>www.openslr.org/resources/33
-</code></pre></div><p>修改下载解压缩数据集为我们新建的解压缩脚本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#local/download_and_untar.sh $data $data_url data_aishell || exit 1;</span>
-<span style="color:#75715e">#local/download_and_untar.sh $data $data_url resource_aishell || exit 1;</span>
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
+</code></pre>
+<p>修改下载解压缩数据集为我们新建的解压缩脚本</p>
+<pre><code class="language-bash">#local/download_and_untar.sh $data $data_url data_aishell || exit 1;
+#local/download_and_untar.sh $data $data_url resource_aishell || exit 1;
 
-local/untar.sh $data <span style="color:#f92672">||</span> exit 1;
-</code></pre></div><p>这样在首次运行训练脚本时会执行我们的解压缩脚本，对wav文件进行批量解压缩</p>
+local/untar.sh $data || exit 1;
+</code></pre>
+<p>这样在首次运行训练脚本时会执行我们的解压缩脚本，对wav文件进行批量解压缩</p>
 <h2 id="3训练">3.训练</h2>
 <h3 id="31修改训练脚本">3.1修改训练脚本</h3>
 <p>修改<code>cmd.sh</code>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#export train_cmd=&#34;queue.pl --mem 2G&#34;</span>
-<span style="color:#75715e">#export decode_cmd=&#34;queue.pl --mem 4G&#34;</span>
-<span style="color:#75715e">#export mkgraph_cmd=&#34;queue.pl --mem 8G&#34;</span>
+<pre><code class="language-bash">#export train_cmd=&quot;queue.pl --mem 2G&quot;
+#export decode_cmd=&quot;queue.pl --mem 4G&quot;
+#export mkgraph_cmd=&quot;queue.pl --mem 8G&quot;
 
-export train_cmd<span style="color:#f92672">=</span>run.pl
-export decode_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 4G&#34;</span>
-export mkgraph_cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;run.pl --mem 8G&#34;</span>
-</code></pre></div><p>和thchs30一样，建议对训练脚本<code>run.sh</code>分成多个文件，run1.sh&hellip;，分次执行，公共的内容是：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#data=/export/a05/xna/data</span>
-data<span style="color:#f92672">=</span>aishell-openslr <span style="color:#75715e">#替换为你解压缩出数据集的路径</span>
-data_url<span style="color:#f92672">=</span>www.openslr.org/resources/33
+export train_cmd=run.pl
+export decode_cmd=&quot;run.pl --mem 4G&quot;
+export mkgraph_cmd=&quot;run.pl --mem 8G&quot;
+</code></pre>
+<p>和thchs30一样，建议对训练脚本<code>run.sh</code>分成多个文件，run1.sh&hellip;，分次执行，公共的内容是：</p>
+<pre><code class="language-bash">#data=/export/a05/xna/data
+data=aishell-openslr #替换为你解压缩出数据集的路径
+data_url=www.openslr.org/resources/33
 
 . ./cmd.sh
-</code></pre></div><h3 id="32训练">3.2训练</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./run.sh <span style="color:#75715e"># run1.sh run2.sh ...</span>
-</code></pre></div><h2 id="4识别--在线解码">4.识别&ndash;在线解码</h2>
+</code></pre>
+<h3 id="32训练">3.2训练</h3>
+<pre><code class="language-bash">./run.sh # run1.sh run2.sh ...
+</code></pre>
+<h2 id="4识别--在线解码">4.识别&ndash;在线解码</h2>
 <p>以aishell的<code>chain</code>模型为例</p>
 <h3 id="41生成配置文件">4.1生成配置文件</h3>
 <p>所有操作都在<code>aishell/s5</code>下</p>
 <h4 id="411使用nnet3模型">4.1.1使用<code>nnet3</code>模型</h4>
 <p>1.建立需要的软链接：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd exp/nnet3/tdnn_sp
+<pre><code class="language-bash">cd exp/nnet3/tdnn_sp
 ln -s 0.mdl final.mdl
-</code></pre></div><p>2.生成配置文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./steps/online/nnet3/prepare_online_decoding.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --add-pitch true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --mfcc-config conf/mfcc_hires.conf <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> data/lang <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/nnet3/extractor <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/nnet3/tdnn_sp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/nnet3/nnet_online
-</code></pre></div><ul>
+</code></pre>
+<p>2.生成配置文件</p>
+<pre><code class="language-bash">./steps/online/nnet3/prepare_online_decoding.sh \
+ --add-pitch true \
+ --mfcc-config conf/mfcc_hires.conf \
+ data/lang \
+ exp/nnet3/extractor \
+ exp/nnet3/tdnn_sp \
+ exp/nnet3/nnet_online
+</code></pre>
+<ul>
 <li>
 <p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p>
 </li>
@@ -592,14 +804,15 @@ ln -s 0.mdl final.mdl
 </li>
 </ul>
 <h4 id="412使用chain模型未经测试">4.1.2使用<code>chain</code>模型(未经测试)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./steps/online/nnet3/prepare_online_decoding.sh <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --add-pitch true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> --mfcc-config conf/mfcc_hires.conf <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> data/lang <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/nnet3/extractor <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/chain/tdnn_1a_sp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span> exp/chain/nnet_online
-</code></pre></div><ul>
+<pre><code class="language-bash">./steps/online/nnet3/prepare_online_decoding.sh \
+ --add-pitch true \
+ --mfcc-config conf/mfcc_hires.conf \
+ data/lang \
+ exp/nnet3/extractor \
+ exp/chain/tdnn_1a_sp \
+ exp/chain/nnet_online
+</code></pre>
+<ul>
 <li>
 <p><code>--add-pitch</code>：aishell的nnet3和chain模型输入的特征在MFCC的基础上还加入了pitch特征，反应了音高的信息</p>
 </li>
@@ -618,44 +831,46 @@ ln -s 0.mdl final.mdl
 </ul>
 <h3 id="42解码">4.2解码</h3>
 <h4 id="421使用nnet3模型未经测试">4.2.1使用<code>nnet3</code>模型(未经测试)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">online2-wav-nnet3-latgen-faster <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --config<span style="color:#f92672">=</span>exp/nnet3/nnet_online/conf/online.conf <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --do-endpointing<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --frames-per-chunk<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --extra-left-context-initial<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --online<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --frame-subsampling-factor<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --min-active<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">7000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --beam<span style="color:#f92672">=</span>15.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --lattice-beam<span style="color:#f92672">=</span>6.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --acoustic-scale<span style="color:#f92672">=</span>1.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --word-symbol-table<span style="color:#f92672">=</span>s5/data/lang/words.txt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  s5/exp/chain/tdnn_1a_sp/final.mdl <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  ark:s5/data/test/spk2utt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  scp:s5/data/test/wav.scp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  ark,t:20190308.txt
-</code></pre></div><h4 id="422使用chain模型未经测试">4.2.2使用<code>chain</code>模型(未经测试)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">online2-wav-nnet3-latgen-faster <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --config<span style="color:#f92672">=</span>s5/exp/chain/nnet_online/conf/online.conf <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --do-endpointing<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --frames-per-chunk<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --extra-left-context-initial<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --online<span style="color:#f92672">=</span>true <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --frame-subsampling-factor<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --min-active<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --max-active<span style="color:#f92672">=</span><span style="color:#ae81ff">7000</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --beam<span style="color:#f92672">=</span>15.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --lattice-beam<span style="color:#f92672">=</span>6.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --acoustic-scale<span style="color:#f92672">=</span>1.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --word-symbol-table<span style="color:#f92672">=</span>s5/data/lang/words.txt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  s5/exp/chain/tdnn_1a_sp/final.mdl <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  ark:s5/data/test/spk2utt <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  scp:s5/data/test/wav.scp <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  ark,t:20190308.txt
-</code></pre></div>
+<pre><code class="language-bash">online2-wav-nnet3-latgen-faster \
+  --config=exp/nnet3/nnet_online/conf/online.conf \
+  --do-endpointing=false \
+  --frames-per-chunk=20 \
+  --extra-left-context-initial=0 \
+  --online=true \
+  --frame-subsampling-factor=3 \
+  --min-active=200 \
+  --max-active=7000 \
+  --beam=15.0 \
+  --lattice-beam=6.0 \
+  --acoustic-scale=1.0 \
+  --word-symbol-table=s5/data/lang/words.txt \
+  s5/exp/chain/tdnn_1a_sp/final.mdl \
+  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst \
+  ark:s5/data/test/spk2utt \
+  scp:s5/data/test/wav.scp \
+  ark,t:20190308.txt
+</code></pre>
+<h4 id="422使用chain模型未经测试">4.2.2使用<code>chain</code>模型(未经测试)</h4>
+<pre><code class="language-bash">online2-wav-nnet3-latgen-faster \
+  --config=s5/exp/chain/nnet_online/conf/online.conf \
+  --do-endpointing=false \
+  --frames-per-chunk=20 \
+  --extra-left-context-initial=0 \
+  --online=true \
+  --frame-subsampling-factor=3 \
+  --min-active=200 \
+  --max-active=7000 \
+  --beam=15.0 \
+  --lattice-beam=6.0 \
+  --acoustic-scale=1.0 \
+  --word-symbol-table=s5/data/lang/words.txt \
+  s5/exp/chain/tdnn_1a_sp/final.mdl \
+  s5/exp/chain/tdnn_1a_sp/graph/HCLG.fst \
+  ark:s5/data/test/spk2utt \
+  scp:s5/data/test/wav.scp \
+  ark,t:20190308.txt
+</code></pre>
+
           </div>
 
           
@@ -696,7 +911,13 @@ ln -s 0.mdl final.mdl
         </div>
 
         <div class="body-footer">
-          Last updated on Dec 3, 2017
+          <p>Last updated on Dec 3, 2017</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -718,7 +939,7 @@ ln -s 0.mdl final.mdl
   <p class="powered-by">
     © 2016-2020 Codist &middot; 
 
-    Powered by the <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+    Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
 
     
   </p>
@@ -734,25 +955,24 @@ ln -s 0.mdl final.mdl
 
     
     
-
-    
-    
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/plaintext.min.js"></script>
         
       
 
-      
-      
     
 
     
@@ -760,22 +980,23 @@ ln -s 0.mdl final.mdl
 
     
     
+    <script>const code_highlighting = true;</script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const isSiteThemeDark = false;</script>
     
 
+    
+    
+    
+    
     
     
     <script>
-      const search_index_filename = "/en/index.json";
-      const i18n = {
-        'placeholder': "Search...",
-        'results': "results found",
-        'no_results': "No results found"
-      };
+      const search_config = {"indexURI":"/en/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
       const content_type = {
         'post': "Posts",
         'project': "Projects",
@@ -819,6 +1040,9 @@ ln -s 0.mdl final.mdl
 
     
     
+
+    
+    
     
     
     
@@ -831,7 +1055,7 @@ ln -s 0.mdl final.mdl
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     <script>
     var _hmt = _hmt || [];
@@ -844,6 +1068,7 @@ ln -s 0.mdl final.mdl
 </script>
 
 
+  
   
 
   

@@ -2,14 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codist</title>
-    <link>https://blog.codist.me/en/authors/admin/</link>
-    <description>Recent content on Codist</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    
-	    <atom:link href="https://blog.codist.me/en/authors/admin/index.xml" rel="self" type="application/rss+xml" />
-    
+    <link>https://codist.me/en/authors/admin/</link>
+      <atom:link href="https://codist.me/en/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Codist</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright>
+    <image>
+      <url>https://codist.me/img/screenshot.png</url>
+      <title>Codist</title>
+      <link>https://codist.me/en/authors/admin/</link>
+    </image>
     
   </channel>
 </rss>

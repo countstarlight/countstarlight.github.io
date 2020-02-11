@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
 
   
 
@@ -31,14 +31,12 @@
   <meta name="description" content="std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的">
 
   
-  <link rel="alternate" hreflang="en" href="https://blog.codist.me/en/docs/stl-set/">
+  <link rel="alternate" hreflang="en" href="https://codist.me/en/docs/stl-set/">
   
-  <link rel="alternate" hreflang="zh-Hans" href="https://blog.codist.me/docs/stl-set/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://codist.me/docs/stl-set/">
 
   
 
-
-  
 
   
   
@@ -48,12 +46,15 @@
 
   
   
+
+  
+  
   
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
     
@@ -64,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -74,51 +75,217 @@
 
     
 
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
   
 
   
   
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.a5c2b6f6dab1dbd59df0fc81b2050ae5.css">
+  
+  <link rel="stylesheet" href="/css/academic.css">
 
   
 
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78646709-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-78646709-1', {});
+
   
-  
-  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
 
   
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://blog.codist.me/docs/stl-set/">
+  
 
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://codist.me/docs/stl-set/">
+
+  
   
   
   
   
     
-    
   
-  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@source_themes">
+  <meta property="twitter:creator" content="@source_themes">
   
   <meta property="og:site_name" content="Codist">
-  <meta property="og:url" content="https://blog.codist.me/docs/stl-set/">
+  <meta property="og:url" content="https://codist.me/docs/stl-set/">
   <meta property="og:title" content="SET容器 - 自定义排序和去重 | Codist">
-  <meta property="og:description" content="std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的"><meta property="og:image" content="https://blog.codist.me/img/icon-192.png">
-  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="std::set，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。 1.使用内置的"><meta property="og:image" content="https://codist.me/img/screenshot.png">
+  <meta property="twitter:image" content="https://codist.me/img/screenshot.png"><meta property="og:locale" content="zh-Hans">
   
-  <meta property="article:published_time" content="2019-03-14T16:32:45&#43;08:00">
+    
+      <meta property="article:published_time" content="2019-03-14T16:32:45&#43;08:00">
+    
+    <meta property="article:modified_time" content="2019-03-14T16:32:45&#43;08:00">
   
-  <meta property="article:modified_time" content="2019-03-14T16:32:45&#43;08:00">
+
   
+
+
+
+  
+
 
   
 
@@ -136,8 +303,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -155,7 +321,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -172,24 +338,43 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+
+
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Codist</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
 
     
-    <div class="collapse navbar-collapse" id="navbar">
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
 
       
-      
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav d-md-inline-flex">
         
 
         
@@ -244,41 +429,44 @@
         
 
       
+
+        
       </ul>
-      <ul class="navbar-nav ml-auto">
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
       
 
-        
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
 
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-            <i class="fas fa-globe" aria-hidden="true"></i>
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">中文 (简体)</span>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item i18n-active font-weight-bold">
             <span>中文 (简体)</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://codist.me/en/docs/stl-set/">
+            <span>English</span>
           </a>
-          <ul class="dropdown-menu">
-            
-            <li class="dropdown-item my-0 py-0 mx-0 px-0">
-              <a href="https://blog.codist.me/en/docs/stl-set/">
-                <span>English</span>
-              </a>
-            </li>
-            
-          </ul>
-        </li>
-        
+          
+        </div>
+      </li>
+      
 
-        
+    </ul>
 
-      </ul>
-
-    </div>
   </div>
 </nav>
 
@@ -294,17 +482,28 @@
 
 
 
+  
+    
+  
+
+
+
+
 <form class="docs-search d-flex align-items-center">
   <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
 
   
-  <input name="q" type="search" class="form-control" id="search-query" placeholder="搜索..." autocomplete="off">
+  <input name="q" type="search" class="form-control" placeholder="搜索..." autocomplete="off">
   
 </form>
 
 <nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
   
   
   <div class="docs-toc-item">
@@ -465,12 +664,12 @@
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
-      <article class="article" itemscope itemtype="http://schema.org/Article">
+      <article class="article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">SET容器 - 自定义排序和去重</h1>
+          <h1>SET容器 - 自定义排序和去重</h1>
 
-          <div class="article-style" itemprop="articleBody">
+          <div class="article-style">
             <p><code>std::set</code>，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。</p>
 <h2 id="1使用内置的比较函数less">1.使用内置的比较函数<code>less</code></h2>
 <p>定义内置类型的<code>set</code>对象，限制：</p>
@@ -479,38 +678,41 @@
 <li>只能对一个内置类型进行排序或去重</li>
 </ul>
 <p>示例排序(<code>c++11</code>)：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;set&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> testSet;
-    testSet.insert(<span style="color:#ae81ff">20</span>);
-    testSet.insert(<span style="color:#ae81ff">10</span>);
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> i : testSet) {
-        std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
-    }
-    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl;
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;set&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
 
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> testSet;
-    testSet.insert(<span style="color:#ae81ff">20</span>);
-    testSet.insert(<span style="color:#ae81ff">10</span>);
-    <span style="color:#75715e">//iteratorz，迭代器，用于遍历容器内元素和元素数据类型
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span><span style="color:#f92672">:</span>iterator i <span style="color:#f92672">=</span> testSet.begin(); i <span style="color:#f92672">!</span><span style="color:#f92672">=</span> testSet.end(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
-        cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#f92672">*</span>i <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; i &lt;&lt; &quot; &quot;;
     }
-    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    std::cout &lt;&lt; std::endl;
+    return 0;
 }
-</code></pre></div><p>输出：</p>
+</code></pre>
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
+
+int main() {
+    std::set&lt;int&gt; testSet;
+    testSet.insert(20);
+    testSet.insert(10);
+    //iteratorz，迭代器，用于遍历容器内元素和元素数据类型
+    for (set&lt;int&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; *i &lt;&lt; &quot; &quot;;
+    }
+    cout &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>输出：</p>
 <pre><code>10 20
-</code></pre><h2 id="2定义比较函数对自定义结构体类排序">2.定义比较函数对自定义结构体(类)排序</h2>
+</code></pre>
+<h2 id="2定义比较函数对自定义结构体类排序">2.定义比较函数对自定义结构体(类)排序</h2>
 <h3 id="21重载操作符-">2.1重载操作符 <code>&lt;</code></h3>
 <p>不能重载<code>&lt;=</code>或<code>&gt;=</code>，几乎所有的方法或容器都需要排序来满足数学意义上的标准严格弱序化，否则这些方法或容器的行为将不可预知。</p>
 <p>严格弱序化需要满足：</p>
@@ -548,84 +750,87 @@
 </ul>
 <p>由上述，必须满足：<strong>比较函数对相同元素返回<code>false</code></strong></p>
 <p>示例，对结构体<code>Stu</code>按照id排序，如果id相同，对<code>name</code>按照字典序排序，同时去重(<code>c++11</code>)：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;set&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Stu</span> {
-    <span style="color:#66d9ef">int</span> id;
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name;
-    Stu(<span style="color:#66d9ef">int</span> d, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>n) <span style="color:#f92672">:</span> id(d), name(n) {}
+<pre><code class="language-cpp">#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
     Stu() {}
-    <span style="color:#75715e">//重载运算符&#39;&lt;&#39;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">const</span> Stu <span style="color:#f92672">&amp;</span>right) <span style="color:#66d9ef">const</span> {
-        <span style="color:#66d9ef">if</span> (id <span style="color:#f92672">!</span><span style="color:#f92672">=</span> right.id)
-            <span style="color:#66d9ef">return</span> id <span style="color:#f92672">&lt;</span> right.id;
-        <span style="color:#66d9ef">else</span> {
-            <span style="color:#75715e">//id相同，根据name按照字典序排序，同时去重
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (strcmp(<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>name, right.name) <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
-                <span style="color:#66d9ef">return</span> false;
-            <span style="color:#66d9ef">else</span>
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strcmp</span>(<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>name, right.name) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>;
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
         }
     }
 };
 
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>set<span style="color:#f92672">&lt;</span>Stu<span style="color:#f92672">&gt;</span> testSet;
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zhang</span><span style="color:#e6db74">&#34;</span>));
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">li</span><span style="color:#e6db74">&#34;</span>));
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">li</span><span style="color:#e6db74">&#34;</span>)); <span style="color:#75715e">//重复数据
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">//对应insert，先调用存储对象构造函数，在内存中生成对象，然后拷贝至容器中，c++98不支持
-</span><span style="color:#75715e"></span>    testSet.emplace(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">wang</span><span style="color:#e6db74">&#34;</span>);
-    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> i : testSet) {
-        std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">id: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i.id <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>
-                  <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i.name <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl;
+int main() {
+    std::set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;)); //重复数据
+    //对应insert，先调用存储对象构造函数，在内存中生成对象，然后拷贝至容器中，c++98不支持
+    testSet.emplace(1, &quot;wang&quot;);
+    for (auto i : testSet) {
+        std::cout &lt;&lt; &quot;id: &quot; &lt;&lt; i.id &lt;&lt; &quot; &quot;
+                  &lt;&lt; &quot;name: &quot; &lt;&lt; i.name &lt;&lt; std::endl;
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    return 0;
 }
-</code></pre></div><p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;set&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</code></pre>
+<p>Microsoft Visual C++ 6.0(<code>c++98</code>)：</p>
+<pre><code class="language-cpp">#include &lt;string.h&gt;
+#include &lt;iostream&gt;
+#include &lt;set&gt;
+using namespace std;
 
-<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Stu</span> {
-    <span style="color:#66d9ef">int</span> id;
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name;
-    Stu(<span style="color:#66d9ef">int</span> d, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>n) <span style="color:#f92672">:</span> id(d), name(n) {}
+struct Stu {
+    int id;
+    const char *name;
+    Stu(int d, const char *n) : id(d), name(n) {}
     Stu() {}
-    <span style="color:#75715e">//重载运算符&#39;&lt;&#39;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">const</span> Stu <span style="color:#f92672">&amp;</span>right) <span style="color:#66d9ef">const</span> {
-        <span style="color:#66d9ef">if</span> (id <span style="color:#f92672">!</span><span style="color:#f92672">=</span> right.id)
-            <span style="color:#66d9ef">return</span> id <span style="color:#f92672">&lt;</span> right.id;
-        <span style="color:#66d9ef">else</span> {
-            <span style="color:#75715e">//id相同，根据name按照字典序排序，同时去重
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (strcmp(<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>name, right.name) <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)
-                <span style="color:#66d9ef">return</span> false;
-            <span style="color:#66d9ef">else</span>
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strcmp</span>(<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>name, right.name) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>;
+    //重载运算符'&lt;'
+    bool operator&lt;(const Stu &amp;right) const {
+        if (id != right.id)
+            return id &lt; right.id;
+        else {
+            //id相同，根据name按照字典序排序，同时去重
+            if (strcmp(this-&gt;name, right.name) == 0)
+                return false;
+            else
+                return strcmp(this-&gt;name, right.name) &lt; 0;
         }
     }
 };
 
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    set<span style="color:#f92672">&lt;</span>Stu<span style="color:#f92672">&gt;</span> testSet;
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">zhang</span><span style="color:#e6db74">&#34;</span>));
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">li</span><span style="color:#e6db74">&#34;</span>));
-    testSet.insert(Stu(<span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">li</span><span style="color:#e6db74">&#34;</span>));
-    testSet.insert(Stu(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">wang</span><span style="color:#e6db74">&#34;</span>));
-    <span style="color:#66d9ef">for</span> (set<span style="color:#f92672">&lt;</span>Stu<span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span><span style="color:#f92672">:</span>iterator i <span style="color:#f92672">=</span> testSet.begin(); i <span style="color:#f92672">!</span><span style="color:#f92672">=</span> testSet.end(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
-        cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">id: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>id <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>
-             <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">name: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> i<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>name <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+int main() {
+    set&lt;Stu&gt; testSet;
+    testSet.insert(Stu(2, &quot;zhang&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(2, &quot;li&quot;));
+    testSet.insert(Stu(1, &quot;wang&quot;));
+    for (set&lt;Stu&gt;::iterator i = testSet.begin(); i != testSet.end(); i++) {
+        cout &lt;&lt; &quot;id: &quot; &lt;&lt; i-&gt;id &lt;&lt; &quot; &quot;
+             &lt;&lt; &quot;name: &quot; &lt;&lt; i-&gt;name &lt;&lt; endl;
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    return 0;
 }
-</code></pre></div><p>输出：</p>
+</code></pre>
+<p>输出：</p>
 <pre><code>id: 1 name: wang
 id: 2 name: li
 id: 2 name: zhang
-</code></pre><h3 id="22重载操作符-">2.2重载操作符 <code>()</code></h3>
+</code></pre>
+<h3 id="22重载操作符-">2.2重载操作符 <code>()</code></h3>
 
           </div>
 
@@ -652,7 +857,13 @@ id: 2 name: zhang
         </div>
 
         <div class="body-footer">
-          最近更新于 Mar 14, 2019
+          <p>最近更新于 Mar 14, 2019</p>
+
+          
+
+
+          
+
         </div>
 
       </article>
@@ -674,7 +885,7 @@ id: 2 name: zhang
   <p class="powered-by">
     © 2016-2020 Codist &middot; 
 
-    由 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 的 <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> 强力驱动
+    由 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> 强力驱动
 
     
   </p>
@@ -690,25 +901,24 @@ id: 2 name: zhang
 
     
     
-
-    
-    
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/yaml.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/plaintext.min.js"></script>
         
       
 
-      
-      
     
 
     
@@ -716,22 +926,23 @@ id: 2 name: zhang
 
     
     
+    <script>const code_highlighting = true;</script>
     
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const isSiteThemeDark = false;</script>
     
 
+    
+    
+    
+    
     
     
     <script>
-      const search_index_filename = "/index.json";
-      const i18n = {
-        'placeholder': "搜索...",
-        'results': "搜索结果",
-        'no_results': "没有找到结果"
-      };
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
       const content_type = {
         'post': "文章",
         'project': "项目",
@@ -775,6 +986,9 @@ id: 2 name: zhang
 
     
     
+
+    
+    
     
     
     
@@ -787,7 +1001,7 @@ id: 2 name: zhang
     
     
     
-    <script src="/js/academic.min.3394a224b26ce58ff36f44c54743e0ab.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     <script>
     var _hmt = _hmt || [];
@@ -800,6 +1014,7 @@ id: 2 name: zhang
 </script>
 
 
+  
   
 
   

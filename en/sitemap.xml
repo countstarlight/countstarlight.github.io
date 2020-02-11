@@ -3,393 +3,393 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.codist.me/en/docs/</loc>
+    <loc>https://codist.me/en/docs/</loc>
     <lastmod>2017-09-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/"
+                href="https://codist.me/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/"
+                href="https://codist.me/en/docs/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/stl-set/</loc>
+    <loc>https://codist.me/en/docs/stl-set/</loc>
     <lastmod>2019-03-14T16:32:45+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/stl-set/"
+                href="https://codist.me/docs/stl-set/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/stl-set/"
+                href="https://codist.me/en/docs/stl-set/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/android-log/</loc>
+    <loc>https://codist.me/en/docs/android-log/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/android-log/"
+                href="https://codist.me/docs/android-log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/android-log/"
+                href="https://codist.me/en/docs/android-log/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/kaldi-install/</loc>
+    <loc>https://codist.me/en/docs/kaldi-install/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/kaldi-install/"
+                href="https://codist.me/docs/kaldi-install/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/kaldi-install/"
+                href="https://codist.me/en/docs/kaldi-install/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/kaldi-thchs30/</loc>
+    <loc>https://codist.me/en/docs/kaldi-thchs30/</loc>
     <lastmod>2016-04-18T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/kaldi-thchs30/"
+                href="https://codist.me/docs/kaldi-thchs30/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/kaldi-thchs30/"
+                href="https://codist.me/en/docs/kaldi-thchs30/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/kaldi-aishell/</loc>
+    <loc>https://codist.me/en/docs/kaldi-aishell/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/kaldi-aishell/"
+                href="https://codist.me/docs/kaldi-aishell/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/kaldi-aishell/"
+                href="https://codist.me/en/docs/kaldi-aishell/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/kaldi-cvte/</loc>
+    <loc>https://codist.me/en/docs/kaldi-cvte/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/kaldi-cvte/"
+                href="https://codist.me/docs/kaldi-cvte/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/kaldi-cvte/"
+                href="https://codist.me/en/docs/kaldi-cvte/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/linux-webcam/</loc>
+    <loc>https://codist.me/en/docs/linux-webcam/</loc>
     <lastmod>2017-07-20T14:54:35+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/linux-webcam/"
+                href="https://codist.me/docs/linux-webcam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/linux-webcam/"
+                href="https://codist.me/en/docs/linux-webcam/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/xrandr/</loc>
+    <loc>https://codist.me/en/docs/xrandr/</loc>
     <lastmod>2019-06-23T00:31:19+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/selfhost-commento/</loc>
+    <loc>https://codist.me/en/docs/selfhost-commento/</loc>
     <lastmod>2016-04-20T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/selfhost-commento/"
+                href="https://codist.me/docs/selfhost-commento/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/selfhost-commento/"
+                href="https://codist.me/en/docs/selfhost-commento/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/embedded-serial-usb/</loc>
+    <loc>https://codist.me/en/docs/embedded-serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/embedded-serial-usb/"
+                href="https://codist.me/docs/embedded-serial-usb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/embedded-serial-usb/"
+                href="https://codist.me/en/docs/embedded-serial-usb/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/embedded-minicom/</loc>
+    <loc>https://codist.me/en/docs/embedded-minicom/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/embedded-minicom/"
+                href="https://codist.me/docs/embedded-minicom/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/embedded-minicom/"
+                href="https://codist.me/en/docs/embedded-minicom/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/docs/git-gpg/</loc>
+    <loc>https://codist.me/en/docs/git-gpg/</loc>
     <lastmod>2019-03-11T20:03:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/docs/git-gpg/"
+                href="https://codist.me/docs/git-gpg/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/docs/git-gpg/"
+                href="https://codist.me/en/docs/git-gpg/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/</loc>
+    <loc>https://codist.me/en/</loc>
     <lastmod>2019-06-23T00:31:19+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/"
+                href="https://codist.me/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/"
+                href="https://codist.me/en/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/asr/</loc>
+    <loc>https://codist.me/en/tags/asr/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/asr/"
+                href="https://codist.me/tags/asr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/asr/"
+                href="https://codist.me/en/tags/asr/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/kaldi/</loc>
+    <loc>https://codist.me/en/tags/kaldi/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/kaldi/"
+                href="https://codist.me/tags/kaldi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/kaldi/"
+                href="https://codist.me/en/tags/kaldi/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/</loc>
+    <loc>https://codist.me/en/tags/</loc>
     <lastmod>2017-12-03T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/"
+                href="https://codist.me/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/"
+                href="https://codist.me/en/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/themes/</loc>
+    <loc>https://codist.me/en/themes/</loc>
     <lastmod>2017-11-16T00:00:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/themes/"
+                href="https://codist.me/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/themes/"
+                href="https://codist.me/en/themes/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/linux/</loc>
+    <loc>https://codist.me/en/tags/linux/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/linux/"
+                href="https://codist.me/tags/linux/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/linux/"
+                href="https://codist.me/en/tags/linux/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/minicom/</loc>
+    <loc>https://codist.me/en/tags/minicom/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/minicom/"
+                href="https://codist.me/tags/minicom/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/minicom/"
+                href="https://codist.me/en/tags/minicom/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/serial-usb/</loc>
+    <loc>https://codist.me/en/tags/serial-usb/</loc>
     <lastmod>2017-07-25T09:38:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/serial-usb/"
+                href="https://codist.me/tags/serial-usb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/serial-usb/"
+                href="https://codist.me/en/tags/serial-usb/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/android/</loc>
+    <loc>https://codist.me/en/tags/android/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/android/"
+                href="https://codist.me/tags/android/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/android/"
+                href="https://codist.me/en/tags/android/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/tags/log/</loc>
+    <loc>https://codist.me/en/tags/log/</loc>
     <lastmod>2016-06-11T19:00:10+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/tags/log/"
+                href="https://codist.me/tags/log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/tags/log/"
+                href="https://codist.me/en/tags/log/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/authors/admin/</loc>
+    <loc>https://codist.me/en/authors/admin/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/authors/admin/"
+                href="https://codist.me/authors/admin/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/authors/admin/"
+                href="https://codist.me/en/authors/admin/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/authors/</loc>
+    <loc>https://codist.me/en/authors/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/authors/"
+                href="https://codist.me/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/authors/"
+                href="https://codist.me/en/authors/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/categories/</loc>
+    <loc>https://codist.me/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/categories/"
+                href="https://codist.me/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/categories/"
+                href="https://codist.me/en/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.codist.me/en/publication_types/</loc>
+    <loc>https://codist.me/en/publication_types/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://blog.codist.me/publication_types/"
+                href="https://codist.me/publication_types/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.codist.me/en/publication_types/"
+                href="https://codist.me/en/publication_types/"
                 />
   </url>
   

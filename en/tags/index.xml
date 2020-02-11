@@ -1,77 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Codist</title>
-    <link>https://blog.codist.me/en/tags/</link>
-    <description>Recent content in Tags on Codist</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
-    
-	    <atom:link href="https://blog.codist.me/en/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Tags | Codist</title>
+    <link>https://codist.me/en/tags/</link>
+      <atom:link href="https://codist.me/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tags</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
+    <image>
+      <url>https://codist.me/img/screenshot.png</url>
+      <title>Tags</title>
+      <link>https://codist.me/en/tags/</link>
+    </image>
     
     <item>
       <title>ASR</title>
-      <link>https://blog.codist.me/en/tags/asr/</link>
+      <link>https://codist.me/en/tags/asr/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/asr/</guid>
+      <guid>https://codist.me/en/tags/asr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kaldi</title>
-      <link>https://blog.codist.me/en/tags/kaldi/</link>
+      <link>https://codist.me/en/tags/kaldi/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/kaldi/</guid>
+      <guid>https://codist.me/en/tags/kaldi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://blog.codist.me/en/tags/linux/</link>
+      <link>https://codist.me/en/tags/linux/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/linux/</guid>
+      <guid>https://codist.me/en/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Minicom</title>
-      <link>https://blog.codist.me/en/tags/minicom/</link>
+      <link>https://codist.me/en/tags/minicom/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/minicom/</guid>
+      <guid>https://codist.me/en/tags/minicom/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Serial-USB</title>
-      <link>https://blog.codist.me/en/tags/serial-usb/</link>
+      <link>https://codist.me/en/tags/serial-usb/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/serial-usb/</guid>
+      <guid>https://codist.me/en/tags/serial-usb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android</title>
-      <link>https://blog.codist.me/en/tags/android/</link>
+      <link>https://codist.me/en/tags/android/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/android/</guid>
+      <guid>https://codist.me/en/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>log</title>
-      <link>https://blog.codist.me/en/tags/log/</link>
+      <link>https://codist.me/en/tags/log/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      
-      <guid>https://blog.codist.me/en/tags/log/</guid>
+      <guid>https://codist.me/en/tags/log/</guid>
       <description></description>
     </item>
     

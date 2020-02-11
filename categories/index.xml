@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Codist</title>
-    <link>https://blog.codist.me/categories/</link>
-    <description>Recent content in Categories on Codist</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>zh-Hans</language>
-    <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    
-	    <atom:link href="https://blog.codist.me/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Categories | Codist</title>
+    <link>https://codist.me/categories/</link>
+      <atom:link href="https://codist.me/categories/index.xml" rel="self" type="application/rss+xml" />
+    <description>Categories</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright>
+    <image>
+      <url>https://codist.me/img/screenshot.png</url>
+      <title>Categories</title>
+      <link>https://codist.me/categories/</link>
+    </image>
     
   </channel>
 </rss>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Codist</title>
-    <link>https://blog.codist.me/en/authors/</link>
-    <description>Recent content in Authors on Codist</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
-    <language>en-us</language>
-    <copyright>&amp;copy; 2016-{year} Codist</copyright>
-    
-	    <atom:link href="https://blog.codist.me/en/authors/index.xml" rel="self" type="application/rss+xml" />
-    
+    <title>Authors | Codist</title>
+    <link>https://codist.me/en/authors/</link>
+      <atom:link href="https://codist.me/en/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright>
+    <image>
+      <url>https://codist.me/img/screenshot.png</url>
+      <title>Authors</title>
+      <link>https://codist.me/en/authors/</link>
+    </image>
     
     <item>
       <title></title>
-      <link>https://blog.codist.me/en/authors/admin/</link>
+      <link>https://codist.me/en/authors/admin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.codist.me/en/authors/admin/</guid>
+      <guid>https://codist.me/en/authors/admin/</guid>
       <description></description>
     </item>
     
