@@ -206,44 +206,6 @@
 
 
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78646709-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-78646709-1', {});
-
-  
-  document.addEventListener('click', onClickCallback, false);
-</script>
-
-
   
 
 
@@ -263,18 +225,16 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="twitter:site" content="@source_themes">
-  <meta property="twitter:creator" content="@source_themes">
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Codist">
   <meta property="og:url" content="https://codist.me/categories/">
   <meta property="og:title" content="Categories | Codist">
-  <meta property="og:description" content="Codist 的个人主页"><meta property="og:image" content="https://codist.me/img/screenshot.png">
-  <meta property="twitter:image" content="https://codist.me/img/screenshot.png"><meta property="og:locale" content="zh-Hans">
+  <meta property="og:description" content="Codist 的个人主页"><meta property="og:image" content="https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
   
     
   
@@ -341,15 +301,13 @@
 
 
 
-  
-
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+      <a class="navbar-brand" href="/">Codist</a>
     </div>
     
 
@@ -362,7 +320,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/"><img src="/images/logo_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_0x70_resize_lanczos_2.png" alt="Codist"></a>
+      <a class="navbar-brand" href="/">Codist</a>
     </div>
     
 
