@@ -5,7 +5,7 @@
     <link>https://codist.me/tags/asr/</link>
       <atom:link href="https://codist.me/tags/asr/index.xml" rel="self" type="application/rss+xml" />
     <description>ASR</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0800</lastBuildDate>
     <image>
       <url>https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png</url>
       <title>ASR</title>
@@ -14,9 +14,9 @@
     
     <item>
       <title>安装kaldi</title>
-      <link>https://codist.me/docs/kaldi-install/</link>
+      <link>https://codist.me/blog/kaldi-install/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-install/</guid>
+      <guid>https://codist.me/blog/kaldi-install/</guid>
       <description>&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 &lt;p&gt;操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如&lt;code&gt;ATLAS&lt;/code&gt;，安装不会遇到太多问题。&lt;/p&gt;
 &lt;p&gt;需要安装有&lt;code&gt;git&lt;/code&gt;，&lt;code&gt;subversion&lt;/code&gt;，&lt;code&gt;make&lt;/code&gt;以及&lt;code&gt;gcc&lt;/code&gt;等编译工具链&lt;/p&gt;
@@ -81,9 +81,9 @@ make -j 8
     
     <item>
       <title>使用thchs30数据集</title>
-      <link>https://codist.me/docs/kaldi-thchs30/</link>
+      <link>https://codist.me/blog/kaldi-thchs30/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-thchs30/</guid>
+      <guid>https://codist.me/blog/kaldi-thchs30/</guid>
       <description>&lt;h2 id=&#34;1下载数据集&#34;&gt;1.下载数据集&lt;/h2&gt;
 &lt;p&gt;Kaldi中文语音识别公共数据集有：&lt;/p&gt;
 &lt;ul&gt;
@@ -416,9 +416,9 @@ VTLN：特征级声道长度归一化&lt;/p&gt;
     
     <item>
       <title>使用aishell数据集</title>
-      <link>https://codist.me/docs/kaldi-aishell/</link>
+      <link>https://codist.me/blog/kaldi-aishell/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-aishell/</guid>
+      <guid>https://codist.me/blog/kaldi-aishell/</guid>
       <description>&lt;h2 id=&#34;1安装依赖&#34;&gt;1.安装依赖&lt;/h2&gt;
 &lt;p&gt;安装&lt;code&gt;train_lm.sh&lt;/code&gt;：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd tools
@@ -617,9 +617,9 @@ ln -s 0.mdl final.mdl
     
     <item>
       <title>使用cvte预训练模型</title>
-      <link>https://codist.me/docs/kaldi-cvte/</link>
+      <link>https://codist.me/blog/kaldi-cvte/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-cvte/</guid>
+      <guid>https://codist.me/blog/kaldi-cvte/</guid>
       <description>&lt;p&gt;cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置&lt;/p&gt;
 &lt;h2 id=&#34;获取模型&#34;&gt;获取模型&lt;/h2&gt;
 &lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 

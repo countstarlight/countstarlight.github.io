@@ -5,7 +5,7 @@
     <link>https://codist.me/</link>
       <atom:link href="https://codist.me/index.xml" rel="self" type="application/rss+xml" />
     <description>Codist</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Sun, 23 Jun 2019 00:31:19 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0800</lastBuildDate>
     <image>
       <url>https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png</url>
       <title>Codist</title>
@@ -14,9 +14,9 @@
     
     <item>
       <title>SET容器 - 自定义排序和去重</title>
-      <link>https://codist.me/docs/stl-set/</link>
+      <link>https://codist.me/blog/stl-set/</link>
       <pubDate>Thu, 14 Mar 2019 16:32:45 +0800</pubDate>
-      <guid>https://codist.me/docs/stl-set/</guid>
+      <guid>https://codist.me/blog/stl-set/</guid>
       <description>&lt;p&gt;&lt;code&gt;std::set&lt;/code&gt;，是基于红黑树的平衡二叉树的数据结构实现的一种容器，因为其中所包含的元素的值是唯一的，因此主要用于排序和去重。&lt;/p&gt;
 &lt;h2 id=&#34;1使用内置的比较函数less&#34;&gt;1.使用内置的比较函数&lt;code&gt;less&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;定义内置类型的&lt;code&gt;set&lt;/code&gt;对象，限制：&lt;/p&gt;
@@ -183,9 +183,9 @@ id: 2 name: zhang
     
     <item>
       <title>将Android的系统日志输出到文件</title>
-      <link>https://codist.me/docs/android-log/</link>
+      <link>https://codist.me/blog/2016-06-11android-log/</link>
       <pubDate>Sat, 11 Jun 2016 19:00:10 +0800</pubDate>
-      <guid>https://codist.me/docs/android-log/</guid>
+      <guid>https://codist.me/blog/2016-06-11android-log/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;首先，在产品目录的init.XXX.rc文件中，添加相应的service，&lt;/li&gt;
 &lt;/ul&gt;
@@ -268,9 +268,9 @@ ln -s /storage/external/ /data/www/sdcard
     
     <item>
       <title>安装kaldi</title>
-      <link>https://codist.me/docs/kaldi-install/</link>
+      <link>https://codist.me/blog/kaldi-install/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-install/</guid>
+      <guid>https://codist.me/blog/kaldi-install/</guid>
       <description>&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 &lt;p&gt;操作系统建议使用Ubuntu，因为官方源里已经有编译好的一些依赖库，如&lt;code&gt;ATLAS&lt;/code&gt;，安装不会遇到太多问题。&lt;/p&gt;
 &lt;p&gt;需要安装有&lt;code&gt;git&lt;/code&gt;，&lt;code&gt;subversion&lt;/code&gt;，&lt;code&gt;make&lt;/code&gt;以及&lt;code&gt;gcc&lt;/code&gt;等编译工具链&lt;/p&gt;
@@ -335,9 +335,9 @@ make -j 8
     
     <item>
       <title>使用thchs30数据集</title>
-      <link>https://codist.me/docs/kaldi-thchs30/</link>
+      <link>https://codist.me/blog/kaldi-thchs30/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-thchs30/</guid>
+      <guid>https://codist.me/blog/kaldi-thchs30/</guid>
       <description>&lt;h2 id=&#34;1下载数据集&#34;&gt;1.下载数据集&lt;/h2&gt;
 &lt;p&gt;Kaldi中文语音识别公共数据集有：&lt;/p&gt;
 &lt;ul&gt;
@@ -670,9 +670,9 @@ VTLN：特征级声道长度归一化&lt;/p&gt;
     
     <item>
       <title>使用aishell数据集</title>
-      <link>https://codist.me/docs/kaldi-aishell/</link>
+      <link>https://codist.me/blog/kaldi-aishell/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-aishell/</guid>
+      <guid>https://codist.me/blog/kaldi-aishell/</guid>
       <description>&lt;h2 id=&#34;1安装依赖&#34;&gt;1.安装依赖&lt;/h2&gt;
 &lt;p&gt;安装&lt;code&gt;train_lm.sh&lt;/code&gt;：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd tools
@@ -871,9 +871,9 @@ ln -s 0.mdl final.mdl
     
     <item>
       <title>使用cvte预训练模型</title>
-      <link>https://codist.me/docs/kaldi-cvte/</link>
+      <link>https://codist.me/blog/kaldi-cvte/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/kaldi-cvte/</guid>
+      <guid>https://codist.me/blog/kaldi-cvte/</guid>
       <description>&lt;p&gt;cvte开放了已经训练好的模型，不用再花费大量时间和算力去训练，但注意cvte没有开源数据集和模型配置&lt;/p&gt;
 &lt;h2 id=&#34;获取模型&#34;&gt;获取模型&lt;/h2&gt;
 &lt;p&gt;从 &lt;a href=&#34;http://kaldi-asr.org/models/m2&#34;&gt;http://kaldi-asr.org/models/m2&lt;/a&gt; 下载 
@@ -918,9 +918,9 @@ fi
     
     <item>
       <title>Linux上摄像设备的使用</title>
-      <link>https://codist.me/docs/linux-webcam/</link>
+      <link>https://codist.me/blog/linux-webcam/</link>
       <pubDate>Thu, 20 Jul 2017 14:54:35 +0800</pubDate>
-      <guid>https://codist.me/docs/linux-webcam/</guid>
+      <guid>https://codist.me/blog/linux-webcam/</guid>
       <description>&lt;p&gt;在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入&lt;/p&gt;
 &lt;h3 id=&#34;1-查找设备&#34;&gt;1. 查找设备&lt;/h3&gt;
 &lt;ul&gt;
@@ -1107,9 +1107,9 @@ modprobe uvcvideo
     
     <item>
       <title>屏幕输出管理: Xrandr</title>
-      <link>https://codist.me/docs/linux-xrandr/</link>
+      <link>https://codist.me/blog/2019-06-23linux-xrandr/</link>
       <pubDate>Sun, 23 Jun 2019 00:31:19 +0800</pubDate>
-      <guid>https://codist.me/docs/linux-xrandr/</guid>
+      <guid>https://codist.me/blog/2019-06-23linux-xrandr/</guid>
       <description>&lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;
 &lt;p&gt;xrandr 用于控制输出设备（显示器，投影仪等）的屏幕分辨率和方向（旋转角度）&lt;/p&gt;
 &lt;p&gt;在主流Linux发行版上，都可以在桌面环境的系统设置里修改输出设备的设置，如kde的系统设置(System Setting)的显示和监视器(Display and Monitor)里，可以直接修改输出设备的显示方式，分辨率等&lt;/p&gt;
@@ -1130,10 +1130,64 @@ modprobe uvcvideo
     </item>
     
     <item>
+      <title>搭建博客评论系统</title>
+      <link>https://codist.me/blog/selfhost-commento/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
+      <guid>https://codist.me/blog/selfhost-commento/</guid>
+      <description>&lt;p&gt;在Debian9上用开源的
+&lt;a href=&#34;https://gitlab.com/commento/commento&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Commento&lt;/a&gt;搭建博客评论系统&lt;/p&gt;
+&lt;p&gt;安装 &lt;code&gt;yarn&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装&lt;code&gt;dep&lt;/code&gt;（需要已经配置好的go环境）：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;go get -u github.com/golang/dep/cmd/dep
+export PATH=$PATH:$GOPATH/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载&amp;amp;编译：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p $GOPATH/gitlab.com/commento
+cd $GOPATH/gitlab.com/commento
+git clone https://gitlab.com/commento/commento.git
+make prod
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在根目录下新建脚本&lt;code&gt;server.sh&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#! /bin/bash
+
+# 绑定的域名
+export COMMENTO_ORIGIN=https://comment.example.com
+
+# 绑定的端口，可以用nginx反向代理到这个端口
+export COMMENTO_PORT=8002
+ 
+# 数据库 PostgreSQL 设置
+export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable
+
+# 关闭注册，首次需要注册账号，之后可以关闭注册
+#export COMMENTO_FORBID_NEW_OWNERS=true
+
+#
+# github oauth，其他类似
+#
+export GITHUB_KEY=
+
+export GITHUB_SECRET=
+
+./build/prod/commento
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x server.sh
+./server.sh
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Linux上通过串口连接嵌入式Linux终端</title>
-      <link>https://codist.me/docs/embedded-serial-usb/</link>
+      <link>https://codist.me/blog/embedded-serial-usb/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <guid>https://codist.me/docs/embedded-serial-usb/</guid>
+      <guid>https://codist.me/blog/embedded-serial-usb/</guid>
       <description>&lt;h3 id=&#34;1-安装-minicom&#34;&gt;1. 安装 &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Debian/Ubuntu：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude update
@@ -1199,9 +1253,9 @@ usbcore: registered new interface driver usbserial_generic
     
     <item>
       <title>用minicom通过串口发送文件</title>
-      <link>https://codist.me/docs/embedded-minicom/</link>
+      <link>https://codist.me/blog/2017-07-25embedded-minicom/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <guid>https://codist.me/docs/embedded-minicom/</guid>
+      <guid>https://codist.me/blog/2017-07-25embedded-minicom/</guid>
       <description>&lt;h3 id=&#34;1-设置文件路径&#34;&gt;1. 设置文件路径&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1214,18 +1268,18 @@ usbcore: registered new interface driver usbserial_generic
 &lt;p&gt;选择 &lt;code&gt;Filenames and paths&lt;/code&gt;：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;设置 &lt;code&gt;A-Download directory&lt;/code&gt; （将文件从设备传送到本地的路径）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;设置 &lt;code&gt;B-Upload directory&lt;/code&gt; （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/2.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;按下 &lt;code&gt;esc&lt;/code&gt; 然后选择 &lt;code&gt;Save setup as dfl&lt;/code&gt;来保存设置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/3.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;3.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1259,9 +1313,9 @@ usbcore: registered new interface driver usbserial_generic
     
     <item>
       <title>Git 用GPG签名</title>
-      <link>https://codist.me/docs/git-gpg/</link>
+      <link>https://codist.me/blog/git-gpg/</link>
       <pubDate>Mon, 11 Mar 2019 20:03:50 +0800</pubDate>
-      <guid>https://codist.me/docs/git-gpg/</guid>
+      <guid>https://codist.me/blog/git-gpg/</guid>
       <description>&lt;h2 id=&#34;1-生成gpg-key&#34;&gt;1. 生成GPG key&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gpg --full-generate-key
 &lt;/code&gt;&lt;/pre&gt;
@@ -1290,17 +1344,6 @@ usbcore: registered new interface driver usbserial_generic
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;测试签名&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;test&amp;quot; | gpg --clearsign
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;4导入已有文件&#34;&gt;4.导入已有文件&lt;/h2&gt;
-&lt;p&gt;导入备份的 &lt;code&gt;.gnupg&lt;/code&gt; 文件夹&lt;/p&gt;
-&lt;p&gt;列出文件夹中的签名：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gpg --homedir=.gnupg --list-secret-keys
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;导出：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gpg --homedir=.gnupg --export-secret-keys &amp;lt;GPG Key ID&amp;gt; &amp;gt; old.asc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;导入：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gpg --import old.asc
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -1434,60 +1477,6 @@ usbcore: registered new interface driver usbserial_generic
 &lt;li&gt;
 &lt;a href=&#34;https://github.com/sourcethemes/academic-www/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Open a ticket&lt;/a&gt; with a link to your theme&amp;rsquo;s Github repository and a screenshot&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>搭建博客评论系统</title>
-      <link>https://codist.me/docs/selfhost-commento/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
-      <guid>https://codist.me/docs/selfhost-commento/</guid>
-      <description>&lt;p&gt;在Debian9上用开源的
-&lt;a href=&#34;https://gitlab.com/commento/commento&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Commento&lt;/a&gt;搭建博客评论系统&lt;/p&gt;
-&lt;p&gt;安装 &lt;code&gt;yarn&lt;/code&gt;：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo &amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install yarn
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装&lt;code&gt;dep&lt;/code&gt;（需要已经配置好的go环境）：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;go get -u github.com/golang/dep/cmd/dep
-export PATH=$PATH:$GOPATH/bin
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下载&amp;amp;编译：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p $GOPATH/gitlab.com/commento
-cd $GOPATH/gitlab.com/commento
-git clone https://gitlab.com/commento/commento.git
-make prod
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在根目录下新建脚本&lt;code&gt;server.sh&lt;/code&gt;：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#! /bin/bash
-
-# 绑定的域名
-export COMMENTO_ORIGIN=https://comment.example.com
-
-# 绑定的端口，可以用nginx反向代理到这个端口
-export COMMENTO_PORT=8002
- 
-# 数据库 PostgreSQL 设置
-export COMMENTO_POSTGRES=postgres://postgres:password@127.0.0.1:5432/comment?sslmode=disable
-
-# 关闭注册，首次需要注册账号，之后可以关闭注册
-#export COMMENTO_FORBID_NEW_OWNERS=true
-
-#
-# github oauth，其他类似
-#
-export GITHUB_KEY=
-
-export GITHUB_SECRET=
-
-./build/prod/commento
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;chmod +x server.sh
-./server.sh
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -5,7 +5,7 @@
     <link>https://codist.me/tags/serial-usb/</link>
       <atom:link href="https://codist.me/tags/serial-usb/index.xml" rel="self" type="application/rss+xml" />
     <description>Serial-USB</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
     <image>
       <url>https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png</url>
       <title>Serial-USB</title>
@@ -14,9 +14,9 @@
     
     <item>
       <title>Linux上通过串口连接嵌入式Linux终端</title>
-      <link>https://codist.me/docs/embedded-serial-usb/</link>
+      <link>https://codist.me/blog/embedded-serial-usb/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <guid>https://codist.me/docs/embedded-serial-usb/</guid>
+      <guid>https://codist.me/blog/embedded-serial-usb/</guid>
       <description>&lt;h3 id=&#34;1-安装-minicom&#34;&gt;1. 安装 &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Debian/Ubuntu：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude update

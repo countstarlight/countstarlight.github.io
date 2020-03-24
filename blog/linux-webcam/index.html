@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Codist">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入 1. 查找设备 插上摄像设备（通常是通过USB） 列出所有的 video4linux 设备: ls">
+
+  
+  <link rel="alternate" hreflang="zh" href="https://codist.me/zh/blog/linux-webcam/">
+  
+  <link rel="alternate" hreflang="en-us" href="https://codist.me/blog/linux-webcam/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://codist.me/blog/linux-webcam/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Codist">
+  <meta property="og:url" content="https://codist.me/blog/linux-webcam/">
+  <meta property="og:title" content="Linux上摄像设备的使用 | Codist">
+  <meta property="og:description" content="在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入 1. 查找设备 插上摄像设备（通常是通过USB） 列出所有的 video4linux 设备: ls"><meta property="og:image" content="https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2017-07-20T14:54:35&#43;08:00">
+    
+    <meta property="article:modified_time" content="2017-07-20T14:54:35&#43;08:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7614676161546695",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+  <title>Linux上摄像设备的使用 | Codist</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Codist</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Codist</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/blog/"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span>
+        </a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item i18n-active font-weight-bold">
+            <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://codist.me/zh/blog/linux-webcam/">
+            <span>中文 (简体)</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/stl-set/">C&#43;&#43; STL</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/stl-set/">SET容器 - 自定义排序和去重</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/2016-06-11android-log/">Android底层</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/2016-06-11android-log/">将Android的系统日志输出到文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/kaldi-install/">中文语音识别</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/kaldi-install/">安装kaldi</a>
+      </li>
+      
+      <li >
+        <a href="/blog/kaldi-thchs30/">使用thchs30数据集</a>
+      </li>
+      
+      <li >
+        <a href="/blog/kaldi-aishell/">使用aishell数据集</a>
+      </li>
+      
+      <li >
+        <a href="/blog/kaldi-cvte/">使用cvte预训练模型</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/linux-webcam/">桌面Linux</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/blog/linux-webcam/">Linux上摄像设备的使用</a>
+      </li>
+      
+      <li >
+        <a href="/blog/2019-06-23linux-xrandr/">屏幕输出管理: Xrandr</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/embedded-serial-usb/">嵌入式</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/embedded-serial-usb/">Linux上通过串口连接嵌入式Linux终端</a>
+      </li>
+      
+      <li >
+        <a href="/blog/2017-07-25embedded-minicom/">用minicom通过串口发送文件</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/git-gpg/">Git使用</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/git-gpg/">Git 用GPG签名</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/blog/selfhost-commento/">自建服务</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/blog/selfhost-commento/">搭建博客评论系统</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-查找设备">1. 查找设备</a></li>
+        <li><a href="#2测试设备">2.测试设备</a></li>
+        <li><a href="#3使用设备">3.使用设备</a></li>
+        <li><a href="#排查问题">排查问题</a></li>
+        <li><a href="#suse-linux-110-and-earlier">SUSE Linux 11.0 and earlier</a></li>
+        <li><a href="#ubuntu">Ubuntu</a></li>
+        <li><a href="#other-webcams">Other webcams</a></li>
+        <li><a href="#testbed">Testbed</a></li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      <div class="connect-widget">
+  <ul class="connect-links fa-ul">
+    <li><i class="fa-li fas fa-question-circle"></i><a href="https://github.com/countstarlight/homo/issues" target="_blank">Ask questions</a></li>
+    <li><i class="fa-li fas fa-comments"></i><a href="https://github.com/countstarlight/homo/issues" target="_blank">Request features</a></li>
+    <li><i class="fa-li fas fa-bug"></i><a href="https://github.com/countstarlight/homo/issues" target="_blank">Report issues</a></li>
+  </ul>
+</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7614676161546695"
+     data-ad-slot="4486393045"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Linux上摄像设备的使用</h1>
+
+          <div class="article-style">
+            <p>在Linux上配置网络摄像头，用到的一些软件，以及如何录制和播放设备的视频输入</p>
+<h3 id="1-查找设备">1. 查找设备</h3>
+<ul>
+<li>
+<p>插上摄像设备（通常是通过USB）</p>
+</li>
+<li>
+<p>列出所有的 <code>video4linux</code> 设备:</p>
+</li>
+</ul>
+<pre><code class="language-bash">ls -ltr /dev/video*
+</code></pre>
+<ul>
+<li>得到的输出类似于：</li>
+</ul>
+<pre><code class="language-bash">crw-rw----+ 1 root video 81, 0 Nov 11 09:06 /dev/video0
+</code></pre>
+<p>这里的摄像设备名称是 <code>*/dev/video0*</code>，如果没有看到任何 <code>/dev/video</code> 文件，查看
+<a href="#%e6%8e%92%e6%9f%a5%e9%97%ae%e9%a2%98">#排查问题</a>。如果有多个 <code>video4linux</code> 设备，比如是一个
+<a href="http://www.linuxintro.org/wiki/Tv_card" target="_blank" rel="noopener">tv card</a>，摄像头设备应该显示为 <code>/dev/video1</code> 或类似的。但它的时间（在这个例子中是 Nov 11 09:06）应该是你插上它的时间。</p>
+<h3 id="2测试设备">2.测试设备</h3>
+<ul>
+<li>
+<p>如果安装有 
+<a href="http://www.linuxintro.org/wiki/Vlc" target="_blank" rel="noopener">vlc</a>，可以启动它，选择 Media -&gt; Open Capture Device -&gt; Video device name = <em>/dev/video0</em> -&gt; Play</p>
+</li>
+<li>
+<p>如果安装有mplayer，可以使用：</p>
+<pre><code class="language-bash">mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 30
+</code></pre>
+</li>
+</ul>
+<h3 id="3使用设备">3.使用设备</h3>
+<h4 id="31录制视频">3.1录制视频</h4>
+<p>要捕获设备的视频输入，可以使用 
+<a href="http://en.wikipedia.org/wiki/Cheese_%28software%29" target="_blank" rel="noopener">cheese</a>，一个不错的图形界面软件，你可以用它边看边录制设备的视频输入，录制保存的文件格式不太常见(.webm)，但用
+<a href="http://www.linuxintro.org/wiki/Vlc" target="_blank" rel="noopener">vlc</a>可以播放。</p>
+<p>You can also automate video recording so you can capture the camera stream with sitting in front of the computer. To do this you can</p>
+<ul>
+<li>
+<p>use the software <em>mencoder</em>:</p>
+<pre><code class="language-bash">mencoder tv:// -tv driver=v4l2:width=320:height=240:device=/dev/video0 -nosound -ovc lavc -o myvideo.avi
+</code></pre>
+</li>
+<li>
+<p>or use the software <em>streamer</em>. Here are two examples:</p>
+<pre><code class="language-bash">streamer -c /dev/video0 -f jpeg -F stereo -o myvideo.avi -t 0:05
+</code></pre>
+</li>
+</ul>
+<h4 id="32视频通话">3.2视频通话</h4>
+<p>视频通话，
+<a href="http://www.linuxintro.org/wiki/Use_skype_under_Linux" target="_blank" rel="noopener">在Linux上使用skype</a>.</p>
+<h4 id="33查看视频输入">3.3查看视频输入</h4>
+<p>查看摄像设备的视频输入，使用<code>cheese</code> 或 
+<a href="http://www.linuxintro.org/wiki/Mplayer" target="_blank" rel="noopener">mplayer</a>:</p>
+<pre><code class="language-bash">mplayer -fps 30 -cache 128 -tv driver=v4l2:width=640:height=480:device=/dev/video0 tv://
+</code></pre>
+<p>或者用
+<a href="http://www.linuxintro.org/wiki/Vlc" target="_blank" rel="noopener">vlc</a>，你可以
+<a href="http://www.linuxintro.org/wiki/Run_vlc_as_root" target="_blank" rel="noopener">用root权限运行vlc</a>，来查看你的摄像设备 <code>/dev/video0</code>，启动vlc并选择 Media -&gt; Open Capture Device -&gt; Video device name = /dev/video0 -&gt; Play</p>
+<h3 id="排查问题">排查问题</h3>
+<p>Troubleshooting heavily depends on the distribution and version you are using. If you have done cabling correctly and a device file /dev/video* does not appear, your kernel probably does not know the hardware. In this case you may have to install the device driver separately because it may not be part of the kernel.</p>
+<h3 id="suse-linux-110-and-earlier">SUSE Linux 11.0 and earlier</h3>
+<p>This has been tested with SUSE Linux 11.0 x64 but should work with any earlier SUSE version. You will need to log in as user root. To find out what driver you need, 
+<a href="http://www.linuxintro.org/wiki/Open_a_console" target="_blank" rel="noopener">open a console</a> and call</p>
+<pre><code class="language-bash">hwinfo --usb
+</code></pre>
+<p>If a Logitech Quickcam Messenger is plugged in the answer will be like:</p>
+<pre><code class="language-bash">06: USB 00.2: 0000 Unclassified device
+  [Created at usb.122]                
+  UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
+  Unique ID: Eopr.vE+cdFBwClB                                      
+  Parent ID: uIhY.uOe2OKugI8D                                      
+  SysFS ID: /devices/pci0000:00/0000:00:1a.2/usb3/3-1/3-1:1.2      
+  SysFS BusID: 3-1:1.2                                             
+  Hardware Class: unknown                                          
+  Model: &quot;Logitech QuickCam Messanger&quot;                             
+  Hotplug: USB                                                     
+  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;                              
+  Device: usb 0x08da &quot;QuickCam Messanger&quot;                          
+  Revision: &quot;1.00&quot;                                                 
+  Driver: &quot;snd-usb-audio&quot;                                          
+  Driver Modules: &quot;snd_usb_audio&quot;                                  
+  Speed: 12 Mbps                                                   
+  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;    
+  Driver Info #0:                                                  
+    Driver Status: quickcam_messenger is active                    
+    Driver Activation Cmd: &quot;modprobe quickcam_messenger&quot;
+  Driver Info #1:                                                  
+    Driver Status: gspca is active                                 
+    Driver Activation Cmd: &quot;modprobe gspca&quot;
+  Config Status: cfg=new, avail=yes, need=no, active=unknown       
+  Attached to: #20 (Hub)
+</code></pre>
+<p>This means you can install and load the webcam driver like this:</p>
+<pre><code class="language-bash">yast -i gspcav-kmp-default
+modprobe gspca
+</code></pre>
+<p>Now you should see a video device:</p>
+<pre><code class="language-bash">ls /dev/video*
+/dev/video  /dev/video0
+</code></pre>
+<p>That means you can install and start your webcam-viewer-software. We choose gqcam:</p>
+<pre><code class="language-bash">yast -i gqcam
+gqcam
+</code></pre>
+<p>It works. You see a video what from what is going on in front of your webcam.</p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p>This has been tested with Ubuntu 8.10 x32 but should work with any Ubuntu version. Find out the driver activation command of your webcam. For this, first install the software <strong>hwinfo</strong>. 
+<a href="http://www.linuxintro.org/wiki/Open_a_console" target="_blank" rel="noopener">Open a console</a>and type:</p>
+<pre><code class="language-bash">sudo apt-get install hwinfo
+</code></pre>
+<p>Then call hwinfo:</p>
+<pre><code class="language-bash">hwinfo --usb
+</code></pre>
+<p>If a Logitech Quickcam Messenger is plugged in the response will be like:</p>
+<pre><code class="language-bash">04: USB 00.2: 0000 Unclassified device
+  [Created at usb.122]
+  UDI: /org/freedesktop/Hal/devices/usb_device_46d_8da_noserial_if2
+  Unique ID: 4ajv.vE+cdFBwClB
+  Parent ID: k4bc._Mkd+LmXb03
+  SysFS ID: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb1/1-1/1-1:1.2
+  SysFS BusID: 1-1:1.2
+  Hardware Class: unknown
+  Model: &quot;Logitech QuickCam Messanger&quot;
+  Hotplug: USB
+  Vendor: usb 0x046d &quot;Logitech, Inc.&quot;
+  Device: usb 0x08da &quot;QuickCam Messanger&quot;
+  Revision: &quot;1.00&quot;
+  Driver: &quot;snd-usb-audio&quot;
+  Driver Modules: &quot;snd_usb_audio&quot;
+  Speed: 12 Mbps
+  Module Alias: &quot;usb:v046Dp08DAd0100dc00dsc00dp00ic01isc02ip00&quot;
+  Driver Info #0:
+    Driver Status: gspca_zc3xx is active
+    Driver Activation Cmd: &quot;modprobe gspca_zc3xx&quot;
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #8 (Hub)
+</code></pre>
+<p>Activate the driver:</p>
+<pre><code class="language-bash">sudo modprobe gspca_zc3xx
+</code></pre>
+<p>Now you should be able to see the video device:</p>
+<pre><code class="language-bash">ls /dev/video*
+/dev/video0
+</code></pre>
+<p>You can now test your webcam using the software cheese:</p>
+<pre><code class="language-bash">sudo apt-get install cheese
+cheese
+</code></pre>
+<h3 id="other-webcams">Other webcams</h3>
+<p>If you have another webcam, try the above nevertheless. If it does not work, exchange the driver gspca against uvcvideo:</p>
+<pre><code class="language-bash">yast -i uvcvideo_kmp_default
+modprobe uvcvideo
+</code></pre>
+<p>and start gqcam again.</p>
+<h3 id="testbed">Testbed</h3>
+<p>The following webcams have been found working with this tutorial:</p>
+<ul>
+<li>Logitech Quickcam messenger</li>
+<li>Philips Webcam SPC220NC</li>
+</ul>
+<p>A general list of working webcams can be found at 
+<a href="http://mxhaard.free.fr/spca5xx.html" target="_blank" rel="noopener">http://mxhaard.free.fr/spca5xx.html</a>.</p>
+<p>The guide has been tested with SUSE Linux 11.4 till 13.2 and Ubuntu.</p>
+<h3 id="see-also">See also</h3>
+<ul>
+<li>
+<a href="http://www.linuxintro.org/wiki/Hardware" target="_blank" rel="noopener">hardware</a></li>
+<li>
+<a href="http://en.opensuse.org/Webcam" target="_blank" rel="noopener">http://en.opensuse.org/Webcam</a></li>
+<li>
+<a href="http://www.linux.com/feature/126186" target="_blank" rel="noopener">http://www.linux.com/feature/126186</a></li>
+<li>
+<a href="http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/" target="_blank" rel="noopener">http://ubuntulinuxhelp.com/linux-driver-for-quickcam-usb-cameras-logitech-quickcam-fusion/</a></li>
+<li>
+<a href="http://www.goldmann.de/webcam-linux_tipp_408.html" target="_blank" rel="noopener">http://www.goldmann.de/webcam-linux_tipp_408.html</a></li>
+<li>
+<a href="http://wiki.ubuntuusers.de/Webcam" target="_blank" rel="noopener">http://wiki.ubuntuusers.de/Webcam</a></li>
+</ul>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="/blog/kaldi-cvte/" rel="next">使用cvte预训练模型</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="/blog/2019-06-23linux-xrandr/" rel="prev">屏幕输出管理: Xrandr</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on Jul 20, 2017</p>
+
+          
+
+
+          
+
+        </div>
+
+      </article>
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7614676161546695"
+     data-ad-slot="3891103469"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<footer class="site-footer">
+  
+
+  <p class="powered-by">
+    © 2016-2020 Codist &middot; 
+
+    Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/yaml.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/plaintext.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f1459cb2fec2935e3d76fea5b49d15eb";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

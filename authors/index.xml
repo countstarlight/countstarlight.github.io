@@ -5,20 +5,12 @@
     <link>https://codist.me/authors/</link>
       <atom:link href="https://codist.me/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright>
     <image>
       <url>https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
       <link>https://codist.me/authors/</link>
     </image>
-    
-    <item>
-      <title></title>
-      <link>https://codist.me/authors/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://codist.me/authors/admin/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

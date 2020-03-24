@@ -5,7 +5,7 @@
     <link>https://codist.me/tags/linux/</link>
       <atom:link href="https://codist.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <description>Linux</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2016-2020 Codist</copyright><lastBuildDate>Tue, 25 Jul 2017 09:38:52 +0800</lastBuildDate>
     <image>
       <url>https://codist.me/images/icon_hu83bd7ad5a6dcf30ed693ae65dfce8870_68634_512x512_fill_lanczos_center_2.png</url>
       <title>Linux</title>
@@ -14,9 +14,9 @@
     
     <item>
       <title>Linux上通过串口连接嵌入式Linux终端</title>
-      <link>https://codist.me/docs/embedded-serial-usb/</link>
+      <link>https://codist.me/blog/embedded-serial-usb/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <guid>https://codist.me/docs/embedded-serial-usb/</guid>
+      <guid>https://codist.me/blog/embedded-serial-usb/</guid>
       <description>&lt;h3 id=&#34;1-安装-minicom&#34;&gt;1. 安装 &lt;code&gt;minicom&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Debian/Ubuntu：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo aptitude update
@@ -82,9 +82,9 @@ usbcore: registered new interface driver usbserial_generic
     
     <item>
       <title>用minicom通过串口发送文件</title>
-      <link>https://codist.me/docs/embedded-minicom/</link>
+      <link>https://codist.me/blog/2017-07-25embedded-minicom/</link>
       <pubDate>Tue, 25 Jul 2017 09:38:52 +0800</pubDate>
-      <guid>https://codist.me/docs/embedded-minicom/</guid>
+      <guid>https://codist.me/blog/2017-07-25embedded-minicom/</guid>
       <description>&lt;h3 id=&#34;1-设置文件路径&#34;&gt;1. 设置文件路径&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -97,18 +97,18 @@ usbcore: registered new interface driver usbserial_generic
 &lt;p&gt;选择 &lt;code&gt;Filenames and paths&lt;/code&gt;：&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;设置 &lt;code&gt;A-Download directory&lt;/code&gt; （将文件从设备传送到本地的路径）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;设置 &lt;code&gt;B-Upload directory&lt;/code&gt; （将文件从本地上传到设备的路径）向设备发送文件时，选择这个目录里的文件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/2.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;2.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;按下 &lt;code&gt;esc&lt;/code&gt; 然后选择 &lt;code&gt;Save setup as dfl&lt;/code&gt;来保存设置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://codist.me/images/work6/3.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;3.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
