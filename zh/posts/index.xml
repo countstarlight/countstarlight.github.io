@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Posts on Codist</title>
+		<title>发布 on Codist</title>
 		<link>https://codist.me/zh/posts/</link>
-		<description>Recent content in Posts on Codist</description>
+		<description>Recent content in 发布 on Codist</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-Hans</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
